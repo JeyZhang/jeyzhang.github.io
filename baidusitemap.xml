@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
+    <lastmod>2016-02-26T10:49:35.546Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记2</title>
+        <pubTime>2016-01-31T05:02:56.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/network-connection-problems-in-win10.html</loc>
+    <lastmod>2016-02-26T10:49:35.539Z</lastmod>
+    <data>
+        <display>
+        <title>Win10下网络连接问题及解决方案</title>
+        <pubTime>2016-01-28T09:54:15.000Z</pubTime>
+        
+        <tag>Network</tag>
+         
+        <tag>Win10</tag>
+         
+        <tag>Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/2015-campus-recruit-summary.html</loc>
+    <lastmod>2016-02-26T10:49:35.509Z</lastmod>
+    <data>
+        <display>
+        <title>2015年校招求职总结</title>
+        <pubTime>2015-12-16T03:01:00.000Z</pubTime>
+        
+        <tag>IT</tag>
+         
+        <tag>Interview</tag>
+         
+        <tag>Job</tag>
+         
+         
+           
+             
+              <breadCrumb title="Interview" url="http://www.jeyzhang.com/categories/Interview/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/hexo-website-seo.html</loc>
+    <lastmod>2016-01-24T13:50:41.931Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo网站优化之SEO</title>
+        <pubTime>2015-12-17T02:04:18.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>SEO</tag>
+         
+        <tag>Web</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.jeyzhang.com/hexo-next-add-post-views.html</loc>
+    <lastmod>2016-01-23T01:58:41.348Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo的NexT主题个性化：添加文章阅读量</title>
+        <pubTime>2016-01-22T01:28:40.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>LeanCloud</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/markdown-common-problems.html</loc>
+    <lastmod>2016-01-22T15:16:41.075Z</lastmod>
+    <data>
+        <display>
+        <title>markdown写作中的常见问题</title>
+        <pubTime>2016-01-22T13:44:33.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.jeyzhang.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2016-01-22T15:15:30.800Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记</title>
+        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/next-theme-personal-settings.html</loc>
+    <lastmod>2016-01-22T15:11:14.081Z</lastmod>
+    <data>
+        <display>
+        <title>NexT主题个性化设置</title>
+        <pubTime>2015-12-14T11:50:04.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/hexo-github-blog-building.html</loc>
+    <lastmod>2016-01-22T15:06:22.739Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo+Github: 搭建属于自己的静态博客</title>
+        <pubTime>2015-12-07T13:44:01.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Github Page</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>Personal Website</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
+    <lastmod>2016-01-22T15:01:31.823Z</lastmod>
+    <data>
+        <display>
+        <title>如何将博客托管至Gitcafe及相应的DNS设置</title>
+        <pubTime>2015-12-20T02:19:18.000Z</pubTime>
+        
+        <tag>DNS</tag>
+         
+        <tag>Gitcafe</tag>
+         
+        <tag>Github</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html</loc>
+    <lastmod>2016-01-22T14:58:36.545Z</lastmod>
+    <data>
+        <display>
+        <title>如何在markdown中插入公式</title>
+        <pubTime>2016-01-14T12:57:19.000Z</pubTime>
+        
+        <tag>Equation</tag>
+         
+        <tag>Markdown</tag>
+         
+        <tag>MarkdownPad 2</tag>
+         
+        <tag>MathJax</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.jeyzhang.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+</urlset>
