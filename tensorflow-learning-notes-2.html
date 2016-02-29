@@ -63,7 +63,7 @@
 然而，由于Softmax Regression模型相对简单，所以最终的识别准确率并不高。下面将针对MNIST数据集构建更加复杂精巧的模型，以进一步提高识别准确率。
 
 深度学习模型TensorFlow很适合用来进行大规模的数值计算，其中也包括实现和">
-<meta property="og:updated_time" content="2016-02-29T02:28:21.103Z">
+<meta property="og:updated_time" content="2016-02-29T13:38:35.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow学习笔记2">
 <meta name="twitter:description" content="上篇博文主要是TensorFlow的一个简单入门，并介绍了如何实现Softmax Regression模型，来对MNIST数据集中的数字手写体进行识别。
@@ -346,8 +346,36 @@ sess = tf.<span class="function"><span class="title">InteractiveSession</span><s
 <p>所以，以上这样的Python代码的作用是简历一个完整的计算流图，然后指定图中的哪些部分需要运行。关于计算流图的更多具体使用见<a href="https://www.tensorflow.org/versions/r0.7/get_started/basic_usage.html#the-computation-graph" target="_blank" rel="external">这里</a>。</p>
 <h3 id="Softmax_Regression模型">Softmax Regression模型</h3><p>见<a href="http://www.jeyzhang.com/tensorflow-learning-notes.html"><strong>上篇博文</strong></a>。</p>
 <h3 id="CNN模型">CNN模型</h3><p>Softmax Regression模型在MNIST数据集上91%的准确率，其实还是比较低的。下面我们将使用一个更加精巧的模型，一个简单的卷积神经网络模型(CNN)。这个模型能够达到99.2%的准确率，尽管这不是最高的，但已经足够接受了。</p>
-<h4 id="权值初始化">权值初始化</h4><p>为了建立模型，我们需要先创建一些权值(w)和偏置(b)等参数，这些参数的初始化过程中需要加入一小部分的<code>噪声</code>以破坏参数整体的对称性，同时避免梯度为0.</p>
-<hr>
+<h4 id="权值初始化">权值初始化</h4><p>为了建立模型，我们需要先创建一些权值(w)和偏置(b)等参数，这些参数的初始化过程中需要加入一小部分的<code>噪声</code>以破坏参数整体的对称性，同时避免梯度为0.由于我们使用<code>ReLU</code>神经网络模型，所以我们通常将这些参数初始化为很小的正值。为了避免重复的初始化操作，我们可以创建下面两个函数：</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">weight_variable</span><span class="params">(shape)</span>:</span>
+  initial = tf.truncated_normal(shape, stddev=<span class="number">0.1</span>)
+  <span class="keyword">return</span> tf.Variable(initial)
+
+<span class="function"><span class="keyword">def</span> <span class="title">bias_variable</span><span class="params">(shape)</span>:</span>
+  initial = tf.constant(<span class="number">0.1</span>, shape=shape)
+  <span class="keyword">return</span> tf.Variable(initial)
+</code></pre><h4 id="卷积(Convolution)和池化(Pooling)">卷积(Convolution)和池化(Pooling)</h4><p>TensorFlow同样提供了方便的卷积和池化计算。怎样处理边界元素？怎样设置卷积窗口大小？在这个例子中，我们始终使用<code>vanilla</code>版本。这里的卷积操作仅使用了大小为1的窗口，使用1进行填充(<strong>?</strong>)，所以输出规模和输入的一致；而池化操作是在2 * 2的窗口内采用最大池化技术(max-pooling)。为了使代码简洁，同样将这些操作抽象为函数形式：</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">conv2d</span><span class="params">(x, W)</span>:</span>
+  <span class="keyword">return</span> tf.nn.conv2d(x, W, strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)
+
+<span class="function"><span class="keyword">def</span> <span class="title">max_pool_2x2</span><span class="params">(x)</span>:</span>
+  <span class="keyword">return</span> tf.nn.max_pool(x, ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],
+                        strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)
+</code></pre><h4 id="第一层：卷积层">第一层：卷积层</h4><p>第一层是卷积层，接下来是最大池化层。卷积层将要计算32个特征，对每个5 * 5的patch。它的权值tensor的大小为[5, 5, 1, 32]. 前两维是patch的大小，第三维时输入通道的数目，最后一维是输出通道的数目。我们对每个输出通道加上了偏置(bias)。</p>
+<pre><code>W_conv1 = <span class="function"><span class="title">weight_variable</span><span class="params">([<span class="number">5</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">32</span>])</span></span>
+b_conv1 = <span class="function"><span class="title">bias_variable</span><span class="params">([<span class="number">32</span>])</span></span>
+</code></pre><p>为了使得图片与计算层匹配，我们首先<code>reshape</code>输入图像<code>x</code>为4维的tensor，第二三维对应图片的宽和高，最后一维对应颜色通道的数目。</p>
+<pre><code>x_image = tf.reshape(x, [-<span class="number">1</span>,<span class="number">28</span>,<span class="number">28</span>,<span class="number">1</span>])
+</code></pre><p>然后，使用<code>weight tensor</code>对<code>x_image</code>进行卷积计算，加上<code>bias</code>，再应用到一个<code>ReLU</code>函数，最终最大池化。</p>
+<pre><code>h_conv1 = tf<span class="class">.nn</span><span class="class">.relu</span>(<span class="function"><span class="title">conv2d</span><span class="params">(x_image, W_conv1)</span></span> + b_conv1)
+h_pool1 = <span class="function"><span class="title">max_pool_2x2</span><span class="params">(h_conv1)</span></span>
+</code></pre><h4 id="第二层：卷积层">第二层：卷积层</h4><p>为了使得网络有足够深度，我们重复堆积一些相同类型的层。第二层将会有64个特征，对应每个5 * 5的patch。（？特征数目和patch大小的对应关系？）</p>
+<pre><code>W_conv2 = <span class="function"><span class="title">weight_variable</span><span class="params">([<span class="number">5</span>, <span class="number">5</span>, <span class="number">32</span>, <span class="number">64</span>])</span></span>
+b_conv2 = <span class="function"><span class="title">bias_variable</span><span class="params">([<span class="number">64</span>])</span></span>
+
+h_conv2 = tf<span class="class">.nn</span><span class="class">.relu</span>(<span class="function"><span class="title">conv2d</span><span class="params">(h_pool1, W_conv2)</span></span> + b_conv2)
+h_pool2 = <span class="function"><span class="title">max_pool_2x2</span><span class="params">(h_conv2)</span></span>
+</code></pre><h4 id="全连接层">全连接层</h4><hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
 <p><a href="http://www.jeyzhang.com/tensorflow-learning-notes.html">http://www.jeyzhang.com/tensorflow-learning-notes.html</a></p>
@@ -563,7 +591,7 @@ sess = tf.<span class="function"><span class="title">InteractiveSession</span><s
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习模型"><span class="nav-number">1.</span> <span class="nav-text">深度学习模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载MNIST数据集"><span class="nav-number">1.2.</span> <span class="nav-text">加载MNIST数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启TensorFlow会话"><span class="nav-number">1.3.</span> <span class="nav-text">开启TensorFlow会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算流图(Computation_Graph)"><span class="nav-number">1.4.</span> <span class="nav-text">计算流图(Computation Graph)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax_Regression模型"><span class="nav-number">1.5.</span> <span class="nav-text">Softmax Regression模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN模型"><span class="nav-number">1.6.</span> <span class="nav-text">CNN模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#权值初始化"><span class="nav-number">1.6.1.</span> <span class="nav-text">权值初始化</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习模型"><span class="nav-number">1.</span> <span class="nav-text">深度学习模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载MNIST数据集"><span class="nav-number">1.2.</span> <span class="nav-text">加载MNIST数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启TensorFlow会话"><span class="nav-number">1.3.</span> <span class="nav-text">开启TensorFlow会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算流图(Computation_Graph)"><span class="nav-number">1.4.</span> <span class="nav-text">计算流图(Computation Graph)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax_Regression模型"><span class="nav-number">1.5.</span> <span class="nav-text">Softmax Regression模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN模型"><span class="nav-number">1.6.</span> <span class="nav-text">CNN模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#权值初始化"><span class="nav-number">1.6.1.</span> <span class="nav-text">权值初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积(Convolution)和池化(Pooling)"><span class="nav-number">1.6.2.</span> <span class="nav-text">卷积(Convolution)和池化(Pooling)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一层：卷积层"><span class="nav-number">1.6.3.</span> <span class="nav-text">第一层：卷积层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二层：卷积层"><span class="nav-number">1.6.4.</span> <span class="nav-text">第二层：卷积层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全连接层"><span class="nav-number">1.6.5.</span> <span class="nav-text">全连接层</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
