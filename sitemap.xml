@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
+    <lastmod>2016-03-01T13:41:02.645Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2016-03-01T03:47:28.812Z</lastmod>
+    <lastmod>2016-03-01T11:52:01.241Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2016-03-01T11:51:37.196Z</lastmod>
   </url>
   
   <url>
@@ -34,11 +44,6 @@
   <url>
     <loc>http://www.jeyzhang.com/markdown-common-problems.html</loc>
     <lastmod>2016-01-22T15:16:41.075Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2016-01-22T15:15:30.800Z</lastmod>
   </url>
   
   <url>

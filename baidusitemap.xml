@@ -4,12 +4,62 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2016-03-01T03:47:28.812Z</lastmod>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
+    <lastmod>2016-03-01T13:41:02.645Z</lastmod>
     <data>
         <display>
-        <title>TensorFlow学习笔记2</title>
+        <title>卷积神经网络(CNN)学习笔记1：入门知识</title>
+        <pubTime>2016-03-01T11:25:11.000Z</pubTime>
+        
+        <tag>CNN</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
+    <lastmod>2016-03-01T11:52:01.241Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记2：构建CNN模型</title>
         <pubTime>2016-01-31T05:02:56.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2016-03-01T11:51:37.196Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记1：入门</title>
+        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
         
         <tag>Artificial Intelligence</tag>
          
@@ -140,32 +190,6 @@
            
              
               <breadCrumb title="Markdown" url="http://www.jeyzhang.com/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2016-01-22T15:15:30.800Z</lastmod>
-    <data>
-        <display>
-        <title>TensorFlow学习笔记</title>
-        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
           
         </display>
     </data>
