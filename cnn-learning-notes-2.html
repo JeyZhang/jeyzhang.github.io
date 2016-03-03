@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Equation,Markdown,MarkdownPad 2,MathJax," />
+  <meta name="keywords" content="CNN,Deep Learning,Machine Learning," />
 
 
 
@@ -51,23 +51,46 @@
 
 
 
-<meta name="description" content="MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&amp;lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config">
+<meta name="description" content="上篇博文主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的LeNet-5模型。下面重点介绍CNN模型的训练过程/参数学习，在阅读本文之前，最好需要有以下方面的预备知识：
+
+神经网络基础（网络结构，前向/后向传播方式，激活函数等）；
+基础的最优化求解方法（梯度法，牛顿法等）；
+机器学习基础
+
+
+神经网络模型常用于处理有监督学习的问题，例如分类问题，CNN也不例外。模型需要一些">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在markdown中插入公式">
-<meta property="og:url" content="http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html">
+<meta property="og:title" content="卷积神经网络(CNN)学习笔记1：模型训练">
+<meta property="og:url" content="http://www.jeyzhang.com/cnn-learning-notes-2.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&amp;lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config">
-<meta property="og:image" content="http://i.imgur.com/dCW2j68.png">
-<meta property="og:updated_time" content="2016-03-03T06:52:49.879Z">
+<meta property="og:description" content="上篇博文主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的LeNet-5模型。下面重点介绍CNN模型的训练过程/参数学习，在阅读本文之前，最好需要有以下方面的预备知识：
+
+神经网络基础（网络结构，前向/后向传播方式，激活函数等）；
+基础的最优化求解方法（梯度法，牛顿法等）；
+机器学习基础
+
+
+神经网络模型常用于处理有监督学习的问题，例如分类问题，CNN也不例外。模型需要一些">
+<meta property="og:image" content="http://i.imgur.com/4mCbV3d.png">
+<meta property="og:image" content="http://i.imgur.com/TcfFA3Y.png">
+<meta property="og:image" content="http://i.imgur.com/zsFtAhI.png">
+<meta property="og:image" content="http://i.imgur.com/iUghGWY.png">
+<meta property="og:image" content="http://i.imgur.com/zH179Jk.png">
+<meta property="og:image" content="http://i.imgur.com/2R5A7VT.png">
+<meta property="og:image" content="http://i.imgur.com/tm4daZv.png">
+<meta property="og:image" content="http://i.imgur.com/Q5pSR1x.png">
+<meta property="og:image" content="http://i.imgur.com/fm30a99.png">
+<meta property="og:updated_time" content="2016-03-03T09:46:59.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在markdown中插入公式">
-<meta name="twitter:description" content="MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&amp;lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config">
+<meta name="twitter:title" content="卷积神经网络(CNN)学习笔记1：模型训练">
+<meta name="twitter:description" content="上篇博文主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的LeNet-5模型。下面重点介绍CNN模型的训练过程/参数学习，在阅读本文之前，最好需要有以下方面的预备知识：
+
+神经网络基础（网络结构，前向/后向传播方式，激活函数等）；
+基础的最优化求解方法（梯度法，牛顿法等）；
+机器学习基础
+
+
+神经网络模型常用于处理有监督学习的问题，例如分类问题，CNN也不例外。模型需要一些">
 
 
 
@@ -79,7 +102,7 @@
   };
 </script>
 
-  <title> 如何在markdown中插入公式 | Jey Zhang </title>
+  <title> 卷积神经网络(CNN)学习笔记1：模型训练 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -264,7 +287,7 @@
             
             
               
-                如何在markdown中插入公式
+                卷积神经网络(CNN)学习笔记1：模型训练
               
             
           </h1>
@@ -273,8 +296,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-14T20:57:19+08:00" content="2016-01-14">
-              2016-01-14
+            <time itemprop="dateCreated" datetime="2016-03-03T13:41:05+08:00" content="2016-03-03">
+              2016-03-03
             </time>
           </span>
 
@@ -283,8 +306,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
                   </a>
                 </span>
 
@@ -299,8 +322,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/how-to-insert-equations-in-markdown.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-insert-equations-in-markdown.html" itemprop="commentsCount"></span>
+              <a href="/cnn-learning-notes-2.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="cnn-learning-notes-2.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -310,7 +333,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/how-to-insert-equations-in-markdown.html"class="leancloud_visitors"  data-flag-title="如何在markdown中插入公式">
+			 <span id="/cnn-learning-notes-2.html"class="leancloud_visitors"  data-flag-title="卷积神经网络(CNN)学习笔记1：模型训练">
              &nbsp;Views
             </span>
 		  
@@ -326,38 +349,55 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="MathJax插件"><strong>MathJax插件</strong></h2><p>著名的<a href="http://stackoverflow.com/" target="_blank" rel="external">Stackoverflow</a>网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加<code>MathJax CDN</code>，如下：</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>
-   <span class="attribute">src</span>=<span class="value">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined">
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-</code></pre><p>就可以在md文件中插入Tex格式的公式了。</p>
-<p><code>行间公式</code>的形式为</p>
-<pre><code><span class="variable">$$</span> 此处插入公式 <span class="variable">$$</span>
-</code></pre><p>而<code>行内公式</code>的形式为</p>
-<pre><code><span class="string">\\(</span> 此处插入公式 <span class="string">\\)</span>
-</code></pre><h2 id="在MarkdownPad_2中编辑公式"><strong>在MarkdownPad 2中编辑公式</strong></h2><p>之前的博文有推荐<a href="http://markdownpad.com/" target="_blank" rel="external">Markdown Pad 2</a>作为Window下的Markdown编辑器。如果你是使用该软件作为markdown的编辑器，你只需要在软件的<code>Tools-&gt; Options-&gt; Advanced-&gt; HTML Head Editor</code>中添加上述的<code>MathJax CDN</code>即可。</p>
-<p>这样你就不必每次都在md文件中重复添加了。</p>
-<h2 id="好用的Tex公式生成器"><strong>好用的Tex公式生成器</strong></h2><p>推荐一个在线手写公式转Tex格式的利器：<a href="https://webdemo.myscript.com/#/demo/equation" target="_blank" rel="external">Web Equation</a>。通过手写公式，即可得到公式所对应的Tex格式，非常好用。</p>
-<h2 id="示例"><strong>示例</strong></h2><p>举个栗子。在<code>Markdown Pad 2</code>中新建文件，添加如下内容：</p>
-<pre><code>最后，我们在一个图片类别的evidence中加入偏置(bias)，加入偏置的目的是加入一些与输入独立无关的信息。所以图片类别的evidence为
-
-<span class="formula">$$ evidence<span class="command">\_</span><span class="special">{</span>i<span class="special">}</span>=<span class="command">\sum</span> <span class="command">\_</span><span class="special">{</span>j<span class="special">}</span>W<span class="command">\_</span><span class="special">{</span>ij<span class="special">}</span>x<span class="command">\_</span><span class="special">{</span>j<span class="special">}</span>+b<span class="command">\_</span><span class="special">{</span>i<span class="special">}</span> $$</span>
-
-其中，<span class="command">\\</span>( W<span class="command">\_</span>i <span class="command">\\</span>) 和 <span class="command">\\</span>( b<span class="command">\_</span>i <span class="command">\\</span>) 分别为类别 <span class="command">\\</span>( i <span class="command">\\</span>) 的权值和偏置。
-</code></pre><p>（<strong>注意</strong>：markdown文件中的<code>_</code>前需要加上<code>\</code>转移符。）</p>
-<p>最终效果如下（在Markdown Pad 2编辑器进行预览，快捷键为<code>F6</code>）：</p>
-<p><img src="http://i.imgur.com/dCW2j68.png" alt=""></p>
-<h2 id="Hexo中显示数学公式"><strong>Hexo中显示数学公式</strong></h2><p>值得注意的是，原生的Hexo并不支持数学公式的显示。所以，如果你仅仅完成了以上步骤，在<code>hexo g -d</code>之后，你会发现公式的效果并没有被渲染出来。</p>
-<h3 id="安装hexo-math插件">安装hexo-math插件</h3><p>在网站根目录下，打开<code>git bash</code>，输入</p>
-<pre><code>npm install hexo-<span class="built_in">math</span> <span class="comment">--save</span>
-</code></pre><p>然后，在根目录下的<code>_config.yml</code>文件中添加</p>
-<pre><code><span class="attribute">plugins</span>: <span class="string"></span>
-  <span class="attribute">hexo-math</span>
-</code></pre><p>之后重新生成和部署网站即可。</p>
+        <span itemprop="articleBody"><p><a href="http://www.jeyzhang.com/cnn-learning-notes-1.html"><strong>上篇博文</strong></a>主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的<strong><code>LeNet-5</code></strong>模型。下面重点介绍CNN模型的训练过程/参数学习，在阅读本文之前，最好需要有以下方面的预备知识：</p>
+<ul>
+<li>神经网络基础（网络结构，前向/后向传播方式，激活函数等）；</li>
+<li>基础的最优化求解方法（梯度法，牛顿法等）；</li>
+<li>机器学习基础</li>
+</ul>
 <hr>
-<p><strong>参考资料</strong>：</p>
-<p><a href="http://pencilandengine.com/2013/08/27/mathjax-with-markdownpad-2/" target="_blank" rel="external">MathJax with Markdownpad 2</a></p>
-<p><a href="http://hijiangtao.github.io/2014/09/08/MathJaxinHexo/" target="_blank" rel="external">Hexo上使用MathJax来实现数学公式的表达</a></p>
+<p>神经网络模型常用于处理有监督学习的问题，例如分类问题，CNN也不例外。模型需要一些有标注的数据进行训练，训练过程中主要涉及到网络的<strong>前向传播</strong>和<strong>反向传播</strong>计算，前向传播体现了特征信息的传递，而反向传播则是体现误差信息对模型参数的矫正。</p>
+<h3 id="CNN前向传播">CNN前向传播</h3><p>与普通的神经网络的前向传播过程一样。用 \( l \) 表示当前层，\( x^{l} \) 表示当前层的输出，\( W^{l} \) 和 \( b^{l} \) 分别表示当前层的权值和偏置，则前向传播可以用下面的公式表示：</p>
+<p>$$ x^{l} = f\left( u^{l}\right), \ with \; u^{l} = W^{l}x^{l-1} + b^{l} $$</p>
+<p>其中 \(f\left( \right)\) 函数为激活函数，可以选择<code>sigmod</code>或者<code>tanh</code>等函数。</p>
+<p>对于卷积层，其前向传播如下图：</p>
+<p><img src="http://i.imgur.com/4mCbV3d.png" alt=""></p>
+<h3 id="CNN反向传播">CNN反向传播</h3><h4 id="代价函数">代价函数</h4><p>代价函数（或损失函数）有较多形式，常用的有平方误差函数，交叉熵等。这里我们用平方误差函数作为代价函数，公式如下：</p>
+<p>$$ E^{n} = \dfrac {1} {2}\sum _{k=1}^{c}\left( t_{k}^{n} - y_{k}^{n}\right) ^{2} = \dfrac {1} {2}||t^{n} - y^{n}||_{2}^{2}$$</p>
+<p>以上公式描述了样本 \( n \) 的训练误差，其中 \( c \) 为输出层节点的个数（通常就是最终的分类类别数目），\( t \) 是训练样本的正确结果，\( y \) 是网络训练的输出结果。</p>
+<h4 id="BP反向传播">BP反向传播</h4><p>基本的反向传播与BP神经网络类似，首先，简单回顾一下BP神经网络中的反向传播计算过程：</p>
+<p>权值参数调整的方向如下公式：</p>
+<p>$$ \Delta W^{l} = -\eta \dfrac {\partial E} {\partial W^{l}}, \ \ \dfrac {\partial E} {\partial W^{l}} = x^{l-1}(\delta ^{l})^{T} $$</p>
+<p>其中，\( \eta \) 为学习率。</p>
+<p>$$ \dfrac {\partial E} {\partial b} = \dfrac {\partial E} {\partial u} \dfrac {\partial u} {\partial b} = \dfrac {\partial E} {\partial u} = \delta $$</p>
+<p>其中，\( \delta \) 称之为<strong>敏感度</strong>，也就是<strong>误差度</strong>。 \( \delta \)的计算方式如下：</p>
+<p>$$ \delta ^{L} = f’(u^{L})\circ (y^{n} - t^{n}) $$</p>
+<p>$$ \delta ^{l} = (W^{l+1})^{T}\circ f’(u^{l}) $$</p>
+<p>其中，\( L \) 表示网络的最后一层，\( l \) 表示网络的其他层，\( \circ \) 表示点乘。 以上的两个公式反映了误差由网络的最后一层逐步向前传递的计算过程。</p>
+<h4 id="特殊的反向传播">特殊的反向传播</h4><p>由于CNN中有不同类型的层级，并且层级之间的连接关系有可能是不确定的（如LeNet-5网络中S2层到C3层）。所以，有几个情形下的反向传播比较特别：</p>
+<ul>
+<li><strong>情况一</strong>：当前为Pooling层，前一层是卷积层；</li>
+<li><strong>情况二</strong>：当前为卷积层，前一层是Pooling层；</li>
+<li><strong>情况三</strong>：当前层与前一层的连接关系不确定（<strong>？尚不理解？</strong>）；</li>
+</ul>
+<h4 id="情况一：当前为Pooling层，前一层是卷积层">情况一：当前为Pooling层，前一层是卷积层</h4><p><img src="http://i.imgur.com/TcfFA3Y.png" alt=""></p>
+<p><img src="http://i.imgur.com/zsFtAhI.png" alt=""></p>
+<p><img src="http://i.imgur.com/iUghGWY.png" alt=""></p>
+<p>其中，<code>Kronecker</code>乘积的计算如下：</p>
+<p><img src="http://i.imgur.com/zH179Jk.png" alt=""></p>
+<h4 id="情况二：当前为卷积层，前一层是Pooling层">情况二：当前为卷积层，前一层是Pooling层</h4><p><img src="http://i.imgur.com/2R5A7VT.png" alt=""></p>
+<p><img src="http://i.imgur.com/tm4daZv.png" alt=""></p>
+<p>以上的矩阵1和矩阵2进行卷积操作时，需要将矩阵2先<strong>水平翻转</strong>，然后再<strong>垂直翻转</strong>；最后在矩阵1上进行<code>卷积操作</code>（和前向传播时类似）。</p>
+<p><img src="http://i.imgur.com/Q5pSR1x.png" alt=""></p>
+<p><img src="http://i.imgur.com/fm30a99.png" alt=""></p>
+<h4 id="情况三：当前层与前一层的连接关系不确定">情况三：当前层与前一层的连接关系不确定</h4><p>个人理解，当前层与前一层的连接关系不确定时，反向传播与传统的BP算法类似，只不过更新的是局部连接的那些值。所以需要提前记录当前层的神经元与前一层的哪些元素是连接的。</p>
+<hr>
+<p>本文结束，感谢欣赏。</p>
+<p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
+<p><a href="http://www.jeyzhang.com/cnn-learning-notes-2.html">http://www.jeyzhang.com/cnn-learning-notes-2.html</a></p>
+<p><strong>参考资料</strong></p>
+<p><a href="http://www.moonshile.com/post/juan-ji-shen-jing-wang-luo-quan-mian-jie-xi" target="_blank" rel="external">卷积神经网络全面解析</a></p>
+<p><a href="http://blog.csdn.net/vintage_1/article/details/17253997" target="_blank" rel="external">CNN卷积神经网络反向传播机制的理解</a></p>
 </span>
       
     </div>
@@ -366,13 +406,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Equation/" rel="tag">#Equation</a>
+            <a href="/tags/CNN/" rel="tag">#CNN</a>
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
           
-            <a href="/tags/MarkdownPad-2/" rel="tag">#MarkdownPad 2</a>
-          
-            <a href="/tags/MathJax/" rel="tag">#MathJax</a>
+            <a href="/tags/Machine-Learning/" rel="tag">#Machine Learning</a>
           
         </div>
       
@@ -381,17 +419,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tensorflow-learning-notes.html" rel="next" title="TensorFlow学习笔记1：入门">
-                <i class="fa fa-chevron-left"></i> TensorFlow学习笔记1：入门
+              <a href="/cnn-learning-notes-1.html" rel="next" title="卷积神经网络(CNN)学习笔记1：基础入门">
+                <i class="fa fa-chevron-left"></i> 卷积神经网络(CNN)学习笔记1：基础入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-next-add-post-views.html" rel="prev" title="Hexo的NexT主题个性化：添加文章阅读量">
-                Hexo的NexT主题个性化：添加文章阅读量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,7 +607,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MathJax插件"><span class="nav-number">1.</span> <span class="nav-text">MathJax插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在MarkdownPad_2中编辑公式"><span class="nav-number">2.</span> <span class="nav-text">在MarkdownPad 2中编辑公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好用的Tex公式生成器"><span class="nav-number">3.</span> <span class="nav-text">好用的Tex公式生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">4.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中显示数学公式"><span class="nav-number">5.</span> <span class="nav-text">Hexo中显示数学公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo-math插件"><span class="nav-number">5.1.</span> <span class="nav-text">安装hexo-math插件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN前向传播"><span class="nav-number">1.</span> <span class="nav-text">CNN前向传播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN反向传播"><span class="nav-number">2.</span> <span class="nav-text">CNN反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数"><span class="nav-number">2.1.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BP反向传播"><span class="nav-number">2.2.</span> <span class="nav-text">BP反向传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊的反向传播"><span class="nav-number">2.3.</span> <span class="nav-text">特殊的反向传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况一：当前为Pooling层，前一层是卷积层"><span class="nav-number">2.4.</span> <span class="nav-text">情况一：当前为Pooling层，前一层是卷积层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况二：当前为卷积层，前一层是Pooling层"><span class="nav-number">2.5.</span> <span class="nav-text">情况二：当前为卷积层，前一层是Pooling层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况三：当前层与前一层的连接关系不确定"><span class="nav-number">2.6.</span> <span class="nav-text">情况三：当前层与前一层的连接关系不确定</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -640,9 +674,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'how-to-insert-equations-in-markdown.html';
-      var disqus_title = '如何在markdown中插入公式';
-      var disqus_url = 'http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html';
+      var disqus_identifier = 'cnn-learning-notes-2.html';
+      var disqus_title = '卷积神经网络(CNN)学习笔记1：模型训练';
+      var disqus_url = 'http://www.jeyzhang.com/cnn-learning-notes-2.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

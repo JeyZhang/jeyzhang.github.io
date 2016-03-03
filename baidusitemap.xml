@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
-    <lastmod>2016-03-02T13:38:35.401Z</lastmod>
+    <lastmod>2016-03-03T09:47:08.799Z</lastmod>
     <data>
         <display>
-        <title>卷积神经网络(CNN)学习笔记1：入门知识</title>
+        <title>卷积神经网络(CNN)学习笔记1：基础入门</title>
         <pubTime>2016-03-01T11:25:11.000Z</pubTime>
         
         <tag>CNN</tag>
@@ -21,6 +21,56 @@
            
              
               <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
+    <lastmod>2016-03-03T09:46:59.415Z</lastmod>
+    <data>
+        <display>
+        <title>卷积神经网络(CNN)学习笔记1：模型训练</title>
+        <pubTime>2016-03-03T05:41:05.000Z</pubTime>
+        
+        <tag>CNN</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html</loc>
+    <lastmod>2016-03-03T06:52:49.879Z</lastmod>
+    <data>
+        <display>
+        <title>如何在markdown中插入公式</title>
+        <pubTime>2016-01-14T12:57:19.000Z</pubTime>
+        
+        <tag>Equation</tag>
+         
+        <tag>Markdown</tag>
+         
+        <tag>MarkdownPad 2</tag>
+         
+        <tag>MathJax</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.jeyzhang.com/categories/Markdown/"/>
           
         </display>
     </data>
@@ -264,32 +314,6 @@
            
              
               <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html</loc>
-    <lastmod>2016-01-22T14:58:36.545Z</lastmod>
-    <data>
-        <display>
-        <title>如何在markdown中插入公式</title>
-        <pubTime>2016-01-14T12:57:19.000Z</pubTime>
-        
-        <tag>Equation</tag>
-         
-        <tag>Markdown</tag>
-         
-        <tag>MarkdownPad 2</tag>
-         
-        <tag>MathJax</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="http://www.jeyzhang.com/categories/Markdown/"/>
           
         </display>
     </data>

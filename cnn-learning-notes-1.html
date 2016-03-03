@@ -51,19 +51,20 @@
 
 
 
-<meta name="description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。
-图像处理中，往往会将图像看成是一个或多个的二维向量，如之前博文中提到的MNIST手写体图片就可以看做是一个28 × 28的二维向量（黑白图片，只有一个颜色通道；如果是RG">
+<meta name="description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。
+图像处理中，往往会将图像看成是一个或多个的二维向量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="卷积神经网络(CNN)学习笔记1：入门知识">
+<meta property="og:title" content="卷积神经网络(CNN)学习笔记1：基础入门">
 <meta property="og:url" content="http://www.jeyzhang.com/cnn-learning-notes-1.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。
-图像处理中，往往会将图像看成是一个或多个的二维向量，如之前博文中提到的MNIST手写体图片就可以看做是一个28 × 28的二维向量（黑白图片，只有一个颜色通道；如果是RG">
+<meta property="og:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。
+图像处理中，往往会将图像看成是一个或多个的二维向量">
 <meta property="og:image" content="http://i.imgur.com/UK1cQOP.png">
 <meta property="og:image" content="http://i.imgur.com/PHbta3D.jpg">
 <meta property="og:image" content="http://i.imgur.com/IIBM59H.jpg">
 <meta property="og:image" content="http://i.imgur.com/qMs50Ma.png">
 <meta property="og:image" content="http://i.imgur.com/w8enPv2.png">
+<meta property="og:image" content="http://i.imgur.com/KPyqPOB.gif">
 <meta property="og:image" content="http://i.imgur.com/bHBUsr4.png">
 <meta property="og:image" content="http://i.imgur.com/2AuotA0.png">
 <meta property="og:image" content="http://i.imgur.com/Zzm048o.png">
@@ -74,11 +75,11 @@
 <meta property="og:image" content="http://i.imgur.com/SNLgNWe.png">
 <meta property="og:image" content="http://i.imgur.com/kJtbaEz.png">
 <meta property="og:image" content="http://i.imgur.com/cXSxkVY.png">
-<meta property="og:updated_time" content="2016-03-02T13:38:35.401Z">
+<meta property="og:updated_time" content="2016-03-03T09:47:08.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卷积神经网络(CNN)学习笔记1：入门知识">
-<meta name="twitter:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。
-图像处理中，往往会将图像看成是一个或多个的二维向量，如之前博文中提到的MNIST手写体图片就可以看做是一个28 × 28的二维向量（黑白图片，只有一个颜色通道；如果是RG">
+<meta name="twitter:title" content="卷积神经网络(CNN)学习笔记1：基础入门">
+<meta name="twitter:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。
+图像处理中，往往会将图像看成是一个或多个的二维向量">
 
 
 
@@ -90,7 +91,7 @@
   };
 </script>
 
-  <title> 卷积神经网络(CNN)学习笔记1：入门知识 | Jey Zhang </title>
+  <title> 卷积神经网络(CNN)学习笔记1：基础入门 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -275,7 +276,7 @@
             
             
               
-                卷积神经网络(CNN)学习笔记1：入门知识
+                卷积神经网络(CNN)学习笔记1：基础入门
               
             
           </h1>
@@ -321,7 +322,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/cnn-learning-notes-1.html"class="leancloud_visitors"  data-flag-title="卷积神经网络(CNN)学习笔记1：入门知识">
+			 <span id="/cnn-learning-notes-1.html"class="leancloud_visitors"  data-flag-title="卷积神经网络(CNN)学习笔记1：基础入门">
              &nbsp;Views
             </span>
 		  
@@ -337,7 +338,7 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="概述">概述</h2><p><strong>卷积神经网络(Convolutional Neural Network, CNN)</strong>是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。</p>
+        <span itemprop="articleBody"><h2 id="概述">概述</h2><p><strong>卷积神经网络(Convolutional Neural Network, CNN)</strong>是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。</p>
 <p>图像处理中，往往会将图像看成是一个或多个的二维向量，如之前博文中提到的MNIST手写体图片就可以看做是一个28 × 28的二维向量（黑白图片，只有一个颜色通道；如果是RGB表示的彩色图片则有三个颜色通道，可表示为三张二维向量）。传统的神经网络都是采用全连接的方式，即输入层到隐藏层的神经元都是全部连接的，这样做将导致参数量巨大，使得网络训练耗时甚至难以训练，而CNN则通过<strong><code>局部连接</code></strong>、<strong><code>权值共享</code></strong>等方法避免这一困难，有趣的是，这些方法都是受到现代生物神经网络相关研究的启发（感兴趣可阅读以下部分）。</p>
 <p><img src="http://i.imgur.com/UK1cQOP.png" alt=""></p>
 <p>下面重点介绍下CNN中的<strong>局部连接(Sparse Connectivity)</strong>和<strong>权值共享(Shared Weights)</strong>方法，理解它们很重要。</p>
@@ -353,14 +354,17 @@
 <p>可以看出，CNN中主要有两种类型的网络层，分别是<strong>卷积层</strong>和<strong>池化/采样层(Pooling)</strong>。卷积层的作用是提取图像的各种特征；池化层的作用是对原始特征信号进行抽象，从而大幅度减少训练参数，另外还可以减轻模型过拟合的程度。</p>
 <h3 id="卷积层">卷积层</h3><p>卷积层是卷积核在上一级输入层上通过逐一滑动窗口计算而得，卷积核中的每一个参数都相当于传统神经网络中的权值参数，与对应的局部像素相连接，将卷积核的各个参数与对应的局部像素值相乘之和，（通常还要再加上一个偏置参数），得到卷积层上的结果。如下图所示。</p>
 <p><img src="http://i.imgur.com/w8enPv2.png" alt=""></p>
-<h3 id="池化/采样层">池化/采样层</h3><p>为了进一步降低网络训练参数，对卷积层进行采样(Pooling)。采样的方式通常有以下两种：</p>
+<p>下面的动图能够更好地解释卷积过程：</p>
+<p><img src="http://i.imgur.com/KPyqPOB.gif" alt=""></p>
+<h3 id="池化/采样层">池化/采样层</h3><p>通过卷积层获得了图像的特征之后，理论上我们可以直接使用这些特征训练分类器（如softmax），但是这样做将面临巨大的计算量的挑战，而且容易产生过拟合的现象。为了进一步降低网络训练参数及模型的过拟合程度，我们对卷积层进行<strong>池化/采样(Pooling)</strong>处理。池化/采样的方式通常有以下两种：</p>
 <ul>
 <li><strong>Max-Pooling</strong>: 选择Pooling窗口中的最大值作为采样值；</li>
 <li><strong>Mean-Pooling</strong>: 将Pooling窗口中的所有值相加取平均，以平均值作为采样值； </li>
 </ul>
 <p>如下图所示。</p>
 <p><img src="http://i.imgur.com/bHBUsr4.png" alt=""></p>
-<h3 id="LeNet-5网络详解">LeNet-5网络详解</h3><p><img src="http://i.imgur.com/2AuotA0.png" alt=""></p>
+<h3 id="LeNet-5网络详解">LeNet-5网络详解</h3><p>以上较详细地介绍了CNN的网络结构和基本原理，下面介绍一个经典的CNN模型：<strong><code>LeNet-5网络</code></strong>。</p>
+<p><img src="http://i.imgur.com/2AuotA0.png" alt=""></p>
 <p><img src="http://i.imgur.com/Zzm048o.png" alt=""></p>
 <p><img src="http://i.imgur.com/aJlgVHg.png" alt=""></p>
 <p><img src="http://i.imgur.com/SiVPyWR.png" alt=""></p>
@@ -405,6 +409,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/cnn-learning-notes-2.html" rel="prev" title="卷积神经网络(CNN)学习笔记1：模型训练">
+                卷积神经网络(CNN)学习笔记1：模型训练 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -499,7 +507,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -654,7 +662,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
       var disqus_identifier = 'cnn-learning-notes-1.html';
-      var disqus_title = '卷积神经网络(CNN)学习笔记1：入门知识';
+      var disqus_title = '卷积神经网络(CNN)学习笔记1：基础入门';
       var disqus_url = 'http://www.jeyzhang.com/cnn-learning-notes-1.html';
 
       function run_disqus_script(disqus_script){
