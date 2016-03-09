@@ -51,13 +51,13 @@
 
 
 
-<meta name="description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。
+<meta name="description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输入原始图像。
 图像处理中，往往会将图像看成是一个或多个的二维向量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卷积神经网络(CNN)学习笔记1：基础入门">
 <meta property="og:url" content="http://www.jeyzhang.com/cnn-learning-notes-1.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。
+<meta property="og:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输入原始图像。
 图像处理中，往往会将图像看成是一个或多个的二维向量">
 <meta property="og:image" content="http://i.imgur.com/UK1cQOP.png">
 <meta property="og:image" content="http://i.imgur.com/PHbta3D.jpg">
@@ -75,10 +75,10 @@
 <meta property="og:image" content="http://i.imgur.com/SNLgNWe.png">
 <meta property="og:image" content="http://i.imgur.com/kJtbaEz.png">
 <meta property="og:image" content="http://i.imgur.com/cXSxkVY.png">
-<meta property="og:updated_time" content="2016-03-03T09:47:08.799Z">
+<meta property="og:updated_time" content="2016-03-09T02:09:56.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络(CNN)学习笔记1：基础入门">
-<meta name="twitter:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。
+<meta name="twitter:description" content="概述卷积神经网络(Convolutional Neural Network, CNN)是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输入原始图像。
 图像处理中，往往会将图像看成是一个或多个的二维向量">
 
 
@@ -338,9 +338,15 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="概述">概述</h2><p><strong>卷积神经网络(Convolutional Neural Network, CNN)</strong>是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输出原始图像。</p>
+        <span itemprop="articleBody"><h2 id="概述">概述</h2><p><strong>卷积神经网络(Convolutional Neural Network, CNN)</strong>是深度学习技术中极具代表的网络结构之一，在图像处理领域取得了很大的成功，在国际标准的ImageNet数据集上，许多成功的模型都是基于CNN的。CNN相较于传统的图像处理算法的优点之一在于，避免了对图像复杂的前期预处理过程（提取人工特征等），可以直接输入原始图像。</p>
 <p>图像处理中，往往会将图像看成是一个或多个的二维向量，如之前博文中提到的MNIST手写体图片就可以看做是一个28 × 28的二维向量（黑白图片，只有一个颜色通道；如果是RGB表示的彩色图片则有三个颜色通道，可表示为三张二维向量）。传统的神经网络都是采用全连接的方式，即输入层到隐藏层的神经元都是全部连接的，这样做将导致参数量巨大，使得网络训练耗时甚至难以训练，而CNN则通过<strong><code>局部连接</code></strong>、<strong><code>权值共享</code></strong>等方法避免这一困难，有趣的是，这些方法都是受到现代生物神经网络相关研究的启发（感兴趣可阅读以下部分）。</p>
 <p><img src="http://i.imgur.com/UK1cQOP.png" alt=""></p>
+<blockquote>
+<p>1）卷积神经网络的历史</p>
+<p>1962年Hubel和Wiesel通过对猫视觉皮层细胞的研究，提出了感受野(receptive field)的概念，1984年日本学者Fukushima基于感受野概念提出的神经认知机(neocognitron)可以看作是卷积神经网络的第一个实现网络，也是感受野概念在人工神经网络领域的首次应用。神经认知机将一个视觉模式分解成许多子模式（特征），然后进入分层递阶式相连的特征平面进行处理，它试图将视觉系统模型化，使其能够在即使物体有位移或轻微变形的时候，也能完成识别。</p>
+<p>通常神经认知机包含两类神经元，即承担特征抽取的S-元和抗变形的C-元。S-元中涉及两个重要参数，即感受野与阈值参数，前者确定输入连接的数目，后者则控制对特征子模式的反应程度。许多学者一直致力于提高神经认知机的性能的研究：在传统的神经认知机中，每个S-元的感光区中由C-元带来的视觉模糊量呈正态分布。如果感光区的边缘所产生的模糊效果要比中央来得大，S-元将会接受这种非正态模糊所导致的更大的变形容忍性。我们希望得到的是，训练模式与变形刺激模式在感受野的边缘与其中心所产生的效果之间的差异变得越来越大。为了有效地形成这种非正态模糊，Fukushima提出了带双C-元层的改进型神经认知机。</p>
+<p>Van Ooyen和Niehuis为提高神经认知机的区别能力引入了一个新的参数。事实上，该参数作为一种抑制信号，抑制了神经元对重复激励特征的激励。多数神经网络在权值中记忆训练信息。根据Hebb学习规则，某种特征训练的次数越多，在以后的识别过程中就越容易被检测。也有学者将进化计算理论与神经认知机结合，通过减弱对重复性激励特征的训练学习，而使得网络注意那些不同的特征以助于提高区分能力。上述都是神经认知机的发展过程，而卷积神经网络可看作是神经认知机的推广形式，神经认知机是卷积神经网络的一种特例。</p>
+</blockquote>
 <p>下面重点介绍下CNN中的<strong>局部连接(Sparse Connectivity)</strong>和<strong>权值共享(Shared Weights)</strong>方法，理解它们很重要。</p>
 <h3 id="局部连接与权值共享">局部连接与权值共享</h3><p>下图是一个很经典的图示，左边是全连接，右边是局部连接。</p>
 <p><img src="http://i.imgur.com/PHbta3D.jpg" alt=""></p>
