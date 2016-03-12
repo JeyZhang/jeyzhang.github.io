@@ -70,7 +70,7 @@ Kalchbrenner">
 <meta property="og:image" content="http://i.imgur.com/3IbLJX4.png">
 <meta property="og:image" content="http://i.imgur.com/CNMa0VL.png">
 <meta property="og:image" content="http://i.imgur.com/YgM3Tsg.png">
-<meta property="og:updated_time" content="2016-03-12T08:28:42.309Z">
+<meta property="og:updated_time" content="2016-03-12T14:29:51.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络(CNN)在句子建模上的应用">
 <meta name="twitter:description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
@@ -410,7 +410,7 @@ Kalchbrenner">
 </blockquote>
 <p>而文中的k-max pooling方式的一般化体现在：</p>
 <ul>
-<li>pooling的结果不是返回一个最大值，而是返回k组最大值，这些最大值是子序列中的最大值（相当于有个滑动窗口）；</li>
+<li>pooling的结果不是返回一个最大值，而是返回k组最大值，这些最大值是原输入的一个子序列；</li>
 <li>pooling中的参数k可以是一个动态函数，具体的值依赖于输入或者网络的其他参数；</li>
 </ul>
 <h4 id="模型结构及原理-1">模型结构及原理</h4><p>DCNN的网络结构如下图：</p>
@@ -421,7 +421,12 @@ Kalchbrenner">
 <p><img src="http://i.imgur.com/YgM3Tsg.png" alt=""></p>
 <p>图中的右图即表示宽卷积的计算过程，当计算第一个节点即\( s_1 \)时，可以假使\( s_1 \)节点前面有四个输入值为0的节点参与卷积（卷积窗口为5）。明显看出，狭义上的卷积输出结果是宽卷积输出结果的一个子集。</p>
 <p><strong>2. k-max池化</strong></p>
+<p>给出数学形式化的表述是，给定一个\( k \)值，和一个序列\( p \in R^p \)(其中\( p ≥ k \))，<code>k-max pooling</code>选择了序列\( p \)中的前\( k \)个最大值，这些最大值保留原来序列的次序（实际上是原序列的一个子序列）。</p>
+<p><code>k-max pooling</code>的好处在于，既提取除了句子中的较重要信息（不止一个），同时保留了它们的次序信息（相对位置）。同时，由于应用在最后的卷积层上只需要提取出\( k \)个值，所以这种方法允许不同长度的输入（输入的长度应该要大于\( k \)）。然而，对于中间的卷积层而言，池化的参数\( k \)不是固定的，具体的选择方法见下面的介绍。</p>
 <p><strong>3. 动态k-max池化</strong></p>
+<p>动态k-max池化操作，其中的\( k \)是<code>输入句子长度</code>和<code>网络深度</code>两个参数的函数，具体如下：</p>
+<p>$$ K_{l}=\max \left( k_{top}, \left \lceil \frac {L-l}{L} s \right \rceil \right) $$</p>
+<p>其中\( l \)表示当前卷积的层数（即第几个卷积层），\( L \)是网络中总共卷积层的层数；\( k_{top} \)为最顶层的卷积层pooling对应的\( k \)值，是一个固定的值。举个例子，例如网络中有三个卷积层，\( k_{top} = 3\)，输入的句子长度为18；那么，对于第一层卷积层下面的pooling参数\( k_{1} = 12\)，而第二层卷积层对于的为\( k_{2} = 6\)，而\( k_{3} = k_{top} = 3\).</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
