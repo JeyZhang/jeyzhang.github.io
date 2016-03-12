@@ -64,7 +64,8 @@ Kalchbrenner N">
 <meta property="og:image" content="http://i.imgur.com/yxoZDt9.png">
 <meta property="og:image" content="http://i.imgur.com/8VDJDDJ.png">
 <meta property="og:image" content="http://i.imgur.com/sNpll24.png">
-<meta property="og:updated_time" content="2016-03-11T09:38:14.761Z">
+<meta property="og:image" content="http://i.imgur.com/fW6pr0p.png">
+<meta property="og:updated_time" content="2016-03-12T02:50:17.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络(CNN)在句子建模上的应用">
 <meta name="twitter:description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
@@ -332,8 +333,8 @@ Kalchbrenner N">
 <p>Kim Y. Convolutional neural networks for sentence classification[J]. arXiv preprint arXiv:1408.5882, 2014.</p>
 <p>Kalchbrenner N, Grefenstette E, Blunsom P. A convolutional neural network for modelling sentences[J]. arXiv preprint arXiv:1404.2188, 2014.</p>
 <p>Hu B, Lu Z, Li H, et al. Convolutional neural network architectures for matching natural language sentences[C]//Advances in Neural Information Processing Systems. 2014: 2042-2050.</p>
+<p>下面对文献中CNN的结构和细节进行梳理。</p>
 <hr>
-<p>首先，梳理一下以上文献中CNN的结构和细节。</p>
 <h3 id="Kim_Y’s_Paper">Kim Y’s Paper</h3><h4 id="模型原理">模型原理</h4><p>模型的结构如下：</p>
 <p><img src="http://i.imgur.com/yxoZDt9.png" alt=""></p>
 <p>说明如下：</p>
@@ -367,12 +368,31 @@ Kalchbrenner N">
 <li>Dropout率为0.5，L2正则化限制权值大小不超过3；</li>
 <li>mini-batch的大小为50；</li>
 </ul>
-<p>文中说道这些参数的选择都是在SST-2 dev数据集上，通过网格搜索方法(Grid Search)得到的最优参数。</p>
+<p>这些参数的选择都是基于SST-2 dev数据集，通过网格搜索方法(Grid Search)得到的最优参数。另外，训练过程中采用随机梯度下降方法，基于shuffled mini-batches之上的，使用了Adadelta update rule(Zeiler, 2012)。</p>
 <p><strong>3. 预训练的Word Vector</strong></p>
 <p>这里的word vector使用的是公开的数据，即连续词袋模型(COW)在Google News上的训练结果。未登录次的vector值是随机初始化的。</p>
 <p><strong>4. 实验结果</strong></p>
 <p>实验结果如下图：</p>
 <p><img src="http://i.imgur.com/sNpll24.png" alt=""></p>
+<p>其中，前四个模型是上文中所提出的基本模型的各个变种：</p>
+<ul>
+<li><strong>CNN-rand</strong>: 所有的word vector都是随机初始化的，同时当做训练过程中优化的参数；</li>
+<li><strong>CNN-static</strong>: 所有的word vector直接使用无监督学习即Google的Word2Vector工具(COW模型)得到的结果，并且是固定不变的；</li>
+<li><strong>CNN-non-static</strong>: 所有的word vector直接使用无监督学习即Google的Word2Vector工具(COW模型)得到的结果，但是会在训练过程中被<code>Fine tuned</code>；</li>
+<li><strong>CNN-multichannel</strong>: CNN-static和CNN-non-static的混合版本，即两种类型的输入；</li>
+</ul>
+<p><strong>5. 结论</strong></p>
+<ul>
+<li><strong><code>CNN-static</code></strong>较与<strong><code>CNN-rand</code></strong>好，<strong>说明pre-training的word vector确实有较大的提升作用</strong>（这也难怪，因为pre-training的word vector显然利用了更大规模的文本数据信息）；</li>
+<li><strong><code>CNN-non-static</code></strong>较于<strong><code>CNN-static</code></strong>大部分要好，<strong>说明适当的Fine tune也是有利的，是因为使得vectors更加贴近于具体的任务</strong>；</li>
+<li><strong><code>CNN-multichannel</code></strong>较于<strong><code>CNN-single</code></strong>在小规模的数据集上有更好的表现，实际上<strong><code>CNN-multichannel</code></strong>体现了一种折中思想，即既不希望Fine tuned的vector距离原始值太远，但同时保留其一定的变化空间。</li>
+</ul>
+<p>值得注意的是，static的vector和non-static的相比，有一些有意思的现象如下表格：</p>
+<p><img src="http://i.imgur.com/fW6pr0p.png" alt=""></p>
+<ul>
+<li>原始的word2vector训练结果中，<code>bad</code>对应的最相近词为<code>good</code>，原因是这两个词在句法上的使用是极其类似的（可以简单替换，不会出现语句毛病）；而在<code>non-static</code>的版本中，<code>bad</code>对应的最相近词为<code>terrible</code>，这是因为在<code>Fune tune</code>的过程中，vector的值发生改变从而更加贴切数据集（是一个情感分类的数据集），所以在情感表达的角度这两个词会更加接近；</li>
+<li>句子中的<strong><code>!</code></strong>最接近一些表达形式较为激进的词汇，如<code>lush</code>等；而<strong><code>,</code></strong>则接近于一些连接词，这和我们的主观感受也是相符的。</li>
+</ul>
 </span>
       
     </div>
