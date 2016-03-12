@@ -52,25 +52,28 @@
 
 
 <meta name="description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
+
 Kim Y. Convolutional neural networks for sentence classification[J]. arXiv preprint arXiv:1408.5882, 2014.
-Kalchbrenner N">
+Kalchbrenner">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卷积神经网络(CNN)在句子建模上的应用">
 <meta property="og:url" content="http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html">
 <meta property="og:site_name" content="Jey Zhang">
 <meta property="og:description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
+
 Kim Y. Convolutional neural networks for sentence classification[J]. arXiv preprint arXiv:1408.5882, 2014.
-Kalchbrenner N">
+Kalchbrenner">
 <meta property="og:image" content="http://i.imgur.com/yxoZDt9.png">
 <meta property="og:image" content="http://i.imgur.com/8VDJDDJ.png">
 <meta property="og:image" content="http://i.imgur.com/sNpll24.png">
 <meta property="og:image" content="http://i.imgur.com/fW6pr0p.png">
-<meta property="og:updated_time" content="2016-03-12T02:50:17.125Z">
+<meta property="og:updated_time" content="2016-03-12T03:05:15.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络(CNN)在句子建模上的应用">
 <meta name="twitter:description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
+
 Kim Y. Convolutional neural networks for sentence classification[J]. arXiv preprint arXiv:1408.5882, 2014.
-Kalchbrenner N">
+Kalchbrenner">
 
 
 
@@ -330,9 +333,11 @@ Kalchbrenner N">
 
       
         <span itemprop="articleBody"><p>之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（<a href="http://pan.baidu.com/s/1jHfWnzg" target="_blank" rel="external">打包下载地址</a>）：</p>
+<blockquote>
 <p>Kim Y. Convolutional neural networks for sentence classification[J]. arXiv preprint arXiv:1408.5882, 2014.</p>
 <p>Kalchbrenner N, Grefenstette E, Blunsom P. A convolutional neural network for modelling sentences[J]. arXiv preprint arXiv:1404.2188, 2014.</p>
 <p>Hu B, Lu Z, Li H, et al. Convolutional neural network architectures for matching natural language sentences[C]//Advances in Neural Information Processing Systems. 2014: 2042-2050.</p>
+</blockquote>
 <p>下面对文献中CNN的结构和细节进行梳理。</p>
 <hr>
 <h3 id="Kim_Y’s_Paper">Kim Y’s Paper</h3><h4 id="模型原理">模型原理</h4><p>模型的结构如下：</p>
@@ -347,7 +352,7 @@ Kalchbrenner N">
 <ul>
 <li><strong>第一层卷积层</strong></li>
 </ul>
-<p>输入层通过卷积操作得到若干个<code>Feature Maps</code>，卷积窗口的大小为 \( h × k \) ，其中 \( h \) 表示纵向词语的个数，而 \( k \) 表示word vector的维数。通过这样一个大型的卷积窗口，将得到若干个列数为1的<code>Feature Maps</code>。</p>
+<p>输入层通过卷积操作得到若干个<code>Feature Map</code>，卷积窗口的大小为 \( h × k \) ，其中 \( h \) 表示纵向词语的个数，而 \( k \) 表示word vector的维数。通过这样一个大型的卷积窗口，将得到若干个列数为1的<code>Feature Map</code>。</p>
 <ul>
 <li><strong>池化层</strong></li>
 </ul>
@@ -393,7 +398,7 @@ Kalchbrenner N">
 <li>原始的word2vector训练结果中，<code>bad</code>对应的最相近词为<code>good</code>，原因是这两个词在句法上的使用是极其类似的（可以简单替换，不会出现语句毛病）；而在<code>non-static</code>的版本中，<code>bad</code>对应的最相近词为<code>terrible</code>，这是因为在<code>Fune tune</code>的过程中，vector的值发生改变从而更加贴切数据集（是一个情感分类的数据集），所以在情感表达的角度这两个词会更加接近；</li>
 <li>句子中的<strong><code>!</code></strong>最接近一些表达形式较为激进的词汇，如<code>lush</code>等；而<strong><code>,</code></strong>则接近于一些连接词，这和我们的主观感受也是相符的。</li>
 </ul>
-</span>
+<h3 id="Kim_Y’s_Paper-1">Kim Y’s Paper</h3></span>
       
     </div>
 
@@ -606,7 +611,7 @@ Kalchbrenner N">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper"><span class="nav-number">1.</span> <span class="nav-text">Kim Y’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型原理"><span class="nav-number">1.1.</span> <span class="nav-text">模型原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分"><span class="nav-number">1.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper"><span class="nav-number">1.</span> <span class="nav-text">Kim Y’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型原理"><span class="nav-number">1.1.</span> <span class="nav-text">模型原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分"><span class="nav-number">1.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper-1"><span class="nav-number">2.</span> <span class="nav-text">Kim Y’s Paper</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
