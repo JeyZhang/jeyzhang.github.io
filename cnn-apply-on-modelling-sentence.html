@@ -67,7 +67,7 @@ Kalchbrenner">
 <meta property="og:image" content="http://i.imgur.com/8VDJDDJ.png">
 <meta property="og:image" content="http://i.imgur.com/sNpll24.png">
 <meta property="og:image" content="http://i.imgur.com/fW6pr0p.png">
-<meta property="og:updated_time" content="2016-03-12T03:05:15.838Z">
+<meta property="og:updated_time" content="2016-03-12T03:37:24.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络(CNN)在句子建模上的应用">
 <meta name="twitter:description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
@@ -398,7 +398,12 @@ Kalchbrenner">
 <li>原始的word2vector训练结果中，<code>bad</code>对应的最相近词为<code>good</code>，原因是这两个词在句法上的使用是极其类似的（可以简单替换，不会出现语句毛病）；而在<code>non-static</code>的版本中，<code>bad</code>对应的最相近词为<code>terrible</code>，这是因为在<code>Fune tune</code>的过程中，vector的值发生改变从而更加贴切数据集（是一个情感分类的数据集），所以在情感表达的角度这两个词会更加接近；</li>
 <li>句子中的<strong><code>!</code></strong>最接近一些表达形式较为激进的词汇，如<code>lush</code>等；而<strong><code>,</code></strong>则接近于一些连接词，这和我们的主观感受也是相符的。</li>
 </ul>
-<h3 id="Kim_Y’s_Paper-1">Kim Y’s Paper</h3></span>
+<h3 id="K’s_Paper">K’s Paper</h3><hr>
+<p>本文结束，感谢欣赏。</p>
+<p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
+<p><a href="http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html">http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</a></p>
+<p><strong>参考资料</strong></p>
+</span>
       
     </div>
 
@@ -611,7 +616,7 @@ Kalchbrenner">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper"><span class="nav-number">1.</span> <span class="nav-text">Kim Y’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型原理"><span class="nav-number">1.1.</span> <span class="nav-text">模型原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分"><span class="nav-number">1.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper-1"><span class="nav-number">2.</span> <span class="nav-text">Kim Y’s Paper</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper"><span class="nav-number">1.</span> <span class="nav-text">Kim Y’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型原理"><span class="nav-number">1.1.</span> <span class="nav-text">模型原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分"><span class="nav-number">1.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K’s_Paper"><span class="nav-number">2.</span> <span class="nav-text">K’s Paper</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
