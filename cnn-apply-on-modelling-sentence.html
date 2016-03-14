@@ -70,7 +70,20 @@ Kalchbrenner">
 <meta property="og:image" content="http://i.imgur.com/3IbLJX4.png">
 <meta property="og:image" content="http://i.imgur.com/CNMa0VL.png">
 <meta property="og:image" content="http://i.imgur.com/YgM3Tsg.png">
-<meta property="og:updated_time" content="2016-03-12T14:29:51.217Z">
+<meta property="og:image" content="http://i.imgur.com/zuf2bSu.png">
+<meta property="og:image" content="http://i.imgur.com/6lWY7zC.png">
+<meta property="og:image" content="http://i.imgur.com/PX9N2JB.png">
+<meta property="og:image" content="http://i.imgur.com/kG7AbW3.png">
+<meta property="og:image" content="http://i.imgur.com/yrFS2k1.png">
+<meta property="og:image" content="http://i.imgur.com/xaP0KNV.png">
+<meta property="og:image" content="http://i.imgur.com/NWvAPVr.png">
+<meta property="og:image" content="http://i.imgur.com/f3DqYsp.png">
+<meta property="og:image" content="http://i.imgur.com/DaFv3ps.png">
+<meta property="og:image" content="http://i.imgur.com/Pr5Mm9n.png">
+<meta property="og:image" content="http://i.imgur.com/wLIUAHW.png">
+<meta property="og:image" content="http://i.imgur.com/fO0Xhnj.png">
+<meta property="og:image" content="http://i.imgur.com/qRfsoB0.png">
+<meta property="og:updated_time" content="2016-03-14T03:14:28.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络(CNN)在句子建模上的应用">
 <meta name="twitter:description" content="之前的博文已经介绍了CNN的基本原理，本文将大概总结一下最近CNN在NLP中的句子建模（或者句子表示）方面的应用情况，主要阅读了以下的文献（打包下载地址）：
@@ -426,12 +439,101 @@ Kalchbrenner">
 <p><strong>3. 动态k-max池化</strong></p>
 <p>动态k-max池化操作，其中的\( k \)是<code>输入句子长度</code>和<code>网络深度</code>两个参数的函数，具体如下：</p>
 <p>$$ K_{l}=\max \left( k_{top}, \left \lceil \frac {L-l}{L} s \right \rceil \right) $$</p>
-<p>其中\( l \)表示当前卷积的层数（即第几个卷积层），\( L \)是网络中总共卷积层的层数；\( k_{top} \)为最顶层的卷积层pooling对应的\( k \)值，是一个固定的值。举个例子，例如网络中有三个卷积层，\( k_{top} = 3\)，输入的句子长度为18；那么，对于第一层卷积层下面的pooling参数\( k_{1} = 12\)，而第二层卷积层对于的为\( k_{2} = 6\)，而\( k_{3} = k_{top} = 3\).</p>
+<p>其中\( l \)表示当前卷积的层数（即第几个卷积层），\( L \)是网络中总共卷积层的层数；\( k_{top} \)为最顶层的卷积层pooling对应的\( k \)值，是一个固定的值。举个例子，例如网络中有三个卷积层，\( k_{top} = 3\)，输入的句子长度为18；那么，对于第一层卷积层下面的pooling参数\( k_{1} = 12\)，而第二层卷积层对于的为\( k_{2} = 6\)，而\( k_{3} = k_{top} = 3\)。</p>
+<p>动态k-max池化的意义在于，从不同长度的句子中提取出相应数量的语义特征信息，以保证后续的卷积层的统一性。</p>
+<p><strong>4. 非线性特征函数</strong></p>
+<p>pooling层与下一个卷积层之间，是通过与一些权值参数相乘后，加上某个偏置参数而来的，这与传统的CNN模型是一样的。</p>
+<p><strong>5. 多个Feature Map</strong></p>
+<p>和传统的CNN一样，会提出多个Feature Map以保证提取特征的多样性。</p>
+<p><strong>6. 折叠操作(Folding)</strong></p>
+<p>之前的宽卷积是在输入矩阵\( d × s \)中的每一行内进行计算操作，其中\(d\)是word vector的维数，\(s\)是输入句子的词语数量。而<strong><code>Folding</code></strong>操作则是考虑相邻的两行之间的某种联系，方式也很简单，就是将两行的vector相加；该操作没有增加参数数量，但是提前（在最后的全连接层之前）考虑了特征矩阵中行与行之间的某种关联。</p>
+<h4 id="模型的特点">模型的特点</h4><ul>
+<li>保留了句子中词序信息和词语之间的相对位置；</li>
+<li>宽卷积的结果是传统卷积的一个扩展，某种意义上，也是n-gram的一个扩展；</li>
+<li>模型不需要任何的先验知识，例如句法依存树等，并且模型考虑了句子中相隔较远的词语之间的语义信息；</li>
+</ul>
+<h4 id="实验部分-1">实验部分</h4><p><strong>1. 模型训练及参数</strong></p>
+<ul>
+<li>输出层是一个类别概率分布（即softmax），与倒数第二层全连接；</li>
+<li>代价函数为交叉熵，训练目标是最小化代价函数；</li>
+<li>L2正则化；</li>
+<li>优化方法：mini-batch + gradient-based (使用Adagrad update rule, Duchi et al., 2011)</li>
+</ul>
+<p><strong>2. 实验结果</strong></p>
+<p>在三个数据集上进行了实验，分别是(1)电影评论数据集上的情感识别，(2)TREC问题分类，以及(3)Twitter数据集上的情感识别。结果如下图：</p>
+<p><img src="http://i.imgur.com/zuf2bSu.png" alt=""></p>
+<p><img src="http://i.imgur.com/6lWY7zC.png" alt=""></p>
+<p><img src="http://i.imgur.com/PX9N2JB.png" alt=""></p>
+<p>可以看出，DCNN的性能非常好，几乎不逊色于传统的模型；而且，DCNN的好处在于不需要任何的先验信息输入，也不需要构造非常复杂的人工特征。</p>
+<h3 id="Hu’s_Paper">Hu’s Paper</h3><h4 id="模型结构与原理">模型结构与原理</h4><p><strong>1. 基于CNN的句子建模</strong></p>
+<p>这篇论文主要针对的是<strong>句子匹配(Sentence Matching)</strong>的问题，但是基础问题仍然是句子建模。首先，文中提出了一种基于CNN的句子建模网络，如下图：</p>
+<p><img src="http://i.imgur.com/kG7AbW3.png" alt=""></p>
+<p>图中灰色的部分表示对于长度较短的句子，其后面不足的部分填充的全是0值(Zero Padding)。可以看出，模型解决不同长度句子输入的方法是规定一个最大的可输入句子长度，然后长度不够的部分进行0值的填充；图中的卷积计算和传统的CNN卷积计算无异，而池化则是使用Max-Pooling。</p>
+<ul>
+<li><strong>卷积结构的分析</strong></li>
+</ul>
+<p>下图示意性地说明了卷积结构的作用，作者认为卷积的作用是<strong>从句子中提取出局部的语义组合信息</strong>，而多张<code>Feature Map</code>则是从多种角度进行提取，也就是<strong>保证提取的语义组合的多样性</strong>；而池化的作用是对多种语义组合进行选择，过滤掉一些置信度低的组合（可能这样的组合语义上并无意义）。</p>
+<p><img src="http://i.imgur.com/yrFS2k1.png" alt=""></p>
+<p><strong>2. 基于CNN的句子匹配模型</strong></p>
+<p>下面是基于之前的句子模型，建立的两种用于两个句子的匹配模型。</p>
+<p><strong>2.1 结构I</strong></p>
+<p>模型结构如下图：</p>
+<p><img src="http://i.imgur.com/xaP0KNV.png" alt=""></p>
+<p>简单来说，首先分别单独地对两个句子进行建模（使用上文中的句子模型），从而得到两个相同且固定长度的向量，向量表示句子经过建模后抽象得来的特征信息；然后，将这两个向量作为一个多层感知机(MLP)的输入，最后计算匹配的分数。</p>
+<p>这个模型比较简单，但是有一个较大的缺点：两个句子在建模过程中是完全独立的，没有任何交互行为，一直到最后生成抽象的向量表示后才有交互行为（一起作为下一个模型的输入），这样做使得句子在抽象建模的过程中会丧失很多语义细节，同时过早地失去了句子间语义交互计算的机会。因此，推出了第二种模型结构。</p>
+<p><strong>2.2 结构II</strong></p>
+<p>模型结构如下图：</p>
+<p><img src="http://i.imgur.com/NWvAPVr.png" alt=""></p>
+<p>图中可以看出，这种结构提前了两个句子间的交互行为。</p>
+<ul>
+<li><strong>第一层卷积层</strong></li>
+</ul>
+<p>第一层中，首先取一个固定的卷积窗口\( k1 \)，然后遍历 \( S_{x} \) 和 \( S_{y} \) 中所有组合的二维矩阵进行卷积，每一个二维矩阵输出一个值（文中把这个称作为一维卷积，因为实际上是把组合中所有词语的vector排成一行进行的卷积计算），构成Layer-2。下面给出数学形式化表述：</p>
+<p><img src="http://i.imgur.com/f3DqYsp.png" alt=""></p>
+<ul>
+<li><strong>第一层卷积层后的Max-Pooling层</strong></li>
+</ul>
+<p>从而得到Layer-2，然后进行2×2的Max-pooling：</p>
+<p><img src="http://i.imgur.com/DaFv3ps.png" alt=""></p>
+<ul>
+<li><strong>后续的卷积层</strong></li>
+</ul>
+<p>后续的卷积层均是传统的二维卷积操作，形式化表述如下：</p>
+<p><img src="http://i.imgur.com/Pr5Mm9n.png" alt=""></p>
+<ul>
+<li><strong>二维卷积结果后的Pooling层</strong></li>
+</ul>
+<p>与第一层卷积层后的简单Max-Pooling方式不同，后续的卷积层的Pooling是一种<strong>动态Pooling方法</strong>，这种方法来源于参考文献[1]。</p>
+<ul>
+<li><strong>结构II的性质</strong></li>
+</ul>
+<ol>
+<li>保留了词序信息；</li>
+<li>更具一般性，实际上结构I是结构II的一种特殊情况（取消指定的权值参数）；</li>
+</ol>
+<h4 id="实验部分-2">实验部分</h4><p><strong>1. 模型训练及参数</strong></p>
+<ul>
+<li>使用基于排序的自定义损失函数(Ranking-based Loss)</li>
+<li>BP反向传播+随机梯度下降；</li>
+<li>mini-batch为100-200,并行化；</li>
+<li>为了防止过拟合，对于中型和大型数据集，会提前停止模型训练；而对于小型数据集，还会使用Dropout策略；</li>
+<li>Word2Vector：50维；英文语料为Wikipedia(~1B words)，中文语料为微博数据(~300M words)；</li>
+<li>使用ReLu函数作为激活函数；</li>
+<li>卷积窗口为3-word window；</li>
+<li>使用Fine tuning；</li>
+</ul>
+<p><strong>2. 实验结果</strong></p>
+<p>一共做了三个实验，分别是(1)句子自动填充任务，(2)推文与评论的匹配，以及(3)同义句识别；结果如下面的图示：</p>
+<p><img src="http://i.imgur.com/wLIUAHW.png" alt=""></p>
+<p><img src="http://i.imgur.com/fO0Xhnj.png" alt=""></p>
+<p><img src="http://i.imgur.com/qRfsoB0.png" alt=""></p>
+<p>其实结构I和结构II的结果相差不大，结构II稍好一些；而相比于其他的模型而言，结构I和结构II的优势还是较大的。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
 <p><a href="http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html">http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</a></p>
-<p><strong>参考资料</strong></p>
+<p><strong>参考文献</strong></p>
+<p>[1] R. Socher, E. H. Huang, and A. Y. Ng. Dynamic pooling and unfolding recursive autoencoders for paraphrase detection. In Advances in NIPS, 2011.</p>
 </span>
       
     </div>
@@ -645,7 +747,7 @@ Kalchbrenner">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper"><span class="nav-number">1.</span> <span class="nav-text">Kim Y’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型结构及原理"><span class="nav-number">1.1.</span> <span class="nav-text">模型结构及原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分"><span class="nav-number">1.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kalchbrenner’s_Paper"><span class="nav-number">2.</span> <span class="nav-text">Kalchbrenner’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型结构及原理-1"><span class="nav-number">2.1.</span> <span class="nav-text">模型结构及原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kim_Y’s_Paper"><span class="nav-number">1.</span> <span class="nav-text">Kim Y’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型结构及原理"><span class="nav-number">1.1.</span> <span class="nav-text">模型结构及原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分"><span class="nav-number">1.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kalchbrenner’s_Paper"><span class="nav-number">2.</span> <span class="nav-text">Kalchbrenner’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型结构及原理-1"><span class="nav-number">2.1.</span> <span class="nav-text">模型结构及原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型的特点"><span class="nav-number">2.2.</span> <span class="nav-text">模型的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分-1"><span class="nav-number">2.3.</span> <span class="nav-text">实验部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hu’s_Paper"><span class="nav-number">3.</span> <span class="nav-text">Hu’s Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模型结构与原理"><span class="nav-number">3.1.</span> <span class="nav-text">模型结构与原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验部分-2"><span class="nav-number">3.2.</span> <span class="nav-text">实验部分</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
