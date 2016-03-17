@@ -68,7 +68,8 @@
 <meta property="og:image" content="http://i.imgur.com/sqlI5oC.png">
 <meta property="og:image" content="http://i.imgur.com/ANwDWKW.png">
 <meta property="og:image" content="http://i.imgur.com/f0c2kWB.png">
-<meta property="og:updated_time" content="2016-03-01T11:51:37.196Z">
+<meta property="og:image" content="http://i.imgur.com/7lEZf7M.png">
+<meta property="og:updated_time" content="2016-03-16T14:15:44.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow学习笔记1：入门">
 <meta name="twitter:description" content="TensorFlow 简介TensorFlow是Google在2015年11月份开源的人工智能系统（Github项目地址），是之前所开发的深度学习基础架构DistBelief的改进版本，该系统可以被用于语音识别、图片识别等多个领域。
@@ -460,6 +461,46 @@ sess.<span class="function"><span class="title">run</span><span class="params">(
 </code></pre><p>最后，我们来获取模型在测试集上的准确率，</p>
 <pre><code><span class="tag">print</span>(sess.<span class="function">run</span>(accuracy, feed_dict={<span class="attribute">x</span>: mnist.test.images, <span class="attribute">y_</span>: mnist.test.labels}))
 </code></pre><p>Softmax regression模型由于模型较简单，所以在测试集上的准确率在91%左右，这个结果并不算太好。通过一些简单的优化，准确率可以达到97%，目前最好的模型的准确率为99.7%。（<a href="http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html" target="_blank" rel="external"><strong>这里</strong></a>有众多模型在MNIST数据集上的运行结果）。</p>
+<h3 id="完整代码及运行结果">完整代码及运行结果</h3><p>利用Softmax模型实现手写体识别的完整代码如下：</p>
+<pre><code>__author__ = <span class="string">'chapter'</span>
+
+<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
+<span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data
+
+mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="keyword">True</span>)
+print(<span class="string">"Download Done!"</span>)
+
+x = tf.placeholder(tf.float32, [<span class="keyword">None</span>, <span class="number">784</span>])
+
+<span class="comment"># paras</span>
+W = tf.Variable(tf.zeros([<span class="number">784</span>, <span class="number">10</span>]))
+b = tf.Variable(tf.zeros([<span class="number">10</span>]))
+
+y = tf.nn.softmax(tf.matmul(x, W) + b)
+y_ = tf.placeholder(tf.float32, [<span class="keyword">None</span>, <span class="number">10</span>])
+
+<span class="comment"># loss func</span>
+cross_entropy = -tf.reduce_sum(y_ * tf.log(y))
+
+train_step = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>).minimize(cross_entropy)
+
+<span class="comment"># init</span>
+init = tf.initialize_all_variables()
+
+sess = tf.Session()
+sess.run(init)
+
+<span class="comment"># train</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):
+    batch_xs, batch_ys = mnist.train.next_batch(<span class="number">100</span>)
+    sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+
+correct_prediction = tf.equal(tf.arg_max(y, <span class="number">1</span>), tf.arg_max(y_, <span class="number">1</span>))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, <span class="string">"float"</span>))
+
+print(<span class="string">"Accuarcy on Test-dataset: "</span>, sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
+</code></pre><p>运行结果如下图：</p>
+<p><img src="http://i.imgur.com/7lEZf7M.png" alt=""></p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
@@ -594,7 +635,7 @@ sess.<span class="function"><span class="title">run</span><span class="params">(
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -681,7 +722,7 @@ sess.<span class="function"><span class="title">run</span><span class="params">(
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow_简介"><span class="nav-number">1.</span> <span class="nav-text">TensorFlow 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据流图(Data_Flow_Graph)"><span class="nav-number">1.1.</span> <span class="nav-text">什么是数据流图(Data Flow Graph)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TensorFlow的特性"><span class="nav-number">1.2.</span> <span class="nav-text">TensorFlow的特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例：曲线拟合"><span class="nav-number">2.</span> <span class="nav-text">示例：曲线拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MNIST手写体识别任务"><span class="nav-number">3.</span> <span class="nav-text">MNIST手写体识别任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MNIST数据集介绍"><span class="nav-number">3.1.</span> <span class="nav-text">MNIST数据集介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax_Regression模型"><span class="nav-number">3.2.</span> <span class="nav-text">Softmax Regression模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax_Regression的程序实现"><span class="nav-number">3.3.</span> <span class="nav-text">Softmax Regression的程序实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型的训练"><span class="nav-number">3.4.</span> <span class="nav-text">模型的训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型的评价"><span class="nav-number">3.5.</span> <span class="nav-text">模型的评价</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow_简介"><span class="nav-number">1.</span> <span class="nav-text">TensorFlow 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据流图(Data_Flow_Graph)"><span class="nav-number">1.1.</span> <span class="nav-text">什么是数据流图(Data Flow Graph)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TensorFlow的特性"><span class="nav-number">1.2.</span> <span class="nav-text">TensorFlow的特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例：曲线拟合"><span class="nav-number">2.</span> <span class="nav-text">示例：曲线拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MNIST手写体识别任务"><span class="nav-number">3.</span> <span class="nav-text">MNIST手写体识别任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MNIST数据集介绍"><span class="nav-number">3.1.</span> <span class="nav-text">MNIST数据集介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax_Regression模型"><span class="nav-number">3.2.</span> <span class="nav-text">Softmax Regression模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax_Regression的程序实现"><span class="nav-number">3.3.</span> <span class="nav-text">Softmax Regression的程序实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型的训练"><span class="nav-number">3.4.</span> <span class="nav-text">模型的训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型的评价"><span class="nav-number">3.5.</span> <span class="nav-text">模型的评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整代码及运行结果"><span class="nav-number">3.6.</span> <span class="nav-text">完整代码及运行结果</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
