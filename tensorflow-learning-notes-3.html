@@ -80,7 +80,7 @@ TensorFlow实现了两个版本的模型：简单版和正式版。">
 <meta property="og:image" content="http://i.imgur.com/tmgHXZZ.png">
 <meta property="og:image" content="http://i.imgur.com/vM1dtFq.png">
 <meta property="og:image" content="http://i.imgur.com/z2VpgFz.png">
-<meta property="og:updated_time" content="2016-03-17T12:30:06.324Z">
+<meta property="og:updated_time" content="2016-03-17T13:15:03.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow学习笔记3：词向量">
 <meta name="twitter:description" content="上篇博文讲了如何构建一个简单的CNN模型，并运行在MNIST数据集上。下面讲述一下如何在TensorFlow中生成词向量(Word Embedding)，使用的模型来自Mikolov et al。
@@ -395,7 +395,7 @@ TensorFlow实现了两个版本的模型：简单版和正式版。">
 <pre><code>embeddings = tf.Variable(
 tf.<span class="function"><span class="title">random_uniform</span><span class="params">([vocabulary_size, embedding_size], -<span class="number">1.0</span>, <span class="number">1.0</span>)</span></span>)
 </code></pre><p>噪声-对比估计的损失函数在输出的逻辑回归模型中定义，为此，需要定义词库中每个词的权值和偏置参数(称为输出层权值参数)，如下：</p>
-<pre><code>nce_weights = tf.Variable(、
+<pre><code>nce_weights = tf.Variable(
   tf.truncated_normal([vocabulary_size, embedding_size],
     stddev=<span class="number">1.0</span> / math.<span class="function"><span class="title">sqrt</span><span class="params">(embedding_size)</span></span>))
 nce_biases = tf.<span class="function"><span class="title">Variable</span><span class="params">(tf.zeros([vocabulary_size])</span></span>)
