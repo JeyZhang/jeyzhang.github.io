@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2016-03-20T08:42:49.819Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
     <lastmod>2016-03-17T13:15:03.661Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
     <lastmod>2016-03-16T14:17:48.931Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2016-03-16T14:15:44.244Z</lastmod>
   </url>
   
   <url>
