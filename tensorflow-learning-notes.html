@@ -69,7 +69,7 @@
 <meta property="og:image" content="http://i.imgur.com/ANwDWKW.png">
 <meta property="og:image" content="http://i.imgur.com/f0c2kWB.png">
 <meta property="og:image" content="http://i.imgur.com/7lEZf7M.png">
-<meta property="og:updated_time" content="2016-03-20T08:42:49.819Z">
+<meta property="og:updated_time" content="2016-03-21T01:48:29.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow学习笔记1：入门">
 <meta name="twitter:description" content="TensorFlow 简介TensorFlow是Google在2015年11月份开源的人工智能系统（Github项目地址），是之前所开发的深度学习基础架构DistBelief的改进版本，该系统可以被用于语音识别、图片识别等多个领域。
@@ -352,10 +352,10 @@
 <li>通过<strong><code>Sessions</code></strong>来执行图计算；</li>
 <li>将数据表示为<strong><code>tensors</code></strong>；</li>
 <li>使用<strong><code>Variables</code></strong>来保持状态信息；</li>
-<li>非别使用<strong><code>feeds</code></strong>和<strong><code>fetches</code></strong>来填充数据和抓取任意的操作；</li>
+<li>分别使用<strong><code>feeds</code></strong>和<strong><code>fetches</code></strong>来填充数据和抓取任意的操作结果；</li>
 </ul>
 <h3 id="概览">概览</h3><p>TensorFlow是一种将计算表示为图的编程系统。图中的节点称为<strong><code>ops</code></strong>(operation的简称)。一个<strong><code>ops</code></strong>使用0个或以上的<code>Tensors</code>，通过执行某些运算，产生0个或以上的<code>Tensors</code>。<strong>一个<code>Tensor</code>是一个多维数组</strong>，例如，你可以将一批图像表示为一个四维的数组<code>[batch, height, width, channels]</code>，数组中的值均为浮点数。</p>
-<p>TensorFlow中的图描述了计算过程，图通过<code>Session</code>的运行而执行计算。<code>Session</code>将图的节点们(即ops)放置到计算设备上，如CPUs和GPUs，然后通过方法执行它们；这些方法执行完成后，将返回tensors，在Python中的tensor的形式是<code>numpy ndarray</code>对象，而在C/C++中则是<code>tensorflow::Tensor</code>.</p>
+<p>TensorFlow中的图描述了计算过程，图通过<code>Session</code>的运行而执行计算。<code>Session</code>将图的节点们(即ops)放置到计算设备(如CPUs和GPUs)上，然后通过方法执行它们；这些方法执行完成后，将返回tensors。在Python中的tensor的形式是<code>numpy ndarray</code>对象，而在C/C++中则是<code>tensorflow::Tensor</code>.</p>
 <h3 id="图计算">图计算</h3><p>TensorFlow程序中图的创建类似于一个 [施工阶段]，而在 [执行阶段] 则利用一个<code>session</code>来执行图中的节点。很常见的情况是，在 [施工阶段] 创建一个图来表示和训练神经网络，而在 [执行阶段] 在图中重复执行一系列的训练操作。</p>
 <h4 id="创建图">创建图</h4><p>在TensorFlow中，<code>Constant</code>是一种没有输入的<code>ops</code>，但是你可以将它作为其他<code>ops</code>的输入。Python库中的<code>ops构造器</code>将返回构造器的输出。TensorFlow的Python库中有一个默认的图，将<code>ops构造器</code>作为节点，更多可了解<a href="https://www.tensorflow.org/versions/r0.7/api_docs/python/framework.html#Graph" target="_blank" rel="external">Graph Class文档</a>。</p>
 <p>见下面的示例代码：</p>
