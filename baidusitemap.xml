@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
+    <lastmod>2016-05-12T09:40:00.840Z</lastmod>
+    <data>
+        <display>
+        <title>如何将博客托管至Coding及相应的DNS设置</title>
+        <pubTime>2015-12-20T02:19:18.000Z</pubTime>
+        
+        <tag>Coding</tag>
+         
+        <tag>DNS</tag>
+         
+        <tag>Gitcafe</tag>
+         
+        <tag>Github</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
     <lastmod>2016-05-08T11:29:56.181Z</lastmod>
     <data>
@@ -461,32 +489,6 @@
         <tag>Hexo</tag>
          
         <tag>Personal Website</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
-    <lastmod>2016-01-22T15:01:31.823Z</lastmod>
-    <data>
-        <display>
-        <title>如何将博客托管至Gitcafe及相应的DNS设置</title>
-        <pubTime>2015-12-20T02:19:18.000Z</pubTime>
-        
-        <tag>DNS</tag>
-         
-        <tag>Gitcafe</tag>
-         
-        <tag>Github</tag>
-         
-        <tag>Hexo</tag>
          
          
            

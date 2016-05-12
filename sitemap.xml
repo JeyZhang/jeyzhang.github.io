@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
+    <lastmod>2016-05-12T09:40:00.840Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
     <lastmod>2016-05-08T11:29:56.181Z</lastmod>
   </url>
@@ -99,11 +104,6 @@
   <url>
     <loc>http://www.jeyzhang.com/hexo-github-blog-building.html</loc>
     <lastmod>2016-01-22T15:06:22.739Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
-    <lastmod>2016-01-22T15:01:31.823Z</lastmod>
   </url>
   
   <url>
