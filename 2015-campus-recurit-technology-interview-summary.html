@@ -69,8 +69,7 @@
 
 
 《Crack the code interview》(Gayle Laakmann著) [PDF下载地址]">
-<meta property="og:image" content="http://i.imgur.com/xRQFCYu.jpg">
-<meta property="og:updated_time" content="2016-04-20T09:26:23.890Z">
+<meta property="og:updated_time" content="2016-05-08T11:29:35.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015年校招总结：技术面试干货">
 <meta name="twitter:description" content="关于实习及校招的全面概括性总结在这篇博文，里面也提出了一些技术面试过程中的注意事项。本文主要是单纯针对程序员技术面试的面试内容，将（1）推荐一些优秀的资源（包括书籍、网站等），以及（2）总结一下自己及周遭同学在实习与校招技术面试过程中遇到的各种原题，以供后人参考。
@@ -445,33 +444,6 @@
 <li>如何实现双端队列</li>
 </ul>
 <blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>排序数组转二叉排序树</li>
-<li>判断一个树是否是另一棵树的子树，包括树中对于的val值要相等，而且这个子树可以从中间阶段，就是大树节点可能比小树来得多。</li>
-<li>LeetCode上的<a href="https://leetcode.com/problems/spiral-matrix/" target="_blank" rel="external">Spiral Matrix</a>.</li>
-<li>字符串匹配的题，原串可以首尾相连：比如ABCD中找DAB这样。</li>
-<li>merge两个已经排序过的数组</li>
-<li><strong>快排</strong>；</li>
-<li>说思路：随机打乱数组。</li>
-<li>写程序，给两个元素已排序的链表，对二者实现“交”运算，例如给出1-&gt;2-&gt;3-&gt;4-&gt;5和1-&gt;5-&gt;7-&gt;9，返回1-&gt;5。</li>
-<li>写程序，给定字典和字符串，判断字符串是否可以切分为许多单词，使得每个单词都在字典中。</li>
-<li>写一个“三角矩形”的类，先只写声明。我问他，写上三角还是写下三角，他说随便。</li>
-<li>描述算法：单机下，给定大文档，统计词频。追问了时间复杂度，空间复杂度，如果文档特别大怎么办。</li>
-<li>平面上n个点，n-1个点在一条直线上，只有一个点不在。 找出这个点。</li>
-<li>一个数组A，随意给两个小标a，b求A[a]..A[b]的最大值，要求O(logN)的时间。</li>
-<li>一维数组 A[n]中求最大的 a[j] - a[i] 其中 i&lt; j 。</li>
-<li>已知平面中 n个点，已经按横坐标排好序，没有点的横坐标相同，现在我们把它们按顺序连起来就有一个折线段。现在给定数字K，希望你找出在折线段上K个的点(不一定是给定的那些点，只要在折线段上就可以)，恰好把这个这线段分成K+1段，每段折线段长度相等。</li>
-<li>给定一个二维矩阵，任何一行从左往右都是递增的，任何一列从上往下也是递增的，设计算法在里面找出x的位置。</li>
-<li>给定一个链表，对它进行二分翻转，具体来说： 如果有2n个节点，则将前n个点逆序翻转，后n个点逆序翻转，然后连接起来； 如果有2n+1个点，将前n个点逆序翻转，中间那个(就是第n+1个)点保持不变，后n个点逆序翻转，然后连接起来。</li>
-<li><strong>单链表反转</strong>；</li>
-<li>找出单调数组中出现次数大于1000的数。</li>
-<li>Leetcode原题：Binary Tree Zigzag Levelorder Traversal。</li>
-<li>Query纠错：NBA胡人队 -&gt; NBA湖人队。</li>
-<li></li>
-</ul>
-<blockquote>
 <p><strong>阿里春招实习</strong></p>
 </blockquote>
 <ul>
@@ -497,37 +469,19 @@
 <p><strong>Hulu实习</strong></p>
 </blockquote>
 <ul>
-<li>判断一颗二叉树是否完全二叉树。</li>
-<li>给一个整数数组，找其中的连续子序列，使得字段和的绝对值最小。</li>
-<li>给一个单链表，写个快排。</li>
-<li>给一个值已排序的双链表，双链表存储在一个Node*数组里，每个元素是一个指向双链表某个节点的指针。现在只有一次查询x，找到x在双链表中的位置或报告找不到。</li>
-<li>整数数组，找到满足f(j) &gt; f(i) 最大的（j - i）。</li>
+<li>判断一颗二叉树是否完全二叉树</li>
+<li>给一个整数数组，找其中的连续子序列，使得字段和的绝对值最小</li>
+<li>给一个单链表，写个快排</li>
+<li>给一个值已排序的双链表，双链表存储在一个Node*数组里，每个元素是一个指向双链表某个节点的指针。现在只有一次查询x，找到x在双链表中的位置或报告找不到</li>
+<li>整数数组，找到满足f(j) &gt; f(i) 最大的（j - i）</li>
 <li>一个数组两种操作，1）修改数组中的一个值，2）计算数组某个子区间所有数字之和。写个线段树？</li>
 <li>一个矩形格子区域，每个格子上有一个数字，还有红蓝2中颜色其中之一，初始从某个位置开始，问能否找到一条能够走到边界外的路线，这条路线要满足，1）数字大小严格递增，2）红蓝两色至少各出现一次。（搜索？我先说宽搜，后来想想只要找一条就行那就深搜。这里貌似可以记忆化一下存储一些信息，可惜当时并没有很清晰地考虑清楚，而且时间不很足够的样子了。写代码。）</li>
-<li>写代码判断一棵树是否是完全二叉树。</li>
+<li>写代码判断一棵树是否是完全二叉树</li>
 <li>一个长度为n的数组，求最小连续子段和，求绝对值最小的连续子段和，求绝对值最接近某个数的连续子段和</li>
-<li>蛇形打印矩阵。</li>
-<li>n个数字，a1,a2…an，数字之间可以添加+、*、括号变成一个表达式，求表达式的最大值。</li>
+<li>蛇形打印矩阵</li>
+<li>n个数字，a1,a2…an，数字之间可以添加+、*、括号变成一个表达式，求表达式的最大值</li>
 <li>有一个字符串流，里面是一些单词和空格。给一个api：read_char()，每次调用将在流中读取一个字符，如果遇到流的结尾，则返回0。请设计函数print_stream()，通过调用read_char()打印流中的单词，要求，每行长度不超过M，一个单词不能跨越两行，单词之间只保留1个空格，删除首尾空格。</li>
-<li>n个元素的数组，设计算法找出现次数大于n/3的元素，要求时空复杂度尽可能小。</li>
-<li>数组最大子段和，绝对值最小的子段和。</li>
-<li>二叉树按如下要求输出</li>
-</ul>
-<p><img src="http://i.imgur.com/xRQFCYu.jpg" alt=""></p>
-<ul>
-<li>给定一个前序遍历，判断是不是BST；</li>
-<li>给定一个正负都有的数组，重排序使负数都在前面正数都在后面，且原来的相对序不变。</li>
-<li>给定一个整数a，找到一个最小的数x满足：(1) x&gt;a; (2) x是回文数。</li>
-<li></li>
-</ul>
-<blockquote>
-<p><strong>腾讯实习</strong></p>
-</blockquote>
-<ul>
-<li>冒泡排序；二分查找；</li>
-<li>数组T[n]， 里面存的是1到n+1之间的数而且不重复，要求找出1到n+1中没有在数组中出现的那个数；</li>
-<li>实现归并排序的非递归写法；</li>
-<li>在一个一维的数轴上，有很多条线段，求重合度最长的两条线段。</li>
+<li>n个元素的数组，设计算法找出现次数大于n/3的元素，要求时空复杂度尽可能小</li>
 <li></li>
 </ul>
 <blockquote>
@@ -554,19 +508,9 @@
 <p><strong>网易游戏实习</strong></p>
 </blockquote>
 <ul>
-<li>m个数中找最小的n个；</li>
-<li>删除链表的某个节点；</li>
-<li>无向普通图G中找两个点最短路径；</li>
-<li>10000个数有一半以上相同，找到这个；</li>
-<li>两个有序数组求综合第k大；</li>
-<li>在一个圆形区域里要求随机分布怪物，单位面积概率相等。给定圆形区域中心和半径，要求设计一个随机坐标生成的方法满足需求。</li>
-<li>在一个数组中找出所有这样的数。它大于等于它左边所有的数，小于等于它右边所有的数。</li>
-<li>100W个数中找最小的100个；</li>
-<li>背包问题；</li>
-<li>100w条用户账户，统计出现最多的用户；</li>
-<li>图的遍历方式，怎么非递归dfs。</li>
-<li>10w的数据找top100， 怎么建堆。</li>
-<li>给定字典包括n个字符串，然后有很多query，问字典中包含query的元素集合。</li>
+<li>m个数中找最小的n个</li>
+<li>删除链表的某个节点</li>
+<li>无向普通图G中找两个点最短路径</li>
 <li></li>
 </ul>
 <h4 id="大数据">大数据</h4><blockquote>
@@ -597,38 +541,15 @@
 <li>怎么判断两个词指的是同一个东西（语言模型，Wordvec）</li>
 <li>对推荐和搜索排序的理解</li>
 </ul>
-<blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>讲讲分词模型中Bayesian HMM的Gibbs Sampling。</li>
-<li>分词系统中新词的问题。</li>
-</ul>
-<blockquote>
-<p><strong>豆瓣实习</strong></p>
-</blockquote>
-<ul>
-<li>线性模型相关内容，线性回归和logistics回归的区别；</li>
-<li>SVM相关内容，如何选择核函数；</li>
-<li>LDA相关内容，为何选择Dir作为先验；</li>
-<li></li>
-</ul>
 <h3 id="编程语言">编程语言</h3><h4 id="C/C++">C/C++</h4><blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>虚继承，const的用法；</li>
-<li>user define的类要往stl里面扔需要重载哪些函数，怎么处理数组越界的问题，delete和delete[]的区别，混用了会怎么样</li>
-<li>讲一下虚函数，以及在构造函数中调用虚函数的结果。</li>
-</ul>
-<blockquote>
 <p><strong>阿里春招实习</strong></p>
 </blockquote>
 <ul>
-<li>C++的多态和虚函数；</li>
-<li>malloc和new关键字；</li>
+<li>C++的多态和虚函数</li>
+<li>malloc和new关键字</li>
 <li><a href="http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html" target="_blank" rel="external">类的构造函数初始化和初始化列表初始化区别</a></li>
-<li>虚函数表；</li>
+<li>虚函数表</li>
+<li></li>
 <li></li>
 </ul>
 <blockquote>
@@ -644,24 +565,6 @@
 <li>map和set的实现机制，以及为什么不用其他的平衡二叉树；除了上面的BST实现方法,map还能怎么实现，以及实现机制</li>
 <li>虚拟内存的作用和实现机制</li>
 <li>介绍动态链接库和静态连接库，如果在运行时找到DLL中的那个函数入口</li>
-<li>struct和class有什么区别；</li>
-<li>虚函数是怎么实现的，多继承的时候怎么处理；</li>
-<li>inline是什么意思；一个函数申明是inline的就一定是inline的吗？</li>
-<li>对象占用的空间是怎么计算的;</li>
-<li>malloc和new的区别;</li>
-<li>虚继承是什么意思;</li>
-<li>影响C++类对象的size的因素；</li>
-<li>如何在执行main函数之前进行输出；</li>
-<li>C++在执行main函数之前进行的处理过程；</li>
-<li>python 和C++的区别；</li>
-<li>static的作用，在C中和C++中；</li>
-<li>C++中如何引用C的函数；</li>
-<li>extern “C” 的原理；</li>
-<li>C++ static的作用。</li>
-<li>让一个类怎么实现不可复制。</li>
-<li>虚函数指针。</li>
-<li>stl里面用vector的时候需要注意什么。</li>
-<li>int 转 char*， 就是itoa.</li>
 <li></li>
 </ul>
 <h4 id="Java">Java</h4><blockquote>
@@ -694,18 +597,7 @@
 <li>Android的fragment和activity有什么区别？activity能否在不同的进程中启动？</li>
 <li></li>
 </ul>
-<h4 id="iOS">iOS</h4><blockquote>
-<p><strong>腾讯实习</strong></p>
-</blockquote>
-<ul>
-<li>UIViewController的生命周期。loadView和viewDidLoad的区别；</li>
-<li>ARC；</li>
-<li>GCD和NSOperation的区别；</li>
-<li>运行时库（Runtime)；</li>
-<li>项目中用到的开源库，AFNetworking（网络请求）、SDWebImage（加载图片）；</li>
-<li>图文视图（也就是说既有图片又有文字）如何选择view；</li>
-</ul>
-<h3 id="计算机网络">计算机网络</h3><blockquote>
+<h4 id="iOS">iOS</h4><h3 id="计算机网络">计算机网络</h3><blockquote>
 <p><strong>阿里春招实习</strong></p>
 </blockquote>
 <ul>
@@ -717,35 +609,12 @@
 <p><strong>网易游戏实习</strong></p>
 </blockquote>
 <ul>
-<li>TCP三次握手和四次握手；</li>
-<li>TCP, UPD, HTTP的关系，还问我会不会socket编程；</li>
-<li>cache的作用和实现机制；</li>
-<li>TCP和UDP的区别；</li>
-<li>TCP三次握手的过程，分别发送的是什么？</li>
-<li>多个client,一个server,如何设计；</li>
-<li>打开www.163.com涉及的协议；</li>
-<li>socket，怎么实现一个服务器，怎么判断连接断开了。</li>
-<li>HTTP处于哪一层，下一层是神马。</li>
-<li></li>
-</ul>
-<blockquote>
-<p><strong>百度实习</strong></p>
-</blockquote>
-<ul>
-<li>在浏览器输入一个网址后，发生了什么事情？</li>
-<li>DDos是什么？</li>
-<li>TCP三次握手协议；</li>
+<li>TCP三次握手和四次握手</li>
+<li>TCP, UPD, HTTP的关系，还问我会不会socket编程</li>
+<li>cache的作用和实现机制</li>
 <li></li>
 </ul>
 <h3 id="数据库">数据库</h3><h3 id="操作系统">操作系统</h3><blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>公司的层级关系图是一颗树的结构，比如是0是最大的Boss，他手下有若干个手下，这些手下都有若干个手下，给你一个接口：vector<int> getUnderling(int id)，返回id的所有手下，而这个接口的调用时间较长，大概是1s。求这个公司有多少个人？多线程的题目，由于线程间是共享内存的，所以让每个子进程直接读取、修改Queue的内容，利用锁的机制保证数据的一致性。写出大致伪码。</int></li>
-<li>栈和堆的区别。为什么栈比堆访问要快；</li>
-<li></li>
-</ul>
-<blockquote>
 <p><strong>阿里春招实习</strong></p>
 </blockquote>
 <ul>
@@ -756,51 +625,13 @@
 <p><strong>网易游戏实习</strong></p>
 </blockquote>
 <ul>
-<li>进程之间通信方法;</li>
-<li>描述一下进程调度的过程;</li>
-<li>线程同步有哪些方法;</li>
-<li>虚拟内存和物理内存什么意思;</li>
-<li>自旋锁和互斥锁有什么区别;</li>
-<li>进程地址空间是怎么分配的，有哪些内容;</li>
-<li>函数调用的过程;</li>
-<li>动态链接库保存在哪里，栈空间是共用的吗？</li>
-<li>多线程中，哪些数据是共有的，哪些是线程私有的（我说局部变量，他说还有。。。（草哥提示：ThreadLocal））。</li>
-<li>两个线程同时对一个全局变量+1，会有神马后果。如何处理。</li>
-<li>神马是死锁，怎么样会产生一个死锁，如何避免死锁。</li>
-<li>100*100的矩阵 for i = 1-&gt;100, for j = 1-&gt;100, f[i][j] 和 f[j][i]的访问当时有什么区别。</li>
-<li>4G内存怎么实现32位的地址空间。</li>
+<li>进程之间通信方法</li>
 </ul>
-<h4 id="Linux">Linux</h4><blockquote>
-<p><strong>腾讯实习</strong></p>
-</blockquote>
-<ul>
-<li>查看当前目录用什么命令？怎么比较两个字符串？两个数字呢？</li>
-</ul>
-<blockquote>
-<p><strong>百度实习</strong></p>
-</blockquote>
-<ul>
-<li>Linux启动过程；</li>
-<li>mmap()；</li>
-<li>page fault的整个流程；</li>
-<li>if else if else和switch case，在编译后有什么区别？哪个更好？</li>
-<li>spinlock和Mutex的区别？如何防止死锁？如果出现死锁，如何定位？</li>
-<li></li>
-</ul>
-<h3 id="系统设计">系统设计</h3><blockquote>
+<h4 id="Linux">Linux</h4><h3 id="系统设计">系统设计</h3><blockquote>
 <p><strong>阿里春招实习</strong></p>
 </blockquote>
 <ul>
-<li>设计个系统：在搜索框里输入一个词，找到以它为前缀的商品，显示给用户作为辅助输入提示；</li>
-<li></li>
-</ul>
-<blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>如何实现一个排队系统，比如说火车票订票、淘宝抢购之类的。又问了一个题，感觉挺有意思的，腾讯新年摇一摇每秒钟会受到大量的请求，需要很多的服务器，但是平时却不需要这么多的服务器，这是怎么做到的？知道答案后感觉被腾讯欺骗了感情- -，后面面试官告诉的结果，大概是腾讯先让客户端筛除大量用户，因为中奖的概率是很小的，比如说，某个时间段摇一摇的用户，都不会中奖，那么<strong>只有少部分请求能够成功发送到服务器端</strong>。</li>
-<li>用户在输入一个query的时候怎么做自动补全（有个字典），比如输入mir，然后推荐补全为mircosoft这样。（Trie树；分析trie树的空间和时间复杂度）</li>
-<li>设计一套API，封装各种排序提供给别人用。</li>
+<li>设计个系统：在搜索框里输入一个词，找到以它为前缀的商品，显示给用户作为辅助输入提示</li>
 <li></li>
 </ul>
 <h3 id="数学、智力题">数学、智力题</h3><blockquote>
@@ -811,42 +642,12 @@
 <li>四个人A、B、C、D，站成一排，面向西边，每人头顶戴顶帽子，帽子有红黄蓝三种颜色，每个人只能看见自己前面的人的帽子的颜色，比如C可以看见A的和B的，A看不见任何人的帽子。现在有3顶红色帽子，2顶黄色帽子，1顶蓝色帽子，随机给这几个人带上。然后D说自己不知道自己是什么颜色，C说自己不知道自己是是什么颜色，B说自己不知道自己是什么颜色，A说自己知道自己是什么颜色，问A怎么推测的。在A说出自己帽子的颜色后，B、C、D能否确定自己帽子的颜色？</li>
 <li></li>
 </ul>
-<blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>最大蓄水池问题，要求证明正确性；</li>
-<li>给两根不均匀的绳子，烧1根1小时，问能烧出多少种时间。</li>
-<li>一条线段，在线段上取两个点，分成的三个线段可以构成一个三角形的概率。</li>
-<li>一个电梯100层，你坐上电梯，电梯每到一层会打开门，门外有一个钻石，一直升到一百层，你每次手里只能有一颗钻石，设计一个方案怎么能拿到最大的那个钻石。（1.可以拿多次；2.只能拿一次）</li>
-<li>为何抽奖先后抽的概率一样？</li>
-<li></li>
-</ul>
 <h3 id="杂项">杂项</h3><blockquote>
 <p><strong>阿里春招实习</strong></p>
 </blockquote>
 <ul>
-<li>接触过什么开源项目；</li>
-<li>最近读过的值得推荐的书是什么；</li>
-</ul>
-<blockquote>
-<p><strong>微软ASG实习</strong></p>
-</blockquote>
-<ul>
-<li>项目中最挑战的部分，你是怎么解决的；</li>
-</ul>
-<blockquote>
-<p><strong>腾讯实习</strong></p>
-</blockquote>
-<ul>
-<li>个人优缺点；</li>
-</ul>
-<blockquote>
-<p><strong>网易游戏实习</strong></p>
-</blockquote>
-<ul>
-<li>介绍一个你觉得简历中最值得说的项目；</li>
-<li></li>
+<li>接触过什么开源项目</li>
+<li>最近读过的值得推荐的书是什么</li>
 </ul>
 <hr>
 <p>本文结束，感谢欣赏。</p>
@@ -981,21 +782,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
