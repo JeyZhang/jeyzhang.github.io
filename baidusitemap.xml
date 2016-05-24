@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/2015-campus-recurit-technology-interview-summary.html</loc>
+    <lastmod>2016-05-24T02:53:01.126Z</lastmod>
+    <data>
+        <display>
+        <title>2015年校招总结：技术面试干货</title>
+        <pubTime>2016-03-03T12:11:07.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>IT</tag>
+         
+        <tag>Interview</tag>
+         
+        <tag>Job</tag>
+         
+         
+           
+             
+              <breadCrumb title="Interview" url="http://www.jeyzhang.com/categories/Interview/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
     <lastmod>2016-05-12T09:40:00.840Z</lastmod>
     <data>
@@ -97,32 +123,6 @@
            
              
               <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/2015-campus-recurit-technology-interview-summary.html</loc>
-    <lastmod>2016-05-08T11:29:35.205Z</lastmod>
-    <data>
-        <display>
-        <title>2015年校招总结：技术面试干货</title>
-        <pubTime>2016-03-03T12:11:07.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
-         
-        <tag>IT</tag>
-         
-        <tag>Interview</tag>
-         
-        <tag>Job</tag>
-         
-         
-           
-             
-              <breadCrumb title="Interview" url="http://www.jeyzhang.com/categories/Interview/"/>
           
         </display>
     </data>
