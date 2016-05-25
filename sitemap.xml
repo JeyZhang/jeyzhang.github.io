@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
+    <lastmod>2016-05-25T12:18:20.075Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/2015-campus-recurit-technology-interview-summary.html</loc>
     <lastmod>2016-05-24T02:53:01.126Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://www.jeyzhang.com/python-learning-notes-and-common-problems.html</loc>
     <lastmod>2016-05-08T11:29:56.174Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2016-05-08T11:29:36.750Z</lastmod>
   </url>
   
   <url>
