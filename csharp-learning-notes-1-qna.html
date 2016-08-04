@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="C#," />
 
 
 
@@ -51,29 +51,31 @@
 
 
 
-<meta name="description" content="列表使用lambda函数实现列表操作实现两个list的元素对应相乘，返回同等大小的list结果。
-list1 = [...]
-list2 = [...]
-multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
-列表的类型转换例如，经常遇到需要将元素类型为int的列表，转为元素类型为str的列表，可以方便的使用join等函数进行格式化">
+<meta name="description" content="关键字ref与out的区别C#中参数传递的方式有两种，分别是值传递和引用传递。ref与out这两种方式都是属于引用传递。唯一的区别在于：
+
+out关键字修饰的参数需要在调用的函数内部先初始化，再使用；
+ref关键字修饰的参数需要在调用函数前，先初始化再传入函数；
+
+static readonly与const的区别static readonly与const非常类似，共同点有：(1) 通过类名而不是对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习笔记与常见问题">
-<meta property="og:url" content="http://www.jeyzhang.com/python-learning-notes-and-common-problems.html">
+<meta property="og:title" content="C#学习笔记1：常见问题">
+<meta property="og:url" content="http://www.jeyzhang.com/csharp-learning-notes-1-qna.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="列表使用lambda函数实现列表操作实现两个list的元素对应相乘，返回同等大小的list结果。
-list1 = [...]
-list2 = [...]
-multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
-列表的类型转换例如，经常遇到需要将元素类型为int的列表，转为元素类型为str的列表，可以方便的使用join等函数进行格式化">
-<meta property="og:image" content="http://imgur.com/F7w50wW.png">
-<meta property="og:updated_time" content="2016-05-08T11:29:56.000Z">
+<meta property="og:description" content="关键字ref与out的区别C#中参数传递的方式有两种，分别是值传递和引用传递。ref与out这两种方式都是属于引用传递。唯一的区别在于：
+
+out关键字修饰的参数需要在调用的函数内部先初始化，再使用；
+ref关键字修饰的参数需要在调用函数前，先初始化再传入函数；
+
+static readonly与const的区别static readonly与const非常类似，共同点有：(1) 通过类名而不是对">
+<meta property="og:updated_time" content="2016-08-04T02:06:56.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python学习笔记与常见问题">
-<meta name="twitter:description" content="列表使用lambda函数实现列表操作实现两个list的元素对应相乘，返回同等大小的list结果。
-list1 = [...]
-list2 = [...]
-multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
-列表的类型转换例如，经常遇到需要将元素类型为int的列表，转为元素类型为str的列表，可以方便的使用join等函数进行格式化">
+<meta name="twitter:title" content="C#学习笔记1：常见问题">
+<meta name="twitter:description" content="关键字ref与out的区别C#中参数传递的方式有两种，分别是值传递和引用传递。ref与out这两种方式都是属于引用传递。唯一的区别在于：
+
+out关键字修饰的参数需要在调用的函数内部先初始化，再使用；
+ref关键字修饰的参数需要在调用函数前，先初始化再传入函数；
+
+static readonly与const的区别static readonly与const非常类似，共同点有：(1) 通过类名而不是对">
 
 
 
@@ -85,7 +87,7 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
   };
 </script>
 
-  <title> python学习笔记与常见问题 | Jey Zhang </title>
+  <title> C#学习笔记1：常见问题 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -270,7 +272,7 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
             
             
               
-                python学习笔记与常见问题
+                C#学习笔记1：常见问题
               
             
           </h1>
@@ -279,8 +281,8 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-04-27T17:22:49+08:00" content="2016-04-27">
-              2016-04-27
+            <time itemprop="dateCreated" datetime="2016-08-01T20:00:26+08:00" content="2016-08-01">
+              2016-08-01
             </time>
           </span>
 
@@ -289,8 +291,8 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
                   </a>
                 </span>
 
@@ -305,8 +307,8 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/python-learning-notes-and-common-problems.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="python-learning-notes-and-common-problems.html" itemprop="commentsCount"></span>
+              <a href="/csharp-learning-notes-1-qna.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="csharp-learning-notes-1-qna.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -316,7 +318,7 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/python-learning-notes-and-common-problems.html"class="leancloud_visitors"  data-flag-title="python学习笔记与常见问题">
+			 <span id="/csharp-learning-notes-1-qna.html"class="leancloud_visitors"  data-flag-title="C#学习笔记1：常见问题">
              &nbsp;Views
             </span>
 		  
@@ -332,23 +334,100 @@ multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
       
 
       
-        <span itemprop="articleBody"><h2 id="列表"><strong>列表</strong></h2><h3 id="使用lambda函数实现列表操作">使用lambda函数实现列表操作</h3><p>实现两个list的元素对应相乘，返回同等大小的list结果。</p>
-<pre><code><span class="label">list1</span> = [...]
-<span class="label">list2</span> = [...]
-<span class="keyword">multiply_list </span>= <span class="preprocessor">map</span>(lambda (a, <span class="keyword">b): </span>a * <span class="keyword">b, </span>zip(list1, list2))
-</code></pre><h3 id="列表的类型转换">列表的类型转换</h3><p>例如，经常遇到需要将元素类型为<code>int</code>的列表，转为元素类型为<code>str</code>的列表，可以方便的使用<code>join</code>等函数进行格式化处理。使用<code>map</code>函数将很简单：</p>
-<pre><code>int_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
-str_list = <span class="built_in">map</span>(str, int_list) <span class="preprocessor"># str_list = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span>
-<span class="preprocessor"># 类似的还有：</span>
-<span class="built_in">map</span>(<span class="keyword">int</span>, <span class="built_in">list</span>) <span class="preprocessor"># list中的元素均转为int类型</span>
-<span class="built_in">map</span>(<span class="keyword">float</span>, <span class="built_in">list</span>) <span class="preprocessor"># list中的元素均转为float类型</span>
-</code></pre><h2 id="字符串及编码"><strong>字符串及编码</strong></h2><h3 id="python2中unicode编码下中文显示问题">python2中unicode编码下中文显示问题</h3><p>使用<code>json</code>对对象进行包装，再打印或者写入文件，如下</p>
-<p><img src="http://imgur.com/F7w50wW.png" alt=""></p>
-<p>写入文件时，需要转化为<code>UTF-8</code>编码，如下</p>
-<pre><code>jsond = json.<span class="function"><span class="title">dumps</span><span class="params">(**, ensure_ascii=False)</span></span>
-f.<span class="function"><span class="title">write</span><span class="params">(jsond.encode(<span class="string">'utf-8'</span>)</span></span>)
+        <span itemprop="articleBody"><h2 id="关键字">关键字</h2><h3 id="ref与out的区别">ref与out的区别</h3><p>C#中参数传递的方式有两种，分别是值传递和引用传递。<code>ref</code>与<code>out</code>这两种方式都是属于引用传递。唯一的区别在于：</p>
+<ul>
+<li><code>out</code>关键字修饰的参数需要<strong>在调用的函数内部先初始化，再使用</strong>；</li>
+<li><code>ref</code>关键字修饰的参数需要<strong>在调用函数前，先初始化再传入函数</strong>；</li>
+</ul>
+<h3 id="static_readonly与const的区别">static readonly与const的区别</h3><p><code>static readonly</code>与<code>const</code>非常类似，共同点有：(1) 通过类名而不是对象名进行访问；(2) 在程序中只读(不可更改)等。两者的本质区别在于：</p>
+<ul>
+<li><strong>const的值在编译期间就是确定的</strong>，只能在声明时通过常量表达式指定值；</li>
+<li><strong>static readonly是在运行时计算出其值的</strong>，所以还可以通过静态构造函数来赋值。</li>
+</ul>
+<p>下面的例子可以更加清楚地认识<code>static readonly</code>与<code>const</code>的区别：</p>
+<pre><code><span class="number">1.</span> <span class="keyword">static</span> readonly MyClass myins = <span class="keyword">new</span> MyClass();
+<span class="number">2.</span> <span class="keyword">static</span> readonly MyClass myins = null;
+<span class="number">3.</span> <span class="keyword">static</span> readonly B = <span class="number">10</span>;   <span class="keyword">static</span> readonly A = B * <span class="number">20</span>;
+<span class="number">4.</span> <span class="keyword">static</span> readonly <span class="keyword">int</span> [] constIntArray = <span class="keyword">new</span> <span class="keyword">int</span>[] {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>};
+<span class="number">5.</span> <span class="function"><span class="keyword">void</span> <span class="title">SomeFunction</span><span class="params">()</span>
+   </span>{
+      <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">10</span>;
+      ...
+   }
+<span class="number">6.</span><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> astr=<span class="string">"abcd"</span>;
+  <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> str = astr+<span class="string">"efg"</span>;
+</code></pre><p>1：不可以 换成const。new操作符是需要执行构造函数的，所以无法在编译期间确定；</p>
+<p>2：可以换成const。我们也看到，Reference类型的常量 （除了String）只能是Null；</p>
+<p>3：可以换成const。我们可以在编译期间很明确的说，A等于200；</p>
+<p>4：不可以换成 const。道理和1是一样的，虽然看起来1,2,3的数组的确就是一个常量；</p>
+<p>5：不可以换成readonly，readonly只能用来修饰类 的field，不能修饰局部变量，也不能修饰property等其他类成员；</p>
+<p>6.错误：如果在astr前加上const或者const改为readonly即可；</p>
+<p><strong>总结如下</strong>：</p>
+<ul>
+<li>const、readonly和static readonly定义的常量，指定初始值后(包括在构造函数内指定的初始值) 将不可更改，可读不可写；</li>
+<li>const定义时必须指定初始值，而readonly定义时可以不进行初始化(MS建议在定义时初始值),同时也可以在构造函数内指定初始值，并以构造函数内指定的值为准；</li>
+<li>const和static readonly定义的常量是静态的，只能由类直接访问；而readonly定义的常量是非静态的，只能由实例对象访问；   </li>
+<li>static readonly常量，如果在构造函数内指定初始值，则必须是静态无参构造函数；</li>
+<li>const是编译时常量，readonly是运行时常量；cosnt较高效，readonly较灵活。在应用上以static readonly代替const，以平衡const在灵活性上的不足，同时克服编译器优化cosnt性能，所带来的程序集引用不一致问题；</li>
+</ul>
+<h3 id="static关键字">static关键字</h3><p>使用<code>static</code>修饰符声明属于类型本身而不是属于特定对象的静态成员。<code>static</code>修饰符可用于类、字段、方法、属性、运算符、事件和构造函数，但不能用于索引器、析构函数或类以外的类型。 </p>
+<ul>
+<li>static修饰的类称为<strong>静态类</strong>，静态类与非静态类的区别在于：<strong>静态类不能够被实例化（不能包含构造函数），仅包含静态成员，访问成员的方式是通过类名</strong>；</li>
+<li>静态成员的初始化工作可以在静态构造函数内部完成（包括static readonly修饰符修饰的成员）；</li>
+</ul>
+<p>与<code>static</code>修饰符相对应的是<code>auto</code>，通常它是默认的（即不用static修饰的都是auto的）。<strong>auto的含义是由程序自动控制变量的生存周期</strong>，通常指的就是变量在进入其作用域的时候被分配，离开其作用域的时候被释放；而static就是不auto，变量在程序初始化时被分配，直到程序退出前才被释放；也就是<strong>static是按照程序的生命周期来分配释放变量的</strong>，而不是变量自己的生命周期。看下面的例子：</p>
+<pre><code>void <span class="function"><span class="keyword">func</span><span class="params">()</span></span>
+{
+     <span class="built_in">int</span> a<span class="comment">;</span>
+     <span class="keyword">static</span> <span class="built_in">int</span> b<span class="comment">;</span>
+}
+</code></pre><p>每一次调用上面的func函数，变量a都是新的，因为它是在进入函数体的时候被分配，退出函数体的时候被释放，所以多个线程调用该函数，都会拥有各自独立的变量a，因为它总是要被重新分配的；而变量b不管你是否使用该函数，在程序初始化时就被分配的了，或者在第一次执行到它的声明的时候分配（不同的编译器可能不同），所以多个线程调用该函数的时候，总是访问同一个变量b，这也是在多线程编程中必须注意的。</p>
+<h2 id="语句">语句</h2><h3 id="使用using_block">使用using block</h3><p>在进行文件的读写操作、数据库连接操作等涉及程序结束时资源的释放，通常建议使用using block。格式如下：</p>
+<pre><code><span class="tag">using</span>(代码段)
+{
+    代码段...
+}
+</code></pre><p>好处在于using block结束后，using里面声明的对象会自动释放内存。尽管.Net的垃圾处理机制会处理，但那是不可控制的。</p>
+<p>下面是一个使用using block进行文件的读操作的示例，可以看出使用using block能够让代码更加简洁。</p>
+<pre><code><span class="keyword">using</span> (StreamReader sr=<span class="keyword">new</span> .....) 
+{} 
+</code></pre><p>相当于</p>
+<pre><code>StreamReader sr=<span class="literal">null</span>; 
+<span class="keyword">try</span> 
+{ 
+    sr=<span class="keyword">new</span> ...; 
+} 
+<span class="keyword">finally</span> 
+{ 
+    sr.Dispose(); 
+}
+</code></pre><h3 id="使用LINQ语句">使用LINQ语句</h3><p>多种数据源（如数据库、XML、数组、集合等）的数据格式是不一样的，因此常常需要对不同的数据格式进行相互转换，以及学习多种数据查询语言。为了使得数据查询和操作变得更加简便，.NET 3.5版本发布了LINQ。</p>
+<p>LINQ全称为语言集成查询（Language Integrated Query），是一种用来进行数据访问的编程模型，它是C# 3.0和.Net 3.5中的主要新增功能。LINQ以统一的方式操作各种数据源，降低数据访问的复杂度。LINQ支持的数据源有SQL Sever、XML以及内存中的数据集合。</p>
+<p>下面举一个简单的示例，以说明使用LINQ语句带来的简便性：</p>
+<pre><code><span class="keyword">bool</span> flag = <span class="keyword">false</span>;
+<span class="keyword">foreach</span> (<span class="keyword">var</span> elem <span class="keyword">in</span> list)
+{
+    <span class="keyword">if</span> (elem...)
+    {
+        flag = <span class="keyword">true</span>;
+        <span class="keyword">break</span>;        
+    }
+}
 ...
-</code></pre><p>在python3中打印unicode编码字符串很简单，使用<strong><code>pprint</code></strong>；python2中也可以使用<strong><code>pprint</code></strong>，具体做法见<a href="https://www.quora.com/How-do-you-print-a-python-unicode-data-structure" target="_blank" rel="external"><strong>这里</strong></a>。</p>
+</code></pre><p>使用LINQ语句就是</p>
+<pre><code><span class="built_in">bool</span> flag = <span class="built_in">list</span>.<span class="type">Any</span>(elem =&gt; ...)
+</code></pre><p>可以看到使用LINQ可以使得代码变得非常简洁。</p>
+<h2 id="OO相关">OO相关</h2><h3 id="C#中的field与property">C#中的field与property</h3><p>property与field的区别在于，property拥有访问器，访问器定义了读取或者写入属性值必须执行的代码。property不是变量，没有存储数据的功能，数据都存在字段中，因此不能对property直接赋值，必须通过set访问器。</p>
+<p>为了类的封装性，一般将描述类的特征的字段定义为private，再将属性定义为public来操作私有字段。例如如下：</p>
+<pre><code><span class="keyword">private</span> <span class="keyword">string</span> phoneNumber;
+<span class="keyword">public</span> <span class="keyword">string</span> PhoneNumber
+{
+    <span class="keyword">get</span> { <span class="keyword">return</span> phoneNumbe; }
+    <span class="keyword">set</span> { phoneNumber = <span class="keyword">value</span>; }
+}
+</code></pre><p>上述代码也可以简写为</p>
+<pre><code><span class="keyword">public</span> PhoneNumber { <span class="keyword">get</span>; <span class="keyword">set</span>; }
+</code></pre><p>使用property最大的好处在于<strong>可以在对field进行赋值时，加入一些逻辑</strong>，例如限制只能给字段赋于某个范围的值、或是要求字段只能读或只能写等。</p>
 </span>
       
     </div>
@@ -357,7 +436,7 @@ f.<span class="function"><span class="title">write</span><span class="params">(j
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/C/" rel="tag">#C#</a>
           
         </div>
       
@@ -366,17 +445,13 @@ f.<span class="function"><span class="title">write</span><span class="params">(j
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/problems-with-solution-in-tensorflow.html" rel="next" title="TensorFlow中遇到的问题及解决方法">
-                <i class="fa fa-chevron-left"></i> TensorFlow中遇到的问题及解决方法
+              <a href="/cshape-learning-notes-0.html" rel="next" title="C#学习笔记0：入门">
+                <i class="fa fa-chevron-left"></i> C#学习笔记0：入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html" rel="prev" title="whoosh+jieba：python下实现中文全文检索">
-                whoosh+jieba：python下实现中文全文检索 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +633,7 @@ f.<span class="function"><span class="title">write</span><span class="params">(j
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">1.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用lambda函数实现列表操作"><span class="nav-number">1.1.</span> <span class="nav-text">使用lambda函数实现列表操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表的类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">列表的类型转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串及编码"><span class="nav-number">2.</span> <span class="nav-text">字符串及编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python2中unicode编码下中文显示问题"><span class="nav-number">2.1.</span> <span class="nav-text">python2中unicode编码下中文显示问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">1.</span> <span class="nav-text">关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ref与out的区别"><span class="nav-number">1.1.</span> <span class="nav-text">ref与out的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static_readonly与const的区别"><span class="nav-number">1.2.</span> <span class="nav-text">static readonly与const的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static关键字"><span class="nav-number">1.3.</span> <span class="nav-text">static关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句"><span class="nav-number">2.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用using_block"><span class="nav-number">2.1.</span> <span class="nav-text">使用using block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用LINQ语句"><span class="nav-number">2.2.</span> <span class="nav-text">使用LINQ语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OO相关"><span class="nav-number">3.</span> <span class="nav-text">OO相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C#中的field与property"><span class="nav-number">3.1.</span> <span class="nav-text">C#中的field与property</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -625,9 +700,9 @@ f.<span class="function"><span class="title">write</span><span class="params">(j
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'python-learning-notes-and-common-problems.html';
-      var disqus_title = 'python学习笔记与常见问题';
-      var disqus_url = 'http://www.jeyzhang.com/python-learning-notes-and-common-problems.html';
+      var disqus_identifier = 'csharp-learning-notes-1-qna.html';
+      var disqus_title = 'C#学习笔记1：常见问题';
+      var disqus_url = 'http://www.jeyzhang.com/csharp-learning-notes-1-qna.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
