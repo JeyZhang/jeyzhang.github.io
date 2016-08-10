@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Artificial Intelligence,Deep Learning,Machine Learning,TensorFlow," />
+  <meta name="keywords" content="chatbot,deep learning," />
 
 
 
@@ -51,22 +51,24 @@
 
 
 
-<meta name="description" content="本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
+<meta name="description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
 
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，">
+聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（链接），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TensorFlow中遇到的问题及解决方法">
-<meta property="og:url" content="http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html">
+<meta property="og:title" content="聊天机器人中的深度学习技术之一：导读">
+<meta property="og:url" content="http://www.jeyzhang.com/deep-learning-for-chatbots-1.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
+<meta property="og:description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
 
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，">
-<meta property="og:updated_time" content="2016-03-26T09:28:31.000Z">
+聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（链接），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果">
+<meta property="og:image" content="http://i.imgur.com/P03eaBZ.png">
+<meta property="og:image" content="http://i.imgur.com/JGrn8LK.png">
+<meta property="og:updated_time" content="2016-08-10T02:40:20.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TensorFlow中遇到的问题及解决方法">
-<meta name="twitter:description" content="本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
+<meta name="twitter:title" content="聊天机器人中的深度学习技术之一：导读">
+<meta name="twitter:description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
 
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，">
+聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（链接），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果">
 
 
 
@@ -78,7 +80,7 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
   };
 </script>
 
-  <title> TensorFlow中遇到的问题及解决方法 | Jey Zhang </title>
+  <title> 聊天机器人中的深度学习技术之一：导读 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -263,7 +265,7 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
             
             
               
-                TensorFlow中遇到的问题及解决方法
+                聊天机器人中的深度学习技术之一：导读
               
             
           </h1>
@@ -272,8 +274,8 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-03-25T22:36:46+08:00" content="2016-03-25">
-              2016-03-25
+            <time itemprop="dateCreated" datetime="2016-08-08T19:43:58+08:00" content="2016-08-08">
+              2016-08-08
             </time>
           </span>
 
@@ -282,8 +284,8 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/deep-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">deep learning</span>
                   </a>
                 </span>
 
@@ -298,8 +300,8 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/problems-with-solution-in-tensorflow.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="problems-with-solution-in-tensorflow.html" itemprop="commentsCount"></span>
+              <a href="/deep-learning-for-chatbots-1.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="deep-learning-for-chatbots-1.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -309,7 +311,7 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/problems-with-solution-in-tensorflow.html"class="leancloud_visitors"  data-flag-title="TensorFlow中遇到的问题及解决方法">
+			 <span id="/deep-learning-for-chatbots-1.html"class="leancloud_visitors"  data-flag-title="聊天机器人中的深度学习技术之一：导读">
              &nbsp;Views
             </span>
 		  
@@ -325,63 +327,48 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
       
 
       
-        <span itemprop="articleBody"><p>本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。</p>
+        <span itemprop="articleBody"><p>以下内容为原文 <a href="http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/" target="_blank" rel="external">《Deep Learning For Chatbots, Part 1 - Introduction》</a> 的翻译，供自己学习及他人参考。</p>
 <hr>
-<h3 id="Q1-_如何查看TensorFlow中Tensor,_Variable,_Constant的值？">Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？</h3><p>TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，我们很容易对其进行创建操作，但是如何得到它们的值呢？</p>
-<p>假设<code>ts</code>是我们想要查看的对象(Variable / Constant / 0输入的Tensor)，运行</p>
-<pre><code>ts_res = sess.<span class="function"><span class="title">run</span><span class="params">(ts)</span></span>
-<span class="function"><span class="title">print</span><span class="params">(ts_res)</span></span>
-</code></pre><p>其中，<code>sess</code>为之前创建或默认的<code>session</code>. 运行后将得到一个<code>narray</code>格式的<code>ts_res</code>对象，通过<code>print</code>函数我们可以很方便的查看其中的内容。</p>
-<p>但是，如果<code>ts</code>是一个有输入要求的Tensor，需要在查看其输出值前，填充(feed)输入数据。如下（假设ts只有一种输入）：</p>
-<pre><code><span class="built_in">input</span> = ××××××  # the <span class="built_in">input</span> data need <span class="keyword">to</span> feed
-ts_res = sess.run(<span class="keyword">ts</span>, feed_dict=<span class="built_in">input</span>)
-<span class="keyword">print</span>(ts_res)
-</code></pre><p>其他要求多种输入的Tensor类似处理即可。</p>
-<h3 id="Q2-_模型训练完成后，如何获取模型的参数？">Q2. 模型训练完成后，如何获取模型的参数？</h3><p>模型训练完成后，通常会将模型参数存储于/checkpoint/×××.model文件(当然文件路径和文件名都可以更改，许多基于TensorFlow的开源包习惯将模型参数存储为model或者model.ckpt文件)。那么，在模型训练完成后，如何得到这些模型参数呢？</p>
-<p>需要以下两个步骤：</p>
-<p><strong>Step 1: 通过tf.train.Saver()恢复模型参数</strong> </p>
-<p>运行</p>
-<pre><code>saver = tf<span class="class">.train</span><span class="class">.Saver</span>()
-</code></pre><p>通过<code>saver</code>的<code>restore()</code>方法可以从本地的模型文件中恢复模型参数。大致做法如下：</p>
-<pre><code><span class="comment"># your model's params</span>
-<span class="comment"># you don't have to initialize them</span>
-
-<span class="constant">x</span> = tf.placeholder(tf.float32)
-<span class="constant">y</span> = tf.placeholder(tf.float32)
-<span class="constant">W</span> = tf.Variable(...)
-<span class="constant">b</span> = tf.Variable(...)
-
-<span class="constant">y_</span> = tf.add(b, tf.matmul(x, w))
-
-<span class="comment"># create the saver</span>
-
-<span class="constant">saver</span> = tf.train.Saver()
-
-<span class="comment"># creat the session you used in the training processing</span>
-<span class="comment"># launch the model</span>
-
-with tf.Session() as sess:
-  <span class="comment"># Restore variables from disk.</span>
-  saver.restore(sess, "/your/path/model.ckpt")
-  print("Model restored.")
-  <span class="comment"># Do some work with the model, such as do a prediction</span>
-  pred = sess.run(y_, feed_dict={batch_x})
-  ...
-</code></pre><p>有关TensorFlow中变量的创建、存储及恢复操作，详细见<a href="http://tensorflow.org/how_tos/variables/index.md" target="_blank" rel="external">API文档</a>.</p>
-<p><strong>Step 2: 通过tf.trainable_variables()得到训练参数</strong></p>
-<p>tf.trainable_variables()方法将返回模型中所有可训练的参数，详细见<a href="https://www.tensorflow.org/versions/r0.7/api_docs/python/state_ops.html#trainable_variables" target="_blank" rel="external">API文档</a>。类似于以下的变量参数不会被返回：</p>
-<pre><code>tf_var = tf.<span class="function"><span class="title">Variable</span><span class="params">(<span class="number">0</span>, name=<span class="string">"××××××"</span>, trainable=False)</span></span>
-</code></pre><p>还可以通过<code>Variable</code>的<code>name</code>属性过滤出需要查看的参数，如下：</p>
-<pre><code><span class="tag">var</span> = [v <span class="keyword">for</span> v <span class="keyword">in</span> t_vars <span class="keyword">if</span> v<span class="class">.name</span> == <span class="string">"W"</span>]
-</code></pre><p>（不断更新中…）</p>
-<hr>
-<p>本文结束，感谢欣赏。</p>
-<p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
-<p><a href="http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html">http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html</a></p>
-<p><strong>参考资料</strong></p>
-<p><a href="https://stackoverflow.com/questions/33759623/tensorflow-how-to-restore-a-previously-saved-model-python" target="_blank" rel="external">Tensorflow: How to restore a previously saved model (python)</a></p>
-<p><a href="https://stackoverflow.com/questions/34172622/get-original-value-of-tensor-in-tensorflow" target="_blank" rel="external">Get original value of Tensor in Tensorflow</a></p>
-<p><a href="https://stackoverflow.com/questions/36193553/get-the-value-of-some-weights-in-a-model-trained-by-tensorflow" target="_blank" rel="external">Get the value of some weights in a model trained by TensorFlow</a></p>
+<p>聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（<a href="http://www.bloomberg.com/features/2016-microsoft-future-ai-chatbots/" target="_blank" rel="external">链接</a>），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果公司的Siri等等。此外，一大批的创业公司发布了类似的产品，例如客户应用<a href="https://operator.com/" target="_blank" rel="external">Operator</a>，<a href="https://x.ai/" target="_blank" rel="external">x.ai</a>，bot framework <a href="http://chatfuel.com/" target="_blank" rel="external">Chatfuel</a>，bot开发工具 <a href="http://howdy.ai/botkit/" target="_blank" rel="external">Howdy’s Botkit</a>。微软也发布了供开发者使用的 <a href="https://dev.botframework.com/" target="_blank" rel="external">bot developer framework</a>。</p>
+<p>许多公司希望能开发出与用户进行自然语言式对话的机器人，并且声称使用了NLP和深度学习相关技术使之成为可能，然而这并不容易实现。在这个博文系列中，我将会重温一些被用于聊天机器人中的深度学习技术，披露出目前技术能够解决或者可能解决的问题以及几乎难以解决的问题。这篇文章是个概述，在接下来的博文中将介绍具体的技术细节。</p>
+<h2 id="模型分类">模型分类</h2><h3 id="基于检索技术的模型_VS_生成式模型">基于检索技术的模型 VS 生成式模型</h3><p><strong>基于检索技术的模型</strong>较为简单，主要是根据用户的输入和上下文内容，使用了知识库（存储了事先定义好的回复内容）和一些启发式方法来得到一个合适的回复。启发式方法简单的有基于规则的表达式匹配，复杂的有一些机器学习里的分类器。这些系统不能够生成任何新的内容，只是从一个固定的数据集中找到合适的内容作为回复。</p>
+<p><strong>生成式模型</strong>则更加复杂，它不依赖于预定义好的回复内容，而是通过<strong>抓取(Scratch)</strong>的方法生成新的回复内容。生成式模型典型的有<strong>基于机器翻译模型</strong>的，与传统机器翻译模型不同的是，生成式模型的任务不是将一句话翻译成其他语言的一句话，而是将<strong>用户的输入[翻译]为一个回答(response)</strong></p>
+<p><img src="http://i.imgur.com/P03eaBZ.png" alt=""></p>
+<p><strong>总结</strong></p>
+<p>以上两种模型均有优缺点。对于基于检索技术的模型，由于使用了知识库且数据为预先定义好的，因此进行回复的内容语法上较为通顺，较少出现语法错误；但是基于检索技术的模型中没有会话概念，不能结合上下文给出更加[智能]的回复。而生成式模型则更加[智能]一些，它能够更加有效地利用上下文信息从而知道你在讨论的东西是什么；然而生成式模型比较难以训练，并且输出的内容经常存在一些语法错误（尤其对于长句子而言），以及模型训练需要大规模的数据。</p>
+<p>深度学习技术都能够用于基于检索技术的模型和生成式模型中，但是目前的研究热点在生成式模型上。深度学习框架例如<strong>Sequence to Sequence</strong>非常适合用来生成文本，非常多的研究者希望能够在这个领域取得成功。然而目前这一块的研究还在初期阶段，工业界的产品更多的还是使用基于检索计算的模型。</p>
+<h3 id="短对话_VS_长对话">短对话 VS 长对话</h3><p>直观上处理长对话内容将更加困难，这是因为你需要在当前对话的情境下知道之前的对话说过什么。如果是一问一答的形式，技术上这将简单的多。通常对于客服对话而言，长对话更加常见，一次对话中往往会伴随着多个关联问题。</p>
+<h3 id="开放域_VS_特定领域">开放域 VS 特定领域</h3><p>面向开放域的聊天机器人技术面临更多困难，这是因为会话可能涉及的面太广，没有一个清晰的目标和意图。在一些社交网站例如Twitter和Reddit上的会话是属于开放域的，会话涉及的主题多种多样，需要的知识量也将非常巨大。</p>
+<p>面向特定领域的相关技术则相对简单一些，这是因为特定领域给会话的主题进行了限制，目标和意图也更加清晰，典型的例子有客服系统助手和购物助手。这些系统通常是为了完成某些特定任务，尽管用户在该系统中也能够问些其他方面的东西，但是系统并不会给出相应的回复。</p>
+<h2 id="面临的挑战">面临的挑战</h2><p>下面介绍一下聊天机器人技术所面临的挑战。</p>
+<h3 id="如何结合上下文信息">如何结合上下文信息</h3><p>为了产生质量更高的回复，聊天机器人系统通常需要利用一些上下文信息(Context)，这里的上下文信息包括了<strong>对话过程中的语言上下文信息</strong>和<strong>用户的身份信息</strong>等。在长对话中人们关注的是之前说了什么内容以及产生了什么内容的交换，这是语言上下文信息的典型。常见的方法是将一个会话转化为向量形式，但这对长会话而言是困难的。论文<a href="http://arxiv.org/abs/1507.04808" target="_blank" rel="external">Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models</a>和<a href="http://arxiv.org/abs/1510.08565" target="_blank" rel="external">Attention with Intention for a Neural Network Conversation Model</a>中的实验结果表明了这一点。另外，可以结合的上下文信息还包括会话进行时的日期地点信息、用户信息等。</p>
+<h3 id="语义一致性">语义一致性</h3><p>理论上来说，机器人面对相同语义而不同形式的问题应该给予一致的回复，例如这两个问题[How old are you?]和[What’s your age?]。这理解起来是简单的，但却是学术界目前的难题之一（如下图）。许多系统都试图对相同语义而不同形式的问题给予语义上合理的回复，但却没有考虑一致性，最大的原因在于训练模型的数据来源于大量不同的用户，这导致机器人失去了固定统一的人格。论文<a href="http://arxiv.org/abs/1603.06155" target="_blank" rel="external">A Persona-Based Neural Conversation Model</a>中提及的模型旨在创建具有固定统一人格的机器人。</p>
+<p><img src="http://i.imgur.com/JGrn8LK.png" alt=""></p>
+<h3 id="对话模型的评测">对话模型的评测</h3><p>评价一个对话模型的好坏在于它是否很好地完成了某项任务，例如在对话中解决了客户的问题。这样的训练数据需要人工标注和评测，所以获取上需要一定人力代价。有时在开放域中的对话系统也没有一个清晰的优化目标。用于机器翻译的评测指标<a href="https://en.wikipedia.org/wiki/BLEU" target="_blank" rel="external">BLEU</a>不能适用于此，是因为它的计算基础是语言表面上的匹配程度，而对话中的回答可以是完全不同词型但语义通顺的语句。论文<a href="http://arxiv.org/abs/1603.08023" target="_blank" rel="external">How NOT To Evaluate Your Dialogue System: An Empirical Study of Unsupervised Evaluation Metrics for Dialogue Response Generation</a>中给出结论，目前常用的评测指标均与人工评测无关。</p>
+<h3 id="意图和回复多样性">意图和回复多样性</h3><p>生成式模型中的一个普遍问题是，它们都想要生成一些通用的回答，例如[That’s great!]和[I don’t know]这样的可以应付许多的用户询问。早期的Google智能回复基本上以[I love you]回复所有的东西<a href="http://googleresearch.blogspot.com/2015/11/computer-respond-to-this-email.html" target="_blank" rel="external">链接</a>，这是一些模型最终训练出来的结果，原因在于训练数据和训练的优化目标。因此，有些研究学者开始关注<a href="http://arxiv.org/abs/1510.03055" target="_blank" rel="external">如何提升机器人的回复的多样性</a>，然而人们在对话过程中的回复与询问有一定特定关系，是有一定意图的，而许多面向开放域的机器人不具备特定的意图。</p>
+<h2 id="实际效果">实际效果</h2><p>以目前的研究水平所制造的机器人能够取得的效果如何？使用基于检索技术的显然无法制作出面向开放域的机器人，这是因为你不能编写覆盖所有领域的语料；而生成式的面向开放域的机器人还属于<strong>一般人工智能(Artifical General Intelligence, AGI)</strong>水平，距离理想状态还相距甚远，但相关研究学者还在致力于此。</p>
+<p>对于特定领域的机器人，基于检索的技术和生成式模型都能够利用。但是对于长对话的情境，也面临许多困难。</p>
+<p>在最近对<a href="http://www.seattletimes.com/business/baidu-research-chief-andrew-ng-fixed-on-self-taught-computers-self-driving-cars/" target="_blank" rel="external">Andrew NG的采访</a>中，NG提到：</p>
+<blockquote>
+<p>目前深度学习的价值主要体现在能够获取大量数据的特定领域。目前一个无法做的事情是产生一个有意义的对话。</p>
+</blockquote>
+<p>许多创业公司声称只要有足够多的数据，就能够产生自动智能的对话系统。然而，目前的水平生产出面向一个特定的子领域的对话应用（如利用Uber打车），而对于一个稍微开放点的领域就难以实现了（如自动销售）。但是，帮助用户提供自动回复建议以及语法纠正还是可行的。</p>
+<p>使用基于检索技术的对话系统更加可控和稳定，给出的回复出现语法错误的几率更低。而使用生成式模型的风险在于回复不可控，且容易出现一些风险，例如<a href="http://www.businessinsider.com/microsoft-deletes-racist-genocidal-tweets-from-ai-chatbot-tay-2016-3" target="_blank" rel="external">微软的Tay</a>。</p>
+<h2 id="即将到来的事情和阅读列表">即将到来的事情和阅读列表</h2><p>在之后的博文中将具体介绍深度学习方面的技术细节。提前阅读下面的文章将会对后面的学习更加有帮助。</p>
+<ul>
+<li><a href="http://arxiv.org/abs/1503.02364" target="_blank" rel="external">Neural Responding Machine for Short-Text Conversation (2015-03)</a></li>
+<li><a href="http://arxiv.org/abs/1506.05869" target="_blank" rel="external">A Neural Conversational Model (2015-06)</a></li>
+<li><a href="http://arxiv.org/abs/1506.06714" target="_blank" rel="external">A Neural Network Approach to Context-Sensitive Generation of Conversational Responses (2015-06)</a></li>
+<li><a href="http://arxiv.org/abs/1506.08909" target="_blank" rel="external">The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems (2015-06)</a></li>
+<li><a href="http://arxiv.org/abs/1507.04808" target="_blank" rel="external">Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models (2015-07)</a></li>
+<li><a href="http://arxiv.org/abs/1510.03055" target="_blank" rel="external">A Diversity-Promoting Objective Function for Neural Conversation Models (2015-10)</a></li>
+<li><a href="http://arxiv.org/abs/1510.08565" target="_blank" rel="external">Attention with Intention for a Neural Network Conversation Model (2015-10)</a></li>
+<li><a href="http://arxiv.org/abs/1510.03753" target="_blank" rel="external">Improved Deep Learning Baselines for Ubuntu Corpus Dialogs (2015-10)</a></li>
+<li><a href="http://arxiv.org/abs/1512.05742" target="_blank" rel="external">A Survey of Available Corpora for Building Data-Driven Dialogue Systems (2015-12)</a></li>
+<li><a href="http://arxiv.org/abs/1603.06393" target="_blank" rel="external">Incorporating Copying Mechanism in Sequence-to-Sequence Learning (2016-03)</a></li>
+<li><a href="http://arxiv.org/abs/1603.06155" target="_blank" rel="external">A Persona-Based Neural Conversation Model (2016-03)</a></li>
+<li><a href="http://arxiv.org/abs/1603.08023" target="_blank" rel="external">How NOT To Evaluate Your Dialogue System: An Empirical Study of Unsupervised Evaluation Metrics for Dialogue Response Generation (2016-03)</a></li>
+</ul>
 </span>
       
     </div>
@@ -390,13 +377,9 @@ with tf.Session() as sess:
       
         <div class="post-tags">
           
-            <a href="/tags/Artificial-Intelligence/" rel="tag">#Artificial Intelligence</a>
+            <a href="/tags/chatbot/" rel="tag">#chatbot</a>
           
-            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
-          
-            <a href="/tags/Machine-Learning/" rel="tag">#Machine Learning</a>
-          
-            <a href="/tags/TensorFlow/" rel="tag">#TensorFlow</a>
+            <a href="/tags/deep-learning/" rel="tag">#deep learning</a>
           
         </div>
       
@@ -405,17 +388,13 @@ with tf.Session() as sess:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tensorflow-learning-notes-3.html" rel="next" title="TensorFlow学习笔记3：词向量">
-                <i class="fa fa-chevron-left"></i> TensorFlow学习笔记3：词向量
+              <a href="/csharp-learning-notes-1-qna.html" rel="next" title="C#学习笔记1：常见问题">
+                <i class="fa fa-chevron-left"></i> C#学习笔记1：常见问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/python-learning-notes-and-common-problems.html" rel="prev" title="python学习笔记与常见问题">
-                python学习笔记与常见问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +580,7 @@ with tf.Session() as sess:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-_如何查看TensorFlow中Tensor,_Variable,_Constant的值？"><span class="nav-number">1.</span> <span class="nav-text">Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2-_模型训练完成后，如何获取模型的参数？"><span class="nav-number">2.</span> <span class="nav-text">Q2. 模型训练完成后，如何获取模型的参数？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型分类"><span class="nav-number">1.</span> <span class="nav-text">模型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于检索技术的模型_VS_生成式模型"><span class="nav-number">1.1.</span> <span class="nav-text">基于检索技术的模型 VS 生成式模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#短对话_VS_长对话"><span class="nav-number">1.2.</span> <span class="nav-text">短对话 VS 长对话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放域_VS_特定领域"><span class="nav-number">1.3.</span> <span class="nav-text">开放域 VS 特定领域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面临的挑战"><span class="nav-number">2.</span> <span class="nav-text">面临的挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何结合上下文信息"><span class="nav-number">2.1.</span> <span class="nav-text">如何结合上下文信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义一致性"><span class="nav-number">2.2.</span> <span class="nav-text">语义一致性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对话模型的评测"><span class="nav-number">2.3.</span> <span class="nav-text">对话模型的评测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#意图和回复多样性"><span class="nav-number">2.4.</span> <span class="nav-text">意图和回复多样性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际效果"><span class="nav-number">3.</span> <span class="nav-text">实际效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#即将到来的事情和阅读列表"><span class="nav-number">4.</span> <span class="nav-text">即将到来的事情和阅读列表</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -668,9 +647,9 @@ with tf.Session() as sess:
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'problems-with-solution-in-tensorflow.html';
-      var disqus_title = 'TensorFlow中遇到的问题及解决方法';
-      var disqus_url = 'http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html';
+      var disqus_identifier = 'deep-learning-for-chatbots-1.html';
+      var disqus_title = '聊天机器人中的深度学习技术之一：导读';
+      var disqus_url = 'http://www.jeyzhang.com/deep-learning-for-chatbots-1.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
