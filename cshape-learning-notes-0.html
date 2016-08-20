@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://www.jeyzhang.com/cshape-learning-notes-0.html">
 <meta property="og:site_name" content="Jey Zhang">
 <meta property="og:description" content="关于.NET Framework简介.NET Framework是微软公司为开发应用程序而设计的一个平台，它不限于运行的系统（尽管Windows系统上运行的最为广泛），包括Windows、linux（称为Mono）、Mac OS等。可以使用.NET Framework来创建各种不同类型的应用程序，例如Windows桌面应用程序、Web应用程序等等。.NET Framework的设计方式确保了它可以">
-<meta property="og:updated_time" content="2016-08-01T11:41:18.881Z">
+<meta property="og:updated_time" content="2016-08-20T03:58:27.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#学习笔记0：入门">
 <meta name="twitter:description" content="关于.NET Framework简介.NET Framework是微软公司为开发应用程序而设计的一个平台，它不限于运行的系统（尽管Windows系统上运行的最为广泛），包括Windows、linux（称为Mono）、Mac OS等。可以使用.NET Framework来创建各种不同类型的应用程序，例如Windows桌面应用程序、Web应用程序等等。.NET Framework的设计方式确保了它可以">
@@ -332,6 +332,10 @@
 <h4 id="托管代码">托管代码</h4><p>在将代码编译为CIL，再用JIT编译器将其编译为本机代码后，CLR的任务尚未全部完成，还需要管理正在执行的用.NET Framework编写的代码（这个执行代码的阶段称为<strong>运行时(runtime)</strong>）。即CLR管理着应用程序，其方式是管理内存、处理安全以及允许进行跨语言调试等。</p>
 <p>不受CLR控制运行的应用程序属于非托管类型，某些语言（如C++）可以用于编写此类应用程序，例如访问操作系统的低级功能。在C#中只能编写在托管环境下运行的代码。将使用CLR的托管功能，让.NET处理与操作系统的任何交互。</p>
 <h4 id="垃圾回收">垃圾回收</h4><p>托管代码中一个重要的功能是垃圾回收，它可以确保应用程序在不使用某些内存时就完全释放这些内存。.Net垃圾回收会定期检查计算机内存，从中删除不再需要的内容，但是执行垃圾回收的时间并不固定。因为垃圾回收的执行时间是不确定的（但是一定会执行），所以设计程序的时候需要注意这一点，在需要清理内存时自己手动完成清理工作也是一个不错的选择。</p>
+<hr>
+<p>本文结束，感谢欣赏。</p>
+<p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
+<p><a href="http://www.jeyzhang.com/cshape-learning-notes-0.html">http://www.jeyzhang.com/cshape-learning-notes-0.html</a></p>
 </span>
       
     </div>
@@ -454,7 +458,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -468,7 +472,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

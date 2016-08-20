@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Equation,Markdown,MarkdownPad 2,MathJax," />
+  <meta name="keywords" content="azure,shadowsocks,vpn," />
 
 
 
@@ -51,23 +51,32 @@
 
 
 
-<meta name="description" content="MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&amp;lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config">
+<meta name="description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
+
+
+在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在markdown中插入公式">
-<meta property="og:url" content="http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html">
+<meta property="og:title" content="使用Azure和Shadowsocks搭建VPN服务">
+<meta property="og:url" content="http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&amp;lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config">
-<meta property="og:image" content="http://i.imgur.com/dCW2j68.png">
-<meta property="og:updated_time" content="2016-03-03T06:52:49.000Z">
+<meta property="og:description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
+
+
+在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），">
+<meta property="og:image" content="http://i.imgur.com/9ZSm50O.png">
+<meta property="og:image" content="http://i.imgur.com/hTtwuP7.png">
+<meta property="og:image" content="http://i.imgur.com/mbGGuiA.png">
+<meta property="og:image" content="http://i.imgur.com/nrcLrb5.png">
+<meta property="og:image" content="http://i.imgur.com/Z9tXOOp.png">
+<meta property="og:image" content="http://i.imgur.com/WaXt6ZU.png">
+<meta property="og:image" content="http://i.imgur.com/eoN7AS8.png">
+<meta property="og:updated_time" content="2016-08-20T04:04:33.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在markdown中插入公式">
-<meta name="twitter:description" content="MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&amp;lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config">
+<meta name="twitter:title" content="使用Azure和Shadowsocks搭建VPN服务">
+<meta name="twitter:description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
+
+
+在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），">
 
 
 
@@ -79,7 +88,7 @@
   };
 </script>
 
-  <title> 如何在markdown中插入公式 | Jey Zhang </title>
+  <title> 使用Azure和Shadowsocks搭建VPN服务 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -264,7 +273,7 @@
             
             
               
-                如何在markdown中插入公式
+                使用Azure和Shadowsocks搭建VPN服务
               
             
           </h1>
@@ -273,8 +282,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-14T20:57:19+08:00" content="2016-01-14">
-              2016-01-14
+            <time itemprop="dateCreated" datetime="2016-08-20T09:39:33+08:00" content="2016-08-20">
+              2016-08-20
             </time>
           </span>
 
@@ -283,8 +292,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
                   </a>
                 </span>
 
@@ -299,8 +308,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/how-to-insert-equations-in-markdown.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-insert-equations-in-markdown.html" itemprop="commentsCount"></span>
+              <a href="/using-azure-to-set-up-vpn-service.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="using-azure-to-set-up-vpn-service.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -310,7 +319,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/how-to-insert-equations-in-markdown.html"class="leancloud_visitors"  data-flag-title="如何在markdown中插入公式">
+			 <span id="/using-azure-to-set-up-vpn-service.html"class="leancloud_visitors"  data-flag-title="使用Azure和Shadowsocks搭建VPN服务">
              &nbsp;Views
             </span>
 		  
@@ -326,38 +335,109 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="MathJax插件"><strong>MathJax插件</strong></h2><p>著名的<a href="http://stackoverflow.com/" target="_blank" rel="external">Stackoverflow</a>网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加<code>MathJax CDN</code>，如下：</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>
-   <span class="attribute">src</span>=<span class="value">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined">
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-</code></pre><p>就可以在md文件中插入Tex格式的公式了。</p>
-<p><code>行间公式</code>的形式为</p>
-<pre><code><span class="variable">$$</span> 此处插入公式 <span class="variable">$$</span>
-</code></pre><p>而<code>行内公式</code>的形式为</p>
-<pre><code><span class="string">\\(</span> 此处插入公式 <span class="string">\\)</span>
-</code></pre><h2 id="在MarkdownPad_2中编辑公式"><strong>在MarkdownPad 2中编辑公式</strong></h2><p>之前的博文有推荐<a href="http://markdownpad.com/" target="_blank" rel="external">Markdown Pad 2</a>作为Window下的Markdown编辑器。如果你是使用该软件作为markdown的编辑器，你只需要在软件的<code>Tools-&gt; Options-&gt; Advanced-&gt; HTML Head Editor</code>中添加上述的<code>MathJax CDN</code>即可。</p>
-<p>这样你就不必每次都在md文件中重复添加了。</p>
-<h2 id="好用的Tex公式生成器"><strong>好用的Tex公式生成器</strong></h2><p>推荐一个在线手写公式转Tex格式的利器：<a href="https://webdemo.myscript.com/#/demo/equation" target="_blank" rel="external">Web Equation</a>。通过手写公式，即可得到公式所对应的Tex格式，非常好用。</p>
-<h2 id="示例"><strong>示例</strong></h2><p>举个栗子。在<code>Markdown Pad 2</code>中新建文件，添加如下内容：</p>
-<pre><code>最后，我们在一个图片类别的evidence中加入偏置(bias)，加入偏置的目的是加入一些与输入独立无关的信息。所以图片类别的evidence为
-
-<span class="formula">$$ evidence<span class="command">\_</span><span class="special">{</span>i<span class="special">}</span>=<span class="command">\sum</span> <span class="command">\_</span><span class="special">{</span>j<span class="special">}</span>W<span class="command">\_</span><span class="special">{</span>ij<span class="special">}</span>x<span class="command">\_</span><span class="special">{</span>j<span class="special">}</span>+b<span class="command">\_</span><span class="special">{</span>i<span class="special">}</span> $$</span>
-
-其中，<span class="command">\\</span>( W<span class="command">\_</span>i <span class="command">\\</span>) 和 <span class="command">\\</span>( b<span class="command">\_</span>i <span class="command">\\</span>) 分别为类别 <span class="command">\\</span>( i <span class="command">\\</span>) 的权值和偏置。
-</code></pre><p>（<strong>注意</strong>：markdown文件中的<code>_</code>前需要加上<code>\</code>转移符。）</p>
-<p>最终效果如下（在Markdown Pad 2编辑器进行预览，快捷键为<code>F6</code>）：</p>
-<p><img src="http://i.imgur.com/dCW2j68.png" alt=""></p>
-<h2 id="Hexo中显示数学公式"><strong>Hexo中显示数学公式</strong></h2><p>值得注意的是，原生的Hexo并不支持数学公式的显示。所以，如果你仅仅完成了以上步骤，在<code>hexo g -d</code>之后，你会发现公式的效果并没有被渲染出来。</p>
-<h3 id="安装hexo-math插件">安装hexo-math插件</h3><p>在网站根目录下，打开<code>git bash</code>，输入</p>
-<pre><code>npm install hexo-<span class="built_in">math</span> <span class="comment">--save</span>
-</code></pre><p>然后，在根目录下的<code>_config.yml</code>文件中添加</p>
-<pre><code><span class="attribute">plugins</span>: <span class="string"></span>
-  <span class="attribute">hexo-math</span>
-</code></pre><p>之后重新生成和部署网站即可。</p>
+        <span itemprop="articleBody"><p>在<a href="https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx" target="_blank" rel="external">Visual Studio Essential</a>里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。</p>
+<p><img src="http://i.imgur.com/9ZSm50O.png" alt=""></p>
 <hr>
-<p><strong>参考资料</strong>：</p>
-<p><a href="http://pencilandengine.com/2013/08/27/mathjax-with-markdownpad-2/" target="_blank" rel="external">MathJax with Markdownpad 2</a></p>
-<p><a href="http://hijiangtao.github.io/2014/09/08/MathJaxinHexo/" target="_blank" rel="external">Hexo上使用MathJax来实现数学公式的表达</a></p>
+<h3 id="在Azure中创建一个虚拟机(VM)">在Azure中创建一个虚拟机(VM)</h3><p>打开<a href="https://ms.portal.azure.com" target="_blank" rel="external">Azure的门户网站（新版）</a>，登录之后，在页面左上方点击 <strong>+New</strong>，选择 <strong>Virtual Machines</strong>；点击 <strong>See all</strong>，接下来会有一些不同类型的服务器OS供你选择，一般选择Linux会比相同配置下的Windows便宜不少，这里建议选择 <strong>Ubuntu Server 16.04 / 14.04 LTS</strong>；选择 <strong>Resource Manager</strong> 模式进行创建即可。</p>
+<p><img src="http://i.imgur.com/hTtwuP7.png" alt=""></p>
+<p>接下来<br>（1）完成VM的基本信息填写，设置并记住你的VM名称、用户名及密码；注意 <strong>Location</strong> 一栏一般填写距离自己常住地比较近的地区（如在中国则可以选择东亚或者东南亚，东南亚的会比东亚便宜一些）；</p>
+<p>（2）然后选择合适的配置，对于只是用来搭建VPN服务的VM，不需要太高的配置（博主选择的是DS1_V2，如下图）；</p>
+<p><img src="http://i.imgur.com/mbGGuiA.png" alt=""></p>
+<p>（3）在设置中点击 <strong>Public IP address</strong>，在右侧选择 <strong>Static</strong>，这样虚机对外的IP就是固定的；记住这个IP地址，以后方便在终端上进行登录。</p>
+<p>这样就完成了一个搭载 Ubuntu Server 16.04 LTS OS 的VM的创建。</p>
+<h3 id="配置VM">配置VM</h3><h4 id="配置nsg">配置nsg</h4><p>在Azure门户中，点击 <strong>All resources</strong>，选择后缀为 <strong>nsg</strong> 的项，在 <strong>SETTING</strong> 中选择 <strong>Inbound security rules</strong>；添加一个rule如下，设置一个端口号，注意Service类型选择 <strong>Custom</strong>。</p>
+<p><img src="http://i.imgur.com/nrcLrb5.png" alt=""></p>
+<h4 id="终端登录，更新系统软件">终端登录，更新系统软件</h4><p>打开一个终端程序，例如<a href="https://www.netsarang.com/products/xsh_overview.html" target="_blank" rel="external">xshell</a>，在 <strong>host</strong> 一栏填上VM对外的IP，然后用用户名和密码登录VM。</p>
+<p>进入VM后，输入以下命令进行系统的更新操作：</p>
+<pre><code>sudo apt <span class="operator"><span class="keyword">update</span>
+sudo apt dist-<span class="keyword">upgrade</span></span>
+</code></pre><h4 id="配置Shadowsocks">配置Shadowsocks</h4><p>安装 shadowsocks，shadowsocks 有 C 和 Python 两个版本。这里安装 C的版本。</p>
+<p>在终端输入</p>
+<pre><code>sudo git <span class="keyword">clone</span> <span class="title">https</span>://github.com/shadowsocks/shadowsocks-libev
+</code></pre><p>完成后，在当前目录下输入以下命令</p>
+<pre><code>cd shadowsocks-libev
+
+sudo apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev \
+    gawk debhelper dh-systemd init-system-helpers pkg-config asciidoc xmlto
+
+sudo dpkg-buildpackage -<span class="tag">b</span> -us -uc -<span class="tag">i</span>
+
+cd ..
+sudo dpkg -<span class="tag">i</span> shadowsocks-libev*.deb
+</code></pre><p>如过程中出现某些依赖包没有安装，则使用<code>sudo apt-get install</code>命令进行安装。</p>
+<p>编辑 shadowsocks 的 <strong>config.json</strong> 文件，</p>
+<pre><code>sudo vim <span class="regexp">/etc/</span>shadowsocks-libev<span class="regexp">/config.json</span>
+</code></pre><p>按照如下配置，注意端口号和密码填写之前你设置好的。</p>
+<p><img src="http://i.imgur.com/Z9tXOOp.png" alt=""></p>
+<p>为了优化 shadowsocks 的使用，输入</p>
+<pre><code>sudo <span class="keyword">vim</span> /etc/sysctl.<span class="keyword">conf</span>
+</code></pre><p>删除原先的内容，再将下面的内容复制进该conf文件中（<a href="https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks" target="_blank" rel="external">参考来源</a>），</p>
+<pre><code><span class="preprocessor"># max open files</span>
+fs.file-max = <span class="number">51200</span>
+<span class="preprocessor"># max read buffer</span>
+net.core.rmem_max = <span class="number">67108864</span>
+<span class="preprocessor"># max write buffer</span>
+net.core.wmem_max = <span class="number">67108864</span>
+<span class="preprocessor"># default read buffer</span>
+net.core.rmem_default = <span class="number">65536</span>
+<span class="preprocessor"># default write buffer</span>
+net.core.wmem_default = <span class="number">65536</span>
+<span class="preprocessor"># max processor input queue</span>
+net.core.netdev_max_backlog = <span class="number">4096</span>
+<span class="preprocessor"># max backlog</span>
+net.core.somaxconn = <span class="number">4096</span>
+
+<span class="preprocessor"># resist SYN flood attacks</span>
+net.ipv4.tcp_syncookies = <span class="number">1</span>
+<span class="preprocessor"># reuse timewait sockets when safe</span>
+net.ipv4.tcp_tw_reuse = <span class="number">1</span>
+<span class="preprocessor"># turn off fast timewait sockets recycling</span>
+net.ipv4.tcp_tw_recycle = <span class="number">0</span>
+<span class="preprocessor"># short FIN timeout</span>
+net.ipv4.tcp_fin_timeout = <span class="number">30</span>
+<span class="preprocessor"># short keepalive time</span>
+net.ipv4.tcp_keepalive_time = <span class="number">1200</span>
+<span class="preprocessor"># outbound port range</span>
+net.ipv4.ip_local_port_range = <span class="number">10000</span> <span class="number">65000</span>
+<span class="preprocessor"># max SYN backlog</span>
+net.ipv4.tcp_max_syn_backlog = <span class="number">4096</span>
+<span class="preprocessor"># max timewait sockets held by system simultaneously</span>
+net.ipv4.tcp_max_tw_buckets = <span class="number">5000</span>
+<span class="preprocessor"># turn on TCP Fast Open on both client and server side</span>
+net.ipv4.tcp_fastopen = <span class="number">3</span>
+<span class="preprocessor"># TCP receive buffer</span>
+net.ipv4.tcp_rmem = <span class="number">4096</span> <span class="number">87380</span> <span class="number">67108864</span>
+<span class="preprocessor"># TCP write buffer</span>
+net.ipv4.tcp_wmem = <span class="number">4096</span> <span class="number">65536</span> <span class="number">67108864</span>
+<span class="preprocessor"># turn on path MTU discovery</span>
+net.ipv4.tcp_mtu_probing = <span class="number">1</span>
+
+<span class="preprocessor"># for high-latency network</span>
+net.ipv4.tcp_congestion_control = hybla
+
+<span class="preprocessor"># for low-latency network, use cubic instead</span>
+<span class="preprocessor"># net.ipv4.tcp_congestion_control = cubic</span>
+</code></pre><p>保存退出即可。</p>
+<h4 id="配置fail2ban">配置fail2ban</h4><p>出于安全考虑，为了防止有人对你的VM进行恶意登录操作，可以利用 <strong>fail2ban</strong> 这个小工具来限制用户的非法登录操作。</p>
+<p>安装</p>
+<pre><code>sudo apt-<span class="keyword">get</span> install fail2ban
+</code></pre><p>输入</p>
+<pre><code>cd /etc/fail2ban/
+<span class="comment"># 创建本地配置文件</span>
+sudo vim jail.<span class="keyword">local</span>
+</code></pre><p>然后将jail.conf的内容拷贝至jail.local文件中，找到如下的内容，修改相应的字段。</p>
+<p><img src="http://i.imgur.com/WaXt6ZU.png" alt=""></p>
+<p>其中<strong>bantime</strong>是指对非法登录的阻止时间，建议设为一天(86400秒)；<strong>maxretry</strong>是指密码错误时尝试登入的最大次数，这里设为3次。</p>
+<p>保存退出即可。</p>
+<p>到这里VM上的配置工作基本完成，重启VM即可。</p>
+<h3 id="使用VPN服务">使用VPN服务</h3><p>对于PC端，可以下载<a href="https://shadowsocks.org" target="_blank" rel="external">shadowsocks客户端</a>。解压打开之后，如下：</p>
+<p><img src="http://i.imgur.com/eoN7AS8.png" alt=""></p>
+<p>输入VM的public IP地址，端口和密码，Encryption栏选择rc4-md5，OK即可。</p>
+<p>之后你应该可以正常使用VPN服务了，不过要注意使用时长和使用流量，感觉Azure应该会单独进行计费。</p>
+<hr>
+<p>本文结束，感谢欣赏。</p>
+<p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
+<p><a href="http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html">http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</a></p>
 </span>
       
     </div>
@@ -366,13 +446,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Equation/" rel="tag">#Equation</a>
+            <a href="/tags/azure/" rel="tag">#azure</a>
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/shadowsocks/" rel="tag">#shadowsocks</a>
           
-            <a href="/tags/MarkdownPad-2/" rel="tag">#MarkdownPad 2</a>
-          
-            <a href="/tags/MathJax/" rel="tag">#MathJax</a>
+            <a href="/tags/vpn/" rel="tag">#vpn</a>
           
         </div>
       
@@ -381,17 +459,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tensorflow-learning-notes.html" rel="next" title="TensorFlow学习笔记1：入门">
-                <i class="fa fa-chevron-left"></i> TensorFlow学习笔记1：入门
+              <a href="/deep-learning-for-chatbots-1.html" rel="next" title="聊天机器人中的深度学习技术之一：导读">
+                <i class="fa fa-chevron-left"></i> 聊天机器人中的深度学习技术之一：导读
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-next-add-post-views.html" rel="prev" title="Hexo的NexT主题个性化：添加文章阅读量">
-                Hexo的NexT主题个性化：添加文章阅读量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,7 +651,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MathJax插件"><span class="nav-number">1.</span> <span class="nav-text">MathJax插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在MarkdownPad_2中编辑公式"><span class="nav-number">2.</span> <span class="nav-text">在MarkdownPad 2中编辑公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好用的Tex公式生成器"><span class="nav-number">3.</span> <span class="nav-text">好用的Tex公式生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">4.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中显示数学公式"><span class="nav-number">5.</span> <span class="nav-text">Hexo中显示数学公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo-math插件"><span class="nav-number">5.1.</span> <span class="nav-text">安装hexo-math插件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Azure中创建一个虚拟机(VM)"><span class="nav-number">1.</span> <span class="nav-text">在Azure中创建一个虚拟机(VM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置VM"><span class="nav-number">2.</span> <span class="nav-text">配置VM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置nsg"><span class="nav-number">2.1.</span> <span class="nav-text">配置nsg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端登录，更新系统软件"><span class="nav-number">2.2.</span> <span class="nav-text">终端登录，更新系统软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Shadowsocks"><span class="nav-number">2.3.</span> <span class="nav-text">配置Shadowsocks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置fail2ban"><span class="nav-number">2.4.</span> <span class="nav-text">配置fail2ban</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用VPN服务"><span class="nav-number">3.</span> <span class="nav-text">使用VPN服务</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -644,9 +718,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'how-to-insert-equations-in-markdown.html';
-      var disqus_title = '如何在markdown中插入公式';
-      var disqus_url = 'http://www.jeyzhang.com/how-to-insert-equations-in-markdown.html';
+      var disqus_identifier = 'using-azure-to-set-up-vpn-service.html';
+      var disqus_title = '使用Azure和Shadowsocks搭建VPN服务';
+      var disqus_url = 'http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

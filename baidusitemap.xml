@@ -4,21 +4,69 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2016-08-10T02:40:20.918Z</lastmod>
+    <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
+    <lastmod>2016-08-20T04:04:33.812Z</lastmod>
     <data>
         <display>
-        <title>聊天机器人中的深度学习技术之一：导读</title>
-        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
+        <title>使用Azure和Shadowsocks搭建VPN服务</title>
+        <pubTime>2016-08-20T01:39:33.000Z</pubTime>
         
-        <tag>chatbot</tag>
+        <tag>azure</tag>
          
-        <tag>deep learning</tag>
+        <tag>shadowsocks</tag>
+         
+        <tag>vpn</tag>
          
          
            
              
-              <breadCrumb title="deep learning" url="http://www.jeyzhang.com/categories/deep-learning/"/>
+              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
+    <lastmod>2016-08-20T04:00:01.984Z</lastmod>
+    <data>
+        <display>
+        <title>whoosh+jieba：python下实现中文全文检索</title>
+        <pubTime>2016-04-28T03:14:53.000Z</pubTime>
+        
+        <tag>Jieba</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>Search Engine</tag>
+         
+        <tag>Whoosh</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/python-learning-notes-and-common-problems.html</loc>
+    <lastmod>2016-08-20T03:59:42.263Z</lastmod>
+    <data>
+        <display>
+        <title>python学习笔记与常见问题</title>
+        <pubTime>2016-04-27T09:22:49.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
           
         </display>
     </data>
@@ -27,7 +75,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-1-qna.html</loc>
-    <lastmod>2016-08-04T02:06:56.510Z</lastmod>
+    <lastmod>2016-08-20T03:58:46.925Z</lastmod>
     <data>
         <display>
         <title>C#学习笔记1：常见问题</title>
@@ -45,10 +93,9 @@
     </url>
 
     
-    
   <url>
     <loc>http://www.jeyzhang.com/cshape-learning-notes-0.html</loc>
-    <lastmod>2016-08-01T11:41:18.881Z</lastmod>
+    <lastmod>2016-08-20T03:58:27.068Z</lastmod>
     <data>
         <display>
         <title>C#学习笔记0：入门</title>
@@ -65,6 +112,29 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2016-08-20T03:58:08.141Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之一：导读</title>
+        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
+        
+        <tag>chatbot</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
@@ -140,52 +210,6 @@
            
              
               <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2016-05-08T11:29:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>whoosh+jieba：python下实现中文全文检索</title>
-        <pubTime>2016-04-28T03:14:53.000Z</pubTime>
-        
-        <tag>Jieba</tag>
-         
-        <tag>Python</tag>
-         
-        <tag>Search Engine</tag>
-         
-        <tag>Whoosh</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/python-learning-notes-and-common-problems.html</loc>
-    <lastmod>2016-05-08T11:29:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>python学习笔记与常见问题</title>
-        <pubTime>2016-04-27T09:22:49.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
           
         </display>
     </data>

@@ -2,23 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2016-08-10T02:40:20.918Z</lastmod>
+    <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
+    <lastmod>2016-08-20T04:04:33.812Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
+    <lastmod>2016-08-20T04:00:01.984Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/python-learning-notes-and-common-problems.html</loc>
+    <lastmod>2016-08-20T03:59:42.263Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-1-qna.html</loc>
-    <lastmod>2016-08-04T02:06:56.510Z</lastmod>
+    <lastmod>2016-08-20T03:58:46.925Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/cshape-learning-notes-0.html</loc>
+    <lastmod>2016-08-20T03:58:27.068Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2016-08-20T03:58:08.141Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/about/index.html</loc>
     <lastmod>2016-08-01T11:48:15.861Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/cshape-learning-notes-0.html</loc>
-    <lastmod>2016-08-01T11:41:18.881Z</lastmod>
   </url>
   
   <url>
@@ -34,16 +49,6 @@
   <url>
     <loc>http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html</loc>
     <lastmod>2016-05-12T09:40:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2016-05-08T11:29:56.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/python-learning-notes-and-common-problems.html</loc>
-    <lastmod>2016-05-08T11:29:56.000Z</lastmod>
   </url>
   
   <url>
