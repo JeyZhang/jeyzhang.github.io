@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Artificial Intelligence,Deep Learning,Machine Learning,TensorFlow," />
+  <meta name="keywords" content="C#,multithreading," />
 
 
 
@@ -51,22 +51,23 @@
 
 
 
-<meta name="description" content="本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
-
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，">
+<meta name="description" content="理解进程与线程进程 (Process) 是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。
+应用程序域 (AppDomain) 是一个程序运行的逻辑区域，它可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TensorFlow中遇到的问题及解决方法">
-<meta property="og:url" content="http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html">
+<meta property="og:title" content="C#学习笔记2：多线程">
+<meta property="og:url" content="http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
-
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，">
-<meta property="og:updated_time" content="2016-03-26T09:28:31.000Z">
+<meta property="og:description" content="理解进程与线程进程 (Process) 是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。
+应用程序域 (AppDomain) 是一个程序运行的逻辑区域，它可">
+<meta property="og:image" content="http://i.imgur.com/HxlKoyz.png">
+<meta property="og:image" content="http://i.imgur.com/TyjtHe2.png">
+<meta property="og:image" content="http://i.imgur.com/NGRlCRH.png">
+<meta property="og:image" content="http://i.imgur.com/7vb7sR3.png">
+<meta property="og:updated_time" content="2016-08-28T03:17:28.028Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TensorFlow中遇到的问题及解决方法">
-<meta name="twitter:description" content="本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
-
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，">
+<meta name="twitter:title" content="C#学习笔记2：多线程">
+<meta name="twitter:description" content="理解进程与线程进程 (Process) 是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。
+应用程序域 (AppDomain) 是一个程序运行的逻辑区域，它可">
 
 
 
@@ -78,7 +79,7 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
   };
 </script>
 
-  <title> TensorFlow中遇到的问题及解决方法 | Jey Zhang </title>
+  <title> C#学习笔记2：多线程 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -263,7 +264,7 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
             
             
               
-                TensorFlow中遇到的问题及解决方法
+                C#学习笔记2：多线程
               
             
           </h1>
@@ -272,8 +273,8 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-03-25T22:36:46+08:00" content="2016-03-25">
-              2016-03-25
+            <time itemprop="dateCreated" datetime="2016-08-28T10:18:53+08:00" content="2016-08-28">
+              2016-08-28
             </time>
           </span>
 
@@ -282,8 +283,8 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
                   </a>
                 </span>
 
@@ -298,8 +299,8 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/problems-with-solution-in-tensorflow.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="problems-with-solution-in-tensorflow.html" itemprop="commentsCount"></span>
+              <a href="/csharp-learning-notes-2-multithreading.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="csharp-learning-notes-2-multithreading.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -309,7 +310,7 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/problems-with-solution-in-tensorflow.html"class="leancloud_visitors"  data-flag-title="TensorFlow中遇到的问题及解决方法">
+			 <span id="/csharp-learning-notes-2-multithreading.html"class="leancloud_visitors"  data-flag-title="C#学习笔记2：多线程">
              &nbsp;Views
             </span>
 		  
@@ -325,63 +326,174 @@ Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的
       
 
       
-        <span itemprop="articleBody"><p>本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。</p>
-<hr>
-<h3 id="Q1-_如何查看TensorFlow中Tensor,_Variable,_Constant的值？">Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？</h3><p>TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，我们很容易对其进行创建操作，但是如何得到它们的值呢？</p>
-<p>假设<code>ts</code>是我们想要查看的对象(Variable / Constant / 0输入的Tensor)，运行</p>
-<pre><code>ts_res = sess.<span class="function"><span class="title">run</span><span class="params">(ts)</span></span>
-<span class="function"><span class="title">print</span><span class="params">(ts_res)</span></span>
-</code></pre><p>其中，<code>sess</code>为之前创建或默认的<code>session</code>. 运行后将得到一个<code>narray</code>格式的<code>ts_res</code>对象，通过<code>print</code>函数我们可以很方便的查看其中的内容。</p>
-<p>但是，如果<code>ts</code>是一个有输入要求的Tensor，需要在查看其输出值前，填充(feed)输入数据。如下（假设ts只有一种输入）：</p>
-<pre><code><span class="built_in">input</span> = ××××××  # the <span class="built_in">input</span> data need <span class="keyword">to</span> feed
-ts_res = sess.run(<span class="keyword">ts</span>, feed_dict=<span class="built_in">input</span>)
-<span class="keyword">print</span>(ts_res)
-</code></pre><p>其他要求多种输入的Tensor类似处理即可。</p>
-<h3 id="Q2-_模型训练完成后，如何获取模型的参数？">Q2. 模型训练完成后，如何获取模型的参数？</h3><p>模型训练完成后，通常会将模型参数存储于/checkpoint/×××.model文件(当然文件路径和文件名都可以更改，许多基于TensorFlow的开源包习惯将模型参数存储为model或者model.ckpt文件)。那么，在模型训练完成后，如何得到这些模型参数呢？</p>
-<p>需要以下两个步骤：</p>
-<p><strong>Step 1: 通过tf.train.Saver()恢复模型参数</strong> </p>
-<p>运行</p>
-<pre><code>saver = tf<span class="class">.train</span><span class="class">.Saver</span>()
-</code></pre><p>通过<code>saver</code>的<code>restore()</code>方法可以从本地的模型文件中恢复模型参数。大致做法如下：</p>
-<pre><code><span class="comment"># your model's params</span>
-<span class="comment"># you don't have to initialize them</span>
+        <span itemprop="articleBody"><h2 id="理解进程与线程">理解进程与线程</h2><p>进程 (Process) 是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。</p>
+<p>应用程序域 (AppDomain) 是一个程序运行的逻辑区域，它可以视为一个轻量级的进程，.NET的程序集正是在应用程序域中运行的，一个进程可以包含有多个应用程序域，一个应用程序域也可以包含多个程序集。在一个应用程序域中包含了一个或多个上下文context，使用上下文CLR就能够把某些特殊对象的状态放置在不同容器当中。</p>
+<p>线程 (Thread) 是进程中的基本执行单元，在进程入口执行的第一个线程被视为这个进程的主线程。在.NET应用程序中，都是以Main方法作为入口的，当调用此方法时系统就会自动创建一个主线程。线程主要是由CPU寄存器、调用栈和线程本地存储器 (Thread Local Storage，TLS) 组成的。CPU寄存器主要记录当前所执行线程的状态，调用栈主要用于维护线程所调用到的内存与数据，TLS主要用于存放线程的状态信息。</p>
+<p>一个进程内可以包括多个应用程序域，也有包括多个线程，线程也可以穿梭于多个应用程序域当中。但在同一个时刻，线程只会处于一个应用程序域内。</p>
+<h2 id="线程的生命周期">线程的生命周期</h2><p>线程生命周期开始于 <strong>System.Threading.Thread</strong> 类的对象被创建时，结束于线程被终止或完成执行时。</p>
+<p>下面列出了线程生命周期中的各种状态：</p>
+<ul>
+<li><p><strong>未启动状态</strong>：当线程实例被创建但 Start 方法未被调用时的状况。</p>
+</li>
+<li><p><strong>就绪状态</strong>：当线程准备好运行并等待 CPU 周期时的状况。</p>
+</li>
+<li><p><strong>不可运行状态</strong>：下面的几种情况下线程是不可运行的：</p>
+<ul>
+<li>已经调用 Sleep 方法</li>
+<li>已经调用 Wait 方法</li>
+<li>通过 I/O 操作阻塞</li>
+</ul>
+</li>
+<li><p><strong>死亡状态</strong>：当线程已完成执行或已中止时的状况。</p>
+</li>
+</ul>
+<h2 id="线程的操作">线程的操作</h2><h3 id="System-Threading-Thread类">System.Threading.Thread类</h3><p>System.Threading.Thread 是用于控制线程的基础类，通过Thread可以控制当前应用程序域中线程的创建、挂起、停止、销毁。</p>
+<h4 id="属性">属性</h4><p><img src="http://i.imgur.com/HxlKoyz.png" alt=""></p>
+<ul>
+<li>ManagedThreadId 是确认线程的唯一标识符，程序在大部分情况下都是通过 <strong>Thread.ManagedThreadId</strong> 来辨别线程的。而 Name 是一个可变值，在默认时候，Name 为一个空值 Null，开发人员可以通过程序设置线程的名称，但这只是一个辅助功能。</li>
+<li>.NET 为线程设置了 <strong>Priority</strong> 属性来定义线程执行的优先级别，里面包含5个选项（Lowest, BelowNormal, Normal, AboveNormal, Highest），其中 Normal 是默认值。<strong>除非系统有特殊要求，否则不应该随便设置线程的优先级别</strong>。</li>
+<li>通过 <strong>ThreadState</strong> 可以检测线程是处于 Unstarted、Sleeping、Running 等等状态，它比 IsAlive 属性能提供更多的特定信息。</li>
+<li>一个应用程序域中可能包括多个上下文，而通过 CurrentContext 可以获取线程当前的上下文。</li>
+<li>CurrentThread 是最常用的一个属性，它是用于获取当前运行的线程。</li>
+</ul>
+<h4 id="方法">方法</h4><p><img src="http://i.imgur.com/TyjtHe2.png" alt=""></p>
+<h4 id="程序示例">程序示例</h4><p>通过Thread显示当前线程信息：</p>
+<pre><code><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">(<span class="built_in">string</span>[] args)</span>
+    </span>{
+        Thread thread = Thread.CurrentThread;
+        thread.Name = <span class="string">"Main Thread"</span>;
+        <span class="built_in">string</span> threadMessage = <span class="built_in">string</span>.Format(<span class="string">"Thread ID:{0}\n    Current AppDomainId:{1}\n    "</span>+
+            <span class="string">"Current ContextId:{2}\n    Thread Name:{3}\n    "</span>+
+            <span class="string">"Thread State:{4}\n    Thread Priority:{5}\n"</span>,
+            thread.ManagedThreadId, Thread.GetDomainID(), Thread.CurrentContext.ContextID,
+            thread.Name, thread.ThreadState, thread.Priority);
+        Console.WriteLine(threadMessage);
+        Console.ReadKey();
+    }
+</code></pre><p>结果如下：</p>
+<p><img src="http://i.imgur.com/NGRlCRH.png" alt=""></p>
+<h3 id="实现多线程">实现多线程</h3><h4 id="无参数传入：使用ThreadStart委托">无参数传入：使用ThreadStart委托</h4><p>示例如下，首先在 Message 类中建立一个方法 ShowMessage()，里面显示了当前运行线程的 Id，并使用 Thread.Sleep(int) 方法模拟部分工作。在 main() 中通过 ThreadStart委托 绑定Message对象的 ShowMessage()方法，然后通过 Thread.Start() 执行异步方法。</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> Message
+  {
+      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowMessage</span><span class="params">()</span>
+      </span>{
+          <span class="built_in">string</span> message = <span class="built_in">string</span>.Format(<span class="string">"Async threadId is :{0}"</span>,
+                                          Thread.CurrentThread.ManagedThreadId);
+          Console.WriteLine(message);
 
-<span class="constant">x</span> = tf.placeholder(tf.float32)
-<span class="constant">y</span> = tf.placeholder(tf.float32)
-<span class="constant">W</span> = tf.Variable(...)
-<span class="constant">b</span> = tf.Variable(...)
+          <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; <span class="number">10</span>; n++)
+          {
+              Thread.Sleep(<span class="number">300</span>);   
+              Console.WriteLine(<span class="string">"The number is:"</span> + n.ToString()); 
+          }
+      }
+  }
 
-<span class="constant">y_</span> = tf.add(b, tf.matmul(x, w))
+  <span class="keyword">class</span> Program
+  {
+      <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">(<span class="built_in">string</span>[] args)</span>
+      </span>{
+          Console.WriteLine(<span class="string">"Main threadId is:"</span>+
+                            Thread.CurrentThread.ManagedThreadId);
+          Message message=<span class="keyword">new</span> Message();
+          Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ThreadStart(message.ShowMessage));
+          thread.Start();
+          Console.WriteLine(<span class="string">"Do something ..........!"</span>);
+          Console.WriteLine(<span class="string">"Main thread working is complete!"</span>);
 
-<span class="comment"># create the saver</span>
+      }
+  }
+</code></pre><p>在调用 Thread.Start()方法 后，系统以异步方式运行 Message.ShowMessage()，而主线程的操作是继续执行的，在 Message.ShowMessage() 完成前，主线程已完成所有的操作。结果如下：</p>
+<p><img src="http://i.imgur.com/7vb7sR3.png" alt=""></p>
+<h4 id="参数传入：三种方式">参数传入：三种方式</h4><p>使用 ThreadStart委托 的缺点在于无法给线程传递参数，下面介绍三种方式以实现给线程传递参数：</p>
+<ol>
+<li><strong>使用ParameterizedThreadStart委托</strong></li>
+</ol>
+<p>如果使用了ParameterizedThreadStart委托，线程的入口必须有一个object类型的参数，且返回类型为void。如下面的例子：</p>
+<pre><code><span class="keyword">class</span> <span class="title">Program</span>
+{
+    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)
+    </span>{
+        <span class="keyword">string</span> hello = <span class="string">"hello world"</span>;
 
-<span class="constant">saver</span> = tf.train.Saver()
+        <span class="comment">//这里也可简写成Thread thread = new Thread(ThreadMainWithParameters);</span>
+        <span class="comment">//但是为了让大家知道这里用的是ParameterizedThreadStart委托，就没有简写了</span>
+        Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ParameterizedThreadStart(ThreadMainWithParameters));
+        thread.Start(hello);
 
-<span class="comment"># creat the session you used in the training processing</span>
-<span class="comment"># launch the model</span>
+        Console.Read();
+    }
 
-with tf.Session() as sess:
-  <span class="comment"># Restore variables from disk.</span>
-  saver.restore(sess, "/your/path/model.ckpt")
-  print("Model restored.")
-  <span class="comment"># Do some work with the model, such as do a prediction</span>
-  pred = sess.run(y_, feed_dict={batch_x})
-  ...
-</code></pre><p>有关TensorFlow中变量的创建、存储及恢复操作，详细见<a href="http://tensorflow.org/how_tos/variables/index.md" target="_blank" rel="external">API文档</a>.</p>
-<p><strong>Step 2: 通过tf.trainable_variables()得到训练参数</strong></p>
-<p>tf.trainable_variables()方法将返回模型中所有可训练的参数，详细见<a href="https://www.tensorflow.org/versions/r0.7/api_docs/python/state_ops.html#trainable_variables" target="_blank" rel="external">API文档</a>。类似于以下的变量参数不会被返回：</p>
-<pre><code>tf_var = tf.<span class="function"><span class="title">Variable</span><span class="params">(<span class="number">0</span>, name=<span class="string">"××××××"</span>, trainable=False)</span></span>
-</code></pre><p>还可以通过<code>Variable</code>的<code>name</code>属性过滤出需要查看的参数，如下：</p>
-<pre><code><span class="tag">var</span> = [v <span class="keyword">for</span> v <span class="keyword">in</span> t_vars <span class="keyword">if</span> v<span class="class">.name</span> == <span class="string">"W"</span>]
-</code></pre><p>（不断更新中…）</p>
+    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ThreadMainWithParameters</span>(<span class="params"><span class="keyword">object</span> obj</span>)
+    </span>{
+        <span class="keyword">string</span> str = obj <span class="keyword">as</span> <span class="keyword">string</span>;
+        <span class="keyword">if</span>(!<span class="keyword">string</span>.IsNullOrEmpty(str))
+            Console.WriteLine(<span class="string">"Running in a thread,received: {0}"</span>, str);
+    }
+}
+</code></pre><p>这里稍微有点麻烦的就是 <strong>ThreadMainWithParameters方法 里的参数必须是 object类型 的</strong>，我们需要进行类型转换。为什么参数必须是object类型呢？看看ParameterizedThreadStart委托的声明就知道了。</p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">ParameterizedThreadStart</span>(<span class="params"><span class="keyword">object</span> obj</span>)</span>;   <span class="comment">//ParameterizedThreadStart委托的声明</span>
+</code></pre><ol>
+<li><strong>创建自定义类</strong></li>
+</ol>
+<p>定义一个类，在其中定义需要的字段，将线程的主方法定义为类的一个实例方法。如下面的例子：</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyThread</span>
+{
+    <span class="keyword">private</span> <span class="keyword">string</span> data;
+
+    <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span>(<span class="params"><span class="keyword">string</span> data</span>)
+    </span>{
+        <span class="keyword">this</span>.data = data;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ThreadMain</span>(<span class="params"></span>)
+    </span>{
+        Console.WriteLine(<span class="string">"Running in a thread,data: {0}"</span>, data);
+    }
+}
+
+<span class="keyword">class</span> <span class="title">Program</span>
+{
+    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)
+    </span>{
+        MyThread myThread = <span class="keyword">new</span> MyThread(<span class="string">"hello world"</span>);
+
+        Thread thread = <span class="keyword">new</span> Thread(myThread.ThreadMain);
+        thread.Start();
+
+        Console.Read();
+    }
+}    
+</code></pre><ol>
+<li><strong>使用匿名方法</strong></li>
+</ol>
+<p>示例如下：</p>
+<pre><code><span class="keyword">class</span> <span class="title">Program</span>
+{
+    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)
+    </span>{
+        <span class="keyword">string</span> hello = <span class="string">"hello world"</span>;
+
+        <span class="comment">//如果写成Thread thread = new Thread(ThreadMainWithParameters(hello));这种形式，编译时就会报错</span>
+        Thread thread = <span class="keyword">new</span> Thread(() =&gt; ThreadMainWithParameters(hello));
+        thread.Start();
+
+        Console.Read();
+    }
+
+    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ThreadMainWithParameters</span>(<span class="params"><span class="keyword">string</span> str</span>)
+    </span>{
+         Console.WriteLine(<span class="string">"Running in a thread,received: {0}"</span>, str);
+    }
+</code></pre><p>通过反编译体现了第三种方法其实和第二种方法其实是一样的。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
-<p><a href="http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html">http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html</a></p>
+<p><a href="http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html">http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</a></p>
 <p><strong>参考资料</strong></p>
-<p><a href="https://stackoverflow.com/questions/33759623/tensorflow-how-to-restore-a-previously-saved-model-python" target="_blank" rel="external">Tensorflow: How to restore a previously saved model (python)</a></p>
-<p><a href="https://stackoverflow.com/questions/34172622/get-original-value-of-tensor-in-tensorflow" target="_blank" rel="external">Get original value of Tensor in Tensorflow</a></p>
-<p><a href="https://stackoverflow.com/questions/36193553/get-the-value-of-some-weights-in-a-model-trained-by-tensorflow" target="_blank" rel="external">Get the value of some weights in a model trained by TensorFlow</a></p>
+<p><a href="http://www.cnblogs.com/leslies2/archive/2012/02/07/2310495.html#t3" target="_blank" rel="external">C#综合揭秘——细说多线程</a></p>
+<p><a href="http://www.runoob.com/csharp/csharp-multithreading.html" target="_blank" rel="external">C#多线程 | 菜鸟教程</a></p>
+<p><a href="http://www.cnblogs.com/lexiaoyao/archive/2011/12/01/2271120.html" target="_blank" rel="external">C# 给多线程传参的三种方式</a></p>
 </span>
       
     </div>
@@ -390,13 +502,9 @@ with tf.Session() as sess:
       
         <div class="post-tags">
           
-            <a href="/tags/Artificial-Intelligence/" rel="tag">#Artificial Intelligence</a>
+            <a href="/tags/C/" rel="tag">#C#</a>
           
-            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
-          
-            <a href="/tags/Machine-Learning/" rel="tag">#Machine Learning</a>
-          
-            <a href="/tags/TensorFlow/" rel="tag">#TensorFlow</a>
+            <a href="/tags/multithreading/" rel="tag">#multithreading</a>
           
         </div>
       
@@ -405,17 +513,13 @@ with tf.Session() as sess:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tensorflow-learning-notes-3.html" rel="next" title="TensorFlow学习笔记3：词向量">
-                <i class="fa fa-chevron-left"></i> TensorFlow学习笔记3：词向量
+              <a href="/using-azure-to-set-up-vpn-service.html" rel="next" title="使用Azure和Shadowsocks搭建VPN服务">
+                <i class="fa fa-chevron-left"></i> 使用Azure和Shadowsocks搭建VPN服务
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/python-learning-notes-and-common-problems.html" rel="prev" title="python学习笔记与常见问题">
-                python学习笔记与常见问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +705,7 @@ with tf.Session() as sess:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-_如何查看TensorFlow中Tensor,_Variable,_Constant的值？"><span class="nav-number">1.</span> <span class="nav-text">Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2-_模型训练完成后，如何获取模型的参数？"><span class="nav-number">2.</span> <span class="nav-text">Q2. 模型训练完成后，如何获取模型的参数？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解进程与线程"><span class="nav-number">1.</span> <span class="nav-text">理解进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">2.</span> <span class="nav-text">线程的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的操作"><span class="nav-number">3.</span> <span class="nav-text">线程的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#System-Threading-Thread类"><span class="nav-number">3.1.</span> <span class="nav-text">System.Threading.Thread类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">3.1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序示例"><span class="nav-number">3.1.3.</span> <span class="nav-text">程序示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程"><span class="nav-number">3.2.</span> <span class="nav-text">实现多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无参数传入：使用ThreadStart委托"><span class="nav-number">3.2.1.</span> <span class="nav-text">无参数传入：使用ThreadStart委托</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数传入：三种方式"><span class="nav-number">3.2.2.</span> <span class="nav-text">参数传入：三种方式</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -668,9 +772,9 @@ with tf.Session() as sess:
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'problems-with-solution-in-tensorflow.html';
-      var disqus_title = 'TensorFlow中遇到的问题及解决方法';
-      var disqus_url = 'http://www.jeyzhang.com/problems-with-solution-in-tensorflow.html';
+      var disqus_identifier = 'csharp-learning-notes-2-multithreading.html';
+      var disqus_title = 'C#学习笔记2：多线程';
+      var disqus_url = 'http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

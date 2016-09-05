@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
-    <lastmod>2016-08-20T04:04:33.812Z</lastmod>
+    <lastmod>2016-09-05T09:52:21.901Z</lastmod>
     <data>
         <display>
         <title>使用Azure和Shadowsocks搭建VPN服务</title>
@@ -21,6 +21,48 @@
            
              
               <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
+    <lastmod>2016-08-28T03:17:28.028Z</lastmod>
+    <data>
+        <display>
+        <title>C#学习笔记2：多线程</title>
+        <pubTime>2016-08-28T02:18:53.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>multithreading</tag>
+         
+         
+           
+             
+              <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/csharp-learning-notes-1-qna.html</loc>
+    <lastmod>2016-08-28T01:52:20.685Z</lastmod>
+    <data>
+        <display>
+        <title>C#学习笔记1：常见问题</title>
+        <pubTime>2016-08-01T12:00:26.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+         
+           
+             
+              <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
           
         </display>
     </data>
@@ -67,26 +109,6 @@
            
              
               <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/csharp-learning-notes-1-qna.html</loc>
-    <lastmod>2016-08-20T03:58:46.925Z</lastmod>
-    <data>
-        <display>
-        <title>C#学习笔记1：常见问题</title>
-        <pubTime>2016-08-01T12:00:26.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-         
-           
-             
-              <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
           
         </display>
     </data>

@@ -51,31 +51,31 @@
 
 
 
-<meta name="description" content="关键字ref与out的区别C#中参数传递的方式有两种，分别是值传递和引用传递。ref与out这两种方式都是属于引用传递。唯一的区别在于：
+<meta name="description" content="概念同步、异步、阻塞、非阻塞转自知乎-严肃的回答：
+“阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。
 
-out关键字修饰的参数需要在调用的函数内部先初始化，再使用；
-ref关键字修饰的参数需要在调用函数前，先初始化再传入函数；
+同步与异步
 
-static readonly与const的区别static readonly与const非常类似，共同点有：(1) 通过类名而不是对">
+同步和异步关注的是消息通信机制 (synchronous communication/ asynchronous communication)。所谓同步，就是在发出一个调用时，在没有得到结果之前，该调用就不返回。但是一旦调用返回，就得到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#学习笔记1：常见问题">
 <meta property="og:url" content="http://www.jeyzhang.com/csharp-learning-notes-1-qna.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="关键字ref与out的区别C#中参数传递的方式有两种，分别是值传递和引用传递。ref与out这两种方式都是属于引用传递。唯一的区别在于：
+<meta property="og:description" content="概念同步、异步、阻塞、非阻塞转自知乎-严肃的回答：
+“阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。
 
-out关键字修饰的参数需要在调用的函数内部先初始化，再使用；
-ref关键字修饰的参数需要在调用函数前，先初始化再传入函数；
+同步与异步
 
-static readonly与const的区别static readonly与const非常类似，共同点有：(1) 通过类名而不是对">
-<meta property="og:updated_time" content="2016-08-20T03:58:46.925Z">
+同步和异步关注的是消息通信机制 (synchronous communication/ asynchronous communication)。所谓同步，就是在发出一个调用时，在没有得到结果之前，该调用就不返回。但是一旦调用返回，就得到">
+<meta property="og:updated_time" content="2016-08-28T01:52:20.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#学习笔记1：常见问题">
-<meta name="twitter:description" content="关键字ref与out的区别C#中参数传递的方式有两种，分别是值传递和引用传递。ref与out这两种方式都是属于引用传递。唯一的区别在于：
+<meta name="twitter:description" content="概念同步、异步、阻塞、非阻塞转自知乎-严肃的回答：
+“阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。
 
-out关键字修饰的参数需要在调用的函数内部先初始化，再使用；
-ref关键字修饰的参数需要在调用函数前，先初始化再传入函数；
+同步与异步
 
-static readonly与const的区别static readonly与const非常类似，共同点有：(1) 通过类名而不是对">
+同步和异步关注的是消息通信机制 (synchronous communication/ asynchronous communication)。所谓同步，就是在发出一个调用时，在没有得到结果之前，该调用就不返回。但是一旦调用返回，就得到">
 
 
 
@@ -334,7 +334,32 @@ static readonly与const的区别static readonly与const非常类似，共同点�
       
 
       
-        <span itemprop="articleBody"><h2 id="关键字">关键字</h2><h3 id="ref与out的区别">ref与out的区别</h3><p>C#中参数传递的方式有两种，分别是值传递和引用传递。<code>ref</code>与<code>out</code>这两种方式都是属于引用传递。唯一的区别在于：</p>
+        <span itemprop="articleBody"><h2 id="概念">概念</h2><h3 id="同步、异步、阻塞、非阻塞">同步、异步、阻塞、非阻塞</h3><p>转自<a href="https://www.zhihu.com/question/19732473" target="_blank" rel="external">知乎-严肃的回答</a>：</p>
+<p>“阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。</p>
+<ul>
+<li><strong>同步与异步</strong></li>
+</ul>
+<p>同步和异步关注的是<strong>消息通信机制 (synchronous communication/ asynchronous communication)</strong>。<br>所谓同步，就是在发出一个<em>调用</em>时，在没有得到结果之前，该<em>调用</em>就不返回。但是一旦调用返回，就得到返回值了。<br>换句话说，就是由<em>调用者</em>主动等待这个<em>调用</em>的结果。</p>
+<p>而异步则是相反，<em>调用</em>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<em>调用</em>发出后，<em>被调用者</em>通过状态、通知来通知调用者，或通过回调函数处理这个调用。</p>
+<p>典型的异步编程模型比如Node.js，举个例子：</p>
+<p>普通B/S模式（同步）AJAX技术（异步）</p>
+<p>同步：提交请求-&gt;等待服务器处理-&gt;处理完毕返回 这个期间客户端浏览器不能干任何事</p>
+<p>异步: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕</p>
+<p>举个通俗的例子：</p>
+<p>你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下”，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。<br>而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调。</p>
+<ul>
+<li><strong>阻塞与非阻塞</strong></li>
+</ul>
+<p>阻塞和非阻塞关注的是<strong>程序在等待调用结果（消息，返回值）时的状态</strong>.</p>
+<p>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。<br>非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。</p>
+<p>还是上面的例子，</p>
+<p>你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果，如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了， 当然你也要偶尔过几分钟check一下老板有没有返回结果。<br>在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。</p>
+<h2 id="语法">语法</h2><h3 id="int?_的意思">int? 的意思</h3><p>下面两种声明int变量的方式：</p>
+<pre><code><span class="built_in">int</span> <span class="built_in">num</span>
+<span class="built_in">int</span>? <span class="built_in">num</span>
+</code></pre><p>区别在于，第二种中的num可以为空（或者赋值为null），而第一种只能赋值整数类型值。</p>
+<p>对于其他的基础类型也同样适用。</p>
+<h2 id="关键字">关键字</h2><h3 id="ref与out的区别">ref与out的区别</h3><p>C#中参数传递的方式有两种，分别是值传递和引用传递。<code>ref</code>与<code>out</code>这两种方式都是属于引用传递。唯一的区别在于：</p>
 <ul>
 <li><code>out</code>关键字修饰的参数需要<strong>在调用的函数内部先初始化，再使用</strong>；</li>
 <li><code>ref</code>关键字修饰的参数需要<strong>在调用函数前，先初始化再传入函数</strong>；</li>
@@ -554,7 +579,7 @@ static readonly与const的区别static readonly与const非常类似，共同点�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -568,7 +593,7 @@ static readonly与const的区别static readonly与const非常类似，共同点�
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -645,7 +670,7 @@ static readonly与const的区别static readonly与const非常类似，共同点�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">1.</span> <span class="nav-text">关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ref与out的区别"><span class="nav-number">1.1.</span> <span class="nav-text">ref与out的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static_readonly与const的区别"><span class="nav-number">1.2.</span> <span class="nav-text">static readonly与const的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static关键字"><span class="nav-number">1.3.</span> <span class="nav-text">static关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句"><span class="nav-number">2.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用using_block"><span class="nav-number">2.1.</span> <span class="nav-text">使用using block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用LINQ语句"><span class="nav-number">2.2.</span> <span class="nav-text">使用LINQ语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OO相关"><span class="nav-number">3.</span> <span class="nav-text">OO相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C#中的field与property"><span class="nav-number">3.1.</span> <span class="nav-text">C#中的field与property</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步、异步、阻塞、非阻塞"><span class="nav-number">1.1.</span> <span class="nav-text">同步、异步、阻塞、非阻塞</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#int?_的意思"><span class="nav-number">2.1.</span> <span class="nav-text">int? 的意思</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">3.</span> <span class="nav-text">关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ref与out的区别"><span class="nav-number">3.1.</span> <span class="nav-text">ref与out的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static_readonly与const的区别"><span class="nav-number">3.2.</span> <span class="nav-text">static readonly与const的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static关键字"><span class="nav-number">3.3.</span> <span class="nav-text">static关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句"><span class="nav-number">4.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用using_block"><span class="nav-number">4.1.</span> <span class="nav-text">使用using block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用LINQ语句"><span class="nav-number">4.2.</span> <span class="nav-text">使用LINQ语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OO相关"><span class="nav-number">5.</span> <span class="nav-text">OO相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C#中的field与property"><span class="nav-number">5.1.</span> <span class="nav-text">C#中的field与property</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

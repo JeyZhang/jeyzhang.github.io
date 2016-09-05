@@ -70,7 +70,7 @@
 <meta property="og:image" content="http://i.imgur.com/Z9tXOOp.png">
 <meta property="og:image" content="http://i.imgur.com/WaXt6ZU.png">
 <meta property="og:image" content="http://i.imgur.com/eoN7AS8.png">
-<meta property="og:updated_time" content="2016-08-20T04:04:33.812Z">
+<meta property="og:updated_time" content="2016-09-05T09:52:21.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Azure和Shadowsocks搭建VPN服务">
 <meta name="twitter:description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
@@ -351,7 +351,7 @@
 <p>进入VM后，输入以下命令进行系统的更新操作：</p>
 <pre><code>sudo apt <span class="operator"><span class="keyword">update</span>
 sudo apt dist-<span class="keyword">upgrade</span></span>
-</code></pre><h4 id="配置Shadowsocks">配置Shadowsocks</h4><p>安装 shadowsocks，shadowsocks 有 C 和 Python 两个版本。这里安装 C的版本。</p>
+</code></pre><h4 id="配置Shadowsocks">配置Shadowsocks</h4><p>安装 shadowsocks，shadowsocks 有 C 和 Python 两个版本。这里安装 C的版本（注意C版本目前不支持多端口实现多用户连接）。</p>
 <p>在终端输入</p>
 <pre><code>sudo git <span class="keyword">clone</span> <span class="title">https</span>://github.com/shadowsocks/shadowsocks-libev
 </code></pre><p>完成后，在当前目录下输入以下命令</p>
@@ -435,6 +435,8 @@ sudo vim jail.<span class="keyword">local</span>
 <p>输入VM的public IP地址，端口和密码，Encryption栏选择rc4-md5，OK即可。</p>
 <p>之后你应该可以正常使用VPN服务了，不过要注意使用时长和使用流量，感觉Azure应该会单独进行计费。</p>
 <hr>
+<p>【插播一条广告】</p>
+<p><strong>如需使用VPN服务，可邮件联系我。价格为每月7元，提供VPN配置服务。</strong></p>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
 <p><a href="http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html">http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</a></p>
@@ -466,6 +468,10 @@ sudo vim jail.<span class="keyword">local</span>
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/csharp-learning-notes-2-multithreading.html" rel="prev" title="C#学习笔记2：多线程">
+                C#学习笔记2：多线程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -560,7 +566,7 @@ sudo vim jail.<span class="keyword">local</span>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -574,7 +580,7 @@ sudo vim jail.<span class="keyword">local</span>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
