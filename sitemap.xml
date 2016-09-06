@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
+    <lastmod>2016-09-06T09:20:17.654Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/about/index.html</loc>
     <lastmod>2016-09-06T09:11:39.765Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
     <lastmod>2016-09-06T09:09:11.956Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
-    <lastmod>2016-08-28T03:17:28.028Z</lastmod>
   </url>
   
   <url>

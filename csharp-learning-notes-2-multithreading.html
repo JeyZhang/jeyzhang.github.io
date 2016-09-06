@@ -63,7 +63,7 @@
 <meta property="og:image" content="http://i.imgur.com/TyjtHe2.png">
 <meta property="og:image" content="http://i.imgur.com/NGRlCRH.png">
 <meta property="og:image" content="http://i.imgur.com/7vb7sR3.png">
-<meta property="og:updated_time" content="2016-08-28T03:17:28.028Z">
+<meta property="og:updated_time" content="2016-09-06T09:20:17.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#学习笔记2：多线程">
 <meta name="twitter:description" content="理解进程与线程进程 (Process) 是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。
@@ -406,9 +406,9 @@
 </code></pre><p>在调用 Thread.Start()方法 后，系统以异步方式运行 Message.ShowMessage()，而主线程的操作是继续执行的，在 Message.ShowMessage() 完成前，主线程已完成所有的操作。结果如下：</p>
 <p><img src="http://i.imgur.com/7vb7sR3.png" alt=""></p>
 <h4 id="参数传入：三种方式">参数传入：三种方式</h4><p>使用 ThreadStart委托 的缺点在于无法给线程传递参数，下面介绍三种方式以实现给线程传递参数：</p>
-<ol>
+<ul>
 <li><strong>使用ParameterizedThreadStart委托</strong></li>
-</ol>
+</ul>
 <p>如果使用了ParameterizedThreadStart委托，线程的入口必须有一个object类型的参数，且返回类型为void。如下面的例子：</p>
 <pre><code><span class="keyword">class</span> <span class="title">Program</span>
 {
@@ -433,9 +433,9 @@
 }
 </code></pre><p>这里稍微有点麻烦的就是 <strong>ThreadMainWithParameters方法 里的参数必须是 object类型 的</strong>，我们需要进行类型转换。为什么参数必须是object类型呢？看看ParameterizedThreadStart委托的声明就知道了。</p>
 <pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">ParameterizedThreadStart</span>(<span class="params"><span class="keyword">object</span> obj</span>)</span>;   <span class="comment">//ParameterizedThreadStart委托的声明</span>
-</code></pre><ol>
+</code></pre><ul>
 <li><strong>创建自定义类</strong></li>
-</ol>
+</ul>
 <p>定义一个类，在其中定义需要的字段，将线程的主方法定义为类的一个实例方法。如下面的例子：</p>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyThread</span>
 {
@@ -464,9 +464,9 @@
         Console.Read();
     }
 }    
-</code></pre><ol>
+</code></pre><ul>
 <li><strong>使用匿名方法</strong></li>
-</ol>
+</ul>
 <p>示例如下：</p>
 <pre><code><span class="keyword">class</span> <span class="title">Program</span>
 {
