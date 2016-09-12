@@ -51,19 +51,16 @@
 
 
 
-<meta name="description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
+<meta name="description" content="下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
 
-
-在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），">
+在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），登录之后，在页面左上方点击 +New，选择 Virtual Machines；点击 See all，接下来会有一些不同类型的服务器OS供你选择，一般选择Linux会比相同配置下的Windows便宜不少，这里建议选择 Ubuntu Server 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Azure和Shadowsocks搭建VPN服务">
 <meta property="og:url" content="http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
+<meta property="og:description" content="下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
 
-
-在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），">
-<meta property="og:image" content="http://i.imgur.com/9ZSm50O.png">
+在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），登录之后，在页面左上方点击 +New，选择 Virtual Machines；点击 See all，接下来会有一些不同类型的服务器OS供你选择，一般选择Linux会比相同配置下的Windows便宜不少，这里建议选择 Ubuntu Server 1">
 <meta property="og:image" content="http://i.imgur.com/hTtwuP7.png">
 <meta property="og:image" content="http://i.imgur.com/mbGGuiA.png">
 <meta property="og:image" content="http://i.imgur.com/nrcLrb5.png">
@@ -71,13 +68,12 @@
 <meta property="og:image" content="http://i.imgur.com/WaXt6ZU.png">
 <meta property="og:image" content="http://i.imgur.com/eoN7AS8.png">
 <meta property="og:image" content="http://i.imgur.com/HzMvtp6.gif">
-<meta property="og:updated_time" content="2016-09-06T09:09:11.956Z">
+<meta property="og:updated_time" content="2016-09-12T13:28:28.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Azure和Shadowsocks搭建VPN服务">
-<meta name="twitter:description" content="在Visual Studio Essential里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
+<meta name="twitter:description" content="下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。
 
-
-在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），">
+在Azure中创建一个虚拟机(VM)打开Azure的门户网站（新版），登录之后，在页面左上方点击 +New，选择 Virtual Machines；点击 See all，接下来会有一些不同类型的服务器OS供你选择，一般选择Linux会比相同配置下的Windows便宜不少，这里建议选择 Ubuntu Server 1">
 
 
 
@@ -336,8 +332,7 @@
       
 
       
-        <span itemprop="articleBody"><p>在<a href="https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx" target="_blank" rel="external">Visual Studio Essential</a>里面发现微软的FTE有一些小福利，如下图。其中，每个月会送150刀的Azure使用费用，所以就准备撸起袖子薅一薅公司的羊毛（大雾）。普通用户每个月有25刀的Azure使用费用，也可以好好利用一下。下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。</p>
-<p><img src="http://i.imgur.com/9ZSm50O.png" alt=""></p>
+        <span itemprop="articleBody"><p>下面介绍如何利用Azure来搭建VPN服务（这里使用的是国外的Azure服务）。</p>
 <hr>
 <h3 id="在Azure中创建一个虚拟机(VM)">在Azure中创建一个虚拟机(VM)</h3><p>打开<a href="https://ms.portal.azure.com" target="_blank" rel="external">Azure的门户网站（新版）</a>，登录之后，在页面左上方点击 <strong>+New</strong>，选择 <strong>Virtual Machines</strong>；点击 <strong>See all</strong>，接下来会有一些不同类型的服务器OS供你选择，一般选择Linux会比相同配置下的Windows便宜不少，这里建议选择 <strong>Ubuntu Server 16.04 / 14.04 LTS</strong>；选择 <strong>Resource Manager</strong> 模式进行创建即可。</p>
 <p><img src="http://i.imgur.com/hTtwuP7.png" alt=""></p>
