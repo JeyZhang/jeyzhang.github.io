@@ -77,7 +77,7 @@
 <meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585655553885.jpg">
 <meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585661398239.jpg">
 <meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585667357562.png">
-<meta property="og:updated_time" content="2016-10-19T06:52:29.735Z">
+<meta property="og:updated_time" content="2016-10-19T06:54:16.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解LSTM网络">
 <meta name="twitter:description" content="循环神经网络(RNN)人们的每次思考并不都是从零开始的。比如说你在阅读这篇文章时，你基于对前面的文字的理解来理解你目前阅读到的文字，而不是每读到一个文字时，都抛弃掉前面的思考，从头开始。你的记忆是有持久性的。
@@ -373,7 +373,7 @@
 <p>门是一种选择性让信息通过的方法。它们由一个Sigmoid神经网络层和一个元素级相乘操作组成。</p>
 <p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585511223368.jpg" alt="-c100"></p>
 <p>Sigmoid层输出0~1之间的值，每个值表示对应的部分信息是否应该通过。0值表示不允许信息通过，1值表示让所有信息通过。一个LSTM有3个这种门，来保护和控制元胞状态。</p>
-<h2 id="LSTM分步详解">LSTM分步详解</h2><p>LSTM的第一步是决定我们将要从元胞状态中扔掉哪些信息。该决定由一个叫做“遗忘门(Forget Gate)”的Sigmoid层控制。遗忘门观察$h<em>{t-1}$和\(x</em>{t}\)，对于元胞状态\(C_{t-1}\)中的每一个元素，输出一个0~1之间的数。1表示“完全保留该信息”，0表示“完全丢弃该信息”。</p>
+<h2 id="LSTM分步详解">LSTM分步详解</h2><p>LSTM的第一步是决定我们将要从元胞状态中扔掉哪些信息。该决定由一个叫做“遗忘门(Forget Gate)”的Sigmoid层控制。遗忘门观察、\(h<em>{t-1}\)和\(x</em>{t}\)，对于元胞状态\(C_{t-1}\)中的每一个元素，输出一个0~1之间的数。1表示“完全保留该信息”，0表示“完全丢弃该信息”。</p>
 <p>回到之前的预测下一个单词的例子。在这样的一个问题中，元胞状态可能包含当前主语的性别信息，以用来选择正确的物主代词。当我们遇到一个新的主语时，我们就需要把旧的性别信息遗忘掉。</p>
 <p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585517843913.jpg" alt="-c600"></p>
 <p>下一步是决定我们将会把哪些新信息存储到元胞状态中。这步分为两部分。首先，有一个叫做“输入门(Input Gate)”的Sigmoid层决定我们要更新哪些信息。接下来，一个tanh层创造了一个新的候选值，$\tilde{C_t}$，该值可能被加入到元胞状态中。在下一步中，我们将会把这两个值组合起来用于更新元胞状态。</p>
