@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Linux,Mac,Windows,shadowsocks,vpn," />
+  <meta name="keywords" content="Android,Linux,Mac,Shadowsocks,VPN,Windows,iOS," />
 
 
 
@@ -74,13 +74,17 @@
 <meta property="og:image" content="http://i.imgur.com/h6S0Jyl.png">
 <meta property="og:image" content="http://i.imgur.com/2Fv7xcL.png">
 <meta property="og:image" content="http://i.imgur.com/RbYWilM.png">
+<meta property="og:image" content="http://i.imgur.com/itFnELi.png">
+<meta property="og:image" content="http://i.imgur.com/GUmwU9Z.png">
+<meta property="og:image" content="http://i.imgur.com/uVxRQyn.png">
+<meta property="og:image" content="http://i.imgur.com/YX4Ndke.png">
 <meta property="og:image" content="http://i.imgur.com/A2TKNMI.jpg">
 <meta property="og:image" content="http://i.imgur.com/GUZO2f4.jpg">
 <meta property="og:image" content="http://i.imgur.com/ejXEesK.jpg">
 <meta property="og:image" content="http://i.imgur.com/Ke40JYP.jpg">
 <meta property="og:image" content="http://i.imgur.com/rFlvuX5.jpg">
 <meta property="og:image" content="http://i.imgur.com/HzMvtp6.gif">
-<meta property="og:updated_time" content="2016-10-13T12:41:35.436Z">
+<meta property="og:updated_time" content="2016-12-04T12:19:00.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="各种系统下Shadowsocks客户端的安装与配置">
 <meta name="twitter:description" content="下面介绍如何在 Windows / Mac / Linux(Ubuntu) / Android 系统下对Shadowsocks的客户端（下面简称SS）的安装和配置，以便于使用相应的VPN服务。在此之前假设你已经知道了SS服务器的端口和密码，如果不知道的话，可以向VPN的提供者（管理员）索要。这里假设你使用的是我的VPN服务，端口号和密码已经获取得到，请结合自己所使用的系统环境找到对应的安装配置方法">
@@ -353,7 +357,7 @@
 <p>下载解压后，你会看到一个Shadowsocks.exe的文件。</p>
 <h3 id="第二步：配置客户端">第二步：配置客户端</h3><p>运行exe文件，你会看到如下窗口；请按照图片中的内容进行配置：</p>
 <p><img src="http://i.imgur.com/GeA3Wtj.png" alt=""></p>
-<p><strong>输入端口号和密码，点击OK即可</strong>，之后你应该就可以正常访问外网了。</p>
+<p><strong>输入端口号和密码，点击OK，右键右下角的运行图标：勾选[启动系统代理]</strong>，之后你应该就可以正常访问外网了。</p>
 <h2 id="MAC系统下的VPN配置方法">MAC系统下的VPN配置方法</h2><h3 id="第一步：下载SS客户端-1">第一步：下载SS客户端</h3><ul>
 <li>下载方式：百度云</li>
 <li>下载链接：<a href="http://pan.baidu.com/s/1nuN2l2D" target="_blank" rel="external">点击此处</a></li>
@@ -426,6 +430,16 @@ sudo apt-<span class="built_in">get</span> install <span class="keyword">python<
 <p>然后点击”Options”，按照如下进行配置：</p>
 <p><img src="http://i.imgur.com/RbYWilM.png" alt=""></p>
 <p>配置完成后，重启浏览器，点击应用图标，选择刚才配置的”SS”即可。之后你应该就可以正常访问国外网站啦。</p>
+<h2 id="iOS系统下的Shadowsocks配置">iOS系统下的Shadowsocks配置</h2><p>适用于iPhone和iPad。</p>
+<p>首先打开AppStore应用商店，搜索<strong>Wingy</strong>应用（目前是免费应用），下载并安装。</p>
+<h3 id="第一步：添加线路">第一步：添加线路</h3><p>打开应用后，首页显示如下，<strong>点击[选择线路（添加线路）]</strong>：</p>
+<p><img src="http://i.imgur.com/itFnELi.png" alt=""></p>
+<p><img src="http://i.imgur.com/GUmwU9Z.png" alt=""></p>
+<h3 id="第二步：配置">第二步：配置</h3><p>按照如下的<strong>红框要求</strong>，填写配置信息（你的端口号和密码），最后保存退出。</p>
+<p><img src="http://i.imgur.com/uVxRQyn.png" alt=""></p>
+<p>回到首页后，点击中间大大的 [开启按钮] 即可打开VPN（注意：弹出的系统框<strong>选择Allow</strong>）。</p>
+<p>之后你就可以自由地上网啦~</p>
+<p><img src="http://i.imgur.com/YX4Ndke.png" alt=""></p>
 <h2 id="Android系统下的Shadowsocks配置">Android系统下的Shadowsocks配置</h2><p>下面介绍如何在Android系统下进行Shadowsocks的配置，以使用VPN服务。注意，你的安卓手机最好先root，root的教程就不再赘述了，网上搜索下载个root的软件即可。本教程使用的安卓手机为乐视1s手机，其他安卓系统的手机操作方式类似。</p>
 <h3 id="第一步：下载SS客户端-2">第一步：下载SS客户端</h3><ul>
 <li>下载方式：百度云</li>
@@ -465,11 +479,13 @@ sudo apt-<span class="built_in">get</span> install <span class="keyword">python<
           
             <a href="/tags/Mac/" rel="tag">#Mac</a>
           
+            <a href="/tags/Shadowsocks/" rel="tag">#Shadowsocks</a>
+          
+            <a href="/tags/VPN/" rel="tag">#VPN</a>
+          
             <a href="/tags/Windows/" rel="tag">#Windows</a>
           
-            <a href="/tags/shadowsocks/" rel="tag">#shadowsocks</a>
-          
-            <a href="/tags/vpn/" rel="tag">#vpn</a>
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
         </div>
       
@@ -583,7 +599,7 @@ sudo apt-<span class="built_in">get</span> install <span class="keyword">python<
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -597,7 +613,7 @@ sudo apt-<span class="built_in">get</span> install <span class="keyword">python<
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -674,7 +690,7 @@ sudo apt-<span class="built_in">get</span> install <span class="keyword">python<
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows下SS客户端的安装与配置"><span class="nav-number">1.</span> <span class="nav-text">Windows下SS客户端的安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：下载SS客户端"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：下载SS客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：配置客户端"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：配置客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC系统下的VPN配置方法"><span class="nav-number">2.</span> <span class="nav-text">MAC系统下的VPN配置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：下载SS客户端-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一步：下载SS客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：运行客户端"><span class="nav-number">2.2.</span> <span class="nav-text">第二步：运行客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux_(Ubuntu_14-04)下Shadowsocks的配置方法"><span class="nav-number">3.</span> <span class="nav-text">Linux (Ubuntu 14.04)下Shadowsocks的配置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：配置Shadowsocks命令行程序"><span class="nav-number">3.1.</span> <span class="nav-text">第一步：配置Shadowsocks命令行程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：配置浏览器"><span class="nav-number">3.2.</span> <span class="nav-text">第二步：配置浏览器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android系统下的Shadowsocks配置"><span class="nav-number">4.</span> <span class="nav-text">Android系统下的Shadowsocks配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：下载SS客户端-2"><span class="nav-number">4.1.</span> <span class="nav-text">第一步：下载SS客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：导入apk文件至手机"><span class="nav-number">4.2.</span> <span class="nav-text">第二步：导入apk文件至手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：打开Shadowsocks客户端，进行相应的配置"><span class="nav-number">4.3.</span> <span class="nav-text">第三步：打开Shadowsocks客户端，进行相应的配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows下SS客户端的安装与配置"><span class="nav-number">1.</span> <span class="nav-text">Windows下SS客户端的安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：下载SS客户端"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：下载SS客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：配置客户端"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：配置客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC系统下的VPN配置方法"><span class="nav-number">2.</span> <span class="nav-text">MAC系统下的VPN配置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：下载SS客户端-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一步：下载SS客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：运行客户端"><span class="nav-number">2.2.</span> <span class="nav-text">第二步：运行客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux_(Ubuntu_14-04)下Shadowsocks的配置方法"><span class="nav-number">3.</span> <span class="nav-text">Linux (Ubuntu 14.04)下Shadowsocks的配置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：配置Shadowsocks命令行程序"><span class="nav-number">3.1.</span> <span class="nav-text">第一步：配置Shadowsocks命令行程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：配置浏览器"><span class="nav-number">3.2.</span> <span class="nav-text">第二步：配置浏览器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS系统下的Shadowsocks配置"><span class="nav-number">4.</span> <span class="nav-text">iOS系统下的Shadowsocks配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：添加线路"><span class="nav-number">4.1.</span> <span class="nav-text">第一步：添加线路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：配置"><span class="nav-number">4.2.</span> <span class="nav-text">第二步：配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android系统下的Shadowsocks配置"><span class="nav-number">5.</span> <span class="nav-text">Android系统下的Shadowsocks配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：下载SS客户端-2"><span class="nav-number">5.1.</span> <span class="nav-text">第一步：下载SS客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：导入apk文件至手机"><span class="nav-number">5.2.</span> <span class="nav-text">第二步：导入apk文件至手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：打开Shadowsocks客户端，进行相应的配置"><span class="nav-number">5.3.</span> <span class="nav-text">第三步：打开Shadowsocks客户端，进行相应的配置</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

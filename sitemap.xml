@@ -2,18 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
-    <lastmod>2016-10-19T08:07:08.744Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2016-10-13T12:41:35.436Z</lastmod>
+    <lastmod>2016-12-04T12:19:00.730Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/about/index.html</loc>
-    <lastmod>2016-09-19T12:01:10.464Z</lastmod>
+    <lastmod>2016-12-04T11:58:40.938Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
+    <lastmod>2016-11-27T03:23:39.273Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2016-11-27T03:08:12.691Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
+    <lastmod>2016-10-19T08:07:08.744Z</lastmod>
   </url>
   
   <url>
@@ -44,11 +54,6 @@
   <url>
     <loc>http://www.jeyzhang.com/cshape-learning-notes-0.html</loc>
     <lastmod>2016-08-20T03:58:27.068Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2016-08-20T03:58:08.141Z</lastmod>
   </url>
   
   <url>

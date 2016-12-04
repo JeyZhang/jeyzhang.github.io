@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Markdown," />
+  <meta name="keywords" content="ChatBot,Deep Learning,TensorFlow," />
 
 
 
@@ -51,49 +51,25 @@
 
 
 
-<meta name="description" content="本文记录markdown写作过程中所遇到的问题及相应的解决方法，以供参考。
+<meta name="description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
+本文涉及到的数据和代码见Github仓库地址
 
-所包围的语句&quot;&amp;gt;Q1: 代码中出现{% 和 %}所包围的语句如果代码中出现了类似于{%××××××%}格式的语句，需要在这些语句块的首尾加上
-1&amp;#123;% raw %&amp;#125;
-和1&amp;#123;% endraw %&amp;#125;
-以保证显示原始的语句。
-示例如下：
-
-显示效果如下：
-
-	{% if theme.lea">
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown写作中的常见问题">
-<meta property="og:url" content="http://www.jeyzhang.com/markdown-common-problems.html">
+<meta property="og:title" content="聊天机器人中的深度学习技术之二：基于检索模型的实现">
+<meta property="og:url" content="http://www.jeyzhang.com/deep-learning-for-chatbots-2.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="本文记录markdown写作过程中所遇到的问题及相应的解决方法，以供参考。
+<meta property="og:description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
+本文涉及到的数据和代码见Github仓库地址
 
-所包围的语句&quot;&amp;gt;Q1: 代码中出现{% 和 %}所包围的语句如果代码中出现了类似于{%××××××%}格式的语句，需要在这些语句块的首尾加上
-1&amp;#123;% raw %&amp;#125;
-和1&amp;#123;% endraw %&amp;#125;
-以保证显示原始的语句。
-示例如下：
-
-显示效果如下：
-
-	{% if theme.lea">
-<meta property="og:image" content="http://i.imgur.com/aYitATq.png">
-<meta property="og:image" content="http://i.imgur.com/B1XqXXr.png">
-<meta property="og:image" content="http://i.imgur.com/fr7Fapa.png">
-<meta property="og:updated_time" content="2016-03-31T07:43:01.000Z">
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）">
+<meta property="og:updated_time" content="2016-11-27T03:23:39.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markdown写作中的常见问题">
-<meta name="twitter:description" content="本文记录markdown写作过程中所遇到的问题及相应的解决方法，以供参考。
+<meta name="twitter:title" content="聊天机器人中的深度学习技术之二：基于检索模型的实现">
+<meta name="twitter:description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
+本文涉及到的数据和代码见Github仓库地址
 
-所包围的语句&quot;&amp;gt;Q1: 代码中出现{% 和 %}所包围的语句如果代码中出现了类似于{%××××××%}格式的语句，需要在这些语句块的首尾加上
-1&amp;#123;% raw %&amp;#125;
-和1&amp;#123;% endraw %&amp;#125;
-以保证显示原始的语句。
-示例如下：
-
-显示效果如下：
-
-	{% if theme.lea">
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）">
 
 
 
@@ -105,7 +81,7 @@
   };
 </script>
 
-  <title> markdown写作中的常见问题 | Jey Zhang </title>
+  <title> 聊天机器人中的深度学习技术之二：基于检索模型的实现 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -290,7 +266,7 @@
             
             
               
-                markdown写作中的常见问题
+                聊天机器人中的深度学习技术之二：基于检索模型的实现
               
             
           </h1>
@@ -299,8 +275,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-22T21:44:33+08:00" content="2016-01-22">
-              2016-01-22
+            <time itemprop="dateCreated" datetime="2016-11-27T11:05:31+08:00" content="2016-11-27">
+              2016-11-27
             </time>
           </span>
 
@@ -309,8 +285,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
                   </a>
                 </span>
 
@@ -325,8 +301,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/markdown-common-problems.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="markdown-common-problems.html" itemprop="commentsCount"></span>
+              <a href="/deep-learning-for-chatbots-2.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="deep-learning-for-chatbots-2.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -336,7 +312,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/markdown-common-problems.html"class="leancloud_visitors"  data-flag-title="markdown写作中的常见问题">
+			 <span id="/deep-learning-for-chatbots-2.html"class="leancloud_visitors"  data-flag-title="聊天机器人中的深度学习技术之二：基于检索模型的实现">
              &nbsp;Views
             </span>
 		  
@@ -352,37 +328,10 @@
       
 
       
-        <span itemprop="articleBody"><p>本文记录markdown写作过程中所遇到的问题及相应的解决方法，以供参考。</p>
+        <span itemprop="articleBody"><p>以下内容为原文 <a href="http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/" target="_blank" rel="external">DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW</a> 的翻译，供自己学习及他人参考。</p>
+<p>本文涉及到的数据和代码见<a href="https://github.com/dennybritz/chatbot-retrieval/" target="_blank" rel="external">Github仓库地址</a></p>
 <hr>
-<h2 id="Q1:_代码中出现<!-￼3->所包围的语句">Q1: 代码中出现{% 和 %}所包围的语句</h2><p>如果代码中出现了类似于{%××××××%}格式的语句，需要在这些<code>语句块的首尾</code>加上</p>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="preprocessor">%</span> raw <span class="preprocessor">%</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>和<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="var_expand">% endraw %</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以保证显示原始的语句。</p>
-<p>示例如下：</p>
-<p><img src="http://i.imgur.com/aYitATq.png" alt=""></p>
-<p>显示效果如下：</p>
-<pre><code><span class="comment">
-	{% if theme.leancloud_visitors.enable %}
-	{% include "_scripts/lean-analytics.swig" %}
-	{% endif %}
-	</span>
-</code></pre><h2 id="Q2:_如何显示原始的html代码">Q2: 如何显示原始的html代码</h2><p>在html代码块的上下均加上<code>三个连续的反引号</code>。</p>
-<p>示例如下：</p>
-<p><img src="http://i.imgur.com/B1XqXXr.png" alt=""></p>
-<p>显示效果如下：</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template_tag">&#123;% <span class="keyword">if</span> theme.leancloud_visitors.enable %&#125;</span><span class="xml"></span><br><span class="line"></span><span class="template_tag">&#123;% <span class="keyword">include</span> '_scripts/lean-analytics.swig' %&#125;</span><span class="xml"></span><br><span class="line"></span><span class="template_tag">&#123;% <span class="keyword">endif</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
-<h2 id="Q3:_怎样给字体阴影的效果">Q3: 怎样给字体阴影的效果</h2><p>例如<code>这样的阴影效果</code>，只需要在内容的前后加上一个反引号，如下图：</p>
-<p><img src="http://i.imgur.com/fr7Fapa.png" alt=""></p>
-<h2 id="Q4:_如何显示公式中的花括号{}">Q4: 如何显示公式中的花括号{}</h2><p>markdown中正常文本中使用<code>\</code>对<code>{}</code>进行转义即可；而公式中的<code>{}</code>即使这样转义也是不会显示的，正确做法是使用<code>\lbrace \rbrace</code>来表示左右花括号。</p>
-<hr>
-<p>本文结束，感谢欣赏。</p>
-<p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
-<p><a href="http://www.jeyzhang.com/markdown-common-problems.html">http://www.jeyzhang.com/markdown-common-problems.html</a></p>
-<p><strong>参考资料</strong></p>
-<p><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a></p>
-<p><a href="https://github.com/hexojs/hexo/issues/587" target="_blank" rel="external">issue#587: Markdown代码块中的Markdown语法</a></p>
-<p><a href="https://www.v2ex.com/t/57233" target="_blank" rel="external">V2EX: markdown反引号内怎么转义反引号</a></p>
-<p><a href="http://jzqt.github.io/2015/06/30/Markdown%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" target="_blank" rel="external">Markdown中写数学公式</a></p>
+<h2 id="基于检索模型的聊天机器人">基于检索模型的聊天机器人</h2><p>本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是<strong>预先存储且知道（或定义）的数据</strong>，而不像生成式模型那样可以创造出崭新的、未知的回复内容（模型没有见过）。准确来讲，检索式模型的输入是<strong>一段上下文内容 C (会话到目前未知的内容信息)</strong> 和<strong>一个可能作为回复的候选答案</strong>；模型的输出是对这个候选答案的打分。寻找最合适的回复内容的过程是：先对一堆候选答案进行打分及排序，最后选出分值最高的那个最为回复。</p>
 </span>
       
     </div>
@@ -391,7 +340,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/ChatBot/" rel="tag">#ChatBot</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
+          
+            <a href="/tags/TensorFlow/" rel="tag">#TensorFlow</a>
           
         </div>
       
@@ -400,17 +353,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-next-add-post-views.html" rel="next" title="Hexo的NexT主题个性化：添加文章阅读量">
-                <i class="fa fa-chevron-left"></i> Hexo的NexT主题个性化：添加文章阅读量
+              <a href="/understanding-lstm-network.html" rel="next" title="理解LSTM网络">
+                <i class="fa fa-chevron-left"></i> 理解LSTM网络
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/network-connection-problems-in-win10.html" rel="prev" title="Win10下网络连接问题及解决方案">
-                Win10下网络连接问题及解决方案 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -596,7 +545,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q1:_代码中出现<!-￼3->所包围的语句"><span class="nav-number">1.</span> <span class="nav-text">Q1: 代码中出现{% 和 %}所包围的语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q2:_如何显示原始的html代码"><span class="nav-number">2.</span> <span class="nav-text">Q2: 如何显示原始的html代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q3:_怎样给字体阴影的效果"><span class="nav-number">3.</span> <span class="nav-text">Q3: 怎样给字体阴影的效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q4:_如何显示公式中的花括号{}"><span class="nav-number">4.</span> <span class="nav-text">Q4: 如何显示公式中的花括号{}</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于检索模型的聊天机器人"><span class="nav-number">1.</span> <span class="nav-text">基于检索模型的聊天机器人</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -663,9 +612,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'markdown-common-problems.html';
-      var disqus_title = 'markdown写作中的常见问题';
-      var disqus_url = 'http://www.jeyzhang.com/markdown-common-problems.html';
+      var disqus_identifier = 'deep-learning-for-chatbots-2.html';
+      var disqus_title = '聊天机器人中的深度学习技术之二：基于检索模型的实现';
+      var disqus_url = 'http://www.jeyzhang.com/deep-learning-for-chatbots-2.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

@@ -4,6 +4,85 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
+    <lastmod>2016-12-04T12:19:00.730Z</lastmod>
+    <data>
+        <display>
+        <title>各种系统下Shadowsocks客户端的安装与配置</title>
+        <pubTime>2016-10-08T03:44:57.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>Mac</tag>
+         
+        <tag>Shadowsocks</tag>
+         
+        <tag>VPN</tag>
+         
+        <tag>Windows</tag>
+         
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
+    <lastmod>2016-11-27T03:23:39.273Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之二：基于检索模型的实现</title>
+        <pubTime>2016-11-27T03:05:31.000Z</pubTime>
+        
+        <tag>ChatBot</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2016-11-27T03:08:12.691Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之一：导读</title>
+        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
+        
+        <tag>ChatBot</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
     <lastmod>2016-10-19T08:07:08.744Z</lastmod>
     <data>
@@ -28,37 +107,6 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2016-10-13T12:41:35.436Z</lastmod>
-    <data>
-        <display>
-        <title>各种系统下Shadowsocks客户端的安装与配置</title>
-        <pubTime>2016-10-08T03:44:57.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>Mac</tag>
-         
-        <tag>Windows</tag>
-         
-        <tag>shadowsocks</tag>
-         
-        <tag>vpn</tag>
-         
-         
-           
-             
-              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
@@ -186,28 +234,6 @@
            
              
               <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2016-08-20T03:58:08.141Z</lastmod>
-    <data>
-        <display>
-        <title>聊天机器人中的深度学习技术之一：导读</title>
-        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
-        
-        <tag>chatbot</tag>
-         
-        <tag>deep learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
           
         </display>
     </data>
