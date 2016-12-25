@@ -65,7 +65,8 @@
 基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）">
 <meta property="og:image" content="http://i.imgur.com/tlKSbnT.png">
 <meta property="og:image" content="http://i.imgur.com/EoEK6vy.png">
-<meta property="og:updated_time" content="2016-12-25T05:04:03.929Z">
+<meta property="og:image" content="http://i.imgur.com/qpFDJWM.png">
+<meta property="og:updated_time" content="2016-12-25T07:37:48.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊天机器人中的深度学习技术之二：基于检索模型的实现">
 <meta name="twitter:description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
@@ -399,7 +400,29 @@ Recall @ (<span class="number">2</span>, <span class="number">10</span>): <span 
 Recall @ (<span class="number">5</span>, <span class="number">10</span>): <span class="number">0.766121</span>
 Recall @ (<span class="number">10</span>, <span class="number">10</span>): <span class="number">1</span>
 </code></pre><p>显然这比Random的模型要好得多，但这还不够。之前的假设并不完美，首先query和response之间并不一定要是语义上的相近；其次tfidf模型忽略了词序这一重要的信息。使用NN模型我们能做得更好一些。</p>
-<h2 id="两层Encode的LSTM模型">两层Encode的LSTM模型</h2></span>
+<h2 id="LSTM">LSTM</h2><p>这篇博文将建立的NN模型为两层Encoder的LSTM模型（Dual Encoder LSTM Network），这种形式的网络被广泛应用在chatbot中（尽管可能效果并不是最佳的那个，你可以尽可能地尝试其他的NN模型）。<a href="https://www.tensorflow.org/versions/r0.9/tutorials/seq2seq/index.html" target="_blank" rel="external">seq2seq模型</a>常用于机器翻译领域，并取得了较大的效果。使用Dual LSTM模型的原因在于这个模型被证明在这个数据集有较好的效果（<a href="http://arxiv.org/abs/1510.03753" target="_blank" rel="external">详情见这里</a>）,这可以作为我们后续模型效果的验证。</p>
+<p>两层Encoder的LSTM模型的结构图如下（<a href="http://arxiv.org/abs/1506.08909" target="_blank" rel="external">论文来源</a>）：</p>
+<p><img src="http://i.imgur.com/qpFDJWM.png" alt=""></p>
+<p>大致的流程如下：</p>
+<p>(1) Query和Response都是经过分词的，分词后每个词embedded为向量形式。初始的词向量使用<a href="http://nlp.stanford.edu/projects/glove/" target="_blank" rel="external">GloVe vectors</a>，之后词向量随着模型的训练会进行fine-tuned（实验发现，初始的词向量使用GloVe并没有在性能上带来显著的提升）。</p>
+<p>(2) 分词且向量化的Query和Response经过相同的RNN（word by word）。RNN最终生成一个向量表示，捕捉了Query和Response之间的[语义联系]（图中的c和r）；这个向量的维度是可以指定的，这里指定为256维。</p>
+<p>(3) 将向量c与一个矩阵M相乘，来预测一个可能的回复r’。如果c为一个256维的向量，M维256*256的矩阵，两者相乘的结果为另一个256维的向量，我们可以将其解释为[一个生成式的回复向量]。矩阵M是需要训练的参数。</p>
+<p>(4) 通过点乘的方式来预测生成的回复r’和候选的回复r之间的相似程度，点乘结果越大表示候选回复作为回复的可信度越高；之后通过sigmoid函数归一化，转成概率形式。图中把第(3)步和第(4)步结合在一起了。</p>
+<p>为了训练模型，我们还需要一个损失函数（loss function）。这里使用二元的交叉熵（binary cross-entropy）作为损失函数。我们已知实例的真实label <code>y</code>，值为0或1；通过上面的第(4)步可以得到一个概率值 <code>y&#39;</code>；因此，交叉熵损失值为<code>L = -y * ln(y&#39;) - (1 - y) * ln(1 - y&#39;)</code>。这个公式的意义是直观的，即当<code>y=1</code>时，<code>L = -ln(y&#39;)</code>，我们期望<code>y&#39;</code>尽量地接近1使得损失函数的值越小；反之亦然。</p>
+<p>实现过程中使用了<a href="http://www.numpy.org/" target="_blank" rel="external">numpy</a>、<a href="http://pandas.pydata.org/" target="_blank" rel="external">pandas</a>、<a href="http://www.tensorflow.org/" target="_blank" rel="external">TensorFlow</a>和<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/learn/python/learn" target="_blank" rel="external">TF Learn</a>等工具。</p>
+<h3 id="数据预处理">数据预处理</h3><p><a href="https://github.com/rkadlec/ubuntu-ranking-dataset-creator" target="_blank" rel="external">数据集</a>的原始格式为csv格式，我们需要先将其转为<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/example/example.proto" target="_blank" rel="external">TensorFlow专有的格式</a>，这种格式的好处在于能够直接从输入文件中load tensors，并让TensorFlow来处理洗牌(shuffling)、批量(batching)和队列化(queuing)等操作。预处理中还包括创建一个字典库，将词进行标号，TFRecord文件将直接存储这些词的标号。</p>
+<p>每个实例包括如下几个字段：</p>
+<ul>
+<li>Query：表示为一串词标号的序列，如[231, 2190, 737, 0, 912]；</li>
+<li>Query的长度；</li>
+<li>Response：同样是一串词标号的序列；</li>
+<li>Response的长度；</li>
+<li>Label；</li>
+<li>Distractor_[N]：表示负例干扰数据，仅在验证集和测试集中有，N的取值为0-8；</li>
+<li>Distractor_[N]的长度；</li>
+</ul>
+<p>数据预处理的Python脚本见<a href="https://github.com/dennybritz/chatbot-retrieval/blob/master/scripts/prepare_data.py" target="_blank" rel="external">这里</a>，生成了3个文件：train.tfrecords, validation.tfrecords 和 test.tfrecords。你可以尝试自己运行程序，或者直接下载和使用<a href="https://drive.google.com/open?id=0B_bZck-ksdkpVEtVc1R6Y01HMWM" target="_blank" rel="external">预处理后的数据</a>。</p>
+<h3 id="创建输入函数">创建输入函数</h3></span>
       
     </div>
 
@@ -612,7 +635,7 @@ Recall @ (<span class="number">10</span>, <span class="number">10</span>): <span
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于检索模型的聊天机器人"><span class="nav-number">1.</span> <span class="nav-text">基于检索模型的聊天机器人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu对话数据集"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu对话数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BASELINE"><span class="nav-number">3.</span> <span class="nav-text">BASELINE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两层Encode的LSTM模型"><span class="nav-number">4.</span> <span class="nav-text">两层Encode的LSTM模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于检索模型的聊天机器人"><span class="nav-number">1.</span> <span class="nav-text">基于检索模型的聊天机器人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu对话数据集"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu对话数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BASELINE"><span class="nav-number">3.</span> <span class="nav-text">BASELINE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM"><span class="nav-number">4.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">4.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建输入函数"><span class="nav-number">4.2.</span> <span class="nav-text">创建输入函数</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
