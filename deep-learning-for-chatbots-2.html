@@ -51,28 +51,28 @@
 
 
 
-<meta name="description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
+<meta name="description" content="上篇博文：聊天机器人中的深度学习技术之一：导读主要从宏观上对目前聊天机器人所用到的主要技术进行了介绍。这篇博文会介绍并实现一个基于检索的模型，使用了双层Decoder的LSTM模型，通过这个模型可以实现聊天机器人。
 本文涉及到的数据和代码见Github仓库地址。
 
-基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义">
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）的数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊天机器人中的深度学习技术之二：基于检索模型的实现">
 <meta property="og:url" content="http://www.jeyzhang.com/deep-learning-for-chatbots-2.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
+<meta property="og:description" content="上篇博文：聊天机器人中的深度学习技术之一：导读主要从宏观上对目前聊天机器人所用到的主要技术进行了介绍。这篇博文会介绍并实现一个基于检索的模型，使用了双层Decoder的LSTM模型，通过这个模型可以实现聊天机器人。
 本文涉及到的数据和代码见Github仓库地址。
 
-基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义">
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）的数据">
 <meta property="og:image" content="http://i.imgur.com/tlKSbnT.png">
 <meta property="og:image" content="http://i.imgur.com/EoEK6vy.png">
 <meta property="og:image" content="http://i.imgur.com/qpFDJWM.png">
-<meta property="og:updated_time" content="2017-01-03T12:07:03.380Z">
+<meta property="og:updated_time" content="2017-01-04T12:27:47.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊天机器人中的深度学习技术之二：基于检索模型的实现">
-<meta name="twitter:description" content="以下内容为原文 DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW 的翻译，供自己学习及他人参考。
+<meta name="twitter:description" content="上篇博文：聊天机器人中的深度学习技术之一：导读主要从宏观上对目前聊天机器人所用到的主要技术进行了介绍。这篇博文会介绍并实现一个基于检索的模型，使用了双层Decoder的LSTM模型，通过这个模型可以实现聊天机器人。
 本文涉及到的数据和代码见Github仓库地址。
 
-基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义">
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）的数据">
 
 
 
@@ -331,7 +331,7 @@
       
 
       
-        <span itemprop="articleBody"><p>以下内容为原文 <a href="http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/" target="_blank" rel="external">DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW</a> 的翻译，供自己学习及他人参考。</p>
+        <span itemprop="articleBody"><p><a href="http://www.jeyzhang.com/deep-learning-for-chatbots-1.html">上篇博文：聊天机器人中的深度学习技术之一：导读</a>主要从宏观上对目前聊天机器人所用到的主要技术进行了介绍。这篇博文会介绍并实现一个基于检索的模型，使用了双层Decoder的LSTM模型，通过这个模型可以实现聊天机器人。</p>
 <p>本文涉及到的数据和代码见<a href="https://github.com/dennybritz/chatbot-retrieval/" target="_blank" rel="external">Github仓库地址</a>。</p>
 <hr>
 <h2 id="基于检索模型的聊天机器人">基于检索模型的聊天机器人</h2><p>本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是<strong>预先存储且知道（或定义）的数据</strong>，而不像生成式模型那样可以创造出崭新的、未知的回复内容（模型没有见过）。准确来讲，检索式模型的输入是<strong>一段上下文内容 C (会话到目前未知的内容信息)</strong> 和<strong>一个可能作为回复的候选答案</strong>；模型的输出是对这个候选答案的打分。寻找最合适的回复内容的过程是：先对一堆候选答案进行打分及排序，最后选出分值最高的那个最为回复。</p>
@@ -568,7 +568,7 @@ Response <span class="number">1</span>: <span class="number">0.44806</span>
 Response <span class="number">2</span>: <span class="number">0.481638</span>
 </code></pre><p>你可以从候选的回复中，选择预测分值最高的那个作为回复。</p>
 <h3 id="总结">总结</h3><p>这篇博文中，我们实现了一个基于检索的NN模型，它能够对候选的回复进行预测和打分，通过输出分值最高（或者满足一定阈值）的候选回复已完成聊天的过程。后续可以尝试其他更好的模型，或者通过调参来取得更好的实验结果。</p>
-<p>本文涉及到的数据和代码见<a href="https://github.com/dennybritz/chatbot-retrieval/" target="_blank" rel="external">Github仓库地址</a>。</p>
+<p>以上内容为原文 <a href="http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/" target="_blank" rel="external">DEEP LEARNING FOR CHATBOTS, PART 2 – IMPLEMENTING A RETRIEVAL-BASED MODEL IN TENSORFLOW</a> 的翻译，供自己学习及他人参考。本文涉及到的数据和代码见<a href="https://github.com/dennybritz/chatbot-retrieval/" target="_blank" rel="external">Github仓库地址</a>。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>

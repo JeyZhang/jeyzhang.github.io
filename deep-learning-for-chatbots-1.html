@@ -52,23 +52,26 @@
 
 
 <meta name="description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
+这篇博文主要概述了目前聊天机器人主要用到的技术，从宏观上进行介绍，不涉及具体的技术细节。下一篇博文：聊天机器人中的深度学习技术之二：基于检索模型的实现会介绍并实现一个基于检索的LSTM模型，通过这个模型可以实现聊天机器人。
 
-聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（链接），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果">
+聊天机器人 (Chat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊天机器人中的深度学习技术之一：导读">
 <meta property="og:url" content="http://www.jeyzhang.com/deep-learning-for-chatbots-1.html">
 <meta property="og:site_name" content="Jey Zhang">
 <meta property="og:description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
+这篇博文主要概述了目前聊天机器人主要用到的技术，从宏观上进行介绍，不涉及具体的技术细节。下一篇博文：聊天机器人中的深度学习技术之二：基于检索模型的实现会介绍并实现一个基于检索的LSTM模型，通过这个模型可以实现聊天机器人。
 
-聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（链接），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果">
+聊天机器人 (Chat">
 <meta property="og:image" content="http://i.imgur.com/P03eaBZ.png">
 <meta property="og:image" content="http://i.imgur.com/JGrn8LK.png">
-<meta property="og:updated_time" content="2016-11-27T03:08:12.691Z">
+<meta property="og:updated_time" content="2017-01-04T12:25:58.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊天机器人中的深度学习技术之一：导读">
 <meta name="twitter:description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
+这篇博文主要概述了目前聊天机器人主要用到的技术，从宏观上进行介绍，不涉及具体的技术细节。下一篇博文：聊天机器人中的深度学习技术之二：基于检索模型的实现会介绍并实现一个基于检索的LSTM模型，通过这个模型可以实现聊天机器人。
 
-聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（链接），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果">
+聊天机器人 (Chat">
 
 
 
@@ -328,6 +331,7 @@
 
       
         <span itemprop="articleBody"><p>以下内容为原文 <a href="http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/" target="_blank" rel="external">《Deep Learning For Chatbots, Part 1 - Introduction》</a> 的翻译，供自己学习及他人参考。</p>
+<p>这篇博文主要概述了目前聊天机器人主要用到的技术，从宏观上进行介绍，不涉及具体的技术细节。<a href="http://www.jeyzhang.com/deep-learning-for-chatbots-2.html">下一篇博文：聊天机器人中的深度学习技术之二：基于检索模型的实现</a>会介绍并实现一个基于检索的LSTM模型，通过这个模型可以实现聊天机器人。</p>
 <hr>
 <p>聊天机器人 (Chatbot)，也被称为对话引擎或者对话系统，是目前的热点之一。微软公司在聊天机器人上的投入巨大（<a href="http://www.bloomberg.com/features/2016-microsoft-future-ai-chatbots/" target="_blank" rel="external">链接</a>），著名产品有小冰 (xiaoice)、bot framework等，其他公司也纷纷在这个领域发力，如Facebook的M，苹果公司的Siri等等。此外，一大批的创业公司发布了类似的产品，例如客户应用<a href="https://operator.com/" target="_blank" rel="external">Operator</a>，<a href="https://x.ai/" target="_blank" rel="external">x.ai</a>，bot framework <a href="http://chatfuel.com/" target="_blank" rel="external">Chatfuel</a>，bot开发工具 <a href="http://howdy.ai/botkit/" target="_blank" rel="external">Howdy’s Botkit</a>。微软也发布了供开发者使用的 <a href="https://dev.botframework.com/" target="_blank" rel="external">bot developer framework</a>。</p>
 <p>许多公司希望能开发出与用户进行自然语言式对话的机器人，并且声称使用了NLP和深度学习相关技术使之成为可能，然而这并不容易实现。在这个博文系列中，我将会重温一些被用于聊天机器人中的深度学习技术，披露出目前技术能够解决或者可能解决的问题以及几乎难以解决的问题。这篇文章是个概述，在接下来的博文中将介绍具体的技术细节。</p>
