@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/about/index.html</loc>
+    <lastmod>2017-01-05T04:03:55.069Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
     <lastmod>2017-01-04T12:33:49.189Z</lastmod>
   </url>
@@ -14,11 +19,6 @@
   <url>
     <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
     <lastmod>2017-01-04T12:25:58.125Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/about/index.html</loc>
-    <lastmod>2016-12-25T04:35:58.614Z</lastmod>
   </url>
   
   <url>
