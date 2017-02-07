@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
-    <lastmod>2017-02-06T09:41:13.471Z</lastmod>
+    <lastmod>2017-02-07T08:50:08.762Z</lastmod>
     <data>
         <display>
         <title>C#学习笔记2：多线程</title>
@@ -13,12 +13,36 @@
         
         <tag>C#</tag>
          
-        <tag>multithreading</tag>
+        <tag>Multithreading</tag>
          
          
            
              
               <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
+    <lastmod>2017-02-07T08:49:27.506Z</lastmod>
+    <data>
+        <display>
+        <title>使用Azure和Shadowsocks搭建VPN服务</title>
+        <pubTime>2016-08-20T01:39:33.000Z</pubTime>
+        
+        <tag>Azure</tag>
+         
+        <tag>Shadowsocks</tag>
+         
+        <tag>VPN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
           
         </display>
     </data>
@@ -124,30 +148,6 @@
            
              
               <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
-    <lastmod>2016-09-19T11:58:47.194Z</lastmod>
-    <data>
-        <display>
-        <title>使用Azure和Shadowsocks搭建VPN服务</title>
-        <pubTime>2016-08-20T01:39:33.000Z</pubTime>
-        
-        <tag>azure</tag>
-         
-        <tag>shadowsocks</tag>
-         
-        <tag>vpn</tag>
-         
-         
-           
-             
-              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
           
         </display>
     </data>
