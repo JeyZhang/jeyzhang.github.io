@@ -51,27 +51,24 @@
 
 
 
-<meta name="description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。
-这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
-在这篇博文中，我们将探索加入LSTM/RNN模型中的att">
+<meta name="description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
+在这篇博文中，我们将探索加入LSTM/RNN模型中的atte">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解RNN中的Attention机制">
+<meta property="og:title" content="理解LSTM/RNN中的Attention机制">
 <meta property="og:url" content="http://www.jeyzhang.com/understand-attention-in-rnn.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。
-这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
-在这篇博文中，我们将探索加入LSTM/RNN模型中的att">
+<meta property="og:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
+在这篇博文中，我们将探索加入LSTM/RNN模型中的atte">
 <meta property="og:image" content="http://i.imgur.com/V9HYowa.png">
 <meta property="og:image" content="http://i.imgur.com/qycpffZ.png">
 <meta property="og:image" content="http://i.imgur.com/B70hRCE.png">
 <meta property="og:image" content="http://i.imgur.com/BTCD2NH.png">
 <meta property="og:image" content="http://i.imgur.com/Kh3gwhV.png">
-<meta property="og:updated_time" content="2017-07-03T12:20:41.132Z">
+<meta property="og:updated_time" content="2017-07-03T12:25:39.434Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解RNN中的Attention机制">
-<meta name="twitter:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。
-这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
-在这篇博文中，我们将探索加入LSTM/RNN模型中的att">
+<meta name="twitter:title" content="理解LSTM/RNN中的Attention机制">
+<meta name="twitter:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
+在这篇博文中，我们将探索加入LSTM/RNN模型中的atte">
 
 
 
@@ -83,7 +80,7 @@
   };
 </script>
 
-  <title> 理解RNN中的Attention机制 | Jey Zhang </title>
+  <title> 理解LSTM/RNN中的Attention机制 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -268,7 +265,7 @@
             
             
               
-                理解RNN中的Attention机制
+                理解LSTM/RNN中的Attention机制
               
             
           </h1>
@@ -314,7 +311,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/understand-attention-in-rnn.html"class="leancloud_visitors"  data-flag-title="理解RNN中的Attention机制">
+			 <span id="/understand-attention-in-rnn.html"class="leancloud_visitors"  data-flag-title="理解LSTM/RNN中的Attention机制">
              &nbsp;Views
             </span>
 		  
@@ -330,8 +327,7 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="导读">导读</h3><p>目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。</p>
-<p>这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：<strong>当输入序列非常长时，模型难以学到合理的向量表示</strong>。</p>
+        <span itemprop="articleBody"><h3 id="导读">导读</h3><p>目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：<strong>当输入序列非常长时，模型难以学到合理的向量表示</strong>。</p>
 <p>在这篇博文中，我们将探索加入LSTM/RNN模型中的attention机制是如何克服传统编码器-解码器结构存在的问题的。</p>
 <p>通过阅读这篇博文，你将会学习到：</p>
 <ul>
@@ -347,22 +343,21 @@
 <li><a href="https://arxiv.org/abs/1409.3215" target="_blank" rel="external">Sequence to Sequence Learning with Neural Networks, 2014</a></li>
 <li><a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="external">Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation, 2014</a></li>
 </ul>
-<p>这种结构在很多其他的领域上也取得了不错的结果。然而，它存在一个问题在于：输入序列不论长短都会被编码成一个固定长度的向量表示，而解码则受限于该固定长度的向量表示。</p>
-<p>这个问题限制了模型的性能，尤其是当输入序列比较长时，模型的性能会变得很差（在文本翻译任务上表现为待翻译的原始文本长度过长时翻译质量较差）。</p>
+<p>这种结构在很多其他的领域上也取得了不错的结果。然而，它存在一个问题在于：<strong>输入序列不论长短都会被编码成一个固定长度的向量表示，而解码则受限于该固定长度的向量表示</strong>。</p>
+<p>这个问题限制了模型的性能，尤其是<strong>当输入序列比较长时，模型的性能会变得很差</strong>（在文本翻译任务上表现为待翻译的原始文本长度过长时翻译质量较差）。</p>
 <blockquote>
 <p>“一个潜在的问题是，采用编码器-解码器结构的神经网络模型需要将输入序列中的必要信息表示为一个固定长度的向量，而当输入序列很长时则难以保留全部的必要信息（因为太多），尤其是当输入序列的长度比训练数据集中的更长时。”</p>
 <p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
 </blockquote>
-<h3 id="使用attention机制">使用attention机制</h3><p>Attention机制的基本思想是，打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制。</p>
-<p>Attention机制的实现是通过保留LSTM编码器对输入序列的中间输出结果，然后训练一个模型来对这些输入进行选择性的学习并且在模型输出时将输出序列与之进行关联。</p>
+<h3 id="使用attention机制">使用attention机制</h3><p>Attention机制的基本思想是，<strong>打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制</strong>。</p>
+<p>Attention机制的实现是<strong>通过保留LSTM编码器对输入序列的中间输出结果，然后训练一个模型来对这些输入进行选择性的学习并且在模型输出时将输出序列与之进行关联</strong>。</p>
 <p>换一个角度而言，输出序列中的每一项的生成概率取决于在输入序列中选择了哪些项。</p>
 <blockquote>
 <p>“在文本翻译任务上，使用attention机制的模型每生成一个词时都会在输入序列中找出一个与之最相关的词集合。之后模型根据当前的上下文向量 (context vectors) 和所有之前生成出的词来预测下一个目标词。</p>
 <p>… 它将输入序列转化为一堆向量的序列并自适应地从中选择一个子集来解码出目标翻译文本。这感觉上像是用于文本翻译的神经网络模型需要“压缩”输入文本中的所有信息为一个固定长度的向量，不论输入文本的长短。”</p>
 <p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
 </blockquote>
-<p>虽然模型使用attention机制之后会增加计算量，但是性能水平能够得到提升。</p>
-<p>另外，使用attention机制便于理解在模型输出过程中输入序列中的信息是如何影响最后生成序列的。这有助于我们更好地理解模型的内部运作机制以及对一些特定的输入-输出进行debug。</p>
+<p>虽然模型使用attention机制之后会增加计算量，但是性能水平能够得到提升。另外，使用attention机制便于理解在模型输出过程中输入序列中的信息是如何影响最后生成序列的。这有助于我们更好地理解模型的内部运作机制以及对一些特定的输入-输出进行debug。</p>
 <blockquote>
 <p>“论文提出的方法能够直观地观察到生成序列中的每个词与输入序列中一些词的对齐关系，这可以通过对标注 (annotations) 权重参数可视化来实现…每个图中矩阵的每一行表示与标注相关联的权重。由此我们可以看出在生成目标词时，源句子中的位置信息会被认为更重要。”</p>
 <p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
@@ -736,7 +731,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
       var disqus_identifier = 'understand-attention-in-rnn.html';
-      var disqus_title = '理解RNN中的Attention机制';
+      var disqus_title = '理解LSTM/RNN中的Attention机制';
       var disqus_url = 'http://www.jeyzhang.com/understand-attention-in-rnn.html';
 
       function run_disqus_script(disqus_script){

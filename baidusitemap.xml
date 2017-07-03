@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2017-07-03T12:20:41.132Z</lastmod>
+    <lastmod>2017-07-03T12:25:39.434Z</lastmod>
     <data>
         <display>
-        <title>理解RNN中的Attention机制</title>
+        <title>理解LSTM/RNN中的Attention机制</title>
         <pubTime>2017-07-03T10:59:56.000Z</pubTime>
         
         <tag>Attention</tag>
