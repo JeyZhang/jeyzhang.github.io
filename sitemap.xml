@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
+    <lastmod>2017-07-03T12:20:41.132Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
     <lastmod>2017-02-07T08:50:08.762Z</lastmod>
   </url>

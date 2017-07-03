@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Deep Learning,LSTM,Machine Learning,RNN," />
+  <meta name="keywords" content="Attention,Deep Learning,LSTM,Machine Learning,RNN," />
 
 
 
@@ -51,38 +51,27 @@
 
 
 
-<meta name="description" content="循环神经网络(RNN)人们的每次思考并不都是从零开始的。比如说你在阅读这篇文章时，你基于对前面的文字的理解来理解你目前阅读到的文字，而不是每读到一个文字时，都抛弃掉前面的思考，从头开始。你的记忆是有持久性的。
-传统的神经网络并不能如此，这似乎是一个主要的缺点。例如，假设你在看一场电影，你想对电影里的每一个场景进行分类。传统的神经网络不能够基于前面的已分类场景来推断接下来的场景分类。
-循环神经网络(">
+<meta name="description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。
+这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
+在这篇博文中，我们将探索加入LSTM/RNN模型中的att">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解LSTM网络">
-<meta property="og:url" content="http://www.jeyzhang.com/understanding-lstm-network.html">
+<meta property="og:title" content="理解RNN中的Attention机制">
+<meta property="og:url" content="http://www.jeyzhang.com/understand-attention-in-rnn.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="循环神经网络(RNN)人们的每次思考并不都是从零开始的。比如说你在阅读这篇文章时，你基于对前面的文字的理解来理解你目前阅读到的文字，而不是每读到一个文字时，都抛弃掉前面的思考，从头开始。你的记忆是有持久性的。
-传统的神经网络并不能如此，这似乎是一个主要的缺点。例如，假设你在看一场电影，你想对电影里的每一个场景进行分类。传统的神经网络不能够基于前面的已分类场景来推断接下来的场景分类。
-循环神经网络(">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585451475265.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585464218639.png">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585476990034.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585481509571.png">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585498578776.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585500063294.png">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585501719114.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585507601229.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585511223368.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585517843913.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585522130400.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585647039038.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585652046323.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585655553885.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585661398239.jpg">
-<meta property="og:image" content="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585667357562.png">
-<meta property="og:updated_time" content="2016-10-19T08:07:08.744Z">
+<meta property="og:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。
+这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
+在这篇博文中，我们将探索加入LSTM/RNN模型中的att">
+<meta property="og:image" content="http://i.imgur.com/V9HYowa.png">
+<meta property="og:image" content="http://i.imgur.com/qycpffZ.png">
+<meta property="og:image" content="http://i.imgur.com/B70hRCE.png">
+<meta property="og:image" content="http://i.imgur.com/BTCD2NH.png">
+<meta property="og:image" content="http://i.imgur.com/Kh3gwhV.png">
+<meta property="og:updated_time" content="2017-07-03T12:20:41.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解LSTM网络">
-<meta name="twitter:description" content="循环神经网络(RNN)人们的每次思考并不都是从零开始的。比如说你在阅读这篇文章时，你基于对前面的文字的理解来理解你目前阅读到的文字，而不是每读到一个文字时，都抛弃掉前面的思考，从头开始。你的记忆是有持久性的。
-传统的神经网络并不能如此，这似乎是一个主要的缺点。例如，假设你在看一场电影，你想对电影里的每一个场景进行分类。传统的神经网络不能够基于前面的已分类场景来推断接下来的场景分类。
-循环神经网络(">
+<meta name="twitter:title" content="理解RNN中的Attention机制">
+<meta name="twitter:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。
+这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
+在这篇博文中，我们将探索加入LSTM/RNN模型中的att">
 
 
 
@@ -94,7 +83,7 @@
   };
 </script>
 
-  <title> 理解LSTM网络 | Jey Zhang </title>
+  <title> 理解RNN中的Attention机制 | Jey Zhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -279,7 +268,7 @@
             
             
               
-                理解LSTM网络
+                理解RNN中的Attention机制
               
             
           </h1>
@@ -288,8 +277,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-10-19T11:38:26+08:00" content="2016-10-19">
-              2016-10-19
+            <time itemprop="dateCreated" datetime="2017-07-03T18:59:56+08:00" content="2017-07-03">
+              2017-07-03
             </time>
           </span>
 
@@ -298,8 +287,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
                   </a>
                 </span>
 
@@ -314,8 +303,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/understanding-lstm-network.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="understanding-lstm-network.html" itemprop="commentsCount"></span>
+              <a href="/understand-attention-in-rnn.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="understand-attention-in-rnn.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -325,7 +314,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/understanding-lstm-network.html"class="leancloud_visitors"  data-flag-title="理解LSTM网络">
+			 <span id="/understand-attention-in-rnn.html"class="leancloud_visitors"  data-flag-title="理解RNN中的Attention机制">
              &nbsp;Views
             </span>
 		  
@@ -341,74 +330,136 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="循环神经网络(RNN)">循环神经网络(RNN)</h2><p>人们的每次思考并不都是从零开始的。比如说你在阅读这篇文章时，你基于对前面的文字的理解来理解你目前阅读到的文字，而不是每读到一个文字时，都抛弃掉前面的思考，从头开始。你的记忆是有持久性的。</p>
-<p>传统的神经网络并不能如此，这似乎是一个主要的缺点。例如，假设你在看一场电影，你想对电影里的每一个场景进行分类。传统的神经网络不能够基于前面的已分类场景来推断接下来的场景分类。</p>
-<p>循环神经网络(Recurrent Neural Networks)解决了这个问题。这种神经网络带有环，可以将信息持久化。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585451475265.jpg" alt="Recurrent Neural Networks have loops. -c100"></p>
-<a id="more"></a>
-<p>在上图所示的神经网络$A$中，输入为$X_t$，输出为$h_t$。$A$上的环允许将每一步产生的信息传递到下一步中。环的加入使得RNN变得神秘。不过，如果你多思考一下的话，其实RNN跟普通的神经网络也没有那么不同。一个RNN可以看作是同一个网络的多份副本，每一份都将信息传递到下一个副本。如果我们将环展开的话：</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585464218639.png" alt="An unrolled recurrent neural network. -c600"></p>
-<p>这种链式结构展示了RNN与序列和列表的密切关系。RNN的这种结构能够非常自然地使用这类数据。而且事实的确如此。在过去的几年里，RNN在一系列的任务中都取得了令人惊叹的成就，比如语音识别，语言建模，翻译，图片标题等等。关于RNN在各个领域所取得的令人惊叹的成就，参见<a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="external">这篇文章</a>。</p>
-<p>LSTM是这一系列成功中的必要组成部分。LSTM(Long Short Term Memory)是一种特殊的循环神经网络，在许多任务中，LSTM表现得比标准的RNN要出色得多。几乎所有基于RNN的令人赞叹的结果都是LSTM取得的。本文接下来将着重介绍LSTM。</p>
-<h2 id="长期依赖(Long_Term_Dependencies)的问题">长期依赖(Long Term Dependencies)的问题</h2><p>RNN的一个核心思想是将以前的信息连接到当前的任务中来，例如，通过前面的视频帧来帮助理解当前帧。如果RNN真的能够这样做的话，那么它们将会极其有用。但是事实真是如此吗？未必。</p>
-<p>有时候，我们只需要看最近的信息，就可以完成当前的任务。比如，考虑一个语言模型，通过前面的单词来预测接下来的单词。如果我们想预测句子“the clouds are in the <em>sky</em>”中的最后一个单词，我们不需要更多的上下文信息——很明显下一个单词应该是sky。在这种情况下，当前位置与相关信息所在位置之间的距离相对较小，RNN可以被训练来使用这样的信息。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585476990034.jpg" alt="-c400"></p>
-<p>然而，有时候我们需要更多的上下文信息。比如，我们想预测句子“I grew up in France… I speak fluent <em>French</em>”中的最后一个单词。最近的信息告诉我们，最后一个单词可能是某种语言的名字，然而如果我们想确定到底是哪种语言的话，我们需要France这个更远的上下文信息。实际上，相关信息和需要该信息的位置之间的距离可能非常的远。</p>
-<p>不幸的是，随着距离的增大，RNN对于如何将这样的信息连接起来无能为力。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585481509571.png" alt="-c600"></p>
-<p>理论上说，RNN是有能力来处理这种长期依赖(Long Term Dependencies)的。人们可以通过精心调参来构建模型处理一个这种玩具问题(Toy Problem)。不过，在实际问题中，RNN并没有能力来学习这些。<a href="http://people.idsia.ch/~juergen/SeppHochreiter1991ThesisAdvisorSchmidhuber.pdf" target="_blank" rel="external">Hochreiter (1991) German</a>更深入地讲了这个问题，<a href="http://www-dsi.ing.unifi.it/~paolo/ps/tnn-94-gradient.pdf" target="_blank" rel="external">Bengio, et al. (1994)</a>发现了RNN的一些非常基础的问题。</p>
-<p>幸运的是，LSTM并没有上述问题！</p>
-<h2 id="LSTM网络">LSTM网络</h2><p>LSTM，全称为长短期记忆网络(Long Short Term Memory networks)，是一种特殊的RNN，能够学习到长期依赖关系。LSTM由<a href="http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf" target="_blank" rel="external">Hochreiter &amp; Schmidhuber (1997)</a>提出，许多研究者进行了一系列的工作对其改进并使之发扬光大。LSTM在许多问题上效果非常好，现在被广泛使用。</p>
-<p>LSTM在设计上明确地避免了长期依赖的问题。记住长期信息是小菜一碟！所有的循环神经网络都有着重复的神经网络模块形成链的形式。在普通的RNN中，重复模块结构非常简单，例如只有一个tanh层。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585498578776.jpg" alt="The repeating module in a standard RNN contains a single layer. -c600"></p>
-<p>LSTM也有这种链状结构，不过其重复模块的结构不同。LSTM的重复模块中有4个神经网络层，并且他们之间的交互非常特别。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585500063294.png" alt="The repeating module in an LSTM contains four interacting layers. -c600"></p>
-<p>现在暂且不必关心细节，稍候我们会一步一步地对LSTM的各个部分进行介绍。开始之前，我们先介绍一下将用到的标记。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585501719114.jpg" alt="-c500"></p>
-<p>在上图中，每条线表示向量的传递，从一个结点的输出传递到另外结点的输入。粉红圆表示向量的元素级操作，比如相加或者相乘。黄色方框表示神经网络的层。线合并表示向量的连接，线分叉表示向量复制。</p>
-<h2 id="LSTM核心思想">LSTM核心思想</h2><p>LSTM的关键是元胞状态(Cell State)，下图中横穿整个元胞顶部的水平线。</p>
-<p>元胞状态有点像是传送带，它直接穿过整个链，同时只有一些较小的线性交互。上面承载的信息可以很容易地流过而不改变。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585507601229.jpg" alt="-c600"></p>
-<p>LSTM有能力对元胞状态添加或者删除信息，这种能力通过一种叫门的结构来控制。</p>
-<p>门是一种选择性让信息通过的方法。它们由一个Sigmoid神经网络层和一个元素级相乘操作组成。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585511223368.jpg" alt="-c100"></p>
-<p>Sigmoid层输出0~1之间的值，每个值表示对应的部分信息是否应该通过。0值表示不允许信息通过，1值表示让所有信息通过。一个LSTM有3个这种门，来保护和控制元胞状态。</p>
-<h2 id="LSTM分步详解">LSTM分步详解</h2><p>LSTM的第一步是决定我们将要从元胞状态中扔掉哪些信息。该决定由一个叫做“遗忘门(Forget Gate)”的Sigmoid层控制。遗忘门观察\(h_{t-1}\)和\(x_{t}\)，对于元胞状态\(C_{t-1}\)中的每一个元素，输出一个0~1之间的数。1表示“完全保留该信息”，0表示“完全丢弃该信息”。</p>
-<p>回到之前的预测下一个单词的例子。在这样的一个问题中，元胞状态可能包含当前主语的性别信息，以用来选择正确的物主代词。当我们遇到一个新的主语时，我们就需要把旧的性别信息遗忘掉。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585517843913.jpg" alt="-c600"></p>
-<p>下一步是决定我们将会把哪些新信息存储到元胞状态中。这步分为两部分。首先，有一个叫做“输入门(Input Gate)”的Sigmoid层决定我们要更新哪些信息。接下来，一个tanh层创造了一个新的候选值，$\tilde{C_t}$，该值可能被加入到元胞状态中。在下一步中，我们将会把这两个值组合起来用于更新元胞状态。</p>
-<p>在语言模型的例子中，我们可能想要把新主语的性别加到元胞状态中，来取代我们已经遗忘的旧值。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585522130400.jpg" alt="-c600"></p>
-<p>现在我们该更新旧元胞状态$C_{t-1}$到新状态$C_t$了。上面的步骤中已经决定了该怎么做，这一步我们只需要实际执行即可。</p>
-<p>我们把旧状态$C_{t-1}$乘以$f_t$，忘掉我们已经决定忘记的内容。然后我们再加上$i_t * \tilde{C_t}$，这个值由新的候选值（$\tilde{C_t}$）乘以候选值的每一个状态我们决定更新的程度（$i_t$）构成。</p>
-<p>还是语言模型的例子，在这一步，我们按照之前的决定，扔掉了旧的主语的性别信息，并且添加了新的信息。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585647039038.jpg" alt="-c600"></p>
-<p>最后，我们需要决定最终的输出。输出将会基于目前的元胞状态，并且会加入一些过滤。首先我们建立一个Sigmoid层的输出门(Output Gate)，来决定我们将输出元胞的哪些部分。然后我们将元胞状态通过tanh之后（使得输出值在-1到1之间），与输出门相乘，这样我们只会输出我们想输出的部分。</p>
-<p>对于语言模型的例子，由于刚刚只输出了一个主语，因此下一步可能需要输出与动词相关的信息。举例来说，可能需要输出主语是单数还是复数，以便于我们接下来选择动词时能够选择正确的形式。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585652046323.jpg" alt="-c600"></p>
-<h2 id="LSTM的变种">LSTM的变种</h2><p>本文前面所介绍的LSTM是最普通的LSTM，但并非所有的LSTM模型都与前面相同。事实上，似乎每一篇paper中所用到的LSTM都是稍微不一样的版本。不同之处很微小，不过其中一些值得介绍。</p>
-<p>一个流行的LSTM变种，由<a href="ftp://ftp.idsia.ch/pub/juergen/TimeCount-IJCNN2000.pdf" target="_blank" rel="external">Gers &amp; Schmidhuber (2000)</a>提出，加入了“窥视孔连接(peephole connection)”。也就是说我们让各种门可以观察到元胞状态。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585655553885.jpg" alt="-c600"></p>
-<p>上图中，对于所有的门都加入了“窥视孔”，不过也有一些paper中只加一部分。</p>
-<p>另一种变种是使用<strong>对偶</strong>的遗忘门和输入门。我们不再是单独地决定需要遗忘什么信息，需要加入什么新信息；而是一起做决定：我们只会在需要在某处放入新信息时忘记该处的旧值；我们只会在已经忘记旧值的位置放入新值。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585661398239.jpg" alt="-c600"></p>
-<p>另一个变化更大一些的LSTM变种叫做Gated Recurrent Unit，或者GRU，由<a href="http://arxiv.org/pdf/1406.1078v3.pdf" target="_blank" rel="external">Cho, et al. (2014)</a>提出。GRU将遗忘门和输入门合并成为单一的“更新门(Update Gate)”。GRU同时也将元胞状态(Cell State)和隐状态(Hidden State)合并，同时引入其他的一些变化。该模型比标准的LSTM模型更加简化，同时现在也变得越来越流行。</p>
-<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585667357562.png" alt="-c600"></p>
-<p>另外还有很多其他的模型，比如<a href="http://arxiv.org/pdf/1508.03790v2.pdf" target="_blank" rel="external">Yao, et al. (2015)</a>提出的Depth Gated RNNs。同时，还有很多完全不同的解决长期依赖问题的方法，比如<a href="http://arxiv.org/pdf/1402.3511v1.pdf" target="_blank" rel="external">Koutnik, et al. (2014)</a>提出的Clockwork RNNs。</p>
-<p>不同的模型中哪个最好？这其中的不同真的有关系吗？<a href="http://arxiv.org/pdf/1503.04069.pdf" target="_blank" rel="external">Greff, et al. (2015)</a>对流行的变种做了一个比较，发现它们基本相同。<a href="http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf" target="_blank" rel="external">Jozefowicz, et al. (2015)</a>测试了一万多种RNN结构，发现其中的一些在特定的任务上效果比LSTM要好。</p>
-<h2 id="结论">结论</h2><p>前文中，我提到了人们使用RNN所取得的出色的成就。本质上，几乎所有的成就都是由LSTM取得的。对于大部分的任务，LSTM表现得非常好。</p>
-<p>由于LSTM写在纸上是一堆公式，因此看起来很吓人。希望本文的分步讲解能让读者更容易接受和理解。</p>
-<p>LSTM使得我们在使用RNN能完成的任务上迈进了一大步。很自然，我们会思考，还会有下一个一大步吗？研究工作者们的共同观点是：“是的！还有一个下一步，那就是注意力(Attention)！”注意力机制的思想是，在每一步中，都让RNN从一个更大的信息集合中去选择信息。举个例子，假如你使用RNN来生成一幅图片的说明文字，RNN可能在输出每一个单词时，都会去观察图片的一部分。事实上，<a href="http://arxiv.org/pdf/1502.03044v2.pdf" target="_blank" rel="external">Xu, et al.(2015)</a>做的正是这个工作！如果你想探索注意力机制的话，这会是一个很有趣的起始点。现在已经有很多使用注意力的令人兴奋的成果，而且似乎更多的成果马上将会出来……</p>
-<p>注意力并不是RNN研究中唯一让人兴奋的主题。举例说，由<a href="http://arxiv.org/pdf/1507.01526v1.pdf" target="_blank" rel="external">Kalchbrenner, et al. (2015)</a>提出的Grid LSTM似乎极有前途。在生成式模型中使用RNN的工作——比如<a href="http://arxiv.org/pdf/1502.04623.pdf" target="_blank" rel="external">Gregor, et al. (2015)</a>、<a href="http://arxiv.org/pdf/1506.02216v3.pdf" target="_blank" rel="external">Chung, et al. (2015)</a>以及<a href="http://arxiv.org/pdf/1411.7610v3.pdf" target="_blank" rel="external">Bayer &amp; Osendorfer (2015)</a>——看起来也非常有意思。最近的几年对于RNN来说是一段非常令人激动的时间，接下来的几年也必将更加使人振奋！</p>
+        <span itemprop="articleBody"><h3 id="导读">导读</h3><p>目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。</p>
+<p>这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：<strong>当输入序列非常长时，模型难以学到合理的向量表示</strong>。</p>
+<p>在这篇博文中，我们将探索加入LSTM/RNN模型中的attention机制是如何克服传统编码器-解码器结构存在的问题的。</p>
+<p>通过阅读这篇博文，你将会学习到：</p>
+<ul>
+<li>传统编码器-解码器结构存在的问题及如何将输入序列编码成固定的向量表示；</li>
+<li>Attention机制是如何克服上述问题的，以及在模型输出时是如何考虑输出与输入序列的每一项关系的；</li>
+<li>基于attention机制的LSTM/RNN模型的5个应用领域：机器翻译、图片描述、语义蕴涵、语音识别和文本摘要。</li>
+</ul>
+<p>让我们开始学习吧。</p>
+<h3 id="长输入序列带来的问题">长输入序列带来的问题</h3><p>使用传统编码器-解码器的RNN模型先用一些LSTM单元来对输入序列进行学习，编码为固定长度的向量表示；然后再用一些LSTM单元来读取这种向量表示并解码为输出序列。</p>
+<p>采用这种结构的模型在许多比较难的序列预测问题（如文本翻译）上都取得了最好的结果，因此迅速成为了目前的主流方法。</p>
+<p>例如：</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1409.3215" target="_blank" rel="external">Sequence to Sequence Learning with Neural Networks, 2014</a></li>
+<li><a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="external">Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation, 2014</a></li>
+</ul>
+<p>这种结构在很多其他的领域上也取得了不错的结果。然而，它存在一个问题在于：输入序列不论长短都会被编码成一个固定长度的向量表示，而解码则受限于该固定长度的向量表示。</p>
+<p>这个问题限制了模型的性能，尤其是当输入序列比较长时，模型的性能会变得很差（在文本翻译任务上表现为待翻译的原始文本长度过长时翻译质量较差）。</p>
+<blockquote>
+<p>“一个潜在的问题是，采用编码器-解码器结构的神经网络模型需要将输入序列中的必要信息表示为一个固定长度的向量，而当输入序列很长时则难以保留全部的必要信息（因为太多），尤其是当输入序列的长度比训练数据集中的更长时。”</p>
+<p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
+</blockquote>
+<h3 id="使用attention机制">使用attention机制</h3><p>Attention机制的基本思想是，打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制。</p>
+<p>Attention机制的实现是通过保留LSTM编码器对输入序列的中间输出结果，然后训练一个模型来对这些输入进行选择性的学习并且在模型输出时将输出序列与之进行关联。</p>
+<p>换一个角度而言，输出序列中的每一项的生成概率取决于在输入序列中选择了哪些项。</p>
+<blockquote>
+<p>“在文本翻译任务上，使用attention机制的模型每生成一个词时都会在输入序列中找出一个与之最相关的词集合。之后模型根据当前的上下文向量 (context vectors) 和所有之前生成出的词来预测下一个目标词。</p>
+<p>… 它将输入序列转化为一堆向量的序列并自适应地从中选择一个子集来解码出目标翻译文本。这感觉上像是用于文本翻译的神经网络模型需要“压缩”输入文本中的所有信息为一个固定长度的向量，不论输入文本的长短。”</p>
+<p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
+</blockquote>
+<p>虽然模型使用attention机制之后会增加计算量，但是性能水平能够得到提升。</p>
+<p>另外，使用attention机制便于理解在模型输出过程中输入序列中的信息是如何影响最后生成序列的。这有助于我们更好地理解模型的内部运作机制以及对一些特定的输入-输出进行debug。</p>
+<blockquote>
+<p>“论文提出的方法能够直观地观察到生成序列中的每个词与输入序列中一些词的对齐关系，这可以通过对标注 (annotations) 权重参数可视化来实现…每个图中矩阵的每一行表示与标注相关联的权重。由此我们可以看出在生成目标词时，源句子中的位置信息会被认为更重要。”</p>
+<p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
+</blockquote>
+<h3 id="大型图片带来的问题">大型图片带来的问题</h3><p>被广泛应用于计算机视觉领域的卷积神经网络模型同样存在类似的问题： 对于特别大的图片输入，模型学习起来比较困难。</p>
+<p>由此，一种启发式的方法是将在模型做预测之前先对大型图片进行某种近似的表示。</p>
+<blockquote>
+<p>“人类的感知有一个重要的特性是不会立即处理外界的全部输入，相反的，人类会将注意力专注于所选择的部分来得到所需要的信息，然后结合不同时间段的局部信息来建立一个内部的场景表示，从而引导眼球的移动及做出决策。”</p>
+<p>— <a href="https://arxiv.org/abs/1406.6247" target="_blank" rel="external">Recurrent Models of Visual Attention, 2014</a></p>
+</blockquote>
+<p>这种启发式方法某种程度上也可以认为是考虑了attention，但在这篇博文中，这种方法并不认为是基于attention机制的。</p>
+<p>基于attention机制的相关论文如下：</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1406.6247" target="_blank" rel="external">Recurrent Models of Visual Attention, 2014</a></li>
+<li><a href="https://arxiv.org/abs/1502.04623" target="_blank" rel="external">DRAW: A Recurrent Neural Network For Image Generation, 2014</a></li>
+<li><a href="https://arxiv.org/abs/1412.7755" target="_blank" rel="external">Multiple Object Recognition with Visual Attention, 2014</a></li>
+</ul>
+<h3 id="基于attention模型的应用实例">基于attention模型的应用实例</h3><p>这部分将列举几个具体的应用实例，介绍attention机制是如何用在LSTM/RNN模型来进行序列预测的。</p>
+<h4 id="1-_Attention在文本翻译任务上的应用">1. Attention在文本翻译任务上的应用</h4><p>文本翻译这个实例在前面已经提过了。</p>
+<p>给定一个法语的句子作为输入序列，需要输出翻译为英语的句子。Attention机制被用在输出输出序列中的每个词时会专注考虑输入序列中的一些被认为比较重要的词。</p>
+<blockquote>
+<p>我们对原始的编码器-解码器模型进行了改进，使其有一个模型来对输入内容进行搜索，也就是说在生成目标词时会有一个编码器来做这个事情。这打破了之前的模型是基于将整个输入序列强行编码为一个固定长度向量的限制，同时也让模型在生成下一个目标词时重点考虑输入中相关的信息。</p>
+<p>— Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a></p>
+</blockquote>
+<p><img src="http://i.imgur.com/V9HYowa.png" alt=""></p>
+<p><em>Attention在文本翻译任务（输入为法语文本序列，输出为英语文本序列）上的可视化（图片来源于Dzmitry Bahdanau, et al., <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="external">Neural machine translation by jointly learning to align and translate, 2015</a>）</em></p>
+<h4 id="2-_Attention在图片描述上的应用">2. Attention在图片描述上的应用</h4><p>与之前启发式方法不同的是，基于序列生成的attention机制可以应用在计算机视觉相关的任务上，帮助卷积神经网络重点关注图片的一些局部信息来生成相应的序列，典型的任务就是对一张图片进行文本描述。</p>
+<p>给定一张图片作为输入，输出对应的英文文本描述。Attention机制被用在输出输出序列的每个词时会专注考虑图片中不同的局部信息。</p>
+<blockquote>
+<p>我们提出了一种基于attention的方法，该方法在3个标准数据集上都取得了最佳的结果……同时展现了attention机制能够更好地帮助我们理解模型地生成过程，模型学习到的对齐关系与人类的直观认知非常的接近（如下图）。</p>
+<p>— <a href="https://arxiv.org/abs/1502.03044" target="_blank" rel="external">Show, Attend and Tell: Neural Image Caption Generation with Visual Attention, 2016</a></p>
+</blockquote>
+<p><img src="http://i.imgur.com/qycpffZ.png" alt=""></p>
+<p><em>Attention在图片描述任务（输入为图片，输出为描述的文本）上的可视化（图片来源于Attend and Tell: Neural Image Caption Generation with Visual Attention, 2016）</em></p>
+<h4 id="3-_Attention在语义蕴涵_(Entailment)_中的应用">3. Attention在语义蕴涵 (Entailment) 中的应用</h4><p>给定一个用英文描述的前提和假设作为输入，输出假设与前提是否矛盾、是否相关或者是否成立。</p>
+<p>举个例子：</p>
+<p><strong>前提</strong>：在一个婚礼派对上拍照</p>
+<p><strong>假设</strong>：有人结婚了</p>
+<p>该例子中的假设是成立的。</p>
+<p>Attention机制被用于关联假设和前提描述文本之间词与词的关系。</p>
+<blockquote>
+<p>我们提出了一种基于LSTM的神经网络模型，和把每个输入文本都独立编码为一个语义向量的模型不同的是，该模型同时读取前提和假设两个描述的文本序列并判断假设是否成立。我们在模型中加入了attention机制来找出假设和前提文本中词/短语之间的对齐关系。……加入attention机制能够使模型在实验结果上有2.6个点的提升，这是目前数据集上取得的最好结果…</p>
+<p>— <a href="https://arxiv.org/abs/1509.06664" target="_blank" rel="external">Reasoning about Entailment with Neural Attention, 2016</a></p>
+</blockquote>
+<p><img src="http://i.imgur.com/B70hRCE.png" alt=""></p>
+<p><em>Attention在语义蕴涵任务（输入是前提文本，输出是假设文本）上的可视化（图片来源于Reasoning about Entailment with Neural Attention, 2016）</em></p>
+<h4 id="4-_Attention在语音识别上的应用">4. Attention在语音识别上的应用</h4><p>给定一个英文的语音片段作为输入，输出对应的音素序列。</p>
+<p>Attention机制被用于对输出序列的每个音素和输入语音序列中一些特定帧进行关联。</p>
+<blockquote>
+<p>…一种基于attention机制的端到端可训练的语音识别模型，能够结合文本内容和位置信息来选择输入序列中下一个进行编码的位置。该模型有一个优点是能够识别长度比训练数据长得多的语音输入。</p>
+<p>— <a href="https://arxiv.org/abs/1506.07503" target="_blank" rel="external">Attention-Based Models for Speech Recognition, 2015.</a></p>
+</blockquote>
+<p><img src="http://i.imgur.com/BTCD2NH.png" alt=""></p>
+<p><em>Attention在语音识别任务（输入是音帧，输出是音素的位置）上的可视化（图片来源于Attention-Based Models for Speech Recognition, 2015）</em></p>
+<h4 id="5-_Attention在文本摘要上的应用">5. Attention在文本摘要上的应用</h4><p>给定一篇英文文章作为输入序列，输出一个对应的摘要序列。</p>
+<p>Attention机制被用于关联输出摘要中的每个词和输入中的一些特定词。</p>
+<blockquote>
+<p>… 在最近神经网络翻译模型的发展基础之上，提出了一个用于生成摘要任务的基于attention的神经网络模型。通过将这个概率模型与一个生成式方法相结合来生成出准确的摘要。</p>
+<p>— <a href="https://arxiv.org/abs/1509.00685" target="_blank" rel="external">A Neural Attention Model for Abstractive Sentence Summarization, 2015</a></p>
+</blockquote>
+<p><img src="http://i.imgur.com/Kh3gwhV.png" alt=""></p>
+<p><em>Attention在文本摘要任务（输入为文章，输出为文本摘要）上的可视化（图片来源于A Neural Attention Model for Abstractive Sentence Summarization, 2015）</em></p>
+<h3 id="进一步的阅读">进一步的阅读</h3><p>如果你想进一步地学习如何在LSTM/RNN模型中加入attention机制，可阅读以下论文：</p>
+<ul>
+<li><a href="http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/" target="_blank" rel="external">Attention and memory in deep learning and NLP</a></li>
+<li><a href="https://blog.heuritech.com/2016/01/20/attention-mechanism/" target="_blank" rel="external">Attention Mechanism</a></li>
+<li><a href="http://yanran.li/peppypapers/2015/10/07/survey-attention-model-1.html" target="_blank" rel="external">Survey on Attention-based Models Applied in NLP</a></li>
+<li><a href="https://www.quora.com/What-is-exactly-the-attention-mechanism-introduced-to-RNN-recurrent-neural-network-It-would-be-nice-if-you-could-make-it-easy-to-understand" target="_blank" rel="external">What is exactly the attention mechanism introduced to RNN?</a> （来自Quora）</li>
+<li><a href="https://www.quora.com/What-is-Attention-Mechanism-in-Neural-Networks" target="_blank" rel="external">What is Attention Mechanism in Neural Networks?</a></li>
+</ul>
+<p>目前Keras官方还没有单独将attention模型的代码开源，下面有一些第三方的实现：</p>
+<ul>
+<li><a href="http://ben.bolte.cc/blog/2016/language.html" target="_blank" rel="external">Deep Language Modeling for Question Answering using Keras</a></li>
+<li><a href="https://github.com/fchollet/keras/issues/2067" target="_blank" rel="external">Attention Model Available!</a></li>
+<li><a href="https://github.com/philipperemy/keras-attention-mechanism" target="_blank" rel="external">Keras Attention Mechanism</a></li>
+<li><a href="https://github.com/fchollet/keras/issues/1472" target="_blank" rel="external">Attention and Augmented Recurrent Neural Networks</a></li>
+<li><a href="https://github.com/fchollet/keras/issues/4962" target="_blank" rel="external">How to add Attention on top of a Recurrent Layer (Text Classification)</a></li>
+<li><a href="https://github.com/fchollet/keras/issues/1472" target="_blank" rel="external">Attention Mechanism Implementation Issue</a></li>
+<li><a href="https://github.com/fchollet/keras/issues/2612" target="_blank" rel="external">Implementing simple neural attention model (for padded inputs)</a></li>
+<li><a href="https://github.com/fchollet/keras/issues/1094" target="_blank" rel="external">Attention layer requires another PR</a></li>
+<li><a href="https://github.com/farizrahman4u/seq2seq" target="_blank" rel="external">seq2seq library</a></li>
+</ul>
+<h3 id="总结">总结</h3><p>通过这篇博文，你应该学习到了attention机制是如何应用在LSTM/RNN模型中来解决序列预测存在的问题。</p>
+<p>具体而言，采用传统编码器-解码器结构的LSTM/RNN模型存在一个问题：不论输入长短都将其编码成一个固定长度的向量表示，这使模型对于长输入序列的学习效果很差（解码效果很差）。而attention机制则克服了上述问题，原理是在模型输出时会选择性地专注考虑输入中的对应相关的信息。使用attention机制的方法被广泛应用在各种序列预测任务上，包括文本翻译、语音识别等。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
-<h4 id="注：本文翻译自colah’s_blog，原文链接：http://colah-github-io/posts/2015-08-Understanding-LSTMs/。译文原作者：Naitong_Yu，译文链接：https://yunaitong-cn/understanding-lstm-networks-html">注：本文翻译自<a href="http://colah.github.io/" target="_blank" rel="external">colah’s blog</a>，原文链接：<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="external">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a>。译文原作者：Naitong Yu，译文链接：<a href="https://yunaitong.cn/understanding-lstm-networks.html" target="_blank" rel="external">https://yunaitong.cn/understanding-lstm-networks.html</a></h4></span>
+<p>感谢原作者<strong><a href="http://machinelearningmastery.com/author/jasonb/" target="_blank" rel="external">Jason Brownlee</a></strong>。原文链接见：<strong><a href="http://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/" target="_blank" rel="external">Attention in Long Short-Term Memory Recurrent Neural Networks</a></strong></p>
+<p>同时，本译文稍作修改被刊登在公众号：<strong>AI科技大本营</strong>上，文章链接见<strong><a href="http://mp.weixin.qq.com/s/0SWcAAiuN3BYtStDZXyAXg" target="_blank" rel="external">一文读懂Attention：Facebook曾拿CNN秒杀谷歌，现如今谷歌拿它秒杀所有人</a></strong>。欢迎关注这个公众号（微信搜索<strong>rgznai100</strong>），上面有较多机器学习/深度学习相关的资源（尽管文章稍有些标题党=。=）。</p>
+</span>
       
     </div>
 
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/Attention/" rel="tag">#Attention</a>
           
             <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
           
@@ -425,17 +476,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/how-to-install-and-setup-shadowsocks-client-in-different-os.html" rel="next" title="各种系统下Shadowsocks客户端的安装与配置">
-                <i class="fa fa-chevron-left"></i> 各种系统下Shadowsocks客户端的安装与配置
+              <a href="/deep-learning-for-chatbots-2.html" rel="next" title="聊天机器人中的深度学习技术之二：基于检索模型的实现">
+                <i class="fa fa-chevron-left"></i> 聊天机器人中的深度学习技术之二：基于检索模型的实现
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/deep-learning-for-chatbots-2.html" rel="prev" title="聊天机器人中的深度学习技术之二：基于检索模型的实现">
-                聊天机器人中的深度学习技术之二：基于检索模型的实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -621,7 +668,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#循环神经网络(RNN)"><span class="nav-number">1.</span> <span class="nav-text">循环神经网络(RNN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长期依赖(Long_Term_Dependencies)的问题"><span class="nav-number">2.</span> <span class="nav-text">长期依赖(Long Term Dependencies)的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM网络"><span class="nav-number">3.</span> <span class="nav-text">LSTM网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM核心思想"><span class="nav-number">4.</span> <span class="nav-text">LSTM核心思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM分步详解"><span class="nav-number">5.</span> <span class="nav-text">LSTM分步详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM的变种"><span class="nav-number">6.</span> <span class="nav-text">LSTM的变种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">7.</span> <span class="nav-text">结论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注：本文翻译自colah’s_blog，原文链接：http://colah-github-io/posts/2015-08-Understanding-LSTMs/。译文原作者：Naitong_Yu，译文链接：https://yunaitong-cn/understanding-lstm-networks-html"><span class="nav-number">7.0.1.</span> <span class="nav-text">注：本文翻译自colah’s blog，原文链接：http://colah.github.io/posts/2015-08-Understanding-LSTMs/。译文原作者：Naitong Yu，译文链接：https://yunaitong.cn/understanding-lstm-networks.html</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长输入序列带来的问题"><span class="nav-number">2.</span> <span class="nav-text">长输入序列带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用attention机制"><span class="nav-number">3.</span> <span class="nav-text">使用attention机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大型图片带来的问题"><span class="nav-number">4.</span> <span class="nav-text">大型图片带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于attention模型的应用实例"><span class="nav-number">5.</span> <span class="nav-text">基于attention模型的应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-_Attention在文本翻译任务上的应用"><span class="nav-number">5.1.</span> <span class="nav-text">1. Attention在文本翻译任务上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-_Attention在图片描述上的应用"><span class="nav-number">5.2.</span> <span class="nav-text">2. Attention在图片描述上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-_Attention在语义蕴涵_(Entailment)_中的应用"><span class="nav-number">5.3.</span> <span class="nav-text">3. Attention在语义蕴涵 (Entailment) 中的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-_Attention在语音识别上的应用"><span class="nav-number">5.4.</span> <span class="nav-text">4. Attention在语音识别上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-_Attention在文本摘要上的应用"><span class="nav-number">5.5.</span> <span class="nav-text">5. Attention在文本摘要上的应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进一步的阅读"><span class="nav-number">6.</span> <span class="nav-text">进一步的阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -688,9 +735,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'understanding-lstm-network.html';
-      var disqus_title = '理解LSTM网络';
-      var disqus_url = 'http://www.jeyzhang.com/understanding-lstm-network.html';
+      var disqus_identifier = 'understand-attention-in-rnn.html';
+      var disqus_title = '理解RNN中的Attention机制';
+      var disqus_url = 'http://www.jeyzhang.com/understand-attention-in-rnn.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

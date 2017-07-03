@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
+    <lastmod>2017-07-03T12:20:41.132Z</lastmod>
+    <data>
+        <display>
+        <title>理解RNN中的Attention机制</title>
+        <pubTime>2017-07-03T10:59:56.000Z</pubTime>
+        
+        <tag>Attention</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>LSTM</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>RNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
     <lastmod>2017-02-07T08:50:08.762Z</lastmod>
     <data>
