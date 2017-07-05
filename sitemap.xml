@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2017-07-04T04:03:58.216Z</lastmod>
+    <loc>http://www.jeyzhang.com/about/index.html</loc>
+    <lastmod>2017-07-05T04:07:08.479Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2017-07-03T12:25:39.434Z</lastmod>
+    <lastmod>2017-07-05T04:07:06.952Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
+    <lastmod>2017-07-04T04:03:58.216Z</lastmod>
   </url>
   
   <url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
     <lastmod>2017-02-07T08:49:27.506Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/about/index.html</loc>
-    <lastmod>2017-01-05T04:03:55.069Z</lastmod>
   </url>
   
   <url>
