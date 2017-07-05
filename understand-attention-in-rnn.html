@@ -64,10 +64,9 @@
 <meta property="og:image" content="http://i.imgur.com/B70hRCE.png">
 <meta property="og:image" content="http://i.imgur.com/BTCD2NH.png">
 <meta property="og:image" content="http://i.imgur.com/Kh3gwhV.png">
-<meta property="og:image" content="http://i.imgur.com/HzMvtp6.gif">
-<meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
-<meta property="og:updated_time" content="2017-07-05T04:08:59.763Z">
+<meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
+<meta property="og:updated_time" content="2017-07-05T04:39:48.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解LSTM/RNN中的Attention机制">
 <meta name="twitter:description" content="导读目前采用编码器-解码器 (Encode-Decode) 结构的模型非常热门，是因为它在许多领域较其他的传统模型方法都取得了更好的结果。这种结构的模型通常将输入序列编码成一个固定长度的向量表示，对于长度较短的输入序列而言，该模型能够学习出对应合理的向量表示。然而，这种模型存在的问题在于：当输入序列非常长时，模型难以学到合理的向量表示。
@@ -449,15 +448,11 @@
 <p>本文结束，感谢欣赏。</p>
 <p>感谢原作者<strong><a href="http://machinelearningmastery.com/author/jasonb/" target="_blank" rel="external">Jason Brownlee</a></strong>。原文链接见：<strong><a href="http://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/" target="_blank" rel="external">Attention in Long Short-Term Memory Recurrent Neural Networks</a></strong></p>
 <p>同时，本译文稍作修改被刊登在公众号：<strong>AI科技大本营</strong>上，文章链接见<strong><a href="http://mp.weixin.qq.com/s/0SWcAAiuN3BYtStDZXyAXg" target="_blank" rel="external">一文读懂Attention：Facebook曾拿CNN秒杀谷歌，现如今谷歌拿它秒杀所有人</a></strong>。欢迎关注这个公众号（微信搜索<strong>rgznai100</strong>），上面有较多机器学习/深度学习相关的资源（尽管文章稍有些标题党=。=）。</p>
-<h3 id="Contact">Contact</h3><p><strong>Email</strong></p>
-<p><img src="http://i.imgur.com/HzMvtp6.gif" alt=""></p>
-<p><strong>WeChat</strong></p>
-<p><img src="http://i.imgur.com/CTuJ7Ln.jpg" alt=""></p>
-<p><strong>加好友请备注：”博客”，近期博主准备筹建NLP方面的技术群，欢迎感兴趣的小伙伴加我入群交流:)</strong></p>
-<h3 id="On_Sale">On Sale</h3><p>提供VPN服务，支持iOS / Android / Windows / Mac / Linux (Ubuntu)等系统；</p>
-<p><strong>价格为每月7元，需要者请邮箱或微信联系，加微信请备注【VPN】</strong>。</p>
-<h3 id="Donate">Donate</h3><p>文章写得不错？打赏一个呗:)</p>
+<p><strong>==========可爱的分割线==========</strong></p>
+<p><strong>文章写得不错？打赏一个呗:)</strong></p>
 <p><img src="http://i.imgur.com/tTBAnzw.png" alt=""></p>
+<p><strong>近期博主准备筹建NLP方面的技术群，欢迎感兴趣的小伙伴加我入群交流:)，加好友请备注：”博客”。</strong></p>
+<p><img src="http://i.imgur.com/CTuJ7Ln.jpg" alt=""></p>
 </span>
       
     </div>
@@ -675,7 +670,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长输入序列带来的问题"><span class="nav-number">2.</span> <span class="nav-text">长输入序列带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用attention机制"><span class="nav-number">3.</span> <span class="nav-text">使用attention机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大型图片带来的问题"><span class="nav-number">4.</span> <span class="nav-text">大型图片带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于attention模型的应用实例"><span class="nav-number">5.</span> <span class="nav-text">基于attention模型的应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-_Attention在文本翻译任务上的应用"><span class="nav-number">5.1.</span> <span class="nav-text">1. Attention在文本翻译任务上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-_Attention在图片描述上的应用"><span class="nav-number">5.2.</span> <span class="nav-text">2. Attention在图片描述上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-_Attention在语义蕴涵_(Entailment)_中的应用"><span class="nav-number">5.3.</span> <span class="nav-text">3. Attention在语义蕴涵 (Entailment) 中的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-_Attention在语音识别上的应用"><span class="nav-number">5.4.</span> <span class="nav-text">4. Attention在语音识别上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-_Attention在文本摘要上的应用"><span class="nav-number">5.5.</span> <span class="nav-text">5. Attention在文本摘要上的应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进一步的阅读"><span class="nav-number">6.</span> <span class="nav-text">进一步的阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contact"><span class="nav-number">8.</span> <span class="nav-text">Contact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#On_Sale"><span class="nav-number">9.</span> <span class="nav-text">On Sale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Donate"><span class="nav-number">10.</span> <span class="nav-text">Donate</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长输入序列带来的问题"><span class="nav-number">2.</span> <span class="nav-text">长输入序列带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用attention机制"><span class="nav-number">3.</span> <span class="nav-text">使用attention机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大型图片带来的问题"><span class="nav-number">4.</span> <span class="nav-text">大型图片带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于attention模型的应用实例"><span class="nav-number">5.</span> <span class="nav-text">基于attention模型的应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-_Attention在文本翻译任务上的应用"><span class="nav-number">5.1.</span> <span class="nav-text">1. Attention在文本翻译任务上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-_Attention在图片描述上的应用"><span class="nav-number">5.2.</span> <span class="nav-text">2. Attention在图片描述上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-_Attention在语义蕴涵_(Entailment)_中的应用"><span class="nav-number">5.3.</span> <span class="nav-text">3. Attention在语义蕴涵 (Entailment) 中的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-_Attention在语音识别上的应用"><span class="nav-number">5.4.</span> <span class="nav-text">4. Attention在语音识别上的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-_Attention在文本摘要上的应用"><span class="nav-number">5.5.</span> <span class="nav-text">5. Attention在文本摘要上的应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进一步的阅读"><span class="nav-number">6.</span> <span class="nav-text">进一步的阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
