@@ -389,6 +389,236 @@
             
               
                 
+                <a class="post-title-link" href="/deep-learning-for-chatbots-2.html" itemprop="url">
+                  聊天机器人中的深度学习技术之二：基于检索模型的实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-11-27T11:05:31+08:00" content="2016-11-27">
+              2016-11-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/deep-learning-for-chatbots-2.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="deep-learning-for-chatbots-2.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/deep-learning-for-chatbots-2.html"class="leancloud_visitors"  data-flag-title="聊天机器人中的深度学习技术之二：基于检索模型的实现">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            上篇博文：聊天机器人中的深度学习技术之一：导读主要从宏观上对目前聊天机器人所用到的主要技术进行了介绍。这篇博文会介绍并实现一个基于检索的模型，使用了双层Decoder的LSTM模型，通过这个模型可以实现聊天机器人。
+本文涉及到的数据和代码见Github仓库地址。
+
+基于检索模型的聊天机器人本文我们将介绍和实现一个基于检索模型的聊天机器人。检索模型所使用的回复数据通常是预先存储且知道（或定义）的数据
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/deep-learning-for-chatbots-2.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/understanding-lstm-network.html" itemprop="url">
+                  理解LSTM网络
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-10-19T11:38:26+08:00" content="2016-10-19">
+              2016-10-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/understanding-lstm-network.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="understanding-lstm-network.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/understanding-lstm-network.html"class="leancloud_visitors"  data-flag-title="理解LSTM网络">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="循环神经网络(RNN)">循环神经网络(RNN)</h2><p>人们的每次思考并不都是从零开始的。比如说你在阅读这篇文章时，你基于对前面的文字的理解来理解你目前阅读到的文字，而不是每读到一个文字时，都抛弃掉前面的思考，从头开始。你的记忆是有持久性的。</p>
+<p>传统的神经网络并不能如此，这似乎是一个主要的缺点。例如，假设你在看一场电影，你想对电影里的每一个场景进行分类。传统的神经网络不能够基于前面的已分类场景来推断接下来的场景分类。</p>
+<p>循环神经网络(Recurrent Neural Networks)解决了这个问题。这种神经网络带有环，可以将信息持久化。</p>
+<p><img src="http://7xqwhn.com1.z0.glb.clouddn.com/2016-10-19-14585451475265.jpg" alt="Recurrent Neural Networks have loops. -c100"></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/understanding-lstm-network.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/how-to-install-and-setup-shadowsocks-client-in-different-os.html" itemprop="url">
                   各种系统下Shadowsocks客户端的安装与配置
                 </a>
