@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/about/index.html</loc>
+    <lastmod>2017-07-14T04:01:16.478Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
     <lastmod>2017-07-05T06:43:39.963Z</lastmod>
   </url>
@@ -52,23 +57,8 @@
   </url>
   
   <url>
-    <loc>http://www.jeyzhang.com/about/index.html</loc>
-    <lastmod>2017-07-05T04:07:08.479Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2017-07-04T04:03:58.216Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
     <lastmod>2017-02-07T08:50:08.762Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
-    <lastmod>2017-02-07T08:49:27.506Z</lastmod>
   </url>
   
   <url>
@@ -152,17 +142,17 @@
   </url>
   
   <url>
+    <loc>http://www.jeyzhang.com/404.html</loc>
+    <lastmod>2016-01-13T02:30:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/tags/index.html</loc>
     <lastmod>2016-01-13T02:30:40.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/categories/index.html</loc>
-    <lastmod>2016-01-13T02:30:40.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/404.html</loc>
     <lastmod>2016-01-13T02:30:40.000Z</lastmod>
   </url>
   

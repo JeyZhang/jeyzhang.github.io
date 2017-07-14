@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
     <lastmod>2017-07-05T06:43:39.963Z</lastmod>
@@ -257,39 +258,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2017-07-04T04:03:58.216Z</lastmod>
-    <data>
-        <display>
-        <title>各种系统下Shadowsocks客户端的安装与配置</title>
-        <pubTime>2016-10-08T03:44:57.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>Mac</tag>
-         
-        <tag>Shadowsocks</tag>
-         
-        <tag>VPN</tag>
-         
-        <tag>Windows</tag>
-         
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
     <lastmod>2017-02-07T08:50:08.762Z</lastmod>
@@ -306,30 +274,6 @@
            
              
               <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/using-azure-to-set-up-vpn-service.html</loc>
-    <lastmod>2017-02-07T08:49:27.506Z</lastmod>
-    <data>
-        <display>
-        <title>使用Azure和Shadowsocks搭建VPN服务</title>
-        <pubTime>2016-08-20T01:39:33.000Z</pubTime>
-        
-        <tag>Azure</tag>
-         
-        <tag>Shadowsocks</tag>
-         
-        <tag>VPN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Network" url="http://www.jeyzhang.com/categories/Network/"/>
           
         </display>
     </data>
