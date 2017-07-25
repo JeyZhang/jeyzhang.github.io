@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
+    <lastmod>2017-07-25T10:21:54.024Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/about/index.html</loc>
     <lastmod>2017-07-14T04:01:16.478Z</lastmod>
   </url>
@@ -54,11 +59,6 @@
   <url>
     <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
     <lastmod>2017-07-05T06:13:10.202Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2017-07-04T04:03:58.216Z</lastmod>
   </url>
   
   <url>
