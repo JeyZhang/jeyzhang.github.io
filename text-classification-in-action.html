@@ -65,7 +65,7 @@
 <meta property="og:image" content="https://i.imgur.com/168IXSD.png">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2017-12-11T13:37:17.804Z">
+<meta property="og:updated_time" content="2017-12-11T13:45:31.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本分类实战系列（一）：特征工程">
 <meta name="twitter:description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
@@ -340,16 +340,23 @@
 <p>词袋模型的one-hot表示示意图如下（假设我们构建了一个2w维的词袋模型，每一维表示一个词）：</p>
 <p><img src="https://i.imgur.com/168IXSD.png" alt=""></p>
 <p>从上到下，可以看出几种不同的表示方法：</p>
-<p>第1种：Naive版本，不考虑词出现的频率，只要出现过就在相应的位置标1，否则为0；</p>
-<p>第2种：考虑词频（即term frequency），认为一段文本中出现越多的词越重要，因此权重也越大；</p>
-<p>第3种：考虑词的重要性，以TFIDF表征一个词的重要程度（不了解TFIDF的点<a href="https://zh.wikipedia.org/wiki/Tf-idf" target="_blank" rel="external">这里</a>）。简单来说，<strong>TFIDF反映了一种折中的思想</strong>：在一篇文档中，一个词出现的次数越大可能越重要（TF），但也可能并不是（比如停用词：“的”“是”之类的）；一个词出现在的文档数越少越重要(IDF)，但也可能不是（比如一些无意义的生僻词）。</p>
-<p>通常情况下，我们都会采用第3种方法。原因也很直观，文本中所出现的词的重要程度是不太一样的，比如上面的例子中“我”，“喜欢”，“学习”这3个词就要比其他词更为重要。除了TFIDF的表征方法，还有chi-square，互信息（MI），熵等其他一些衡量词重要性的指标（<a href="https://www.zhihu.com/question/21374143" target="_blank" rel="external">见这里</a>）。但是一般TFIDF用得比较普遍。</p>
+<ul>
+<li>第1种：Naive版本，不考虑词出现的频率，只要出现过就在相应的位置标1，否则为0；</li>
+<li>第2种：考虑词频（即term frequency），认为一段文本中出现越多的词越重要，因此权重也越大；</li>
+<li>第3种：考虑词的重要性，以TFIDF表征一个词的重要程度（不了解TFIDF的点<a href="https://zh.wikipedia.org/wiki/Tf-idf" target="_blank" rel="external">这里</a>）。简单来说，<strong>TFIDF反映了一种折中的思想</strong>：即在一篇文档中，TF认为一个词出现的次数越大可能越重要，但也可能并不是（比如停用词：“的”“是”之类的）；IDF认为一个词出现在的文档数越少越重要，但也可能不是（比如一些无意义的生僻词）。</li>
+</ul>
+<p><strong>通常情况下，我们都会采用第3种方法。</strong>原因也很直观，文本中所出现的词的重要程度是不太一样的，比如上面的例子中“我”，“喜欢”，“学习”这3个词就要比其他词更为重要。除了TFIDF的表征方法，还有chi-square，互信息（MI），熵等其他一些衡量词重要性的指标（<a href="https://www.zhihu.com/question/21374143" target="_blank" rel="external">见这里</a>）。但是一般TFIDF用得比较普遍。</p>
 <p><strong>经验总结</strong>：</p>
 <ul>
 <li>通常考虑unigram和bigram来构建词袋模型（trigram的话维数太高，取得的gain也不高）；</li>
 <li>用TFIDF时，注意对TF作归一化，通常用词频除以文本的长度；</li>
-<li>如果构建的词袋维数太高，可以用TF（或者TFIDF）来卡，将一些不常见的词（会有很多噪音词，如联系方式、邮箱之类的）过滤掉。</li>
-<li>如果有一些先验的词袋，word count通常都是比较强的一维特征（比如情感分类中，正负情感词的出现次数），可以考虑。</li>
+<li>如果构建的词袋维数太高，可以用TF（或者TFIDF）来卡，将一些不常见的词（会有很多噪音词，如联系方式、邮箱之类的）过滤掉；</li>
+<li>如果有一些先验的词袋，word count通常都是比较强的一维特征（比如情感分类中，正负情感词的出现次数），可以考虑；</li>
+</ul>
+<p>词袋模型比较简单直观，它通常能学习出一些关键词和类别之间的映射关系，<strong>但是缺点也很明显</strong>：</p>
+<ul>
+<li>丢失了文本中词出现的先后顺序信息；</li>
+<li>仅将词语符号化，没有考虑词之间的语义联系；</li>
 </ul>
 <h2 id="基于embedding的特征表示">基于embedding的特征表示</h2><p>下次再写咯~</p>
 <hr>
