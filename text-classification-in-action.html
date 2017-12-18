@@ -62,10 +62,10 @@
 本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
 概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任">
 <meta property="og:image" content="https://i.imgur.com/TULIWnI.png">
-<meta property="og:image" content="https://i.imgur.com/168IXSD.png">
+<meta property="og:image" content="https://i.imgur.com/25KYCfO.png">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2017-12-11T13:45:31.836Z">
+<meta property="og:updated_time" content="2017-12-15T09:52:24.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本分类实战系列（一）：特征工程">
 <meta name="twitter:description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
@@ -338,7 +338,7 @@
 <p>我主要将这些特征分为四个层次，由下往上，特征由抽象到具体，粒度从细到粗。我们希望能够从不同的角度和纬度来设计特征，以捕捉这些特征和类别之间的关系。下面详细介绍这四个层次上常用到的特征表示。</p>
 <h3 id="基于词袋模型的特征表示">基于词袋模型的特征表示</h3><p>词袋模型的基本思想是将文本符号化，将一段文本表示成一堆符号的集合；由于中文文本的多样性，通常导致构建的词袋维数较大，仅仅以词为单位（Unigram）构建的词袋可能就达到几万维，如果考虑二元词组（Bigram）、三元词组（Trigram）的话词袋大小可能会有几十万之多，因此基于词袋模型的特征表示通常是极其稀疏的。</p>
 <p>词袋模型的one-hot表示示意图如下（假设我们构建了一个2w维的词袋模型，每一维表示一个词）：</p>
-<p><img src="https://i.imgur.com/168IXSD.png" alt=""></p>
+<p><img src="https://i.imgur.com/25KYCfO.png" alt=""></p>
 <p>从上到下，可以看出几种不同的表示方法：</p>
 <ul>
 <li>第1种：Naive版本，不考虑词出现的频率，只要出现过就在相应的位置标1，否则为0；</li>
@@ -352,13 +352,14 @@
 <li>用TFIDF时，注意对TF作归一化，通常用词频除以文本的长度；</li>
 <li>如果构建的词袋维数太高，可以用TF（或者TFIDF）来卡，将一些不常见的词（会有很多噪音词，如联系方式、邮箱之类的）过滤掉；</li>
 <li>如果有一些先验的词袋，word count通常都是比较强的一维特征（比如情感分类中，正负情感词的出现次数），可以考虑；</li>
+<li><strong>基于词袋模型构建的特征通常高维但稀疏，通常使用非线性模型取得的效果较线性的要好，推荐大家尝试使用一些基于决策树的boosting模型，如<a href="https://en.wikipedia.org/wiki/Gradient_boosting" target="_blank" rel="external">GBDT</a></strong>；这也很好理解，较线性模型而言，非线性模型能够学习出更加复杂的规则，对于文本而言，体现在能够一定程度上考虑词出现的语境（context）情况，比如，对于识别文本是否为骂人语料，文本中出现“妈”，同时也出现“你”，那么为骂人的概率会增大。</li>
 </ul>
 <p>词袋模型比较简单直观，它通常能学习出一些关键词和类别之间的映射关系，<strong>但是缺点也很明显</strong>：</p>
 <ul>
 <li>丢失了文本中词出现的先后顺序信息；</li>
-<li>仅将词语符号化，没有考虑词之间的语义联系；</li>
+<li>仅将词语符号化，没有考虑词之间的语义联系（比如，“麦克风”和“话筒”是不同的词，但是语义是相同的）；</li>
 </ul>
-<h2 id="基于embedding的特征表示">基于embedding的特征表示</h2><p>下次再写咯~</p>
+<h2 id="基于embedding的特征表示">基于embedding的特征表示</h2><p>上一部分介绍了基于词袋模型如何提取文本特征，这主要是从词形的角度考虑的，并没有考虑词语之间的语义关联信息。提到语义关联，大家都会联想到著名的<a href="https://zh.wikipedia.org/wiki/Word2vec" target="_blank" rel="external">word2vec</a>。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
