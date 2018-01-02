@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
-    <lastmod>2017-12-15T09:52:24.015Z</lastmod>
+    <lastmod>2018-01-02T12:01:22.402Z</lastmod>
     <data>
         <display>
         <title>文本分类实战系列（一）：特征工程</title>
@@ -20,6 +20,28 @@
         <tag>TensorFlow</tag>
          
         <tag>Text Classification</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2017-12-27T07:58:55.519Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之一：导读</title>
+        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
+        
+        <tag>ChatBot</tag>
+         
+        <tag>Deep Learning</tag>
          
          
            
@@ -231,28 +253,6 @@
         <tag>Deep Learning</tag>
          
         <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2017-07-05T06:39:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>聊天机器人中的深度学习技术之一：导读</title>
-        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
-        
-        <tag>ChatBot</tag>
-         
-        <tag>Deep Learning</tag>
          
          
            

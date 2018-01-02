@@ -65,7 +65,7 @@
 <meta property="og:image" content="https://i.imgur.com/25KYCfO.png">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2017-12-15T09:52:24.015Z">
+<meta property="og:updated_time" content="2018-01-02T12:01:22.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本分类实战系列（一）：特征工程">
 <meta name="twitter:description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
@@ -359,7 +359,20 @@
 <li>丢失了文本中词出现的先后顺序信息；</li>
 <li>仅将词语符号化，没有考虑词之间的语义联系（比如，“麦克风”和“话筒”是不同的词，但是语义是相同的）；</li>
 </ul>
-<h2 id="基于embedding的特征表示">基于embedding的特征表示</h2><p>上一部分介绍了基于词袋模型如何提取文本特征，这主要是从词形的角度考虑的，并没有考虑词语之间的语义关联信息。提到语义关联，大家都会联想到著名的<a href="https://zh.wikipedia.org/wiki/Word2vec" target="_blank" rel="external">word2vec</a>。</p>
+<h2 id="基于embedding的特征表示">基于embedding的特征表示</h2><p>上一部分介绍了基于词袋模型如何提取文本特征，这主要是从词形的角度考虑的，并没有考虑词语之间的语义关联信息。提到语义关联，大家都会联想到著名的<a href="https://zh.wikipedia.org/wiki/Word2vec" target="_blank" rel="external">word2vec</a>。<strong>word2vec的原理很简单，基本思想是用词出现的上下文来表示这个词，上下文越接近的词之间的语义相似性越高。</strong>例如，上一小节中举到的例子，“话筒”和“麦克风”两者的上下文可能非常接近，因此会被认为是语义接近的。（不过语义接近并不代表含义接近，例如“黑色”和“白色”的上下文是相似的，但所代表的含义可能却是相反的）。</p>
+<p>目前做word embedding的方法很多，比较流行的有下面两种：</p>
+<ul>
+<li><a href="https://code.google.com/archive/p/word2vec/" target="_blank" rel="external">word2vec</a></li>
+<li><a href="https://nlp.stanford.edu/projects/glove/" target="_blank" rel="external">GloVe</a></li>
+</ul>
+<p>word2vec和GloVe两者的思想是类似的，都是用词的上下文来表示这个词，但是用的方法不同：word2vec是predict-based，用一个3层的NN模型来预测词的上下文（或者反过来），词向量是训练过程的中间产物；而GloVe则是count-based的方法，通过对共现词矩阵做降维来获取词的向量。两者在效果上相差不大，但GloVe模型的优势在于矩阵运算可以并行化，这样训练速度能加快。具体两者的差别可以参考<a href="https://www.quora.com/How-is-GloVe-different-from-word2vec" target="_blank" rel="external">Quora上的回答</a>。</p>
+<p>有了word embedding之后，我们怎么得到文本的embedding呢？</p>
+<p>对于短文本而言，比较好的方法有：</p>
+<p>(1) 取短文本的各个词向量之和（或者取平均）作为文本的向量表示；</p>
+<p>(2) 用一个pre-train好的NN model得到文本作为输入的最后一层向量表示；</p>
+<p>除此之外，还有<a href="https://github.com/minghui/Twitter-LDA" target="_blank" rel="external">TwitterLda</a>，TwitterLda是Lda的简化版本，针对短文本做主题刻画，实际效果也还不错。</p>
+<p>基于embedding的特征刻画的是语义、主题层面上的特征，较词匹配而言，有一定的泛化能力。</p>
+<h2 id="基于NN_Model抽取的特征">基于NN Model抽取的特征</h2><p>NN的好处在于能end2end实现模型的训练和测试，利用模型的非线性和众多参数来学习特征，而不需要手工提取特征。CNN和RNN都是NLP中常用的模型，两个模型捕捉特征的角度也不太一样，<strong>CNN善于捕捉文本中关键的局部信息，而RNN则善于捕捉文本的上下文信息（考虑语序信息），并且有一定的记忆能力，两者都可以用在文本分类任务中，而且效果都不错</strong>。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
@@ -586,7 +599,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于词袋模型的特征表示"><span class="nav-number">2.1.</span> <span class="nav-text">基于词袋模型的特征表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于embedding的特征表示"><span class="nav-number">3.</span> <span class="nav-text">基于embedding的特征表示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于词袋模型的特征表示"><span class="nav-number">2.1.</span> <span class="nav-text">基于词袋模型的特征表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于embedding的特征表示"><span class="nav-number">3.</span> <span class="nav-text">基于embedding的特征表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于NN_Model抽取的特征"><span class="nav-number">4.</span> <span class="nav-text">基于NN Model抽取的特征</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -610,7 +623,7 @@
 <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>

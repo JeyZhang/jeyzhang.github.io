@@ -67,7 +67,7 @@
 <meta property="og:image" content="http://i.imgur.com/JGrn8LK.png">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2017-07-05T06:39:41.000Z">
+<meta property="og:updated_time" content="2017-12-27T07:58:55.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊天机器人中的深度学习技术之一：导读">
 <meta name="twitter:description" content="以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
@@ -352,7 +352,7 @@
 <p><img src="http://i.imgur.com/JGrn8LK.png" alt=""></p>
 <h3 id="对话模型的评测">对话模型的评测</h3><p>评价一个对话模型的好坏在于它是否很好地完成了某项任务，例如在对话中解决了客户的问题。这样的训练数据需要人工标注和评测，所以获取上需要一定人力代价。有时在开放域中的对话系统也没有一个清晰的优化目标。用于机器翻译的评测指标<a href="https://en.wikipedia.org/wiki/BLEU" target="_blank" rel="external">BLEU</a>不能适用于此，是因为它的计算基础是语言表面上的匹配程度，而对话中的回答可以是完全不同词型但语义通顺的语句。论文<a href="http://arxiv.org/abs/1603.08023" target="_blank" rel="external">How NOT To Evaluate Your Dialogue System: An Empirical Study of Unsupervised Evaluation Metrics for Dialogue Response Generation</a>中给出结论，目前常用的评测指标均与人工评测无关。</p>
 <h3 id="意图和回复多样性">意图和回复多样性</h3><p>生成式模型中的一个普遍问题是，它们都想要生成一些通用的回答，例如[That’s great!]和[I don’t know]这样的可以应付许多的用户询问。早期的Google智能回复基本上以[I love you]回复所有的东西<a href="http://googleresearch.blogspot.com/2015/11/computer-respond-to-this-email.html" target="_blank" rel="external">链接</a>，这是一些模型最终训练出来的结果，原因在于训练数据和训练的优化目标。因此，有些研究学者开始关注<a href="http://arxiv.org/abs/1510.03055" target="_blank" rel="external">如何提升机器人的回复的多样性</a>，然而人们在对话过程中的回复与询问有一定特定关系，是有一定意图的，而许多面向开放域的机器人不具备特定的意图。</p>
-<h2 id="实际效果">实际效果</h2><p>以目前的研究水平所制造的机器人能够取得的效果如何？使用基于检索技术的显然无法制作出面向开放域的机器人，这是因为你不能编写覆盖所有领域的语料；而生成式的面向开放域的机器人还属于<strong>一般人工智能(Artifical General Intelligence, AGI)</strong>水平，距离理想状态还相距甚远，但相关研究学者还在致力于此。</p>
+<h2 id="实际效果">实际效果</h2><p>以目前的研究水平所制造的机器人能够取得的效果如何？使用基于检索技术的显然无法制作出面向开放域的机器人，这是因为你不能编写覆盖所有领域的语料；而生成式的面向开放域的机器人还属于<strong>通用人工智能(Artifical General Intelligence, AGI)</strong>水平，距离理想状态还相距甚远，但相关研究学者还在致力于此。</p>
 <p>对于特定领域的机器人，基于检索的技术和生成式模型都能够利用。但是对于长对话的情境，也面临许多困难。</p>
 <p>在最近对<a href="http://www.seattletimes.com/business/baidu-research-chief-andrew-ng-fixed-on-self-taught-computers-self-driving-cars/" target="_blank" rel="external">Andrew NG的采访</a>中，NG提到：</p>
 <blockquote>
@@ -623,7 +623,7 @@
 <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
