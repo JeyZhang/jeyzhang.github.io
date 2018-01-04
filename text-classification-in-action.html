@@ -65,7 +65,7 @@
 <meta property="og:image" content="https://i.imgur.com/25KYCfO.png">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2018-01-02T12:01:22.402Z">
+<meta property="og:updated_time" content="2018-01-04T12:21:11.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本分类实战系列（一）：特征工程">
 <meta name="twitter:description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
@@ -359,7 +359,7 @@
 <li>丢失了文本中词出现的先后顺序信息；</li>
 <li>仅将词语符号化，没有考虑词之间的语义联系（比如，“麦克风”和“话筒”是不同的词，但是语义是相同的）；</li>
 </ul>
-<h2 id="基于embedding的特征表示">基于embedding的特征表示</h2><p>上一部分介绍了基于词袋模型如何提取文本特征，这主要是从词形的角度考虑的，并没有考虑词语之间的语义关联信息。提到语义关联，大家都会联想到著名的<a href="https://zh.wikipedia.org/wiki/Word2vec" target="_blank" rel="external">word2vec</a>。<strong>word2vec的原理很简单，基本思想是用词出现的上下文来表示这个词，上下文越接近的词之间的语义相似性越高。</strong>例如，上一小节中举到的例子，“话筒”和“麦克风”两者的上下文可能非常接近，因此会被认为是语义接近的。（不过语义接近并不代表含义接近，例如“黑色”和“白色”的上下文是相似的，但所代表的含义可能却是相反的）。</p>
+<h3 id="基于embedding的特征表示">基于embedding的特征表示</h3><p>上一部分介绍了基于词袋模型如何提取文本特征，这主要是从词形的角度考虑的，并没有考虑词语之间的语义关联信息。提到语义关联，大家都会联想到著名的<a href="https://zh.wikipedia.org/wiki/Word2vec" target="_blank" rel="external">word2vec</a>。<strong>word2vec的原理很简单，基本思想是用词出现的上下文来表示这个词，上下文越接近的词之间的语义相似性越高。</strong>例如，上一小节中举到的例子，“话筒”和“麦克风”两者的上下文可能非常接近，因此会被认为是语义接近的。（不过语义接近并不代表含义接近，例如“黑色”和“白色”的上下文是相似的，但所代表的含义可能却是相反的）。</p>
 <p>目前做word embedding的方法很多，比较流行的有下面两种：</p>
 <ul>
 <li><a href="https://code.google.com/archive/p/word2vec/" target="_blank" rel="external">word2vec</a></li>
@@ -372,7 +372,10 @@
 <p>(2) 用一个pre-train好的NN model得到文本作为输入的最后一层向量表示；</p>
 <p>除此之外，还有<a href="https://github.com/minghui/Twitter-LDA" target="_blank" rel="external">TwitterLda</a>，TwitterLda是Lda的简化版本，针对短文本做主题刻画，实际效果也还不错。</p>
 <p>基于embedding的特征刻画的是语义、主题层面上的特征，较词匹配而言，有一定的泛化能力。</p>
-<h2 id="基于NN_Model抽取的特征">基于NN Model抽取的特征</h2><p>NN的好处在于能end2end实现模型的训练和测试，利用模型的非线性和众多参数来学习特征，而不需要手工提取特征。CNN和RNN都是NLP中常用的模型，两个模型捕捉特征的角度也不太一样，<strong>CNN善于捕捉文本中关键的局部信息，而RNN则善于捕捉文本的上下文信息（考虑语序信息），并且有一定的记忆能力，两者都可以用在文本分类任务中，而且效果都不错</strong>。</p>
+<h3 id="基于NN_Model抽取的特征">基于NN Model抽取的特征</h3><p>NN的好处在于能end2end实现模型的训练和测试，利用模型的非线性和众多参数来学习特征，而不需要手工提取特征。CNN和RNN都是NLP中常用的模型，两个模型捕捉特征的角度也不太一样，<strong>CNN善于捕捉文本中关键的局部信息，而RNN则善于捕捉文本的上下文信息（考虑语序信息），并且有一定的记忆能力，两者都可以用在文本分类任务中，而且效果都不错</strong>。</p>
+<p>对于简单的文本分类任务，用几个简单的NN模型基本就够了（调参数也是一大累活儿）。网上有很多关于NN的实现，这里推荐一个TensorFlow的实现版本，里面有一个浅层的CNN和RNN实现（word-based和chat-based都有），代码也很好懂，可以快速实验验证效果。地址在<a href="https://github.com/gaussic/text-classification-cnn-rnn" target="_blank" rel="external">这里</a>。</p>
+<p>最后我们可以将这些NNs预测的分值作为我们分类系统的一个特征，来加强分类系统的性能。</p>
+<h3 id="基于任务本身抽取的特征">基于任务本身抽取的特征</h3><p>这一部分的特征主要是针对具体任务而设计的，通过我们对数据的观察和感知，也许能够发现一些可能有用的特征。有时候，这些手工特征对最后的分类效果提升很大。举个例子，比如对于正负面评论分类任务，对于负面评论，包含负面词的数量就是一维很强的特征。</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
@@ -599,7 +602,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于词袋模型的特征表示"><span class="nav-number">2.1.</span> <span class="nav-text">基于词袋模型的特征表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于embedding的特征表示"><span class="nav-number">3.</span> <span class="nav-text">基于embedding的特征表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于NN_Model抽取的特征"><span class="nav-number">4.</span> <span class="nav-text">基于NN Model抽取的特征</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于词袋模型的特征表示"><span class="nav-number">2.1.</span> <span class="nav-text">基于词袋模型的特征表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于embedding的特征表示"><span class="nav-number">2.2.</span> <span class="nav-text">基于embedding的特征表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于NN_Model抽取的特征"><span class="nav-number">2.3.</span> <span class="nav-text">基于NN Model抽取的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于任务本身抽取的特征"><span class="nav-number">2.4.</span> <span class="nav-text">基于任务本身抽取的特征</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
