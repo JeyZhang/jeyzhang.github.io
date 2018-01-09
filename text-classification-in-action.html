@@ -51,26 +51,24 @@
 
 
 
-<meta name="description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
-本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
-概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任">
+<meta name="description" content="本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
+概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任务。根据文本内容的长短，有做句子、段落或者文章的分类；文本的长短不同可能会导">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文本分类实战系列（一）：特征工程">
 <meta property="og:url" content="http://www.jeyzhang.com/text-classification-in-action.html">
 <meta property="og:site_name" content="Jey Zhang">
-<meta property="og:description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
-本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
-概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任">
+<meta property="og:description" content="本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
+概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任务。根据文本内容的长短，有做句子、段落或者文章的分类；文本的长短不同可能会导">
 <meta property="og:image" content="https://i.imgur.com/TULIWnI.png">
 <meta property="og:image" content="https://i.imgur.com/25KYCfO.png">
+<meta property="og:image" content="https://i.imgur.com/2Abcoej.png">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2018-01-04T12:21:11.475Z">
+<meta property="og:updated_time" content="2018-01-09T07:54:41.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本分类实战系列（一）：特征工程">
-<meta name="twitter:description" content="一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。
-本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
-概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任">
+<meta name="twitter:description" content="本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
+概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任务。根据文本内容的长短，有做句子、段落或者文章的分类；文本的长短不同可能会导">
 
 
 
@@ -329,8 +327,7 @@
       
 
       
-        <span itemprop="articleBody"><p>一晃17年就要过去了，懒癌已经无可救药了，赶紧发篇博文证明博主还活着。。。</p>
-<p>本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。</p>
+        <span itemprop="articleBody"><p>本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。</p>
 <h2 id="概述">概述</h2><p>文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任务。根据文本内容的长短，有做句子、段落或者文章的分类；文本的长短不同可能会导致文本可抽取的特征上的略微差异，但是总体上来说，<strong>文本分类的核心都是如何从文本中抽取出能够体现文本特点的关键特征，抓取特征到类别之间的映射</strong>。所以，特征工程就显得非常重要，特征找的好，分类效果也会大幅提高（当然前提是标注数据质量和数量也要合适，数据的好坏决定效果的下限，特征工程决定效果的上限）。</p>
 <p>也许会有人问最近的深度学习技术能够避免我们构造特征这件事，为什么还需要特征工程？深度学习并不是万能的，在NLP领域深度学习技术取得的效果有限（毕竟语言是高阶抽象的信息，深度学习在图像、语音这些低阶具体的信息处理上更适合，因为在低阶具体的信息上构造特征是一件费力的事情），并不是否认深度学习在NLP领域上取得的成绩，工业界现在通用的做法都是会把深度学习模型作为系统的一个子模块（也是一维特征），和一些传统的基于统计的自然语言技术的特征，还有一些针对具体任务本身专门设计的特征，一起作为一个或多个模型（也称Ensemble，即模型集成）的输入，最终构成一个文本处理系统。</p>
 <h2 id="特征工程">特征工程</h2><p>那么，对于文本分类任务而言，工业界常用到的特征有哪些呢？下面用一张图以概括：</p>
@@ -376,12 +373,20 @@
 <p>对于简单的文本分类任务，用几个简单的NN模型基本就够了（调参数也是一大累活儿）。网上有很多关于NN的实现，这里推荐一个TensorFlow的实现版本，里面有一个浅层的CNN和RNN实现（word-based和chat-based都有），代码也很好懂，可以快速实验验证效果。地址在<a href="https://github.com/gaussic/text-classification-cnn-rnn" target="_blank" rel="external">这里</a>。</p>
 <p>最后我们可以将这些NNs预测的分值作为我们分类系统的一个特征，来加强分类系统的性能。</p>
 <h3 id="基于任务本身抽取的特征">基于任务本身抽取的特征</h3><p>这一部分的特征主要是针对具体任务而设计的，通过我们对数据的观察和感知，也许能够发现一些可能有用的特征。有时候，这些手工特征对最后的分类效果提升很大。举个例子，比如对于正负面评论分类任务，对于负面评论，包含负面词的数量就是一维很强的特征。</p>
+<p>这部分的特征设计就是在拼脑力和拼经验，建议可以多看看各个类别数据找找感觉，将那些你直观上感觉对分类有帮助的东西设计成特征，有时候这些经验主义的东西很有用（可能是模型从数据学习不出来的）。</p>
+<h2 id="特征融合">特征融合</h2><p>在设计完这些特征之后，怎么融合更合适呢？对于特征维数较高、数据模式复杂的情况，建议用非线性模型（如比较流行的GDBT, XGBoost）；对于特征维数较低、数据模式简单的情况，建议用简单的线性模型即可（如LR）。下面分享一个我做特征融合的模型框架，任务是正负面评论分类（负面评论定义是不适合出现在网络上的评论，如政治敏感、带有人身攻击、强烈负面情绪的评论）。</p>
+<p><img src="https://i.imgur.com/2Abcoej.png" alt=""></p>
+<p>其中，橙色框表示模型，蓝色框表示用到的特征，[]里面表示特征的维数。这里需要注意的是，<strong>训练子模型（GBDT/DNN）的训练数据和训练融合模型（LR）的训练数据需要不一样</strong>，这也很好理解，就是防止子模型因为“见过”这些训练数据而产生偏向于子模型的情况。实际的模型训练中，可以用training数据集作为子模型的训练数据，dev数据集作为最终融合模型的训练数据。</p>
+<p>模型融合能够从多个角度更加全面地学习出训练数据中的模式，往往能比单个模型效果好一点（2~3个点左右）。</p>
+<p>另外，通过观察LR模型给各个特征分配的权重大小和正负，我们可以看出对于训练数据而言，这些特征影响分类的重要程度（权重大小（绝对值）），以及特征影响最终分类目标的极性。特别的，我们可以通过观察那些手工特征的权重来验证这些特征的有效性和有效程度。</p>
+<h2 id="总结">总结</h2><p>这篇文章主要从宏观上介绍了对于文本分类任务而言设计特征的思路，对于其他的NLP任务，也可以参考类似的方法。总而言之，特征工程的核心是尽量从多个角度和纬度来捕捉数据中的模式，并用数值特征来加以刻画。最近流行的深度学习模型可以end2end地学习数据中隐含的模式，免去了人工提取特征的麻烦，然而对于信息高度抽象的文本数据而言，深度学习模型能取得的效果有限，在实际的产品中，我们往往会加入一些传统的基于统计学习的自然语言技术，以及根据我们对业务和数据的理解而人工设计的特征，来最终实现一个比较优良的结果。</p>
+<p>下一篇，我会具体介绍一下文本分类中常用到的模型和算法。请各位坐等更新:)</p>
 <hr>
 <p>本文结束，感谢欣赏。</p>
 <p><strong>欢迎转载，请注明本文的链接地址：</strong></p>
 <p><a href="http://www.jeyzhang.com/text-classification-in-action.html">http://www.jeyzhang.com/text-classification-in-action.html</a></p>
 <hr>
-<p><strong>文章写得不错？打赏一个呗:)</strong></p>
+<p><strong>文章写得不错？打赏一个呗:) （打赏1￥以上，备注你的邮箱，可获得博主精心为你准备的深度学习/机器学习/自然语言处理的学习资料大礼包）</strong></p>
 <p><img src="http://i.imgur.com/tTBAnzw.png" alt=""></p>
 <p><strong>近期博主准备筹建NLP方面的技术群，欢迎感兴趣的小伙伴加我入群交流:)，加好友请备注：”博客”。</strong></p>
 <p><img src="http://i.imgur.com/CTuJ7Ln.jpg" alt=""></p>
@@ -602,7 +607,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于词袋模型的特征表示"><span class="nav-number">2.1.</span> <span class="nav-text">基于词袋模型的特征表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于embedding的特征表示"><span class="nav-number">2.2.</span> <span class="nav-text">基于embedding的特征表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于NN_Model抽取的特征"><span class="nav-number">2.3.</span> <span class="nav-text">基于NN Model抽取的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于任务本身抽取的特征"><span class="nav-number">2.4.</span> <span class="nav-text">基于任务本身抽取的特征</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于词袋模型的特征表示"><span class="nav-number">2.1.</span> <span class="nav-text">基于词袋模型的特征表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于embedding的特征表示"><span class="nav-number">2.2.</span> <span class="nav-text">基于embedding的特征表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于NN_Model抽取的特征"><span class="nav-number">2.3.</span> <span class="nav-text">基于NN Model抽取的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于任务本身抽取的特征"><span class="nav-number">2.4.</span> <span class="nav-text">基于任务本身抽取的特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征融合"><span class="nav-number">3.</span> <span class="nav-text">特征融合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
