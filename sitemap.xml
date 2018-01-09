@@ -2,13 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
-    <lastmod>2018-01-09T07:54:41.914Z</lastmod>
+    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
+    <lastmod>2018-01-09T10:46:46.608Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
+    <lastmod>2018-01-09T10:46:38.283Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
+    <lastmod>2018-01-09T10:46:24.996Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
+    <lastmod>2018-01-09T10:46:17.001Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
+    <lastmod>2018-01-09T10:45:50.362Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2018-01-09T10:45:25.473Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
+    <lastmod>2018-01-09T10:44:43.828Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2017-12-27T07:58:55.519Z</lastmod>
+    <lastmod>2018-01-09T10:44:33.725Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
+    <lastmod>2018-01-09T10:44:13.446Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
+    <lastmod>2018-01-09T10:43:57.667Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
+    <lastmod>2018-01-09T10:43:44.311Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
+    <lastmod>2018-01-09T10:42:35.654Z</lastmod>
   </url>
   
   <url>
@@ -22,51 +72,6 @@
   </url>
   
   <url>
-    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
-    <lastmod>2017-07-05T06:43:39.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
-    <lastmod>2017-07-05T06:43:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
-    <lastmod>2017-07-05T06:43:10.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2017-07-05T06:43:03.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
-    <lastmod>2017-07-05T06:42:43.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2017-07-05T06:42:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
-    <lastmod>2017-07-05T06:41:44.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
-    <lastmod>2017-07-05T06:39:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2017-07-05T06:13:10.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
     <lastmod>2017-02-07T08:50:08.000Z</lastmod>
   </url>
@@ -74,11 +79,6 @@
   <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-1-qna.html</loc>
     <lastmod>2016-08-28T01:52:20.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2016-08-20T04:00:01.000Z</lastmod>
   </url>
   
   <url>

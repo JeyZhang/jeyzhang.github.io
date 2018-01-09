@@ -4,8 +4,288 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
+    <lastmod>2018-01-09T10:46:46.608Z</lastmod>
+    <data>
+        <display>
+        <title>理解LSTM网络</title>
+        <pubTime>2016-10-19T03:38:26.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>LSTM</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>RNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
+    <lastmod>2018-01-09T10:46:38.283Z</lastmod>
+    <data>
+        <display>
+        <title>理解LSTM/RNN中的Attention机制</title>
+        <pubTime>2017-07-03T10:59:56.000Z</pubTime>
+        
+        <tag>Attention</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>LSTM</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>RNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
+    <lastmod>2018-01-09T10:46:24.996Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记3：词向量</title>
+        <pubTime>2016-03-16T13:24:38.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
+    <lastmod>2018-01-09T10:46:17.001Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记2：构建CNN模型</title>
+        <pubTime>2016-01-31T05:02:56.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
+    <lastmod>2018-01-09T10:45:50.362Z</lastmod>
+    <data>
+        <display>
+        <title>whoosh+jieba：python下实现中文全文检索</title>
+        <pubTime>2016-04-28T03:14:53.000Z</pubTime>
+        
+        <tag>Jieba</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>Search Engine</tag>
+         
+        <tag>Whoosh</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2018-01-09T10:45:25.473Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记1：入门</title>
+        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
+    <lastmod>2018-01-09T10:44:43.828Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之二：基于检索模型的实现</title>
+        <pubTime>2016-11-27T03:05:31.000Z</pubTime>
+        
+        <tag>ChatBot</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2018-01-09T10:44:33.725Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之一：导读</title>
+        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
+        
+        <tag>ChatBot</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
+    <lastmod>2018-01-09T10:44:13.446Z</lastmod>
+    <data>
+        <display>
+        <title>卷积神经网络(CNN)学习笔记2：模型训练</title>
+        <pubTime>2016-03-03T05:41:05.000Z</pubTime>
+        
+        <tag>CNN</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
+    <lastmod>2018-01-09T10:43:57.667Z</lastmod>
+    <data>
+        <display>
+        <title>卷积神经网络(CNN)学习笔记1：基础入门</title>
+        <pubTime>2016-03-01T11:25:11.000Z</pubTime>
+        
+        <tag>CNN</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
+    <lastmod>2018-01-09T10:43:44.311Z</lastmod>
+    <data>
+        <display>
+        <title>卷积神经网络(CNN)在句子建模上的应用</title>
+        <pubTime>2016-03-11T02:36:35.000Z</pubTime>
+        
+        <tag>CNN</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>NLP</tag>
+         
+        <tag>Sentence Model</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
-    <lastmod>2018-01-09T07:54:41.914Z</lastmod>
+    <lastmod>2018-01-09T10:42:35.654Z</lastmod>
     <data>
         <display>
         <title>文本分类实战系列（一）：特征工程</title>
@@ -20,28 +300,6 @@
         <tag>TensorFlow</tag>
          
         <tag>Text Classification</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2017-12-27T07:58:55.519Z</lastmod>
-    <data>
-        <display>
-        <title>聊天机器人中的深度学习技术之一：导读</title>
-        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
-        
-        <tag>ChatBot</tag>
-         
-        <tag>Deep Learning</tag>
          
          
            
@@ -87,238 +345,6 @@
     
     
   <url>
-    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
-    <lastmod>2017-07-05T06:43:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>卷积神经网络(CNN)学习笔记1：基础入门</title>
-        <pubTime>2016-03-01T11:25:11.000Z</pubTime>
-        
-        <tag>CNN</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
-    <lastmod>2017-07-05T06:43:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>卷积神经网络(CNN)学习笔记2：模型训练</title>
-        <pubTime>2016-03-03T05:41:05.000Z</pubTime>
-        
-        <tag>CNN</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
-    <lastmod>2017-07-05T06:43:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>TensorFlow学习笔记3：词向量</title>
-        <pubTime>2016-03-16T13:24:38.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2017-07-05T06:43:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>TensorFlow学习笔记1：入门</title>
-        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
-    <lastmod>2017-07-05T06:42:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>卷积神经网络(CNN)在句子建模上的应用</title>
-        <pubTime>2016-03-11T02:36:35.000Z</pubTime>
-        
-        <tag>CNN</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>NLP</tag>
-         
-        <tag>Sentence Model</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2017-07-05T06:42:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>TensorFlow学习笔记2：构建CNN模型</title>
-        <pubTime>2016-01-31T05:02:56.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
-    <lastmod>2017-07-05T06:41:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>聊天机器人中的深度学习技术之二：基于检索模型的实现</title>
-        <pubTime>2016-11-27T03:05:31.000Z</pubTime>
-        
-        <tag>ChatBot</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
-    <lastmod>2017-07-05T06:39:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解LSTM网络</title>
-        <pubTime>2016-10-19T03:38:26.000Z</pubTime>
-        
-        <tag>Deep Learning</tag>
-         
-        <tag>LSTM</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>RNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2017-07-05T06:13:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解LSTM/RNN中的Attention机制</title>
-        <pubTime>2017-07-03T10:59:56.000Z</pubTime>
-        
-        <tag>Attention</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>LSTM</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>RNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>
     <lastmod>2017-02-07T08:50:08.000Z</lastmod>
     <data>
@@ -354,32 +380,6 @@
            
              
               <breadCrumb title="C#" url="http://www.jeyzhang.com/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2016-08-20T04:00:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>whoosh+jieba：python下实现中文全文检索</title>
-        <pubTime>2016-04-28T03:14:53.000Z</pubTime>
-        
-        <tag>Jieba</tag>
-         
-        <tag>Python</tag>
-         
-        <tag>Search Engine</tag>
-         
-        <tag>Whoosh</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://www.jeyzhang.com/categories/Python/"/>
           
         </display>
     </data>
