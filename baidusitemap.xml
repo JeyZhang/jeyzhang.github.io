@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
-    <lastmod>2018-01-09T10:46:46.608Z</lastmod>
+    <lastmod>2018-01-10T12:37:24.404Z</lastmod>
     <data>
         <display>
         <title>理解LSTM网络</title>
@@ -31,7 +31,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2018-01-09T10:46:38.283Z</lastmod>
+    <lastmod>2018-01-10T12:37:13.010Z</lastmod>
     <data>
         <display>
         <title>理解LSTM/RNN中的Attention机制</title>
@@ -58,8 +58,36 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
+    <lastmod>2018-01-10T12:37:03.624Z</lastmod>
+    <data>
+        <display>
+        <title>文本分类实战系列（一）：特征工程</title>
+        <pubTime>2017-12-09T09:15:31.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>Feature Engineering</tag>
+         
+        <tag>NLP</tag>
+         
+        <tag>TensorFlow</tag>
+         
+        <tag>Text Classification</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
-    <lastmod>2018-01-09T10:46:24.996Z</lastmod>
+    <lastmod>2018-01-10T12:36:54.705Z</lastmod>
     <data>
         <display>
         <title>TensorFlow学习笔记3：词向量</title>
@@ -85,7 +113,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2018-01-09T10:46:17.001Z</lastmod>
+    <lastmod>2018-01-10T12:36:43.637Z</lastmod>
     <data>
         <display>
         <title>TensorFlow学习笔记2：构建CNN模型</title>
@@ -111,7 +139,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2018-01-09T10:45:50.362Z</lastmod>
+    <lastmod>2018-01-10T12:36:32.109Z</lastmod>
     <data>
         <display>
         <title>whoosh+jieba：python下实现中文全文检索</title>
@@ -137,7 +165,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2018-01-09T10:45:25.473Z</lastmod>
+    <lastmod>2018-01-10T12:36:22.780Z</lastmod>
     <data>
         <display>
         <title>TensorFlow学习笔记1：入门</title>
@@ -163,7 +191,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
-    <lastmod>2018-01-09T10:44:43.828Z</lastmod>
+    <lastmod>2018-01-10T12:35:40.934Z</lastmod>
     <data>
         <display>
         <title>聊天机器人中的深度学习技术之二：基于检索模型的实现</title>
@@ -187,7 +215,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2018-01-09T10:44:33.725Z</lastmod>
+    <lastmod>2018-01-10T12:35:30.594Z</lastmod>
     <data>
         <display>
         <title>聊天机器人中的深度学习技术之一：导读</title>
@@ -209,7 +237,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
-    <lastmod>2018-01-09T10:44:13.446Z</lastmod>
+    <lastmod>2018-01-10T12:35:17.317Z</lastmod>
     <data>
         <display>
         <title>卷积神经网络(CNN)学习笔记2：模型训练</title>
@@ -232,32 +260,8 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
-    <lastmod>2018-01-09T10:43:57.667Z</lastmod>
-    <data>
-        <display>
-        <title>卷积神经网络(CNN)学习笔记1：基础入门</title>
-        <pubTime>2016-03-01T11:25:11.000Z</pubTime>
-        
-        <tag>CNN</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
-    <lastmod>2018-01-09T10:43:44.311Z</lastmod>
+    <lastmod>2018-01-10T12:35:01.893Z</lastmod>
     <data>
         <display>
         <title>卷积神经网络(CNN)在句子建模上的应用</title>
@@ -284,27 +288,23 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
-    <lastmod>2018-01-09T10:42:35.654Z</lastmod>
+    <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
+    <lastmod>2018-01-10T12:34:36.083Z</lastmod>
     <data>
         <display>
-        <title>文本分类实战系列（一）：特征工程</title>
-        <pubTime>2017-12-09T09:15:31.000Z</pubTime>
+        <title>卷积神经网络(CNN)学习笔记1：基础入门</title>
+        <pubTime>2016-03-01T11:25:11.000Z</pubTime>
         
+        <tag>CNN</tag>
+         
         <tag>Deep Learning</tag>
          
-        <tag>Feature Engineering</tag>
-         
-        <tag>NLP</tag>
-         
-        <tag>TensorFlow</tag>
-         
-        <tag>Text Classification</tag>
+        <tag>Machine Learning</tag>
          
          
            
              
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
           
         </display>
     </data>
