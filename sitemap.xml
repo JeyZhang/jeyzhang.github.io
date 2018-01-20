@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/my-plans-for-2018.html</loc>
+    <lastmod>2018-01-20T14:01:16.169Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
     <lastmod>2018-01-10T12:37:24.404Z</lastmod>
   </url>
@@ -152,17 +157,17 @@
   </url>
   
   <url>
+    <loc>http://www.jeyzhang.com/404.html</loc>
+    <lastmod>2016-01-13T02:30:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/tags/index.html</loc>
     <lastmod>2016-01-13T02:30:40.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/categories/index.html</loc>
-    <lastmod>2016-01-13T02:30:40.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/404.html</loc>
     <lastmod>2016-01-13T02:30:40.000Z</lastmod>
   </url>
   
