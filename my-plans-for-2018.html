@@ -41,6 +41,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Jey Zhang" type="application/atom+xml" />
+
 
 
 
@@ -61,7 +63,7 @@
 今天想要写些关于自己的东西，多年没有动笔写作，才发觉文笔生疏了很多，想起五六年前还在读本科的自己，动不动地就在空间里文笔大攉强说愁，现在想来除了觉得有点可笑和幼稚之外，也">
 <meta property="og:image" content="http://i.imgur.com/tTBAnzw.png">
 <meta property="og:image" content="http://i.imgur.com/CTuJ7Ln.jpg">
-<meta property="og:updated_time" content="2018-01-20T14:19:21.000Z">
+<meta property="og:updated_time" content="2018-01-20T14:19:21.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的2018年计划和一些感想">
 <meta name="twitter:description" content="建立这个博客已经两年多，自己从来还没有在这上面写过关于个人的东西。当初对这个博客的定位是希望能督促自己多写出一些技术类的文章，一来可以一边学习一边总结，二来也给自己留一个底，方便打捞自己曾经学习过的东西，三来获取能够帮助到别人。
@@ -373,7 +375,21 @@
 <p><strong>【打赏1.99￥以上，备注你的邮箱，可获得博主精心为你准备的深度学习/机器学习/自然语言处理的学习资料大礼包】</strong></p>
 <p><strong>近期博主准备筹建NLP方面的技术群，欢迎感兴趣的小伙伴加我入群交流:)，加好友请备注：”博客”。</strong></p>
 <p><img src="http://i.imgur.com/CTuJ7Ln.jpg" alt=""></p>
-</span>
+
+      <script>
+        window.disqusProxy={
+          shortname: 'jeyzhang',
+          username: 'jeyzhang',
+          server: 'vm.jeyzhang.com',
+          port: 443,
+          adminAvatar: '/avatars/admin-avatar.jpg',
+          identifier: 'my-plans-for-2018.html',
+        };
+        window.disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.disqusProxy.identifier;
+        };
+      </script></span>
       
     </div>
 
@@ -450,7 +466,13 @@
         
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
+      
+      <script src="//cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
+      <script src="//cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+      <script src="//cdn.bootcss.com/fetch/2.0.3/fetch.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/blockies-identicon@0.1.0/blockies.min.js"></script>
+      <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <div id="disqus_proxy_thread"><script src="/scripts/hexo-disqus-proxy-primary.js" async></script>
         <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
     
@@ -516,6 +538,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -622,7 +651,7 @@
 </div>
 
 <div class="powered-by">
-  Hosted by <a class="theme-link" href="https://coding.net">Coding Pages</a>
+  Hosted by <a class="theme-link" href="https://coding.net/pages/">Coding Pages</a>
 </div>
 
 <span id="busuanzi_container_site_pv">

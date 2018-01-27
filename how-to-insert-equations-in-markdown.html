@@ -41,6 +41,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Jey Zhang" type="application/atom+xml" />
+
 
 
 
@@ -358,7 +360,21 @@
 <p><strong>参考资料</strong>：</p>
 <p><a href="http://pencilandengine.com/2013/08/27/mathjax-with-markdownpad-2/" target="_blank" rel="external">MathJax with Markdownpad 2</a></p>
 <p><a href="http://hijiangtao.github.io/2014/09/08/MathJaxinHexo/" target="_blank" rel="external">Hexo上使用MathJax来实现数学公式的表达</a></p>
-</span>
+
+      <script>
+        window.disqusProxy={
+          shortname: 'jeyzhang',
+          username: 'jeyzhang',
+          server: 'vm.jeyzhang.com',
+          port: 443,
+          adminAvatar: '/avatars/admin-avatar.jpg',
+          identifier: 'how-to-insert-equations-in-markdown.html',
+        };
+        window.disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.disqusProxy.identifier;
+        };
+      </script></span>
       
     </div>
 
@@ -441,7 +457,13 @@
         
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
+      
+      <script src="//cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
+      <script src="//cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+      <script src="//cdn.bootcss.com/fetch/2.0.3/fetch.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/blockies-identicon@0.1.0/blockies.min.js"></script>
+      <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <div id="disqus_proxy_thread"><script src="/scripts/hexo-disqus-proxy-primary.js" async></script>
         <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
     
@@ -507,6 +529,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -613,7 +642,7 @@
 </div>
 
 <div class="powered-by">
-  Hosted by <a class="theme-link" href="https://coding.net">Coding Pages</a>
+  Hosted by <a class="theme-link" href="https://coding.net/pages/">Coding Pages</a>
 </div>
 
 <span id="busuanzi_container_site_pv">
