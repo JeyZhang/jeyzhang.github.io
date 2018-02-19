@@ -4,80 +4,8 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/using-disqus-in-china.html</loc>
-    <lastmod>2018-01-27T14:15:47.062Z</lastmod>
-    <data>
-        <display>
-        <title>解决国内Hexo+Next无法正常使用disqus评论系统的问题</title>
-        <pubTime>2018-01-21T13:09:02.000Z</pubTime>
-        
-        <tag>Comment</tag>
-         
-        <tag>Disqus</tag>
-         
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/my-plans-for-2018.html</loc>
-    <lastmod>2018-01-20T14:19:21.166Z</lastmod>
-    <data>
-        <display>
-        <title>我的2018年计划和一些感想</title>
-        <pubTime>2018-01-20T12:18:16.000Z</pubTime>
-        
-        <tag>Life</tag>
-         
-         
-           
-             
-              <breadCrumb title="Life" url="http://www.jeyzhang.com/categories/Life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
-    <lastmod>2018-01-10T12:37:24.404Z</lastmod>
-    <data>
-        <display>
-        <title>理解LSTM网络</title>
-        <pubTime>2016-10-19T03:38:26.000Z</pubTime>
-        
-        <tag>Deep Learning</tag>
-         
-        <tag>LSTM</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>RNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2018-01-10T12:37:13.010Z</lastmod>
+    <lastmod>2018-02-19T13:44:57.088Z</lastmod>
     <data>
         <display>
         <title>理解LSTM/RNN中的Attention机制</title>
@@ -104,8 +32,34 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
+    <lastmod>2018-02-19T13:44:55.059Z</lastmod>
+    <data>
+        <display>
+        <title>理解LSTM网络</title>
+        <pubTime>2016-10-19T03:38:26.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>LSTM</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>RNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
-    <lastmod>2018-01-10T12:37:03.624Z</lastmod>
+    <lastmod>2018-02-19T13:44:53.206Z</lastmod>
     <data>
         <display>
         <title>文本分类实战系列（一）：特征工程</title>
@@ -132,8 +86,34 @@
 
     
   <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
+    <lastmod>2018-02-19T13:44:51.208Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow学习笔记1：入门</title>
+        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
-    <lastmod>2018-01-10T12:36:54.705Z</lastmod>
+    <lastmod>2018-02-19T13:44:49.074Z</lastmod>
     <data>
         <display>
         <title>TensorFlow学习笔记3：词向量</title>
@@ -159,7 +139,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2018-01-10T12:36:43.637Z</lastmod>
+    <lastmod>2018-02-19T13:44:46.983Z</lastmod>
     <data>
         <display>
         <title>TensorFlow学习笔记2：构建CNN模型</title>
@@ -185,7 +165,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2018-01-10T12:36:32.109Z</lastmod>
+    <lastmod>2018-02-19T13:44:44.919Z</lastmod>
     <data>
         <display>
         <title>whoosh+jieba：python下实现中文全文检索</title>
@@ -210,25 +190,41 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2018-01-10T12:36:22.780Z</lastmod>
+    <loc>http://www.jeyzhang.com/my-plans-for-2018.html</loc>
+    <lastmod>2018-02-19T13:44:42.276Z</lastmod>
     <data>
         <display>
-        <title>TensorFlow学习笔记1：入门</title>
-        <pubTime>2016-01-13T08:49:49.000Z</pubTime>
+        <title>我的2018年计划和一些感想</title>
+        <pubTime>2018-01-20T12:18:16.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>TensorFlow</tag>
+        <tag>Life</tag>
          
          
            
              
-              <breadCrumb title="Machine Learning" url="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+              <breadCrumb title="Life" url="http://www.jeyzhang.com/categories/Life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
+    <lastmod>2018-02-19T13:44:40.013Z</lastmod>
+    <data>
+        <display>
+        <title>聊天机器人中的深度学习技术之一：导读</title>
+        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
+        
+        <tag>ChatBot</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
           
         </display>
     </data>
@@ -237,7 +233,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
-    <lastmod>2018-01-10T12:35:40.934Z</lastmod>
+    <lastmod>2018-02-19T13:44:38.527Z</lastmod>
     <data>
         <display>
         <title>聊天机器人中的深度学习技术之二：基于检索模型的实现</title>
@@ -260,30 +256,8 @@
 
     
   <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2018-01-10T12:35:30.594Z</lastmod>
-    <data>
-        <display>
-        <title>聊天机器人中的深度学习技术之一：导读</title>
-        <pubTime>2016-08-08T11:43:58.000Z</pubTime>
-        
-        <tag>ChatBot</tag>
-         
-        <tag>Deep Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://www.jeyzhang.com/categories/Deep-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
-    <lastmod>2018-01-10T12:35:17.317Z</lastmod>
+    <lastmod>2018-02-19T13:44:34.036Z</lastmod>
     <data>
         <display>
         <title>卷积神经网络(CNN)学习笔记2：模型训练</title>
@@ -307,7 +281,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
-    <lastmod>2018-01-10T12:35:01.893Z</lastmod>
+    <lastmod>2018-02-19T13:44:24.385Z</lastmod>
     <data>
         <display>
         <title>卷积神经网络(CNN)在句子建模上的应用</title>
@@ -335,7 +309,7 @@
     
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
-    <lastmod>2018-01-10T12:34:36.083Z</lastmod>
+    <lastmod>2018-02-19T13:44:20.390Z</lastmod>
     <data>
         <display>
         <title>卷积神经网络(CNN)学习笔记1：基础入门</title>
@@ -357,9 +331,36 @@
     </url>
 
     
+    
+  <url>
+    <loc>http://www.jeyzhang.com/using-disqus-in-china.html</loc>
+    <lastmod>2018-01-27T14:15:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决国内Hexo+Next无法正常使用disqus评论系统的问题</title>
+        <pubTime>2018-01-21T13:09:02.000Z</pubTime>
+        
+        <tag>Comment</tag>
+         
+        <tag>Disqus</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jeyzhang.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2017-12-09T07:13:27.953Z</lastmod>
+    <lastmod>2017-12-09T07:13:27.000Z</lastmod>
     <data>
         <display>
         <title>各种系统下Shadowsocks客户端的安装与配置</title>
@@ -388,7 +389,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://www.jeyzhang.com/csharp-learning-notes-2-multithreading.html</loc>

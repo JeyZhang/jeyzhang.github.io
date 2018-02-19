@@ -2,83 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jeyzhang.com/using-disqus-in-china.html</loc>
-    <lastmod>2018-01-27T14:15:47.062Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/my-plans-for-2018.html</loc>
-    <lastmod>2018-01-20T14:19:21.166Z</lastmod>
+    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
+    <lastmod>2018-02-19T13:44:57.088Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/understanding-lstm-network.html</loc>
-    <lastmod>2018-01-10T12:37:24.404Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
-    <lastmod>2018-01-10T12:37:13.010Z</lastmod>
+    <lastmod>2018-02-19T13:44:55.059Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/text-classification-in-action.html</loc>
-    <lastmod>2018-01-10T12:37:03.624Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
-    <lastmod>2018-01-10T12:36:54.705Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
-    <lastmod>2018-01-10T12:36:43.637Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
-    <lastmod>2018-01-10T12:36:32.109Z</lastmod>
+    <lastmod>2018-02-19T13:44:53.206Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/tensorflow-learning-notes.html</loc>
-    <lastmod>2018-01-10T12:36:22.780Z</lastmod>
+    <lastmod>2018-02-19T13:44:51.208Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
-    <lastmod>2018-01-10T12:35:40.934Z</lastmod>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-3.html</loc>
+    <lastmod>2018-02-19T13:44:49.074Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/tensorflow-learning-notes-2.html</loc>
+    <lastmod>2018-02-19T13:44:46.983Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html</loc>
+    <lastmod>2018-02-19T13:44:44.919Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/my-plans-for-2018.html</loc>
+    <lastmod>2018-02-19T13:44:42.276Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-1.html</loc>
-    <lastmod>2018-01-10T12:35:30.594Z</lastmod>
+    <lastmod>2018-02-19T13:44:40.013Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/deep-learning-for-chatbots-2.html</loc>
+    <lastmod>2018-02-19T13:44:38.527Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-2.html</loc>
-    <lastmod>2018-01-10T12:35:17.317Z</lastmod>
+    <lastmod>2018-02-19T13:44:34.036Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/cnn-apply-on-modelling-sentence.html</loc>
-    <lastmod>2018-01-10T12:35:01.893Z</lastmod>
+    <lastmod>2018-02-19T13:44:24.385Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
-    <lastmod>2018-01-10T12:34:36.083Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
-    <lastmod>2017-12-09T07:13:27.953Z</lastmod>
+    <lastmod>2018-02-19T13:44:20.390Z</lastmod>
   </url>
   
   <url>
     <loc>http://www.jeyzhang.com/about/index.html</loc>
-    <lastmod>2017-11-04T08:02:22.000Z</lastmod>
+    <lastmod>2018-02-19T13:38:48.989Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/using-disqus-in-china.html</loc>
+    <lastmod>2018-01-27T14:15:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html</loc>
+    <lastmod>2017-12-09T07:13:27.000Z</lastmod>
   </url>
   
   <url>
