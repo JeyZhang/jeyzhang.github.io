@@ -244,6 +244,11 @@
 
     
     
+      
+      
+
+      
+    
 
     
       
@@ -267,8 +272,8 @@
             
               
                 
-                <a class="post-title-link" href="/cshape-learning-notes-0.html" itemprop="url">
-                  C#学习笔记0：入门
+                <a class="post-title-link" href="/how-to-install-and-setup-shadowsocks-client-in-different-os.html" itemprop="url">
+                  各种系统下Shadowsocks客户端的安装与配置
                 </a>
               
             
@@ -278,8 +283,122 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-06-29T16:48:47+08:00" content="2016-06-29">
-              2016-06-29
+            <time itemprop="dateCreated" datetime="2016-10-08T11:44:57+08:00" content="2016-10-08">
+              2016-10-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/how-to-install-and-setup-shadowsocks-client-in-different-os.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-install-and-setup-shadowsocks-client-in-different-os.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/how-to-install-and-setup-shadowsocks-client-in-different-os.html"class="leancloud_visitors"  data-flag-title="各种系统下Shadowsocks客户端的安装与配置">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            下面介绍如何在 Windows / Mac / Linux(Ubuntu) / iOS / Android 系统下对Shadowsocks的客户端（下面简称SS）的安装和配置，以便于使用相应的VPN服务。在此之前假设你已经知道了SS服务器的端口和密码，如果不知道的话，可以向VPN的提供者（管理员）索要。这里假设你端口号和密码已经获取得到，请结合自己所使用的系统环境找到对应的安装配置方法，在需要输入
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/how-to-install-and-setup-shadowsocks-client-in-different-os.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/csharp-learning-notes-2-multithreading.html" itemprop="url">
+                  C#学习笔记2：多线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-08-28T10:18:53+08:00" content="2016-08-28">
+              2016-08-28
             </time>
           </span>
 
@@ -304,8 +423,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/cshape-learning-notes-0.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="cshape-learning-notes-0.html" itemprop="commentsCount"></span>
+              <a href="/csharp-learning-notes-2-multithreading.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="csharp-learning-notes-2-multithreading.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -315,7 +434,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/cshape-learning-notes-0.html"class="leancloud_visitors"  data-flag-title="C#学习笔记0：入门">
+			 <span id="/csharp-learning-notes-2-multithreading.html"class="leancloud_visitors"  data-flag-title="C#学习笔记2：多线程">
              &nbsp;Views
             </span>
 		  
@@ -334,11 +453,12 @@
         
           <span itemprop="articleBody">
             
-            关于.NET Framework简介.NET Framework是微软公司为开发应用程序而设计的一个平台，它不限于运行的系统（尽管Windows系统上运行的最为广泛），包括Windows、linux（称为Mono）、Mac OS等。可以使用.NET Framework来创建各种不同类型的应用程序，例如Windows桌面应用程序、Web应用程序等等。.NET Framework的设计方式确保了它可以
+            理解进程与线程进程 (Process) 是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。
+应用程序域 (AppDomain) 是一个程序运行的逻辑区域，它可
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/cshape-learning-notes-0.html#more" rel="contents">
+            <a class="btn" href="/csharp-learning-notes-2-multithreading.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -381,8 +501,8 @@
             
               
                 
-                <a class="post-title-link" href="/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html" itemprop="url">
-                  whoosh+jieba：python下实现中文全文检索
+                <a class="post-title-link" href="/deep-learning-for-chatbots-1.html" itemprop="url">
+                  聊天机器人中的深度学习技术之一：导读
                 </a>
               
             
@@ -392,8 +512,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-04-28T11:14:53+08:00" content="2016-04-28">
-              2016-04-28
+            <time itemprop="dateCreated" datetime="2016-08-08T19:43:58+08:00" content="2016-08-08">
+              2016-08-08
             </time>
           </span>
 
@@ -402,8 +522,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
                   </a>
                 </span>
 
@@ -418,8 +538,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="realization-of-full-chinese-text-search-using-whoosh-and-jieba.html" itemprop="commentsCount"></span>
+              <a href="/deep-learning-for-chatbots-1.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="deep-learning-for-chatbots-1.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -429,7 +549,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html"class="leancloud_visitors"  data-flag-title="whoosh+jieba：python下实现中文全文检索">
+			 <span id="/deep-learning-for-chatbots-1.html"class="leancloud_visitors"  data-flag-title="聊天机器人中的深度学习技术之一：导读">
              &nbsp;Views
             </span>
 		  
@@ -448,377 +568,14 @@
         
           <span itemprop="articleBody">
             
-            需要安装
-python 2.xx
-whoosh
-jieba
+            以下内容为原文 《Deep Learning For Chatbots, Part 1 - Introduction》 的翻译，供自己学习及他人参考。
+这篇博文主要概述了目前聊天机器人主要用到的技术，从宏观上进行介绍，不涉及具体的技术细节。下一篇博文：聊天机器人中的深度学习技术之二：基于检索模型的实现会介绍并实现一个基于检索的LSTM模型，通过这个模型可以实现聊天机器人。
 
-whoosh和jieba的安装使用pip install即可。
-快速入门下面的代码实现了简单的中文检索
-# coding=utf-8
-import os
-from whoosh.index import create_in
-from whoosh.fields import *
-from jieba.analyse import Chi
+聊天机器人 (Chat
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/realization-of-full-chinese-text-search-using-whoosh-and-jieba.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/python-learning-notes-and-common-problems.html" itemprop="url">
-                  python学习笔记与常见问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-04-27T17:22:49+08:00" content="2016-04-27">
-              2016-04-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/python-learning-notes-and-common-problems.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="python-learning-notes-and-common-problems.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/python-learning-notes-and-common-problems.html"class="leancloud_visitors"  data-flag-title="python学习笔记与常见问题">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            列表使用lambda函数实现列表操作实现两个list的元素对应相乘，返回同等大小的list结果。
-list1 = [...]
-list2 = [...]
-multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
-列表的类型转换例如，经常遇到需要将元素类型为int的列表，转为元素类型为str的列表，可以方便的使用join等函数进行格式化
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/python-learning-notes-and-common-problems.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/problems-with-solution-in-tensorflow.html" itemprop="url">
-                  TensorFlow中遇到的问题及解决方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-03-25T22:36:46+08:00" content="2016-03-25">
-              2016-03-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/problems-with-solution-in-tensorflow.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="problems-with-solution-in-tensorflow.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/problems-with-solution-in-tensorflow.html"class="leancloud_visitors"  data-flag-title="TensorFlow中遇到的问题及解决方法">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
-
-Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/problems-with-solution-in-tensorflow.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/tensorflow-learning-notes-3.html" itemprop="url">
-                  TensorFlow学习笔记3：词向量
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-03-16T21:24:38+08:00" content="2016-03-16">
-              2016-03-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/tensorflow-learning-notes-3.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="tensorflow-learning-notes-3.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/tensorflow-learning-notes-3.html"class="leancloud_visitors"  data-flag-title="TensorFlow学习笔记3：词向量">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            上篇博文讲了如何构建一个简单的CNN模型，并运行在MNIST数据集上。下面讲述一下如何在TensorFlow中生成词向量(Word Embedding)，使用的模型来自Mikolov et al。
-本文的目录如下：
-
-解释使用连续词向量的原因；
-词向量模型的原理及训练过程；
-在TensorFlow中实现模型的简单版本，并给出优化的方法；
-
-TensorFlow实现了两个版本的模型：简单版和正式版。
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/tensorflow-learning-notes-3.html#more" rel="contents">
+            <a class="btn" href="/deep-learning-for-chatbots-1.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -845,7 +602,7 @@ TensorFlow实现了两个版本的模型：简单版和正式版。
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 

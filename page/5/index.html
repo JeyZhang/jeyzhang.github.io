@@ -244,6 +244,11 @@
 
     
     
+      
+      
+
+      
+    
 
     
       
@@ -267,8 +272,8 @@
             
               
                 
-                <a class="post-title-link" href="/tensorflow-learning-notes-2.html" itemprop="url">
-                  TensorFlow学习笔记2：构建CNN模型
+                <a class="post-title-link" href="/python-learning-notes-and-common-problems.html" itemprop="url">
+                  python学习笔记与常见问题
                 </a>
               
             
@@ -278,8 +283,126 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-31T13:02:56+08:00" content="2016-01-31">
-              2016-01-31
+            <time itemprop="dateCreated" datetime="2016-04-27T17:22:49+08:00" content="2016-04-27">
+              2016-04-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/python-learning-notes-and-common-problems.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="python-learning-notes-and-common-problems.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/python-learning-notes-and-common-problems.html"class="leancloud_visitors"  data-flag-title="python学习笔记与常见问题">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            列表使用lambda函数实现列表操作实现两个list的元素对应相乘，返回同等大小的list结果。
+list1 = [...]
+list2 = [...]
+multiply_list = map(lambda (a, b): a * b, zip(list1, list2))
+列表的类型转换例如，经常遇到需要将元素类型为int的列表，转为元素类型为str的列表，可以方便的使用join等函数进行格式化
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/python-learning-notes-and-common-problems.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/problems-with-solution-in-tensorflow.html" itemprop="url">
+                  TensorFlow中遇到的问题及解决方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-03-25T22:36:46+08:00" content="2016-03-25">
+              2016-03-25
             </time>
           </span>
 
@@ -304,8 +427,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/tensorflow-learning-notes-2.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="tensorflow-learning-notes-2.html" itemprop="commentsCount"></span>
+              <a href="/problems-with-solution-in-tensorflow.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="problems-with-solution-in-tensorflow.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -315,7 +438,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/tensorflow-learning-notes-2.html"class="leancloud_visitors"  data-flag-title="TensorFlow学习笔记2：构建CNN模型">
+			 <span id="/problems-with-solution-in-tensorflow.html"class="leancloud_visitors"  data-flag-title="TensorFlow中遇到的问题及解决方法">
              &nbsp;Views
             </span>
 		  
@@ -334,14 +457,13 @@
         
           <span itemprop="articleBody">
             
-            上篇博文主要是TensorFlow的一个简单入门，并介绍了如何实现Softmax Regression模型，来对MNIST数据集中的数字手写体进行识别。
-然而，由于Softmax Regression模型相对简单，所以最终的识别准确率并不高。下面将针对MNIST数据集构建更加复杂精巧的模型，以进一步提高识别准确率。
+            本文记录一下自己在使用TensorFlow的过程中，遇到的较为困扰的问题及最终的解决方法。
 
-深度学习模型TensorFlow很适合用来进行大规模的数值计算，其中也包括实现和
+Q1. 如何查看TensorFlow中Tensor, Variable, Constant的值？TensorFlow中的许多方法返回的都是一个Tensor对象。在Debug的过程中，我们发现只能看到Tensor对象的一些属性信息，无法查看Tensor具体的输出值；而对于Variable和Constant，
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/tensorflow-learning-notes-2.html#more" rel="contents">
+            <a class="btn" href="/problems-with-solution-in-tensorflow.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -384,8 +506,8 @@
             
               
                 
-                <a class="post-title-link" href="/network-connection-problems-in-win10.html" itemprop="url">
-                  Win10下网络连接问题及解决方案
+                <a class="post-title-link" href="/tensorflow-learning-notes-3.html" itemprop="url">
+                  TensorFlow学习笔记3：词向量
                 </a>
               
             
@@ -395,8 +517,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-28T17:54:15+08:00" content="2016-01-28">
-              2016-01-28
+            <time itemprop="dateCreated" datetime="2016-03-16T21:24:38+08:00" content="2016-03-16">
+              2016-03-16
             </time>
           </span>
 
@@ -405,8 +527,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Network/" itemprop="url" rel="index">
-                    <span itemprop="name">Network</span>
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
                   </a>
                 </span>
 
@@ -421,8 +543,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/network-connection-problems-in-win10.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="network-connection-problems-in-win10.html" itemprop="commentsCount"></span>
+              <a href="/tensorflow-learning-notes-3.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="tensorflow-learning-notes-3.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -432,7 +554,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/network-connection-problems-in-win10.html"class="leancloud_visitors"  data-flag-title="Win10下网络连接问题及解决方案">
+			 <span id="/tensorflow-learning-notes-3.html"class="leancloud_visitors"  data-flag-title="TensorFlow学习笔记3：词向量">
              &nbsp;Views
             </span>
 		  
@@ -451,377 +573,18 @@
         
           <span itemprop="articleBody">
             
-            回家后，发现笔记本能连上家里的wifi，但是就是不能上网。网络诊断问题提示是【此计算机上缺少一个或多个网络协议】。尝试了多种方法一直解决不了，经过一番折腾后终于成功，特此记录一下，以供后人参考。
-操作系统环境：Windows 10
-网络诊断错误：此计算机缺少一个或多个网络协议
+            上篇博文讲了如何构建一个简单的CNN模型，并运行在MNIST数据集上。下面讲述一下如何在TensorFlow中生成词向量(Word Embedding)，使用的模型来自Mikolov et al。
+本文的目录如下：
 
-可能的解决方法：开启特定的网络服务项网上大多都是这种方法，如下：
-按windows+R键，在运行窗口中输入service
+解释使用连续词向量的原因；
+词向量模型的原理及训练过程；
+在TensorFlow中实现模型的简单版本，并给出优化的方法；
+
+TensorFlow实现了两个版本的模型：简单版和正式版。
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/network-connection-problems-in-win10.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/markdown-common-problems.html" itemprop="url">
-                  markdown写作中的常见问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-22T21:44:33+08:00" content="2016-01-22">
-              2016-01-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/markdown-common-problems.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="markdown-common-problems.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/markdown-common-problems.html"class="leancloud_visitors"  data-flag-title="markdown写作中的常见问题">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            本文记录markdown写作过程中所遇到的问题及相应的解决方法，以供参考。
-
-所包围的语句">Q1: 代码中出现{% 和 %}所包围的语句如果代码中出现了类似于{%××××××%}格式的语句，需要在这些语句块的首尾加上
-1&#123;% raw %&#125;
-和1&#123;% endraw %&#125;
-以保证显示原始的语句。
-示例如下：
-
-显示效果如下：
-
-	{% if theme.lea
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/markdown-common-problems.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/hexo-next-add-post-views.html" itemprop="url">
-                  Hexo的NexT主题个性化：添加文章阅读量
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-22T09:28:40+08:00" content="2016-01-22">
-              2016-01-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/hexo-next-add-post-views.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hexo-next-add-post-views.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/hexo-next-add-post-views.html"class="leancloud_visitors"  data-flag-title="Hexo的NexT主题个性化：添加文章阅读量">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            关于Hexo的文章阅读量设置问题，大多数人都是使用不蒜子的代码实现。但是这个方法仅局限于在文章页面显示阅读数，首页是不显示的。
-下面介绍如何在首页及文章页面都显示文章的阅读量，显示效果如下：
-
-
-配置LeanCloud注册打开LeanCloud官网，进入注册页面注册。完成邮箱激活后，点击头像，进入控制台页面，如下：
-
-创建新应用创建一个新应用(类型为JavaScript SDK)，点击应用进入；
-
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/hexo-next-add-post-views.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/how-to-insert-equations-in-markdown.html" itemprop="url">
-                  如何在markdown中插入公式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-14T20:57:19+08:00" content="2016-01-14">
-              2016-01-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/how-to-insert-equations-in-markdown.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-insert-equations-in-markdown.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/how-to-insert-equations-in-markdown.html"class="leancloud_visitors"  data-flag-title="如何在markdown中插入公式">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            MathJax插件著名的Stackoverflow网站上的漂亮公式，就是使用了MathJax插件的效果。添加MathJax插件也非常简单，只需要在markdown文件中，添加MathJax CDN，如下：
-&lt;script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/how-to-insert-equations-in-markdown.html#more" rel="contents">
+            <a class="btn" href="/tensorflow-learning-notes-3.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -848,7 +611,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 

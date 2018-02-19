@@ -56,7 +56,7 @@
 <meta name="description" content="Life is Now.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jey Zhang">
-<meta property="og:url" content="http://www.jeyzhang.com/index.html">
+<meta property="og:url" content="http://www.jeyzhang.com/page/8/index.html">
 <meta property="og:site_name" content="Jey Zhang">
 <meta property="og:description" content="Life is Now.">
 <meta name="twitter:card" content="summary">
@@ -246,10 +246,6 @@
     
       
       
-        
-        
-        
-      
 
       
     
@@ -276,8 +272,8 @@
             
               
                 
-                <a class="post-title-link" href="/using-disqus-in-china.html" itemprop="url">
-                  解决国内Hexo+Next无法正常使用disqus评论系统的问题
+                <a class="post-title-link" href="/network-connection-problems-in-win10.html" itemprop="url">
+                  Win10下网络连接问题及解决方案
                 </a>
               
             
@@ -287,8 +283,251 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2018-01-21T21:09:02+08:00" content="2018-01-21">
-              2018-01-21
+            <time itemprop="dateCreated" datetime="2016-01-28T17:54:15+08:00" content="2016-01-28">
+              2016-01-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/network-connection-problems-in-win10.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="network-connection-problems-in-win10.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/network-connection-problems-in-win10.html"class="leancloud_visitors"  data-flag-title="Win10下网络连接问题及解决方案">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            回家后，发现笔记本能连上家里的wifi，但是就是不能上网。网络诊断问题提示是【此计算机上缺少一个或多个网络协议】。尝试了多种方法一直解决不了，经过一番折腾后终于成功，特此记录一下，以供后人参考。
+操作系统环境：Windows 10
+网络诊断错误：此计算机缺少一个或多个网络协议
+
+可能的解决方法：开启特定的网络服务项网上大多都是这种方法，如下：
+按windows+R键，在运行窗口中输入service
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/network-connection-problems-in-win10.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/markdown-common-problems.html" itemprop="url">
+                  markdown写作中的常见问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-22T21:44:33+08:00" content="2016-01-22">
+              2016-01-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">Markdown</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/markdown-common-problems.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="markdown-common-problems.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/markdown-common-problems.html"class="leancloud_visitors"  data-flag-title="markdown写作中的常见问题">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            本文记录markdown写作过程中所遇到的问题及相应的解决方法，以供参考。
+
+所包围的语句">Q1: 代码中出现{% 和 %}所包围的语句如果代码中出现了类似于{%××××××%}格式的语句，需要在这些语句块的首尾加上
+1&#123;% raw %&#125;
+和1&#123;% endraw %&#125;
+以保证显示原始的语句。
+示例如下：
+
+显示效果如下：
+
+	{% if theme.lea
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/markdown-common-problems.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/hexo-next-add-post-views.html" itemprop="url">
+                  Hexo的NexT主题个性化：添加文章阅读量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-22T09:28:40+08:00" content="2016-01-22">
+              2016-01-22
             </time>
           </span>
 
@@ -313,8 +552,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/using-disqus-in-china.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="using-disqus-in-china.html" itemprop="commentsCount"></span>
+              <a href="/hexo-next-add-post-views.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hexo-next-add-post-views.html" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -324,7 +563,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/using-disqus-in-china.html"class="leancloud_visitors"  data-flag-title="解决国内Hexo+Next无法正常使用disqus评论系统的问题">
+			 <span id="/hexo-next-add-post-views.html"class="leancloud_visitors"  data-flag-title="Hexo的NexT主题个性化：添加文章阅读量">
              &nbsp;Views
             </span>
 		  
@@ -343,242 +582,18 @@
         
           <span itemprop="articleBody">
             
-            今天在家里没有连V的情况下，发现博客的评论竟然加载不出来了（我说这么最近半年博文的评论数直线下降（大雾））…搜了一下才知道原来半年前国内就不能正常访问disqus了，因为本站用到了disqus作为评论系统，所以自然是挂了…
-真是感叹国内的互联网环境的安(xian)全(e)，看了一下解决方法：首先检测当前访问下能不能正常加载disqus（即在一定时间内有响应）；如果能，那么走正常的流程，调disqu
+            关于Hexo的文章阅读量设置问题，大多数人都是使用不蒜子的代码实现。但是这个方法仅局限于在文章页面显示阅读数，首页是不显示的。
+下面介绍如何在首页及文章页面都显示文章的阅读量，显示效果如下：
+
+
+配置LeanCloud注册打开LeanCloud官网，进入注册页面注册。完成邮箱激活后，点击头像，进入控制台页面，如下：
+
+创建新应用创建一个新应用(类型为JavaScript SDK)，点击应用进入；
+
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/using-disqus-in-china.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/my-plans-for-2018.html" itemprop="url">
-                  我的2018年计划和一些感想
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2018-01-20T20:18:16+08:00" content="2018-01-20">
-              2018-01-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/my-plans-for-2018.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="my-plans-for-2018.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/my-plans-for-2018.html"class="leancloud_visitors"  data-flag-title="我的2018年计划和一些感想">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            建立这个博客已经两年多，自己从来还没有在这上面写过关于个人的东西。当初对这个博客的定位是希望能督促自己多写出一些技术类的文章，一来可以一边学习一边总结，二来也给自己留一个底，方便打捞自己曾经学习过的东西，三来获取能够帮助到别人。
-今天想要写些关于自己的东西，多年没有动笔写作，才发觉文笔生疏了很多，想起五六年前还在读本科的自己，动不动地就在空间里文笔大攉强说愁，现在想来除了觉得有点可笑和幼稚之外，也
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/my-plans-for-2018.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/text-classification-in-action.html" itemprop="url">
-                  文本分类实战系列（一）：特征工程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2017-12-09T17:15:31+08:00" content="2017-12-09">
-              2017-12-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/text-classification-in-action.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="text-classification-in-action.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/text-classification-in-action.html"class="leancloud_visitors"  data-flag-title="文本分类实战系列（一）：特征工程">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            本文的话题老生常谈，文本分类应该是很多NLPer非常常遇到和熟悉的任务之一了，下面总结一下博主在处理这类任务的过程中特征工程方面的经验，希望对各位NLP入门者或者在做此类任务的新手有所帮助。对于其他的文本处理任务，也会有一定的参考意义。
-概述文本分类，顾名思义，就是根据文本内容本身将文本归为不同的类别，通常是有监督学习的任务。根据文本内容的长短，有做句子、段落或者文章的分类；文本的长短不同可能会导
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/text-classification-in-action.html#more" rel="contents">
+            <a class="btn" href="/hexo-next-add-post-views.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -605,7 +620,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -791,7 +806,7 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jeyzhang';
-      var disqus_identifier = 'index.html';
+      var disqus_identifier = 'page/8/index.html';
       var disqus_title = '';
       var disqus_url = '';
 
