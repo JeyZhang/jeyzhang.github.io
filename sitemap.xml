@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jeyzhang.com/about/index.html</loc>
+    <lastmod>2018-04-08T03:20:38.019Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.jeyzhang.com/understand-attention-in-rnn.html</loc>
     <lastmod>2018-02-19T13:44:57.088Z</lastmod>
   </url>
@@ -64,11 +69,6 @@
   <url>
     <loc>http://www.jeyzhang.com/cnn-learning-notes-1.html</loc>
     <lastmod>2018-02-19T13:44:20.390Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.jeyzhang.com/about/index.html</loc>
-    <lastmod>2018-02-19T13:38:48.989Z</lastmod>
   </url>
   
   <url>
