@@ -267,6 +267,127 @@
             
               
                 
+                <a class="post-title-link" href="/tensorflow-learning-notes-3.html" itemprop="url">
+                  TensorFlow学习笔记3：词向量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-03-16T21:24:38+08:00" content="2016-03-16">
+              2016-03-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/tensorflow-learning-notes-3.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="tensorflow-learning-notes-3.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+		  
+		  
+			 &nbsp; | &nbsp;
+			 <span id="/tensorflow-learning-notes-3.html"class="leancloud_visitors"  data-flag-title="TensorFlow学习笔记3：词向量">
+             &nbsp;Views
+            </span>
+		  
+		
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            上篇博文讲了如何构建一个简单的CNN模型，并运行在MNIST数据集上。下面讲述一下如何在TensorFlow中生成词向量(Word Embedding)，使用的模型来自Mikolov et al。
+本文的目录如下：
+
+解释使用连续词向量的原因；
+词向量模型的原理及训练过程；
+在TensorFlow中实现模型的简单版本，并给出优化的方法；
+
+TensorFlow实现了两个版本的模型：简单版和正式版。
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/tensorflow-learning-notes-3.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/cnn-apply-on-modelling-sentence.html" itemprop="url">
                   卷积神经网络(CNN)在句子建模上的应用
                 </a>
@@ -604,133 +725,12 @@ Deep Learning in NLP （一）词向量和语言模型
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/cnn-learning-notes-2.html" itemprop="url">
-                  卷积神经网络(CNN)学习笔记2：模型训练
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-03-03T13:41:05+08:00" content="2016-03-03">
-              2016-03-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/cnn-learning-notes-2.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="cnn-learning-notes-2.html" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-		  
-		  
-			 &nbsp; | &nbsp;
-			 <span id="/cnn-learning-notes-2.html"class="leancloud_visitors"  data-flag-title="卷积神经网络(CNN)学习笔记2：模型训练">
-             &nbsp;Views
-            </span>
-		  
-		
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            上篇博文主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的LeNet-5模型。下面重点介绍CNN模型的训练过程/参数学习，在阅读本文之前，最好需要有以下方面的预备知识：
-
-神经网络基础（网络结构，前向/后向传播方式，激活函数等）；
-基础的最优化求解方法（梯度法，牛顿法等）；
-机器学习基础
-
-
-神经网络模型常用于处理有监督学习的问题，例如分类问题，CNN也不例外。模型需要一些
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/cnn-learning-notes-2.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -771,7 +771,7 @@ Deep Learning in NLP （一）词向量和语言模型
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -785,7 +785,7 @@ Deep Learning in NLP （一）词向量和语言模型
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-count">54</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

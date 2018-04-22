@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jeyzhang.com/"/>
-  <updated>2018-04-15T14:27:23.488Z</updated>
+  <updated>2018-04-22T12:28:12.910Z</updated>
   <id>http://www.jeyzhang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推荐一本适合机器学习工程师的读物</title>
+    <link href="http://www.jeyzhang.com/machine-learning-for-engineers.html"/>
+    <id>http://www.jeyzhang.com/machine-learning-for-engineers.html</id>
+    <published>2018-04-22T12:09:26.000Z</published>
+    <updated>2018-04-22T12:28:12.910Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近看到一本NG大神写的书，叫《Machine Learning Yearning》。特别适合机器学习方向的工程师们阅读，里面谈到了很多工程上机器学习经常面临的问题，比如如何选择dev/test数据集（如何构造？大概数据量多少合适？），如何对DSAT（分类错误的case）进行分析，提供了很多很好的建议和经验。</p><p>整本书目前仅仅31页（仍在持续更新中），通俗易懂，建议大家（尤其是做这方面的工程师们）阅读~</p><p><strong>下载地址如下</strong>：</p><p>百度云链接地址<a href="https://pan.baidu.com/s/13F25_sZG9aSaqKb7W4waHQ" target="_blank" rel="external">在这里</a> 密码：h7ea</p><p><strong>之前打赏过我的小伙伴可以直接在我分享的学习资料大礼包的”1机器学习”目录下找到，大礼包里面的资源会逐渐更新，之后我看到好的资料也会放在相应的目录下。</strong></p><hr><p><strong>文章写得不错？打赏一个呗:)</strong></p><p><img src="http://i.imgur.com/tTBAnzw.png" alt=""></p><p><strong>【打赏1.99￥以上，备注你的邮箱，可获得博主精心为你准备的深度学习/机器学习/自然语言处理的学习资料大礼包】</strong></p><p><strong>近期博主准备筹建NLP方面的技术群，欢迎感兴趣的小伙伴加我入群交流:)，加好友请备注：”博客”。</strong></p><p><img src="https://i.imgur.com/pBtBjMe.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近看到一本NG大神写的书，叫《Machine Learning Yearning》。特别适合机器学习方向的工程师们阅读，里面谈到了很多工程上机器学习经常面临的问题，比如如何选择dev/test数据集（如何构造？大概数据量多少合适？），如何对DSAT（分类错误的case）进
+      
+    
+    </summary>
+    
+      <category term="Machine Learning" scheme="http://www.jeyzhang.com/categories/Machine-Learning/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://www.jeyzhang.com/tags/Deep-Learning/"/>
+    
+      <category term="Machine Learning" scheme="http://www.jeyzhang.com/tags/Machine-Learning/"/>
+    
+      <category term="Resource" scheme="http://www.jeyzhang.com/tags/Resource/"/>
+    
+  </entry>
   
   <entry>
     <title>北京的一天</title>
@@ -593,35 +622,6 @@
       <category term="Interview" scheme="http://www.jeyzhang.com/tags/Interview/"/>
     
       <category term="Job" scheme="http://www.jeyzhang.com/tags/Job/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>卷积神经网络(CNN)学习笔记2：模型训练</title>
-    <link href="http://www.jeyzhang.com/cnn-learning-notes-2.html"/>
-    <id>http://www.jeyzhang.com/cnn-learning-notes-2.html</id>
-    <published>2016-03-03T05:41:05.000Z</published>
-    <updated>2018-02-19T13:44:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://www.jeyzhang.com/cnn-learning-notes-1.html"><strong>上篇博文</strong></a>主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的<strong><code>LeNet-5</code></strong>模型。下面重点介绍CNN模型的训练过程/参数学习，在阅读本文之前，最好需要有以下方面的预备知识：</p><ul><li>神经网络基础（网络结构，前向/后向传播方式，激活函数等）；</li><li>基础的最优化求解方法（梯度法，牛顿法等）；</li><li>机器学习基础</li></ul><hr><p>神经网络模型常用于处理有监督学习的问题，例如分类问题，CNN也不例外。模型需要一些有标注的数据进行训练，训练过程中主要涉及到网络的<strong>前向传播</strong>和<strong>反向传播</strong>计算，前向传播体现了特征信息的传递，而反向传播则是体现误差信息对模型参数的矫正。</p><h3 id="CNN前向传播">CNN前向传播</h3><p>与普通的神经网络的前向传播过程一样。用 \( l \) 表示当前层，\( x^{l} \) 表示当前层的输出，\( W^{l} \) 和 \( b^{l} \) 分别表示当前层的权值和偏置，则前向传播可以用下面的公式表示：</p><p>$$ x^{l} = f\left( u^{l}\right), \ with \; u^{l} = W^{l}x^{l-1} + b^{l} $$</p><p>其中 \(f\left( \right)\) 函数为激活函数，可以选择<code>sigmod</code>或者<code>tanh</code>等函数。</p><p>对于卷积层，其前向传播如下图：</p><p><img src="http://i.imgur.com/4mCbV3d.png" alt=""></p><h3 id="CNN反向传播">CNN反向传播</h3><h4 id="代价函数">代价函数</h4><p>代价函数（或损失函数）有较多形式，常用的有平方误差函数，交叉熵等。这里我们用平方误差函数作为代价函数，公式如下：</p><p>$$ E^{n} = \dfrac {1} {2}\sum _{k=1}^{c}\left( t_{k}^{n} - y_{k}^{n}\right) ^{2} = \dfrac {1} {2}||t^{n} - y^{n}||_{2}^{2}$$</p><p>以上公式描述了样本 \( n \) 的训练误差，其中 \( c \) 为输出层节点的个数（通常就是最终的分类类别数目），\( t \) 是训练样本的正确结果，\( y \) 是网络训练的输出结果。</p><h4 id="BP反向传播">BP反向传播</h4><p>基本的反向传播与BP神经网络类似，首先，简单回顾一下BP神经网络中的反向传播计算过程：</p><p>权值参数调整的方向如下公式：</p><p>$$ \Delta W^{l} = -\eta \dfrac {\partial E} {\partial W^{l}}, \ \ \dfrac {\partial E} {\partial W^{l}} = x^{l-1}(\delta ^{l})^{T} $$</p><p>其中，\( \eta \) 为学习率。</p><p>$$ \dfrac {\partial E} {\partial b} = \dfrac {\partial E} {\partial u} \dfrac {\partial u} {\partial b} = \dfrac {\partial E} {\partial u} = \delta $$</p><p>其中，\( \delta \) 称之为<strong>敏感度</strong>，也就是<strong>误差度</strong>。 \( \delta \)的计算方式如下：</p><p>$$ \delta ^{L} = f’(u^{L})\circ (y^{n} - t^{n}) $$</p><p>$$ \delta ^{l} = (W^{l+1})^{T}\circ f’(u^{l}) $$</p><p>其中，\( L \) 表示网络的最后一层，\( l \) 表示网络的其他层，\( \circ \) 表示点乘。 以上的两个公式反映了误差由网络的最后一层逐步向前传递的计算过程。</p><h4 id="特殊的反向传播">特殊的反向传播</h4><p>由于CNN中有不同类型的层级，并且层级之间的连接关系有可能是不确定的（如LeNet-5网络中S2层到C3层）。所以，有几个情形下的反向传播比较特别：</p><ul><li><strong>情况一</strong>：当前为Pooling层，前一层是卷积层；</li><li><strong>情况二</strong>：当前为卷积层，前一层是Pooling层；</li><li><strong>情况三</strong>：当前层与前一层的连接关系不确定（<strong>？尚不理解？</strong>）；</li></ul><h4 id="情况一：当前为Pooling层，前一层是卷积层">情况一：当前为Pooling层，前一层是卷积层</h4><p><img src="http://i.imgur.com/TcfFA3Y.png" alt=""></p><p><img src="http://i.imgur.com/zsFtAhI.png" alt=""></p><p><img src="http://i.imgur.com/iUghGWY.png" alt=""></p><p>其中，<code>Kronecker</code>乘积的计算如下：</p><p><img src="http://i.imgur.com/zH179Jk.png" alt=""></p><h4 id="情况二：当前为卷积层，前一层是Pooling层">情况二：当前为卷积层，前一层是Pooling层</h4><p><img src="http://i.imgur.com/2R5A7VT.png" alt=""></p><p><img src="http://i.imgur.com/tm4daZv.png" alt=""></p><p>以上的矩阵1和矩阵2进行卷积操作时，需要将矩阵2先<strong>水平翻转</strong>，然后再<strong>垂直翻转</strong>；最后在矩阵1上进行<code>卷积操作</code>（和前向传播时类似）。</p><p><img src="http://i.imgur.com/Q5pSR1x.png" alt=""></p><p><img src="http://i.imgur.com/fm30a99.png" alt=""></p><h4 id="情况三：当前层与前一层的连接关系不确定">情况三：当前层与前一层的连接关系不确定</h4><p>个人理解，当前层与前一层的连接关系不确定时，反向传播与传统的BP算法类似，只不过更新的是局部连接的那些值。所以需要提前记录当前层的神经元与前一层的哪些元素是连接的。</p><hr><p>本文结束，感谢欣赏。</p><p><strong>欢迎转载，请注明本文的链接地址：</strong></p><p><a href="http://www.jeyzhang.com/cnn-learning-notes-2.html">http://www.jeyzhang.com/cnn-learning-notes-2.html</a></p><p><strong>参考资料</strong></p><p><a href="http://www.moonshile.com/post/juan-ji-shen-jing-wang-luo-quan-mian-jie-xi" target="_blank" rel="external">卷积神经网络全面解析</a></p><p><a href="http://blog.csdn.net/vintage_1/article/details/17253997" target="_blank" rel="external">CNN卷积神经网络反向传播机制的理解</a></p><hr><p><strong>文章写得不错？打赏一个呗:)</strong></p><p><img src="http://i.imgur.com/tTBAnzw.png" alt=""></p><p><strong>【打赏1.99￥以上，备注你的邮箱，可获得博主精心为你准备的深度学习/机器学习/自然语言处理的学习资料大礼包】</strong></p><p><strong>近期博主准备筹建NLP方面的技术群，欢迎感兴趣的小伙伴加我入群交流:)，加好友请备注：”博客”。</strong></p><p><img src="https://i.imgur.com/pBtBjMe.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;http://www.jeyzhang.com/cnn-learning-notes-1.html&quot;&gt;&lt;strong&gt;上篇博文&lt;/strong&gt;&lt;/a&gt;主要对CNN的基本网络结构及连接方式做了简单的介绍，还介绍了一个界内经典的&lt;strong&gt;&lt;code&gt;L
-      
-    
-    </summary>
-    
-      <category term="Machine Learning" scheme="http://www.jeyzhang.com/categories/Machine-Learning/"/>
-    
-    
-      <category term="CNN" scheme="http://www.jeyzhang.com/tags/CNN/"/>
-    
-      <category term="Deep Learning" scheme="http://www.jeyzhang.com/tags/Deep-Learning/"/>
-    
-      <category term="Machine Learning" scheme="http://www.jeyzhang.com/tags/Machine-Learning/"/>
     
   </entry>
   
